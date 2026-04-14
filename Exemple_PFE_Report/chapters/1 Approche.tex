@@ -1,0 +1,130 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+\begin{document}
+\chapter{Approche de Développement et Technologies Utilisées}
+ \section{Méthodologie}
+    \subsection{Introduction}
+    Une méthodogie de développement informatique est un cadre utilisé pour structurer, planifier et contrôler le processus de développement d'un système d'informations. Adhérer à une méthodologie bien définie permets au projet de proposer de meilleurs estimations, délivrer des systèmes stables, rendre le client informé, créer une définition claire de la tâche à venir, et identifier les potentiels pièges à l'avance, ce qui va permettre d'avoir le temps d'ajuster au fur et à mesure.\cite{dev_methodology}
+    
+    \subsection{Méthodologie Agile}
+    La méthodologie agile a été développé en réponse aux problèmes croissant surgissant en raison des inconvénients créé par la structure en cascade (Waterfall) et d'autres méthodes hautement structurée et non flexible. Cette approche est désigné de façon à s'adapter au changement et au besoin de créer des applications de façon plus rapide. 
+    \newline
+    Les méthodes Agiles sont reconnus à travers les valeurs suivantes:
+    \begin{itemize}
+      \item La mise en valeur des individus, des relations, et des interactions avec les outils.  
+      \item Coopérer avec le client durant tout le processus de développement. 
+      \item La satisfaction du client est la priorité absolue.
+    \end{itemize}
+    \subsection{L'approche Scrumban}
+    Scrumban est une méthode de gestion de projet qui combine les principales facultés des deux méthodologies agiles populaires: \textbf{Scrum et Kanban}.\cite{scrumban}
+    \begin{outline}
+     \1 Un scrum est une approche agile utilisé dans le développement informatique.\cite{scrumban_basics} 
+       \2 Avec Scrum, une équipe s'organise en rôles spécifiques, incluant un Scrum master, un product owner, et le reste de la team Scrum. 
+       \2 L'équipe décompose la charge de travail en plus petites parties qui prennent peu de temps appelés sprints. Chaque sprint dure deux semaines ou un mois.
+       \2 Durant un sprint, les développeurs travaille seulement sur les tâches sur lesquels l'équipe s'est mise d'accord, durant les réunions de sprint.
+       \2 Avant le prochain sprint, l'équipe tiens une autre réunion sprint et décide quelles points sur lesquels travailler durant ce dernier. Les équipes Scrum se réunissent également chaque matin pour une petite réunion récapitulative du travail fait au cours de la dernières journée. On appelle cette réunion plus communément le "stand-up meet".
+     \1 La méthode Kanban, est une approche de gestion de la charge de l'équipe.\cite{scrumban_basics} 
+        \2 Grâce à cette méthodologie, une équipe crée un Kanban board pour représenter visuellement le travail en colomnes -tels que: "Prêt à commencer", "En progression", "Sous révision", et enfin "Complété".
+        \2 Dès qu'un développeur commence à travailler sur une tâche, il bouge la carte avec le nom de l'article de "Prêt à commencer" à "En progression".
+        \2 Si un article se doit de retourner en arrière, par exemple de 'Sous révision' à 'En progression' l'équipe peut bouger la tâche vers la colonne souhaitée.  
+        \2 Le tableau Kanban rend ma tâche facile à tout le monde quand il s'agit de visualiser et mettre à jour le statut de chaque projet. 
+    \end{outline}
+    Scrumban mélange la structure et prévisibilité d'un Scrum grâce à la flexibilité de la méthode Kanban et le travail continue grâce aux étapes suivantes:\cite{scrumban_basics}
+    \begin{enumerate}
+    \item \textbf{Développer un tableau Scrumban}: Un tableau Scrumban est un Kanban board qui inclus un "product backlog" (tableau dans lequel sont précisés toutes les tâches à accomplir), un sprint backlog, les étapes du flux de travail de l'équipe (comme par exemple: en standby, en progression, et en cours de révision), et une colonne claire désigné pour les tâches complétées.    
+    Les étapes qui apparaissent dans le tableau Kanban sont tous dédiées à l'équipe. Par exemple, quelques équipes choisissent de ne pas avoir les product backlog dans le Scrumban board, et garder uniquement leur sprint backlog dans le tableau (astuce pour se concentrer uniquement sur les tâches les plus importantes du moment).
+    \item \textbf{Établir des limites pour le travail en cours}: Il est important de poser une limite sur les articles \acrfull{wip} pour chaque colonne en tant qu'équipe. Cela va aider à établir une limite de quantité de travail à n'importe quel instant. 
+    Les limites \acrshort{wip} sont faites pour garder les membres d'une équipe concentrés sur un nombre bien déterminé de tâches et pour assurer une progression significative envers leur accomplissement. Quand l'équipe est surmené par les tâches simultanées en cours, la productivités en souffre. 
+    \item \textbf{Établir les priorités}: Il n'y a pas de rôles spécifiques — e.i., scrum master, product owner, etc. — dans le Scrumban. Les membres de l'équipe ont une certaine autonomie pour choisir la tâche sur laquelle ils veulent travailler.
+    Ensemble, l'équipe décide ce qui se doit d'être fait en premier et discutent ensuite de la liste des tâches à mettre en priorités.
+    Dès que des tâches sont accomplies, les membres de l'équipe prennent les tâches prioritaires dans la liste établie.
+    \item \textbf{Réunion journalières}: Malgré le fait qu'il n'y aie pas de scrum master pour diriger l'équipe, il est important pour l'équipe d'avoir des mini réunions journalières pour se mettre à jour vis à vis de l'avancement du projet.
+    Les membres de l'équipe peuvent tour à tour diriger la réunion quotidienne debout.  
+    \end{enumerate}
+    Si implémenté de façon correcte, le Scrumban peut aider une équipe à bénéficier de la nature perscriptive du Scrum et de la liberté du Kanban pour améliorer leur processus.
+    
+ \section{Technologies Utilisées}
+    Avant de commencer n'importe quel projet de développement, il est essentiel de choisir les bonnes technologies à avoir. Les projets peuvent avoir différentes tailles, complexité et contraintes, incluant les intégrations de partie tiers, etc... Cela va dépendre du but que le projet compte atteindre
+    \newline Pour cela, on commence tout d'abord par déterminer les besoins du projet. 
+    \newline Pour ce projet, les technologies suivantes ont été choisies comme montré dans l'image ci-dessous: 
+    \begin{figure}[H]
+      \centering
+        \includegraphics[width=0.8\textwidth]{img/bilel-technos.png}
+        \caption{Pile de Technologie}
+        \label{fig:technologies-stack}
+    \end{figure}
+    \newpage
+    \begin{outline}
+ \1 Frontend:
+   \2 \textbf{Next.js}: Next.js est un framework React flexible qui vous donne les blocks de construction nécessaires à la création d'applications web rapides.\cite{nextjsvercel}
+   C'est un framework open-source créé par l'entreprise Vercel pour fournir aux développeur la possibilité de faire du \acrlong{ssr} et du \acrlong{ssg} avec du React.\cite{nextjswikipedia}
+   \2 \textbf{TypesSript}: TypeScript est un language de programmation fortement typé construit en dessus de JavaScript, ce qui vous donne un meilleur contrôle à n'importe quelle échelle.\cite{typescript} Cet outil va nous permettre d'éviter des difficultés à long terme et débugger certains problèmes à l'avance que l'on aurait pas pu détecter avec javascript dès le début. C'est un outil parfait pour les projets \acrshort{js} scalable.
+   \2 \textbf{Tailwind}: Tailwind est un framework CSS qui va nous fournir des classes utilitaires à usage unique qui sont pré configurés pour la plupart des cas, et qui vont nous aider à concevoir nos pages web directement depuis notre balisage (markup) ou de nos fichiers .js/.jsx/.ts/.tsx.\cite{tailwind}
+ \1 Backend:
+   \2 \textbf{NestJS}: NestJS est un framework Node.js server-side qui est excellent quand il s'agit de construire des applications backend hautement maintenable et testable. On peut créer des applications Node.js de types plus différents les uns que les autres; On est uniquement limités par les fonctionnalités de notre application.\cite{nestjs} 
+   \2 \textbf{TypeORM}: TypeORM est un framework de Mappage Objet-Relationnel \acrshort{orm}. En général, la partie 'Objet' fait référence au domaine/modèle de l'application, Relationnel fait référence aux relations entre les tables and enfin la partie Mappage fait référence à l'acte de liaison entre le modèle et la table.\cite{typeorm}
+   \2 \textbf{Bull}: Bull est une librairie Node qui implémente un système de gestion de file rapide et robuste basé sur redis.
+   Même si c'est possible d'implémenter des files directement en utilisant des commandes Redis, la librairie offre une API qui s'occupe de tout les détails bas-niveaux et enrichie les fonctionnalités de base de Redis pour que des cas d'utilisation plus complexe puissent être manipulé plus facilement.\cite{bull}
+ \1 Base de donnée:
+    \2 \textbf{PostgreSQL}: PostgreSQL est un système de base donnée objet-relationnel  avancé, entreprenarial et open source. Il utilise et étend le langage \acrshort{sql} en le combinant avec plusieurs fonctionnalités qui stocke de façon sûr et fait évoluer les charges de travail les plus complexes.\cite{postgre}
+    \2 \textbf{Redis}: Redis, qui signifie Remote Dictionary Server (Serveur de dictionnaire à distance), est un système de stockage de données clé-valeur en mémoire, open source et rapide.\cite{redis} Le choix de cette base de données légère a été fait pour fonctionner main dans la main avec la librairie de gestion de file Bull.  
+ \1 Contrôle de version et Conteneurisation:
+    \2 \textbf{Git}: Git est un projet open source avancé, qui est activement maintenu. Par sa structure décentralisée, Git illustre parfaitement ce qu'est un système de contrôle de version décentralisé (DVCS). Plutôt que de consacrer un seul emplacement pour l'historique complet des versions du logiciel, dans Git, chaque copie de travail du code est également un dépôt qui contient l'historique complet de tous les changements.
+
+    En plus d'être décentralisé, Git a été conçu pour répondre à trois objectifs : performances, sécurité et flexibilité..\cite{git}
+    \2 \textbf{Docker}: La technologie Docker utilise le noyau Linux ainsi que ses fonctionnalités (comme les Cgroups et les espaces de noms) pour séparer des processus afin qu'ils s'exécutent de manière indépendante. Cette indépendance reflète l'objectif des conteneurs : exécuter plusieurs processus et applications séparément les uns des autres afin d'optimiser l'utilisation de votre infrastructure tout en bénéficiant du même niveau de sécurité que celui des systèmes distincts. \cite{docker}
+ \1 Infrastructure CI/CD:
+    \2 \textbf{Jira}: JIRA est une plateforme multifonction qui vise à faciliter la gestion de projet en aidant à suivre les tâches, identifier les blocages et partager des informations entre les membres d'une équipe\cite{jira} L'entretien d'une telle plateforme, bien que payant fait d'elle un choix de qualité quand il s'agit de maintenir d'un projet de grande envergure. Pour cela, l'équipe Watto et l'équipe AYV ont choisit de coopérer à travers la plateforme JIRA et de créer une infrastructure CI/CD qui passe à travers la plateforme et son outils Bitbucket. 
+    \2 \textbf{CircleCI}: CircleCI est une plate-forme d'intégration continue et de livraison continue qui peut être utilisée pour mettre en oeuvre des pratiques Devops. CircleCI est l'une des plateformes \acrshort{cicd} les plus populaires au monde.\cite{circleci} Sachant que CircleCI offre une flexibilité de travail conséquente, un support Docker et une versatilité quand il s'agit de configurer l'infrastructure \acrshort{cicd}. Le choix fut évident. 
+ \1 Autres Services:
+    \2 \textbf{AWS}: \acrlong{asss} (\acrshort{asss}) est un service de stockage d'objets qui offre une évolutivité de premier ordre, une disponibilité de données, une sécutrité et une performance de qualité exceptionnel. \acrshort{asss} fournit un système de gestion des fonctionnalités pour permettre l'optimisation, l'organisation, et la configuration d'accès à vos données pour atteindre les besoins spécifiques business, organisationnel et de conformité.\cite{aws}
+    \2 \textbf{SendGrid}: SendGrid est un système de livraison d'email basé sur le cloud, un API et un service qui permet d'envoyer des emails sans avoir un maintenir des servers d'email.\cite{sendgrid}
+\end{outline}
+\section{Architecture Système}
+    \subsection{Introduction}
+    Après avoir vu l'ensemble des technologies majeurs utilisée pour la mise en place du projet Watto, il est essentiel de voir l'interaction entre la plupart d'entre eux interagissent ensemble. 
+    \newline En effet, avant d'aborder les besoins fonctionnels et non fonctionnels, il est primordial de mettre en place un schéma qui représente correctement la liaison entre nos technologies et la manière dont on va les mettre en place. 
+    \newline On va commencer par voir comment le backend intéragis avec la base de données et le frontend, puis nous verrons la mise en place architecturale de notre infrastructure \acrshort{cicd}
+    
+    \newline 
+    \subsection{Intéractions Client, Serveur et Base de Données}
+    \begin{figure}[H]
+      \centering
+        \includegraphics[width=1\textwidth]{img/bilel-architecture-logique.png}
+        \caption{Architecture Système Client/Serveur/BD}
+        \label{fig:system-architecture}
+    \end{figure}
+    \newline
+    Commençons par l'explication de la partie base de données, la conteneurisation des bases de données Redis et PostgreSQL est essentiel à la mise en place d'une architecture solide pour un projet scalable. 
+    \newline En effet, un projet comme Watto est prometteur et risque d'évoluer très rapidement en ampleur et en complexité. La conteneurisation permettra donc de fluidifier le processus d'introduction aux projets grâce à la facilité d'utilisation et portabilité de Docker. 
+    \newline Ce dernier, permet d'avoir un environnement similaire quelques soit la machine, sécurisé, et facile à mettre en place. 
+    Pour intéragir avec ces bases de données, on utilise TypeORM en tandem avec le framework backend NestJS. En effet, TypeORM rend facile et granulaire la manipulation des bases de données, grâce à son intégration clés en main avec NestJS, la configuration est très facile à implémenter et le potentiel d'agrandir le projet est infinie. L'architecture inspiré d'Angular de NestJS et sa liaison à TypeScript rend de ce framework un choix primordial pour une entreprise de cette envergure. 
+    \newline Bull va nous permettre de gérer le système de notifications que l'on va mettre en place ainsi que le système de mailing et de logging, c'est pour cela que l'on a choisit de mettre en place Redis avec PostgreSQL comme base de données pour la gestion le stockage léger dont aura besoin Bull. 
+    \newline Enfin, Next.js pour la partie front-end, une technologie qui rend le déploiement d'une application web presque magique tant l'affichage côté client bat tous les records quand il s'agit d'application massive (cela est également valable pour les applications légères). 
+    \subsection{Infrastructure CI/CD}
+     \subsubsection{Introduction}
+ \acrfull{cicd} sont des termes utilisés pour décrire un processus ou de multiple changements sont fait à la base de codes en simultané.\cite{cicd}
+ \begin{figure}[H]
+  \centering
+    \includegraphics[width=0.5\textwidth]{img/cicd.png}
+    \caption{Processus CI/CD}
+    \label{fig:cicd-process}
+    \caption*{\textbf{Source:} synopsys.com/glossary/what-is-cicd.html}
+\end{figure}
+ Une pipeline \acrshort{cicd} représente des séries d'étapes qui dirige le processus de livraison de software. Grâce au \acrshort{devops}, \acrshort{cicd} améliore le développement d'application en utilisant le monitoring et l'automation. Ceci est particulièrement utile quand il s'agit d'intégrer et de tester de façon continue, ce qui est typiquement difficile à performer, prends énormément de temps, et requiert la création de stubs et de drivers.
+ \newline Construire une pipeline \acrshort{cicd} peut être très exigeante en termes de ressources car elle peut s'avérer être une tâche très laborieuse en terme de temps et très technique. Une équipe disposant d'un ensemble de compétences très spécifiques sera nécessaire pour mettre en place le pipeline.\cite{cicd2}
+ Voici notre architecture avec les outils utilisés: 
+\newline
+\begin{figure}[H]
+\begin{center}
+    \includegraphics[width=1\textwidth]{img/bilel-ci-cd.png}
+    \caption{Architecture CI/CD}
+    \label{fig:cicd-architecture}
+\end{center}
+\end{figure}
+\newline
+Le prochain chapitre abordera les besoins fonctionnelles et non fonctionnelles ainsi que le côté architecturale de l'implémentation du projet Watto.
+    
+    
+    
+\end{document}

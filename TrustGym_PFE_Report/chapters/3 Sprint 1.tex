@@ -1,0 +1,317 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../img/}}{\subfix{../architectures images/}}}
+\begin{document}
+
+\chapter{Sprint 1 : Authentification et Gestion des Utilisateurs}
+
+\section{Introduction}
+
+Le premier sprint constitue le socle fondamental de la plateforme TrustGym. Il porte sur la mise en place du syst\`{e}me d'authentification et de gestion des utilisateurs, deux piliers indispensables pour s\'{e}curiser l'acc\`{e}s \`{a} l'ensemble des fonctionnalit\'{e}s de l'application. Ce sprint couvre la cr\'{e}ation d'un double syst\`{e}me \acrshort{jwt} permettant de distinguer les administrateurs/caissiers des membres adh\'{e}rents, la gestion des r\^{o}les et des permissions via un m\'{e}canisme \acrshort{rbac}, ainsi que le contr\^{o}le d'acc\`{e}s aux modules \acrshort{saas}. C\^{o}t\'{e} mobile, un flux d'inscription multi-\'{e}tapes est impl\'{e}ment\'{e} pour offrir une exp\'{e}rience utilisateur fluide et s\'{e}curis\'{e}e.
+
+\section{Sprint Backlog}
+
+\begin{longtable}{|p{3cm}|p{2.5cm}|p{4cm}|p{5cm}|}
+\hline
+\textbf{Epic} & \textbf{Nature} & \textbf{User Story} & \textbf{Description} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Epic} & \textbf{Nature} & \textbf{User Story} & \textbf{Description} \\
+\hline
+\endhead
+\hline
+\endfoot
+
+\multirow{3}{3cm}{Authentification Admin} & Fonctionnalit\'{e} & En tant qu'administrateur, je veux me connecter via mon email et mot de passe & Impl\'{e}menter le endpoint \texttt{POST /api/auth/login} avec g\'{e}n\'{e}ration de token \acrshort{jwt}. \\
+\cline{2-4}
+& Fonctionnalit\'{e} & En tant qu'administrateur, je veux que mes routes soient prot\'{e}g\'{e}es & Mettre en place \texttt{JwtAuthGuard} et \texttt{JwtStrategy} pour la v\'{e}rification des tokens admin. \\
+\cline{2-4}
+& T\^{a}che & Configurer la strat\'{e}gie Passport.js & Int\'{e}grer Passport.js avec NestJS pour la gestion des gardes d'authentification. \\
+\hline
+
+\multirow{3}{3cm}{Authentification Membre} & Fonctionnalit\'{e} & En tant que membre, je veux me connecter depuis l'application mobile & Impl\'{e}menter \texttt{POST /api/auth/member/login} avec \texttt{MemberJwtGuard}. \\
+\cline{2-4}
+& Fonctionnalit\'{e} & En tant que membre, je veux v\'{e}rifier mon token au lancement & Cr\'{e}er \texttt{GET /api/auth/member/verify} pour la validation du token au d\'{e}marrage. \\
+\cline{2-4}
+& Fonctionnalit\'{e} & En tant que membre, je veux m'inscrire en plusieurs \'{e}tapes & Impl\'{e}menter le flux : v\'{e}rification email, confirmation d'identit\'{e}, code \acrshort{otp}, d\'{e}finition du mot de passe. \\
+\hline
+
+\multirow{3}{3cm}{Gestion des Utilisateurs} & Fonctionnalit\'{e} & En tant que SuperAdmin, je veux cr\'{e}er des utilisateurs avec des r\^{o}les & Impl\'{e}menter le \acrshort{crud} des utilisateurs avec attribution des r\^{o}les. \\
+\cline{2-4}
+& Fonctionnalit\'{e} & En tant qu'admin, je veux prot\'{e}ger les routes par r\^{o}le & Mettre en place \texttt{RolesGuard} pour la protection des routes. \\
+\cline{2-4}
+& Fonctionnalit\'{e} & En tant qu'admin, je veux contr\^{o}ler l'acc\`{e}s aux modules & Impl\'{e}menter \texttt{ModuleGuard} avec \texttt{SaasModuleEnum}. \\
+\hline
+
+\multirow{2}{3cm}{S\'{e}curit\'{e} Globale} & T\^{a}che & Configurer les pipes de validation & Mettre en place le \texttt{ValidationPipe} global et \texttt{TypeOrmExceptionFilter}. \\
+\cline{2-4}
+& T\^{a}che & Configurer Helmet et CORS & S\'{e}curiser les en-t\^{e}tes HTTP et configurer le partage cross-origin. \\
+\hline
+
+\caption{Sprint Backlog -- Sprint 1}
+\label{tab:sprint1-backlog}
+\end{longtable}
+
+\section{Analyse}
+
+\subsection{Diagramme de cas d'utilisation}
+
+La figure~\ref{fig:sprint1-usecase} pr\'{e}sente le diagramme de cas d'utilisation du Sprint 1 couvrant les fonctionnalit\'{e}s d'authentification et de gestion des utilisateurs.
+
+\begin{figure}[H]
+\centering
+\resizebox{0.95\textwidth}{!}{%
+\begin{tikzpicture}[
+  uc/.style={draw, ellipse, minimum width=2.8cm, minimum height=0.9cm, text width=2.6cm, align=center, font=\scriptsize},
+  sys/.style={draw, dashed, rounded corners=5pt, inner sep=10pt}
+]
+
+% System boundary
+\node[sys, minimum width=9cm, minimum height=10cm] (system) at (5,0) {};
+\node[font=\small\bfseries, anchor=north] at (system.north) {Sprint 1 -- Authentification};
+
+% Admin actor (left)
+\stickfigure{(-2, 2.5)}{Admin / Caissier}
+\node[uc] (uc1) at (3.5, 4) {Se connecter (web)};
+\node[uc] (uc2) at (3.5, 2.5) {V\'{e}rifier le token};
+
+\draw (-2, 2.5) -- (uc1);
+\draw (-2, 2.5) -- (uc2);
+
+% SuperAdmin actor (left bottom)
+\stickfigure{(-2, -1.5)}{SuperAdmin}
+\node[uc] (uc3) at (3.5, 1) {G\'{e}rer les utilisateurs};
+\node[uc] (uc4) at (3.5, -0.5) {Attribuer les r\^{o}les};
+\node[uc] (uc5) at (3.5, -2) {Configurer les modules SaaS};
+
+\draw (-2, -1.5) -- (uc3);
+\draw (-2, -1.5) -- (uc4);
+\draw (-2, -1.5) -- (uc5);
+
+% Member actor (left bottom)
+\stickfigure{(-2, -4.5)}{Membre}
+\node[uc] (uc6) at (7.5, 4) {S'inscrire (multi-\'{e}tapes)};
+\node[uc] (uc7) at (7.5, 2.5) {Se connecter (mobile)};
+\node[uc] (uc8) at (7.5, 1) {V\'{e}rifier le code OTP};
+\node[uc] (uc9) at (7.5, -0.5) {D\'{e}finir le mot de passe};
+\node[uc] (uc10) at (7.5, -2) {R\'{e}initialiser le mot de passe};
+
+\draw (-2, -4.5) -- (uc6.west);
+\draw (-2, -4.5) -- (uc7.west);
+\draw (-2, -4.5) -- (uc8.west);
+\draw (-2, -4.5) -- (uc9.west);
+\draw (-2, -4.5) -- (uc10.west);
+
+% Include relationship
+\draw[dashed, -{Stealth[length=2mm]}] (uc6) -- node[above, font=\tiny, sloped] {$\ll$include$\gg$} (uc8);
+
+\end{tikzpicture}
+}%
+\caption{Diagramme de cas d'utilisation -- Sprint 1}
+\label{fig:sprint1-usecase}
+\end{figure}
+
+\subsection{Description textuelle des cas d'utilisation}
+
+\subsubsection{Cas d'utilisation : Connexion Administrateur}
+
+\begin{itemize}
+  \item \textbf{Acteur principal} : Administrateur / Caissier
+  \item \textbf{Pr\'{e}conditions} : L'utilisateur poss\`{e}de un compte actif avec un r\^{o}le attribu\'{e}.
+  \item \textbf{Sc\'{e}nario principal} :
+  \begin{enumerate}
+    \item L'utilisateur acc\`{e}de \`{a} la page de connexion du tableau de bord web.
+    \item Il saisit son adresse email et son mot de passe.
+    \item Le syst\`{e}me v\'{e}rifie les identifiants via \texttt{POST /api/auth/login}.
+    \item Le syst\`{e}me g\'{e}n\`{e}re un token \acrshort{jwt} et le retourne au client.
+    \item L'utilisateur est redirig\'{e} vers le tableau de bord.
+  \end{enumerate}
+  \item \textbf{Sc\'{e}nario alternatif} : Si les identifiants sont invalides, un message d'erreur est affich\'{e}.
+  \item \textbf{Postconditions} : L'utilisateur est authentifi\'{e} et peut acc\'{e}der aux fonctionnalit\'{e}s autoris\'{e}es par son r\^{o}le.
+\end{itemize}
+
+\subsubsection{Cas d'utilisation : Inscription Membre (Mobile)}
+
+\begin{itemize}
+  \item \textbf{Acteur principal} : Membre (adh\'{e}rent)
+  \item \textbf{Pr\'{e}conditions} : Le membre a \'{e}t\'{e} pr\'{e}alablement enregistr\'{e} par un administrateur dans le syst\`{e}me.
+  \item \textbf{Sc\'{e}nario principal} :
+  \begin{enumerate}
+    \item Le membre ouvre l'application mobile et s\'{e}lectionne l'inscription.
+    \item Il saisit son adresse email. Le syst\`{e}me v\'{e}rifie son existence via \texttt{POST /api/auth/member/check-email}.
+    \item Le syst\`{e}me affiche les informations d'identit\'{e} \`{a} confirmer (nom, pr\'{e}nom).
+    \item Un code \acrshort{otp} \`{a} six chiffres est envoy\'{e} par email via Nodemailer.
+    \item Le membre saisit le code re\c{c}u et le syst\`{e}me le v\'{e}rifie via \texttt{POST /api/auth/member/verify-email}.
+    \item Le membre d\'{e}finit son mot de passe via \texttt{POST /api/auth/member/register}.
+    \item Le compte est activ\'{e} et le membre est redirig\'{e} vers l'accueil.
+  \end{enumerate}
+  \item \textbf{Sc\'{e}nario alternatif} : Si l'email n'existe pas dans le syst\`{e}me, un message indique de contacter l'administration de la salle.
+  \item \textbf{Postconditions} : Le membre dispose d'un compte actif avec un mot de passe d\'{e}fini.
+\end{itemize}
+
+\subsubsection{Cas d'utilisation : Gestion des Utilisateurs}
+
+\begin{itemize}
+  \item \textbf{Acteur principal} : SuperAdmin
+  \item \textbf{Pr\'{e}conditions} : L'acteur est authentifi\'{e} avec le r\^{o}le SuperAdmin.
+  \item \textbf{Sc\'{e}nario principal} :
+  \begin{enumerate}
+    \item Le SuperAdmin acc\`{e}de \`{a} la page de gestion des utilisateurs.
+    \item Il peut cr\'{e}er un nouvel utilisateur en sp\'{e}cifiant le nom, l'email, le mot de passe et le r\^{o}le.
+    \item Il peut modifier les informations ou le r\^{o}le d'un utilisateur existant.
+    \item Il peut d\'{e}sactiver ou supprimer un utilisateur.
+  \end{enumerate}
+  \item \textbf{Postconditions} : Les modifications sont persist\'{e}es en base de donn\'{e}es.
+\end{itemize}
+
+\subsection{Diagramme de s\'{e}quence : Authentification JWT}
+
+La figure~\ref{fig:sprint1-seq} illustre le flux d'authentification pour un administrateur via le endpoint \texttt{POST /api/auth/login}.
+
+\begin{figure}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}
+
+% Actors
+\node[sdactor] (client) at (0,0) {Navigateur};
+\node[sdactor] (frontend) at (4,0) {Next.js (NextAuth)};
+\node[sdactor] (api) at (8.5,0) {NestJS API};
+\node[sdactor] (guard) at (12.5,0) {LocalAuthGuard};
+\node[sdactor] (db) at (16.5,0) {PostgreSQL};
+
+% Lifelines
+\draw[dashed] (client.south) -- ++(0,-10);
+\draw[dashed] (frontend.south) -- ++(0,-10);
+\draw[dashed] (api.south) -- ++(0,-10);
+\draw[dashed] (guard.south) -- ++(0,-10);
+\draw[dashed] (db.south) -- ++(0,-10);
+
+% Messages
+\draw[sdmessage] (0,-1.2) -- node[above, font=\scriptsize] {1: Saisir email + mot de passe} (4,-1.2);
+\draw[sdmessage] (4,-2) -- node[above, font=\scriptsize] {2: POST /api/auth/login} (8.5,-2);
+\draw[sdmessage] (8.5,-2.8) -- node[above, font=\scriptsize] {3: validate()} (12.5,-2.8);
+\draw[sdmessage] (12.5,-3.6) -- node[above, font=\scriptsize] {4: SELECT user WHERE email} (16.5,-3.6);
+\draw[sdreturn] (16.5,-4.4) -- node[above, font=\scriptsize] {5: User entity} (12.5,-4.4);
+\draw[sdreturn] (12.5,-5.2) -- node[above, font=\scriptsize] {6: bcrypt.compare() OK} (8.5,-5.2);
+\draw[sdmessage] (8.5,-6) -- node[above, font=\scriptsize] {7: jwtService.sign(payload)} (8.5,-6.8);
+\node[font=\scriptsize, text width=3cm, align=center] at (8.5,-6.4) {};
+\draw[sdreturn] (8.5,-7) -- node[above, font=\scriptsize] {8: \{token, user, role\}} (4,-7);
+\draw[sdmessage] (4,-7.8) -- node[above, font=\scriptsize] {9: Stocker session NextAuth} (4,-8.6);
+\draw[sdreturn] (4,-9) -- node[above, font=\scriptsize] {10: Redirection dashboard} (0,-9);
+
+\end{tikzpicture}
+}%
+\caption{Diagramme de s\'{e}quence -- Authentification administrateur}
+\label{fig:sprint1-seq}
+\end{figure}
+
+\section{R\'{e}alisation}
+
+\subsection{Backend}
+
+\subsubsection{Module d'Authentification}
+
+Le module \texttt{AuthenticationModule} constitue le c\oe ur du syst\`{e}me de s\'{e}curit\'{e}. Il impl\'{e}mente un double syst\`{e}me \acrshort{jwt} \cite{jwt_rfc7519} gr\^{a}ce \`{a} l'int\'{e}gration de Passport.js \cite{passport} avec NestJS :
+
+\begin{itemize}
+  \item \textbf{Strat\'{e}gie Admin} (\texttt{JwtStrategy} + \texttt{JwtAuthGuard}) : utilis\'{e}e pour authentifier les administrateurs et caissiers via le endpoint \texttt{POST /api/auth/login}. Le token g\'{e}n\'{e}r\'{e} contient l'identifiant de l'utilisateur, son r\^{o}le, l'identifiant du partenaire et du centre.
+  \item \textbf{Strat\'{e}gie Membre} (\texttt{JwtMemberStrategy} + \texttt{MemberJwtGuard}) : d\'{e}di\'{e}e aux membres de l'application mobile via \texttt{POST /api/auth/member/login}. Le token inclut l'identifiant du membre et ses informations de salle.
+\end{itemize}
+
+Le flux d'inscription mobile repose sur trois endpoints s\'{e}par\'{e}s :
+\begin{enumerate}
+  \item \texttt{POST /api/auth/member/check-email} : v\'{e}rifie l'existence du membre et envoie un code \acrshort{otp} \`{a} six chiffres par email.
+  \item \texttt{POST /api/auth/member/verify-email} : valide le code \acrshort{otp} saisi par le membre.
+  \item \texttt{POST /api/auth/member/register} : finalise l'inscription en hashant et stockant le mot de passe.
+\end{enumerate}
+
+\subsubsection{Module Utilisateur}
+
+Le \texttt{UserModule} g\`{e}re le \acrshort{crud} des utilisateurs du back-office. L'entit\'{e} TypeORM \texttt{User} stocke les informations de connexion (\texttt{email}, \texttt{password} hash\'{e}), le r\^{o}le (\texttt{roleId}), les r\'{e}f\'{e}rences au partenaire (\texttt{partnerId}) et \`{a} la salle (\texttt{gymId}), ainsi que les champs de synchronisation mat\'{e}rielle (\texttt{cardId}, \texttt{pin}, \texttt{isSynced}).
+
+\subsubsection{Contr\^{o}le d'Acc\`{e}s}
+
+Deux niveaux de contr\^{o}le d'acc\`{e}s ont \'{e}t\'{e} mis en place :
+
+\begin{itemize}
+  \item \textbf{\acrshort{rbac}} \cite{sandhu1996rbac} via \texttt{RolesGuard} : un d\'{e}corateur personnalis\'{e} \texttt{@Roles()} permet de restreindre l'acc\`{e}s \`{a} certaines routes selon le r\^{o}le de l'utilisateur authentifi\'{e}. Trois r\^{o}les sont d\'{e}finis : SuperAdmin, Admin et Cashier.
+  \item \textbf{Contr\^{o}le modulaire} via \texttt{ModuleGuard} : le \texttt{SaasModuleEnum} d\'{e}finit les fonctionnalit\'{e}s disponibles par centre (Boutique, Coachs, Finance, Acc\`{e}s, \acrshort{kpi}, \acrshort{ai}), permettant une personnalisation par partenaire.
+\end{itemize}
+
+\subsubsection{S\'{e}curit\'{e} Globale}
+
+La configuration globale de s\'{e}curit\'{e} dans \texttt{main.ts} inclut :
+
+\begin{itemize}
+  \item \texttt{ValidationPipe} global avec transformation automatique et validation des \acrshort{dto}.
+  \item \texttt{TypeOrmExceptionFilter} pour la gestion unifi\'{e}e des erreurs de base de donn\'{e}es (contraintes d'unicit\'{e}, r\'{e}f\'{e}rences manquantes).
+  \item Helmet pour la s\'{e}curisation des en-t\^{e}tes HTTP (XSS, clickjacking, MIME sniffing).
+  \item Configuration CORS restrictive pour autoriser uniquement les origines autoris\'{e}es.
+  \item Pr\'{e}fixe global \texttt{/api} pour tous les endpoints.
+\end{itemize}
+
+\subsection{Frontend Web}
+
+\subsubsection{Fournisseur de Session}
+
+L'authentification c\^{o}t\'{e} web repose sur NextAuth.js, int\'{e}gr\'{e} via un \texttt{SessionProvider} dans la pile de fournisseurs racine. Le \texttt{JWT\_SECRET} partag\'{e} entre l'\acrshort{api} NestJS et NextAuth garantit la compatibilit\'{e} des tokens. L'\texttt{AuthContext} expose les informations de l'utilisateur connect\'{e} et les m\'{e}thodes de connexion/d\'{e}connexion \`{a} l'ensemble de l'application.
+
+\subsubsection{Page de Connexion}
+
+La page de connexion pr\'{e}sente un formulaire valid\'{e} par Yup \cite{yup} via React Hook Form. Apr\`{e}s soumission, le token \acrshort{jwt} est stock\'{e} dans la session NextAuth et l'utilisateur est redirig\'{e} vers le tableau de bord. La page g\`{e}re les erreurs d'authentification avec des messages d'erreur localis\'{e}s gr\^{a}ce \`{a} \texttt{next-intl} \cite{nextintl}.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Page de connexion web}\vspace{2cm}}}
+  \caption{Page de connexion du tableau de bord web}
+  \label{fig:sprint1-web-login}
+\end{figure}
+
+\subsubsection{Gestion des Utilisateurs}
+
+L'interface de gestion des utilisateurs offre une liste paginable avec recherche, cr\'{e}ation avec attribution de r\^{o}le, modification et d\'{e}sactivation. Le \texttt{ModuleAccessContext} contr\^{o}le la visibilit\'{e} des \'{e}l\'{e}ments d'interface selon les modules activ\'{e}s pour le centre.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Gestion des utilisateurs}\vspace{2cm}}}
+  \caption{Interface de gestion des utilisateurs du back-office}
+  \label{fig:sprint1-user-management}
+\end{figure}
+
+\subsection{Frontend Mobile}
+
+\subsubsection{Flux d'Inscription Multi-\'{E}tapes}
+
+L'inscription sur l'application mobile suit un parcours en quatre \'{e}tapes, chacune correspondant \`{a} un \'{e}cran d\'{e}di\'{e} dans le dossier \texttt{app/auth/} :
+
+\begin{enumerate}
+  \item \textbf{SignUp} : saisie de l'adresse email et v\'{e}rification de son existence dans le syst\`{e}me via l'\acrshort{api}.
+  \item \textbf{IdentityConfirm} : affichage et confirmation des informations personnelles du membre (nom, pr\'{e}nom).
+  \item \textbf{VerifyEmail} : saisie du code \acrshort{otp} \`{a} six chiffres envoy\'{e} par email. Un timer de 60 secondes g\`{e}re le renvoi du code.
+  \item \textbf{SetPassword} : d\'{e}finition du mot de passe avec validation (longueur minimale, complexit\'{e}).
+\end{enumerate}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Captures d'\'{e}cran : Flux d'inscription mobile (4 \'{e}tapes)}\vspace{2cm}}}
+  \caption{Flux d'inscription multi-\'{e}tapes sur l'application mobile}
+  \label{fig:sprint1-mobile-signup}
+\end{figure}
+
+\subsubsection{\'{E}cran de Connexion Mobile}
+
+L'\'{e}cran \texttt{SignIn} permet la connexion par email et mot de passe. Le formulaire est valid\'{e} par Yup \cite{yup}. Apr\`{e}s authentification r\'{e}ussie, le token \acrshort{jwt} est persist\'{e} dans \texttt{AsyncStorage} via le service \texttt{auth-storage.ts}, et l'utilisateur est redirig\'{e} vers les onglets principaux de l'application.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : \'{E}cran de connexion mobile}\vspace{2cm}}}
+  \caption{\'{E}cran de connexion de l'application mobile}
+  \label{fig:sprint1-mobile-signin}
+\end{figure}
+
+\section{Conclusion}
+
+Ce premier sprint a permis de poser les fondations s\'{e}curitaires de la plateforme TrustGym. Le double syst\`{e}me \acrshort{jwt}, le contr\^{o}le d'acc\`{e}s par r\^{o}les (\acrshort{rbac}) et le contr\^{o}le modulaire \acrshort{saas} via \texttt{ModuleGuard} garantissent une s\'{e}paration claire des privil\`{e}ges entre les diff\'{e}rents types d'utilisateurs. Le flux d'inscription multi-\'{e}tapes c\^{o}t\'{e} mobile, avec v\'{e}rification par code \acrshort{otp}, assure une exp\'{e}rience d'onboarding fluide et s\'{e}curis\'{e}e pour les membres. Ces bases solides permettront d'aborder le Sprint 2, consacr\'{e} \`{a} la gestion des membres et des abonnements.
+
+\end{document}

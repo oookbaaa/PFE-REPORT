@@ -1,0 +1,118 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+\begin{document}
+\chapter{Cadre Général}
+\section{Introduction Générale}
+Ce premier chapitre est une introduction au cadre général du projet, à l'environnement de travail et au partenaire de l'organisme d'accueil. 
+\section{Introduction}
+\subsection{Présentation de l'entreprise d'accueil}
+AYV Studio est une entreprise Tunisienne qui se spécialise dans la concrétisation des idées technologiques des nouvelles startups. L'accompagnement professionnel et technologique ainsi que la mise en place de solutions aux problèmes de ces dernières. En effet, l'entreprise se présente comme LA SOLUTION au problème de transition d'\textbf{idée} à  \textbf{application} des nouvelles entreprises à faible, moyen ou grand budget. 
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.4\textwidth]{img/ayv.logo.jpg}
+    \caption{Logo AYV Studio}
+    \label{fig:jm_logo}
+  \end{minipage}
+\end{figure}
+\subsection{Introduction au Projet}
+\subsubsection{Introduction à Watto}
+Watto est une startup créée par deux jeunes hommes, Omar et Selim, dont le but est de révolutionner le fait d'offrir des cadeaux en Tunisie!
+\subsubsection{Description du projet}
+En effet, Watto a pour but d'offrir aux citoyens Tunisiens un moyen de collecter de l'argent en groupe sous forme de cagnottes.
+Cela permet au Tunisien lambda de pouvoir: 
+\begin{itemize}
+\item Avoir des idées de cadeaux proposés par la plateforme.
+\item Avoir des réductions grâce au système de partenariat proposé par Watto.
+\item Faciliter le système de cagnotte en offrant une plateforme qui automatise le processus.
+\item Réduire à néant les restrictions géographique lorsqu'on veut offrir un cadeau à un proche.
+\end{itemize}
+
+\subsection{Structure du Rapport}
+Ce rapport est structuré comme suit :
+
+\begin{enumerate}
+  \item \textbf{Introduction :} Présenter le projet et ses objectifs.
+  \item \textbf{Approche de développement et pile technologique :} Expliquer l'approche de développement adoptée et les choix technologiques.
+  \item \textbf{Spécification des Exigences :} Identifier les acteurs, les exigences fonctionnelles et non fonctionnelles.
+  \item \textbf{Sprint 1 : Intégration des Mockups :} Décrire le processus avec des extraits de code et des explications.
+  \item \textbf{Sprint 2 : Débogage du MVP et Refonte de l'UI :} Décrire le processus avec des extraits de code et des explications.
+  \item \textbf{Sprint 3 : Implémentation de Nouvelles Fonctionnalités et Optimisation du Code :} Décrire le processus avec des extraits de code et des explications.
+  \item \textbf{Conclusion Générale :} Résumer les principaux éléments abordés dans le rapport.
+\end{enumerate}
+\newpage
+
+\section{Problématiques}
+ \subsection{Point de vue Watto}
+  En Tunisie, il n'y a pas de système de cagnotte libre pour particuliers. En effet, si un groupe d'amis veulent contribuer à l'achat d'un cadeau commun pour une tiers personne, il faudra le faire manuellement, ce qui peut être encombrant. 
+  Les problèmes à résoudre du point de vue de Watto sont les suivants: 
+ \begin{itemize}
+  \item Que faire avec les cagnottes une fois l'argent collecté pour offrir un maximum d'options et de liberté aux clients?
+  \item Quel partenaire choisir pour un frais de transaction optimale?
+  \item Comment se démarquer vis-à-vis de la concurrence?
+  \item Comment mettre le système en place?
+\end{itemize} 
+ \subsection{Point de vue AYV Studio}
+ Du point de vue de l'entreprise AYV, technologiquement parlant, plusieurs problématiques se posent. On sait que Watto est une plateforme C2C et dont la principale activité sera étroitement liée au transport d'argent. 
+ De ce fait découlent plusieurs questions auxquels l'entreprise devra répondre: 
+ \begin{itemize}
+  \item Quelle architecture générale devra être mise en place pour assurer une application robuste? 
+  \item Quelles technologies seront les plus optimales dans ce cas, en prenant tous les facteurs en compte? 
+  \item Comment pourrait-on assurer la sécurité de la plateforme? 
+  \item Quelle mesure prendre pour assurer un \textbf{Minimum Viable Product (MVP)} dans les plus brefs délais? 
+  \item Comment assurer le recrutement, pour garantir une passation sans heurts? 
+\end{itemize} 
+
+\newpage 
+
+\section{Revue de la Littérature}
+\subsection{Introduction}
+Il est indéniable qu'étudier les processus et les solutions existants. Cela permet d'analyser clairement les études menées sur l'environnement de développement du projet, que ce soit en relation avec le marché cible ou les concurrents du marché. 
+\newline On peut ainsi éviter les problèmes après le lancement du service en faisant de ce dernier le point central de cette phase. À l'état actuel, les projets se concentrant sur le bien être du citoyen Tunisien sont de plus en plus rare. Avec l'inflation et la situation économique qui se dégrade de jour en jour, il est rare de voir des idées innovantes, à risque, qui visent à divertir le citoyen lambda, réussir. De ce fait est né l'idée de créer une solution qui s'adapte au budget de l'individu et qui offre une certaine flexibilité aux clients. 
+\newline L'idée de collecter de l'argent à un but précis existe depuis la nuit des temps. Cependant, le problème se pose dans le processus de modernisation du concept en Tunisie. Avec les limitations juridiques financières il est dur de mettre en place un projet de cagnotte en ligne sans subir de lourdes répercussion au niveau des frais de transactions, c'est pour ça que les projet allant dans ce sens se font rares!
+\newline La solution est donc d'innover pour offrir liberté et flexibilités. Les différents concurrents de Watto offrent des idées plus ou moins différentes mais assez similaires pour être considérer comme compétiteur sur le marché: 
+\subsection{Services Similaires}
+\begin{outline}
+ \1 \textbf{Cha9a9a}: Cha9a9a est un projet créé par l'Association Tunisienne des Technologies Digitales. "cha9a9a.tn" est une plateforme qui permet aux associations et individus de s'entraider pour réaliser des projets et organiser des évènements.
+
+Le but de la plateforme est purement associatif. En effet, la création de cagnottes pour les associations a pour but de remplir des objectifs communautaires communs à un certain groupe social.
+    \2 \textbf{Lancé en}: 2017
+    \2 \textbf{Avantages}:
+        \3 La procédure est facile pour les associations
+        \3 Est une association, ne cherche donc pas à faire des bénéfices et ne va pas donc pas faire de marges au delà de celle des frais de transactions
+    \2 \textbf{Inconvénients}:
+        \3 L'impossibilité de pouvoir fournir légalement l'option aux individus singuliers d'ouvrir et de bénéficier d'une cagnotte à but non lucratif. 
+        \3 Seuls résidants au sol Tunisien peuvent se permettre participer ou créer une cagnotte. 
+ \1 \textbf{Club Privilège}: Club privilèges est une application donnant droit à ses membres des avantages et de remises exclusives dans l’ensemble du réseau des enseignes participantes.
+
+L’application Club privilèges  permet à ses utilisateurs de profiter des avantages exclusifs spécialement négociés auprès des enseignes de proximités.\cite{clubprivilege}
+
+Le domaine dans lequel Club Privilège concurrence Watto est le partenariat B2B avec les enseignes dont le but est d'offrir des  produits ou services à consommation direct par le client. 
+
+Alors que Watto offre des vouchers (cartes qui se consomment et sont déduites des sommes cumulées dans la cagnotte.) et des cartes cadeaux (achetés directement sur la plateforme) à consommer directement chez ses partenaires sans frais au préalable, Club privilège offre une réduction sur tous les produits chez les partenaires en achetant la carte d'appartenance au Club. 
+    \2 \textbf{Lancé en}: 2019
+    \2 \textbf{Avantages}:
+        \3 Offre des réductions conséquentes chez la plupart de ses partenaires
+        \3 Est implanté dans le sol Tunisien depuis longtemps et donc a plus de partenaires. 
+    \2 \textbf{Inconvénients}:
+        \3 Le prix pour lequel on se procure la carte est conséquent (vers les environs des 700 dt) et donc limite le marché potentiel.
+        \3 \textbf{Perception d'élitisme}, le prix de base peut donner une image prestigieuse, mais va également va donner une vision élitiste et donc négative de la marque envers l'opinion publique.  
+\end{outline}
+
+\section{Solution et Objectifs}
+Construire un projet sur de bonnes bases est une tâche qui peut s'avérer ardue. Ce cas précis comporte plusieurs problématiques à résoudre de point de vue technique et pratique. 
+Watto devra donc se démarquer de la concurrence tout en offrant un service fiable, sécurisé, pratique et flexible. 
+Le projet a été construit avec en priorité numéro 1 le fait de révolutionner la façon dont on utilise et manipule l'argent en Tunisie. 
+Les méthodes traditionnelles ont leur limites et pour cela, Watto a voulu faire quelque chose de mieux et de nouveau.
+
+\subsection{Objectifs}
+ \begin{itemize}
+  \item \textbf{Rendre les cadeaux accessibles à tous}: La volonté de détruire les frontières quand il en va d'offrir des cadeaux est une priorité chez Watto. N'importe qui de n'importe où peut se permettre de participer pour offrir un cadeau à un Tunisien. 
+  \item \textbf{Flexibilité}: Watto ne s'arrête pas au fait d'offrir des cadeaux. C'est également une plateforme dans laquelle on peut faire ce que l'on veut de l'argent collecté dans la cagnotte. On peut s'offrir des vouchers, des cartes cadeaux ou mêmes se transférer directement l'argent dans son compte bancaire. 
+\end{itemize} 
+
+En utilisant un stack à la pointe de la technologie telle que Nextjs et Nestjs, Watto est devenue un endroit dans lequel offrir est facile, créatif et adaptables. 
+
+
+\end{document}

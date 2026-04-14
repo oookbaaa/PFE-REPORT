@@ -1,0 +1,328 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../img/}}{\subfix{../architectures images/}}}
+\begin{document}
+\chapter{Sprint 5 : Boutique et Gestion de Stock}
+
+%──────────────────────────────────────────────
+\section{Introduction}
+%──────────────────────────────────────────────
+
+Ce sprint porte sur la mise en place du module boutique et de la gestion de stock au sein de la plateforme TrustGym. Il couvre l'ensemble de la cha\^{i}ne logistique, depuis la gestion des fournisseurs et des achats, jusqu'au suivi de l'inventaire par salle, aux transferts inter-salles et aux ventes aux membres. Ce module est prot\'{e}g\'{e} par un garde de module \acrshort{saas} (\texttt{ModuleGuard}), permettant d'activer ou de d\'{e}sactiver la fonctionnalit\'{e} boutique selon l'abonnement du partenaire.
+
+%──────────────────────────────────────────────
+\section{Sprint Backlog}
+%──────────────────────────────────────────────
+
+Le tableau~\ref{tab:backlog_sprint5} pr\'{e}sente le backlog du Sprint 5 d\'{e}taill\'{e} par \'{e}pic, nature et user stories.
+
+\begin{longtable}{|p{2.5cm}|p{2cm}|p{4cm}|p{5.5cm}|}
+\caption{Sprint Backlog -- Sprint 5} \label{tab:backlog_sprint5} \\
+\hline
+\textbf{Epic} & \textbf{Nature} & \textbf{User Story} & \textbf{Description} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Epic} & \textbf{Nature} & \textbf{User Story} & \textbf{Description} \\
+\hline
+\endhead
+\hline
+\endfoot
+
+\multirow{2}{*}{\parbox{2.5cm}{Gestion des produits}} & \acrshort{crud} & En tant qu'administrateur, je veux g\'{e}rer les produits & Cr\'{e}er, modifier, consulter et supprimer des produits avec leurs informations : nom, prix unitaire, association au partenaire et image. \\
+\cline{2-4}
+ & Consultation & En tant qu'administrateur, je veux consulter le catalogue & Visualiser l'ensemble des produits disponibles avec filtres et recherche. \\
+\hline
+
+\multirow{2}{*}{\parbox{2.5cm}{Gestion des fournisseurs}} & \acrshort{crud} & En tant qu'administrateur, je veux g\'{e}rer les fournisseurs & Cr\'{e}er et g\'{e}rer les fiches fournisseurs pour le suivi des approvisionnements. \\
+\cline{2-4}
+ & Consultation & En tant qu'administrateur, je veux consulter la liste des fournisseurs & Afficher les fournisseurs avec leurs informations de contact et historique d'achats. \\
+\hline
+
+\multirow{2}{*}{\parbox{2.5cm}{Achats fournisseurs}} & \acrshort{crud} & En tant qu'administrateur, je veux enregistrer des achats fournisseurs & Saisir les achats avec quantit\'{e}, prix et date de r\'{e}ception pour alimenter le stock. \\
+\cline{2-4}
+ & Fonctionnalit\'{e} & En tant qu'administrateur, je veux que le stock soit mis \`{a} jour automatiquement & Le stock de la salle concern\'{e}e est incr\'{e}ment\'{e} automatiquement lors de la r\'{e}ception d'un achat. \\
+\hline
+
+\multirow{2}{*}{\parbox{2.5cm}{Stock par salle}} & Consultation & En tant qu'administrateur, je veux consulter l'\'{e}tat du stock par salle & Visualiser les quantit\'{e}s disponibles de chaque produit pour chaque salle de sport. \\
+\cline{2-4}
+ & Fonctionnalit\'{e} & En tant qu'administrateur, je veux recevoir des alertes de stock bas & \^{E}tre notifi\'{e} lorsque le stock d'un produit descend en dessous d'un seuil critique. \\
+\hline
+
+\multirow{1}{*}{\parbox{2.5cm}{Transferts de stock}} & Fonctionnalit\'{e} & En tant qu'administrateur, je veux transf\'{e}rer du stock entre salles & Effectuer des mouvements de stock d'une salle source (\texttt{fromGym}) vers une salle destination (\texttt{toGym}) en sp\'{e}cifiant le produit et la quantit\'{e}. \\
+\hline
+
+\multirow{2}{*}{\parbox{2.5cm}{Ventes aux membres}} & Fonctionnalit\'{e} & En tant que caissier, je veux vendre des produits aux membres & Enregistrer une vente en s\'{e}lectionnant le produit, la quantit\'{e}, le prix et le membre acheteur. \\
+\cline{2-4}
+ & Fonctionnalit\'{e} & En tant qu'administrateur, je veux consulter l'historique des ventes & Visualiser l'ensemble des ventes r\'{e}alis\'{e}es avec filtres par date, produit et membre. \\
+\hline
+
+\multirow{1}{*}{\parbox{2.5cm}{Feature flag \acrshort{saas}}} & Technique & En tant que syst\`{e}me, je veux contr\^{o}ler l'acc\`{e}s au module boutique & Prot\'{e}ger l'acc\`{e}s au module boutique via le \texttt{ModuleGuard} et le \texttt{SaasModuleEnum.Boutique} selon l'abonnement du partenaire. \\
+\hline
+
+\end{longtable}
+
+%──────────────────────────────────────────────
+\section{Analyse}
+%──────────────────────────────────────────────
+
+\subsection{Diagramme de cas d'utilisation}
+
+La figure~\ref{fig:sprint5-usecase} pr\'{e}sente le diagramme de cas d'utilisation du Sprint 5 couvrant la boutique et la gestion de stock.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.85, transform shape]
+
+% System box
+\node[systembox={Syst\`{e}me TrustGym -- Boutique et Stock}, minimum width=10cm, minimum height=12cm] (sys) at (5.5, -5) {};
+
+% Actors (all on the left)
+\stickfigure{(-2.5, -2)}{Admin}
+\stickfigure{(-2.5, -7)}{Caissier}
+
+% Use cases
+\node[usecase] (uc1) at (5.5, 0) {G\'{e}rer les produits};
+\node[usecase] (uc2) at (5.5, -1.8) {G\'{e}rer les fournisseurs};
+\node[usecase] (uc3) at (5.5, -3.6) {Enregistrer un achat};
+\node[usecase] (uc4) at (5.5, -5.4) {Consulter l'\'{e}tat du stock};
+\node[usecase] (uc5) at (5.5, -7.2) {Transf\'{e}rer du stock};
+\node[usecase] (uc6) at (5.5, -9) {Vendre un produit};
+\node[usecase] (uc7) at (5.5, -10.8) {Consulter l'historique des ventes};
+
+% Admin links
+\draw (-1, -2) -- (uc1.west);
+\draw (-1, -2) -- (uc2.west);
+\draw (-1, -2) -- (uc3.west);
+\draw (-1, -2) -- (uc4.west);
+\draw (-1, -2) -- (uc5.west);
+\draw (-1, -2) -- (uc7.west);
+
+% Caissier links
+\draw (-1, -7) -- (uc6.west);
+\draw (-1, -7) -- (uc4.west);
+
+\end{tikzpicture}
+\caption{Diagramme de cas d'utilisation -- Sprint 5}
+\label{fig:sprint5-usecase}
+\end{figure}
+
+\subsection{Description textuelle des cas d'utilisation}
+
+\subsubsection{Cas d'utilisation : G\'{e}rer les produits}
+
+\begin{table}[H]
+\centering
+\caption{Description textuelle -- G\'{e}rer les produits}
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Cas d'utilisation} & G\'{e}rer les produits \\
+\hline
+\textbf{Acteur principal} & Administrateur \\
+\hline
+\textbf{Pr\'{e}condition} & L'administrateur est authentifi\'{e} et le module boutique est activ\'{e} pour le partenaire. \\
+\hline
+\textbf{Sc\'{e}nario principal} &
+\begin{enumerate}
+    \item L'administrateur acc\`{e}de au catalogue des produits.
+    \item Le syst\`{e}me affiche la liste des produits existants.
+    \item L'administrateur cr\'{e}e un nouveau produit en renseignant : nom, prix unitaire et image.
+    \item Le syst\`{e}me valide les donn\'{e}es et enregistre le produit associ\'{e} au partenaire.
+    \item L'administrateur peut modifier ou supprimer un produit existant.
+\end{enumerate} \\
+\hline
+\textbf{Postcondition} & Le produit est cr\'{e}\'{e}, modifi\'{e} ou supprim\'{e} avec succ\`{e}s. \\
+\hline
+\textbf{Exceptions} &
+\begin{itemize}
+    \item Le nom du produit est d\'{e}j\`{a} utilis\'{e} pour ce partenaire.
+    \item Le prix unitaire est invalide (n\'{e}gatif ou nul).
+\end{itemize} \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Cas d'utilisation : Transf\'{e}rer du stock entre salles}
+
+\begin{table}[H]
+\centering
+\caption{Description textuelle -- Transf\'{e}rer du stock entre salles}
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Cas d'utilisation} & Transf\'{e}rer du stock entre salles \\
+\hline
+\textbf{Acteur principal} & Administrateur \\
+\hline
+\textbf{Pr\'{e}condition} & Le produit existe dans le stock de la salle source avec une quantit\'{e} suffisante. \\
+\hline
+\textbf{Sc\'{e}nario principal} &
+\begin{enumerate}
+    \item L'administrateur acc\`{e}de \`{a} la section des mouvements de stock.
+    \item Il s\'{e}lectionne la salle source (\texttt{fromGym}) et la salle destination (\texttt{toGym}).
+    \item Il choisit le produit et sp\'{e}cifie la quantit\'{e} \`{a} transf\'{e}rer.
+    \item Le syst\`{e}me v\'{e}rifie que le stock source est suffisant.
+    \item Le syst\`{e}me d\'{e}cr\'{e}mente le stock source et incr\'{e}mente le stock destination.
+    \item Le transfert est enregistr\'{e} dans l'historique des mouvements.
+\end{enumerate} \\
+\hline
+\textbf{Postcondition} & Le stock est mis \`{a} jour dans les deux salles et le mouvement est trac\'{e}. \\
+\hline
+\textbf{Exceptions} &
+\begin{itemize}
+    \item La quantit\'{e} demand\'{e}e d\'{e}passe le stock disponible dans la salle source.
+    \item La salle source et la salle destination sont identiques.
+\end{itemize} \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Cas d'utilisation : Vendre un produit \`{a} un membre}
+
+\begin{table}[H]
+\centering
+\caption{Description textuelle -- Vendre un produit \`{a} un membre}
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Cas d'utilisation} & Vendre un produit \`{a} un membre \\
+\hline
+\textbf{Acteur principal} & Caissier / Administrateur \\
+\hline
+\textbf{Pr\'{e}condition} & Le produit est en stock dans la salle concern\'{e}e et le membre existe dans le syst\`{e}me. \\
+\hline
+\textbf{Sc\'{e}nario principal} &
+\begin{enumerate}
+    \item Le caissier acc\`{e}de \`{a} l'interface de vente.
+    \item Il s\'{e}lectionne le membre acheteur.
+    \item Il ajoute les produits avec les quantit\'{e}s souhait\'{e}es.
+    \item Le syst\`{e}me calcule le montant total.
+    \item Le caissier valide la vente.
+    \item Le syst\`{e}me enregistre la transaction et d\'{e}cr\'{e}mente le stock.
+\end{enumerate} \\
+\hline
+\textbf{Postcondition} & La vente est enregistr\'{e}e, le stock est mis \`{a} jour et le paiement est trac\'{e}. \\
+\hline
+\textbf{Exceptions} &
+\begin{itemize}
+    \item Le stock est insuffisant pour la quantit\'{e} demand\'{e}e.
+    \item Le membre n'est pas trouv\'{e} dans le syst\`{e}me.
+\end{itemize} \\
+\hline
+\end{tabular}
+\end{table}
+
+%──────────────────────────────────────────────
+\section{R\'{e}alisation}
+%──────────────────────────────────────────────
+
+\subsection{Backend}
+
+La r\'{e}alisation backend de ce sprint s'articule autour de plusieurs modules NestJS \cite{nestjs} g\'{e}rant l'ensemble de la cha\^{i}ne logistique de la boutique :
+
+\begin{outline}
+    \1 \textbf{ProductModule} : Module de gestion des produits. L'entit\'{e} \texttt{Product} contient le nom, le prix unitaire (\texttt{unitPrice}), la r\'{e}f\'{e}rence au partenaire (\texttt{partnerId}) et l'image associ\'{e}e. Le service expose les op\'{e}rations \acrshort{crud} avec filtrage par partenaire.
+    \1 \textbf{SupplierModule} : Gestion des fournisseurs. Permet de cr\'{e}er et de g\'{e}rer les fiches fournisseurs utilis\'{e}es pour les approvisionnements en produits.
+    \1 \textbf{SupplierPurchaseModule} : Enregistrement des achats aupr\`{e}s des fournisseurs. Chaque achat comprend la quantit\'{e}, le prix d'achat et la date de r\'{e}ception. L'enregistrement d'un achat d\'{e}clenche automatiquement la mise \`{a} jour du stock de la salle concern\'{e}e.
+    \1 \textbf{ProductStockModule} : Gestion de l'inventaire par salle de sport. L'entit\'{e} \texttt{ProductStock} associe un produit \`{a} une salle avec une quantit\'{e} disponible. Ce module est le point central du suivi des stocks.
+    \1 \textbf{StockTransferModule} : Gestion des mouvements de stock inter-salles. Chaque transfert sp\'{e}cifie une salle source (\texttt{fromGym}), une salle destination (\texttt{toGym}), le produit et la quantit\'{e}. Le service v\'{e}rifie la disponibilit\'{e} du stock avant d'ex\'{e}cuter le transfert et met \`{a} jour les deux inventaires de mani\`{e}re transactionnelle.
+    \1 \textbf{MemberPurchaseModule} : Gestion des ventes aux membres. Chaque vente enregistre le produit, la quantit\'{e}, le prix de vente et le membre acheteur. Le stock est automatiquement d\'{e}cr\'{e}ment\'{e} lors de la validation de la vente.
+    \1 \textbf{ModuleGuard} : Garde de module \acrshort{saas} prot\'{e}geant l'acc\`{e}s \`{a} l'ensemble des endpoints de la boutique. L'\'{e}num\'{e}ration \texttt{SaasModuleEnum.Boutique} permet d'activer ou de d\'{e}sactiver le module selon l'abonnement du partenaire, assurant ainsi le mod\`{e}le multi-tenant de la plateforme.
+\end{outline}
+
+\subsection{Diagramme de s\'{e}quence}
+
+La figure~\ref{fig:sprint5-sequence} illustre le flux d'un transfert de stock entre deux salles de sport.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.8, transform shape]
+
+% Participants
+\node[sdactor] (ui) at (0, 0) {Dashboard};
+\node[sdactor] (api) at (4, 0) {NestJS API};
+\node[sdactor] (svc) at (8, 0) {StockTransfer};
+\node[sdactor] (db) at (12, 0) {PostgreSQL};
+
+% Lifelines
+\draw[dashed] (0, -0.35) -- (0, -13);
+\draw[dashed] (4, -0.35) -- (4, -13);
+\draw[dashed] (8, -0.35) -- (8, -13);
+\draw[dashed] (12, -0.35) -- (12, -13);
+
+% Messages
+\draw[sdmessage] (0, -1) -- node[above, font=\scriptsize, text width=3cm, align=center] {POST /stock-transfer} (4, -1);
+\node[font=\scriptsize\itshape, text=gray] at (2, -1.7) {fromGym, toGym, product, qty};
+
+\draw[sdmessage] (4, -2.5) -- node[above, font=\scriptsize] {createTransfer(dto)} (8, -2.5);
+
+\draw[sdmessage] (8, -3.5) -- node[above, font=\scriptsize, text width=2.5cm, align=center] {SELECT stock source} (12, -3.5);
+\draw[sdreturn] (12, -4.5) -- node[above, font=\scriptsize] {qty: 50} (8, -4.5);
+
+\node[draw, dashed, rounded corners, inner sep=3pt, font=\scriptsize] at (10, -5.5) {qty $\geq$ requested?};
+
+\draw[sdmessage] (8, -6.5) -- node[above, font=\scriptsize, text width=2.8cm, align=center] {BEGIN TRANSACTION} (12, -6.5);
+
+\draw[sdmessage] (8, -7.5) -- node[above, font=\scriptsize, text width=2.5cm, align=center] {UPDATE stock source -qty} (12, -7.5);
+
+\draw[sdmessage] (8, -8.5) -- node[above, font=\scriptsize, text width=2.5cm, align=center] {UPDATE stock dest +qty} (12, -8.5);
+
+\draw[sdmessage] (8, -9.5) -- node[above, font=\scriptsize, text width=2.5cm, align=center] {INSERT transfert} (12, -9.5);
+
+\draw[sdmessage] (8, -10.5) -- node[above, font=\scriptsize] {COMMIT} (12, -10.5);
+
+\draw[sdreturn] (8, -11.5) -- node[above, font=\scriptsize] {Transfer cr\'{e}\'{e}} (4, -11.5);
+\draw[sdreturn] (4, -12.5) -- node[above, font=\scriptsize] {201 Created} (0, -12.5);
+
+\end{tikzpicture}
+\caption{Diagramme de s\'{e}quence -- Transfert de stock inter-salles}
+\label{fig:sprint5-sequence}
+\end{figure}
+
+\subsection{Frontend Web}
+
+L'interface web du tableau de bord d'administration int\`{e}gre un ensemble complet de pages pour la gestion de la boutique et du stock :
+
+\begin{outline}
+    \1 \textbf{Catalogue produits (\texttt{articles/})} : Page de listing des produits avec composant \texttt{CardComponent} affichant l'image, le nom et le prix unitaire de chaque produit. Formulaire de cr\'{e}ation et de modification avec upload d'image.
+    \1 \textbf{R\'{e}ception de stock (\texttt{entree/})} : Interface d'enregistrement des achats fournisseurs. Formulaire de saisie avec s\'{e}lection du fournisseur, du produit, de la quantit\'{e} et du prix d'achat.
+    \1 \textbf{Sorties de stock (\texttt{sortie/})} : Page de suivi des sorties de stock li\'{e}es aux ventes et autres mouvements de d\'{e}stockage.
+    \1 \textbf{Ventes aux membres (\texttt{vente/})} : Interface de vente avec s\'{e}lection du membre, ajout de produits et validation de la transaction. Historique des ventes avec filtres par date et par membre.
+    \1 \textbf{Mouvements de stock (\texttt{mouvement-de-stock/})} : Page de gestion des transferts inter-salles avec s\'{e}lection des salles source et destination, du produit et de la quantit\'{e}. Historique des transferts.
+    \1 \textbf{\'{E}tat du stock (\texttt{etat-du-stock/})} : Tableau de bord de l'inventaire affichant les quantit\'{e}s disponibles par produit et par salle. Le composant \texttt{BoutiqueFilter} permet de filtrer par cat\'{e}gorie, par salle ou par fournisseur.
+\end{outline}
+
+\subsection{Interfaces r\'{e}alis\'{e}es}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Catalogue des produits}\vspace{2cm}}}
+  \caption{Page du catalogue produits avec cards visuelles}
+  \label{fig:sprint5-products}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : \'{E}tat du stock par salle}\vspace{2cm}}}
+  \caption{Tableau de bord de l'inventaire par salle de sport}
+  \label{fig:sprint5-stock}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Transfert de stock inter-salles}\vspace{2cm}}}
+  \caption{Interface de transfert de stock entre salles}
+  \label{fig:sprint5-transfer}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Interface de vente aux membres}\vspace{2cm}}}
+  \caption{Page de vente de produits aux membres}
+  \label{fig:sprint5-sale}
+\end{figure}
+
+%──────────────────────────────────────────────
+\section{Conclusion}
+%──────────────────────────────────────────────
+
+Ce sprint a permis de mettre en place un syst\`{e}me complet de gestion de boutique et de stock pour la plateforme TrustGym. La solution couvre l'int\'{e}gralit\'{e} de la cha\^{i}ne logistique : gestion des produits et des fournisseurs, enregistrement des achats, suivi de l'inventaire par salle, transferts inter-salles et ventes aux membres. Le m\'{e}canisme de feature flag \acrshort{saas} assure que ce module n'est accessible qu'aux partenaires disposant de l'abonnement ad\'{e}quat. Le prochain sprint sera consacr\'{e} \`{a} la finance, la facturation et le portefeuille pr\'{e}pay\'{e}.
+
+\end{document}

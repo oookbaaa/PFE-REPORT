@@ -1,0 +1,102 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+\begin{document}
+\chapter{Software Architecture}
+\section{Introduction}
+Software architecture describes the different elements of an application. The architecture design is a particularly crucial stage in software development. \newline The system's stability, robustness, and scalability. will be determined from This phase. \cite{ZULLIGHOVEN2005281}
+\section{Architectural Pattern}
+\subsection{Layered Architecture Pattern}
+The layered architecture pattern, is the most common architecture pattern, otherwise known as the n-tier architecture pattern.
+This pattern is the de facto standard for most \acrfull{jee} applications and therefore is widely known by most architects, designers, and developers. The layered architecture pattern closely matches the traditional \acrshort{it} communication and organizational structures found in most companies, making it a natural choice for most business application development efforts.\cite{SoftwareArchitecturePatterns}
+\newline
+Components within the layered architecture pattern are organized into horizontal layers, each layer performing a specific role within the application (e.g., presentation logic or business logic).
+Each layer of the layered architecture pattern has a specific role and responsibility within the application. Each layer in the architecture forms an abstraction around the work that needs to be done to satisfy a particular business request.\cite{SoftwareArchitecturePatterns}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.8\textwidth]{img/logi.png}
+    \caption{Layered Architecture Pattern}
+    \label{fig:layered-arch-pattern}
+\end{figure}
+The logical architecture is composed of four main layers as shown in the diagram above:
+\begin{itemize}
+    \item \textbf{Presentation Layer}: It is the first and topmost layer present in the application where users can interact with the application.\cite{layeredArch}
+    \item \textbf{Business Layer}: This is the middle layer - the heart of the application. It contains all business logic of the application, describes how business objects interact with each other, where the Presentation layer and Data Access layer can indirectly communicate with each other.\cite{layeredArch}
+     \item \textbf{Database Layer}: This layer contains the tables, indexes, and data managed by the application. Searches and insert/delete/update operations are executed here.\cite{layeredArch}
+     \item \textbf{Deployment and Infrastructure Layer}: The "deployment layer" in a software architecture, though not a standard term, could handle activities such as preparing the software for release, orchestrating its distribution to the appropriate runtime environment, managing configuration and setup tasks, overseeing version control, and implementing performance monitoring and error logging tools. These tasks can be executed manually or through an automated process like a CI/CD pipeline.
+\end{itemize}
+Keeping things separate between different layers of an application helps solve many problems and makes it easier to test, update, and change.
+\newline It can also significantly improve code re-use opportunities and allows developers and \acrshort{ui} designers to collaborate more easily when developing their respective parts of an app.
+\newpage
+\section{Physical Architecture}
+Deployment diagrams model the physical architecture of a system and also, show the relationships between the software and hardware components in the system and the physical distribution of the processing.\cite{dep_diag}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/deployment-diagram.png}
+    \caption{Deployment Diagram}
+    \label{fig:deployment-diagram}
+\end{figure}
+Deployment diagrams, show the physical arrangement of the nodes in a distributed system, the artifacts that are stored on each node, and the components and other elements that the artifacts implement. Nodes represent hardware devices such as computers, sensors, and printers, as well as other devices that support the runtime environment of a system. Communication paths and deploy relationships model the connections in the system.\cite{dep_diag}
+\newpage
+\section{Technologies, Hardware, and Tools}
+\subsection{Technologies}
+Before starting any software development project, it is essential to choose the right technology stack for it. The projects might be of different size, complexity and constraints, including 3rd party integrations, etc... It all depends on the goals the business is pursuing. 
+\newline Before getting any code written, It is essential to thoroughly consider the project requirements.
+\newline For the project, the following technologies stack was agreed upon as shown in the figure below:
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.8\textwidth]{img/techs-2.png}
+    \caption{Technologies Stack}
+    \label{fig:technologies-stack}
+\end{figure}
+\begin{outline}
+ \1 Backend:
+   \2 \textbf{Supabase}: Supabase is an open-source Firebase alternative for building secure and performant Postgres backends with minimal configuration. It provides a full Postgres database with real-time functionality, database backups, a complete User Management system thanks to the Auth layer, a storage service with unlimited scalability, for any file type, edge functions, extensions, and more.\cite{supabase}
+   \2 \textbf{Nuxt.js}: Nuxt is a free and open-source server-side rendering framework built on Vue.js with an intuitive and extendable way to create type-safe, performant and production-grade full-stack web applications and websites. It combines the power of Vue.js with server-side rendering features to make it more powerful.\cite{nuxt}
+    \2 \textbf{PostgreSQL}: PostgreSQL is an advanced, enterprise-class, open source, object-relational database system that uses and extends the \acrshort{sql} language combined with many features that safely store and scale the most complicated data workloads.\cite{nuxt}
+    \newpage
+ \1 Frontend:
+   \2 \textbf{Vue.js}: Vue is a JavaScript framework for building user interfaces. It builds on top of standard \acrshort{html}, \acrshort{css}, and \acrshort{js} and provides a declarative and component-based programming model that helps efficiently develop user interfaces. It also comes with a truly reactive, compiler-optimized rendering system and a rich, incrementally adoptable ecosystem that scales between a library and a full-featured framework.\cite{vuejs}
+   \2 \textbf{DaisyUI}: DaisyUI is the most popular, free, open-source, and customizable Tailwind \acrshort{css} component library that prevents expansive markup in front-end applications.\cite{daisyui} With a focus on customizing and creating themes for user interfaces, DaisyUI uses pure \acrshort{css} and Tailwind utility classes, allowing developers to write clean \acrshort{html} and build web applications faster.\cite{daisyui2}
+ \1 CI/CD Infrastructure:
+    \2 \textbf{Netlify}: Netlify is a web hosting and automation platform that accelerates development productivity. By unifying the modern decoupled web elements from local development processes to advanced logics, Netlify is offering an amazingly faster way to ensure much more performant, scalable, and secure websites and applications. Netlify offers many services besides web hosting, such as Serverless functions, Continuous deployment and Netlify Build, which is a modern \acrshort{cicd} infrastructure service.\cite{netlify}
+    \2 \textbf{GitLab}: GitLab is an open-source code repository and collaborative software development platform for large \acrshort{devops} and \acrshort{devsecops} projects.\cite{gitLab} Coupled with Netlify, it will enable the management and creation of custom GitLab and Netlify workflows for deployments environments.
+ \1 Services:
+    \2 \textbf{Gotenberg}: Gotenberg is a Docker-powered stateless \acrshort{api} for converting file formats (\acrshort{html}, Markdown, Word, Excel, etc. ) to \acrshort{pdf}\cite{gotenberg}
+    \2 \textbf{PostHog}: PostHog is a self-hosted, open-source, suite of product and data tools, built for engineers for product analytics, session recording, feature flagging, a/b testing, and more.\cite{posthog}
+    \2 \textbf{SendGrid}: SendGrid is a cloud-based Email Delivery, API, Service that allows sending email without having to maintain email servers.\cite{sendgrid}
+\end{outline}
+\newpage
+\subsection{Hardware}
+All the development was done on an Asus X550JK Laptop:
+\begin{itemize}
+    \item Intel Core i7-4710HQ processor.
+    \item 8 GB memory.
+    \item Nvidia GeForce GTX 850M graphics card.
+    \item Ubuntu 20.04.6 \acrshort{lts} operating system.
+\end{itemize}
+\subsection{Tools}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.8\textwidth]{img/tools.png}
+    \caption{Tools List}
+    \label{fig:tools_list}
+\end{figure}
+\begin{outline}
+ \1 Modeling:
+   \2 \textbf{Modelio}: Modelio is a modeling solution offering a wide range of functionalities based on the main standards of enterprise architecture, software development and systems engineering.\cite{modelio}
+ \1 Integrated development environment (IDE):
+   \2 \textbf{Visual Studio Code}: Visual Studio Code is a code editor redefined and optimized for building and debugging modern web and cloud applications. It comes with built-in support for JavaScript, TypeScript, and Node.js and has a rich ecosystem of extensions for other languages and runtimes (such as C++, C\#, Java, Python, PHP, Go, .NET).\cite{vscode}
+ \1 Project Management:
+   \2 \textbf{ClickUp}: ClickUp is a cloud-based collaboration and project management tool suitable for businesses of all sizes and industries. Features include communication and collaboration tools, task assignments and statuses, alerts and more.\cite{clickUp}
+   \2 \textbf{Slack}: Slack is a messaging app for business. It offers all-around services to users. Slack allows code creation, project management, chat functions, data protection, third-party tool integrations, and a collaborative work platform across devices and regions.\cite{slack} 
+   \2 \textbf{Google Meet}: Google Meet is a video conferencing service from Google which lets colleagues chat over video and text. Meet offers a wide range of features and settings that teams can use to make meetings more productive, like screen sharing, chatting and recording meetings.\cite{gmeet}
+ \1 Testing:
+   \2 \textbf{Postman}: Postman is an \acrshort{api} platform for building and interacting with \acrshort{api}s. Postman simplifies each step of the \acrshort{api} lifecycle and streamlines collaboration for the goal of building better \acrshort{api}s, faster.\cite{postman}
+ \1 Version Control:
+   \2 \textbf{Git}: Git is a free and open source distributed version control system designed to handle everything from small to immense projects with speed and efficiency. Git is used in tracking changes in the source code, enabling multiple developers to work together on non-linear development.\cite{git}
+   \2 \textbf{GitLab}: GitLab is an open-source code repository and collaborative software development platform for large \acrshort{devops} and \acrshort{devsecops} projects.\cite{gitLab}
+\end{outline}
+\subsection{Conclusion}
+This chapter detailed the logical architecture of the application, the modeling of the deployment diagram and the working environment. The following chapters will be focused on to the modeling of the iterations.
+\end{document}

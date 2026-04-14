@@ -1,0 +1,267 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+\begin{document}
+\chapter{Sprint 1: Intégration de la maquette}
+ \section{Introduction}
+ Durant le premier Sprint qui s'étale sur une durée de 1 mois et demi on a abordé le premier point et le point le plus important pour introduire le projet Watto au grand public: le site web vitrine.  
+ \section{La Maquette}
+    La première étape fut d'étudier la maquette proposé par Watto pour le site web et le Dashboard ensemble, on se concentrera principalement sur la partie du site web vu qu'il s'agira de la majeur partie de notre travail dans ce premier Sprint. 
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-mockup.PNG}
+    \caption{Maquette Globale Watto}
+    \label{fig:maquettedesign}
+\end{figure}
+    
+ \newline Comme on peut voir sur la maquette globale, on a plusieurs éléments présenté. On va donc se concentrer sur la 2 éléments principaux, \item La maquette Desktop: 
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-page-front.PNG}
+    \caption{Maquette desktop site vitrine}
+    \label{fig:maquettedesignsitevitrine}
+\end{figure} 
+    
+ \newline \item Ainsi que la maquette mobile:
+\begin{center}   
+\begin{minipage}{0.5\textwidth}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.67\textwidth, keepaspectratio,]{img/bilel-page-front-mobile.PNG}
+    \caption{Maquette mobile site vitrine}
+    \label{fig:maquettedesignsitevitrinemobile}
+\end{center}
+\end{figure}
+\end{minipage} 
+\begin{minipage}{0.30\textwidth}
+\centering
+\small \textbf{Description:} Sa version mobile
+\end{minipage}
+\end{center}
+
+\newline A première vue, la maquette est simple de nature et ne paraît pas complexe, cependant quatres éléments nous ont interpelés dès la première analyse: 
+
+\section{Composant réutilisable}
+
+Commençons par l'élément le moins intriguant, il va falloir mettre en place un reusable component lors de l'intégration de la page Comment ça marche: 
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-comment-ca-marche-section-reusable-components.PNG}
+    \caption{Section comment ça marche}
+    \label{fig:maquettecommentcamarche}
+\end{figure}
+
+\newline En quoi cet élément pose problème? 
+\newline Intégrer un site est une partie du processus d'un projet à part entière. Si on prend en compte le code du projet et la passation, on se doit de rendre le plus lisible possible et de minimiser son volume au maximum. Une partie comme celle présentée en haut, représente beaucoup de code, cependant grâce à l'option que nous offre React de créer des components, il est possible de transformer les 3 étapes en un seul composant (component) réutilisable à 3 reprises. 
+
+\newline Passant maintenant à l'exécution. Comme on peut le voir, la section commence par un titre puis ce suit par des étapes dans lesquels il faudra prendre en compte: 
+
+\begin{enumerate}
+\item \textbf{La partie texte} composée d'un numéro représentant l'étape, le titre et enfin le paragraphe 
+\item \textbf{enumerate}
+\item \textbf{L'orientation} des 2 items (image et partie texte)
+\end{enumerate}
+
+\newline Pour créer cette partie il suffira de créer un objet data dans lequel on stockera :
+
+\begin{enumerate}
+\item  Une \textbf{id} (pour l'affecter à l'index du composant une fois on listera l'objet data)
+\item Le \textbf{titre} 
+\item Le \textbf{paragraphe}
+\item L'\textbf{url} de l'image
+\end{enumerate}
+
+\newline Ensuite un créer un flex component qu'on reversera à chaque fois qu'on tombe sur un index paire dans la liste.
+
+\section{Tableau fonctionnel}
+La page \textbf{Les boutiques Watto} paraît simple vu la quantité d'informations minimes représentée par rapport aux autres pages, cependant, créer un tableau et un carrousel sur une maquette est bien plus simple que de le créer en code. On reviendra sur l'implémentation de le carrousel plus tard, commençons par le tableau. 
+
+\newline Pour la création d'un tableau en bonne et due forme Il faut tout d'abord penser, quelles sont les éléments avec lesquels on va faire notre recherche. 
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-tableaux-toute.PNG}
+    \caption{Tableau de partenaires}
+    \label{fig:maquetteteableaux}
+\end{figure}
+
+Ce qu'on peut noter sur ce tableau c'est qu'il va falloir prendre 3 types de filtres: 
+
+\begin{itemize}
+\item \textbf{Input texte} de recherche: un input qui va prendre du texte et retourner les éléments dont le titre correspond en partie au texte écrit par l'utilisateur
+\item \textbf{Select Input} de catégorie et de mode d'achat: des dropdowns qui vont prendre en paramètres les modes d'achat et les catégories disponible dans la plate-forme.
+\item \textbf{Checkbox Input} prenant en compte si les boutiques vont être affichés dans l'ordre croissant ou décroissant depuis leur création. 
+\end{itemize}
+
+Pour créer tout ces éléments le plus proprement possible, on va créer un seul Select input général, un checkbox input et un input texte dans lequel on va styliser avec du Tailwind notre input de façon à correspondre au tableau affiché et ensuite seulement on passe à notre useTable hook customisé. 
+\newline Ce hook va avoir une tâche très simple, gérer la partie fonctionnelle du tableau, c'est à dire que la valeur et les changes handlers des Inputs va être stockés dans les states créer dans ce hook. 
+\newline Les étapes sont simples:
+\begin{enumerate}
+\item On va tout d'abord appelés les states nécessaires au tableau
+\item On va ensuite créer les handlers nécessaire aux changements des valeurs des states. 
+\item Une fois la gestion des states faite, on passe directement à l'appel des api à travers React Query et axios.
+\item Enfin on va retourner dans le hook, les handlers, l'affichage des valeurs et la méthode avec laquelle on va déclencher l'api (qui sera appelé à chaque changement d'inputs).
+\end{enumerate}
+
+Après avoir créer nos inputs et notre hook personnalisé, on passe à la création du component qui va appelés tout ces éléments. Ce composant regroupera les inputs et le hook tout en minimisant la quantité de code vu la répartition des rôles de chaque élément appelé. 
+On appellera également les cards contenant les images des boutiques. Nous avons volontairement omis d'approfondir la discussion sur ce composant, car son intégration est linéaire et ne mérite donc pas que l'on s'y attarde davantage.
+
+\section{Le Tabbed Pannel}
+
+Le tabbed pannel est un composant qui va nous permettre de naviguer de tab en tab dans une seule section du site, c'est un élément pratique quand on veut montrer plusieurs choses dans une seule section et qui représentent plus ou moins le même cadre. 
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.73\textwidth}
+    \includegraphics[width=\textwidth]{img/bilel-tabulator-desktop.PNG}
+    \caption{Le Tabbed Pannel}
+    \label{fig:tabbedpannel}
+    \caption*{\textbf{Description:} Cet élément est cliquable en dessus de l'image, chaque "tab" dans lequel on se situe aura son titre mis en avant par un style précis, ici un soulignage et la mise en gras du titre}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.73\textwidth}
+    \includegraphics[width=\textwidth]{img/bilel-tabulator-mobile.PNG}
+    \caption{Le Tabbed Pannel (Mobile)}
+    \label{fig:tabbedpannelmobile}
+    \caption*{\textbf{Description:} Ceci est la version mobile du tabbed pannel}
+  \end{minipage}
+\end{figure}
+
+La maquette ne représente pas de façon fidèle l'élément dans son état final car on a omit de styliser correctement les titres lors de la représentation des composants du tab 2 et 3. 
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.73\textwidth}
+    \includegraphics[width=\textwidth]{img/bilel-tabulator-result.PNG}
+    \caption{Le Résultat}
+    \label{fig:tabbedpannelresult}
+    \caption*{\textbf{Description:} En dessus est la représentation fidèle du vrai composant onglets avec ses corrections finale. }
+  \end{minipage}
+\end{figure}
+
+\newline Pour créer ce tab pannel, on va tout d'abord créer un objet data dans lequel on mettra le titre, l'id et l'image de l'onglet en question que l'on stockera dans un fichier data. 
+\newline Il s'agirait ensuite de créer un hook qui s'occupera de la logique de changement entre onglets une fois l'utilisateur clique sur un titre.
+
+\vspace{5mm} %5mm vertical space
+\newline Une fois ce composant créé, on pourra ensuite s'occuper des 2 composants d'affichages: 
+\begin{itemize}
+\item Le composant qui affiche les titres.
+\item Le composant qui affiche le contenu.
+\end{itemize}
+\vspace{5mm} %5mm vertical space
+
+La séparation entre les deux est préférable car chacune a son objectif, alors que le composant qui affiche les titres est cliquable celui d'en dessous ne l'est pas, c'est donc pour cela qu'on a choisit de les séparer.
+De plus, le composant titre varie grandement de sa version desktop à sa version mobile et son type d'affichage diffère. Quand on est sur mobile, il s'agira de swipe sur tout le composant, alors que sur desktop il suffira uniquement de cliquer sur un titre. C'est pour ces différences qu'on a choisit de les séparer. Le composant contenu quant à lui va s'occuper de l'animation lors du changement, pour cela on va utiliser le Transition component de Headless ui pour gérer les animations onExit et onEntry des composants contenu lors des changements d'onglets.
+
+Une fois tout ces composants créés, il suffit enfin de les assembler dans un seul presentational component qui regroupera le tout, en créant notre composant de façon responsive, et que l'on va recouvrir par un Swipeable Wrapper fournit par la librairie \textbf{react-swipeable} qui va nous permettre de gérer de façon efficace le swipe sur mobile. 
+
+\section{Carousel}
+L'élément le plus consistent est le carrousel. Même si à première vue l'import d'un carrousel prête telle que celles proposées par Flowbite par exemple est une option à considérer, les besoins de celle voulue par Watto est quelques peu différentes car il s'agit d'implémenter un même hook pour la logique pour 2 carrousels différentes dans la partie fonctionnelle et d'ensuite  créer deux composants de présentation différents selon le besoin. 
+\newline Pour un peu plus de contexte voici les 2 carrousels différentes: 
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.73\textwidth}
+    \includegraphics[width=\textwidth]{img/bilel-carousel-desktop.PNG}
+    \caption{Carousel Page d'accueil}
+    \label{fig:carouselhome}
+    \caption*{\textbf{Description:} Cette carrousel est celle présentée dans la page d'\textbf{accueil} }
+  \end{minipage}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.73\textwidth}
+    \includegraphics[width=\textwidth]{img/bilel-carousel-mobile.PNG}
+    \caption{Carrousel Page d'accueil mobile}
+    \label{fig:carouselhomemobile}
+    \caption*{\textbf{Description:} Sa version mobile }
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.73\textwidth}
+    \includegraphics[width=\textwidth]{img/bilel-carousel-desktop-reusable.PNG}
+    \caption{Carousel Page Boutique et Carte cadeaux }
+    \label{fig:carouselboutique}
+    \caption*{\textbf{Description:} Cette carrousels est celle présentée dans la page \textbf{cartes cadeaux} et \textbf{boutiques partenaires} }
+  \end{minipage}
+\end{figure}
+\begin{center}   
+\begin{minipage}{0.5\textwidth}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.67\textwidth, keepaspectratio,]{img/bilel-carousel-mobile-reusable.PNG}
+    \caption{Carousel Page Boutique et Carte cadeaux mobile}
+    \label{fig:carouselboutiquemobile}
+\end{center}
+\end{figure}
+\end{minipage} 
+\begin{minipage}{0.30\textwidth}
+\centering
+\small \textbf{Description:} Sa version mobile
+\end{minipage}
+\end{center}
+Comme on peut le voir les carrousels sont présentées de façon différentes de ce fait, il nous faut créer une logique qui s'applique aux deux tout en laissant la liberté du styling à chaque carrousel. Les carrousels et le besoins du client sont atypiques, de ce fait, nous n'avons pas réussit à trouver une librairie ayant les caractéristiques recouvrant les besoins de cette carrousel. Il va nous falloir donc la créer "from scratch". 
+\vspace{5mm} %5mm vertical space
+\newline \textbf{Les besoins du client vis-à-vis du carrousel sont les suivants:} 
+\newline Si la grandeur de l'écran permet d'afficher tout les éléments, dans ce cas il faudra faire disparaître les flèches aux extrémités du carrousel.
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.73\textwidth}
+    \includegraphics[width=\textwidth]{img/bilel-carousel-no-arrows.PNG}
+    \caption{Carrousel sans flèches}
+    \label{fig:carouselsansfleches}
+    \caption*{\textbf{Description:} Sur un écran 1920*1080 par exemple, tous les éléments sont présents.}
+  \end{minipage}
+\end{figure}
+\newline Dans le carrousel présent sur la page d'accueil uniquement, on n'a qu'une flèche qui pointe vers la direction droite. 
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.73\textwidth}
+    \includegraphics[width=\textwidth]{img/bilel-carousel-one-arrow.PNG}
+    \caption{Carrousel à une flèche}
+    \label{fig:carouselunefleche}
+    \caption*{\textbf{Description:} Carrousel à une flèche sur la page d'accueil}
+  \end{minipage}
+\end{figure}
+
+\newline A chaque fois que l'on atteint l'extrémité droite ou gauche de l'élément, il faut laisser la possibilité à l'utilisateur de continuer dans la direction qu'il veut comme si le premier élément de l'autre extrémité était suivant sur la liste d'objets présents dans le carrousel. 
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.73\textwidth}
+    \includegraphics[width=\textwidth]{img/bilel-carousel-last.PNG}
+    \caption{Dernier élément du carrousel}
+    \label{fig:dernierelementcarrousel}
+  \end{minipage}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.73\textwidth}
+    \includegraphics[width=\textwidth]{img/bilel-carousel-last.PNG}
+    \caption{Élément suivant le dernier du carrousel}
+    \label{fig:premierelementcarrousel}
+    \caption*{\textbf{Description:} En swipant à droite il faudra réafficher le premier élément du carrousel et ainsi de suite}
+  \end{minipage}
+\end{figure}
+
+Pour pouvoir créer un carrousel qui remplit tout ces besoins, la création d'une hook qui va gérer la logique du swipe est \textbf{primordiale}. Dans cette hook:
+\begin{enumerate}
+\item On appellera l'objet data qui contient tous les éléments du carrousel avec image et titre, 
+\item On appellera la fonction créer au préalable dans un fichier utils qui permettra de réorganiser le tableaux d'items une fois on atteins l'une des deux extrémités
+\item On gérera la fonction \textbf{onClick} pour mettre en avant le titre de l'item cliqué dans le carrousel. 
+\end{enumerate}
+
+Ensuite, on devra créer un CarrouselWrapper qui va nous permettre de recouvrir notre carrousel par les éléments essentiels à son fonctionnement. Dans ce wrapper, on appellera :
+\begin{itemize}
+\item Le hook pour établir la logique, 
+\item Les composants enfants (children) du wrapper qui représenteront les items du carrousel 
+\item Les éléments nécessaires aux fonctionnement de la logique (e.g. Les flèches de gauche et de droite dans leurs différents styles, le Swipeable Wrapper, etc.)
+\end{itemize}
+Ainsi on aura terminé de créer la logique du Carrousel, il nous suffit ensuite juste de créer le conteneur de l'item enfant du carrousel et de le recouvrir d'un Transition component pour gérer l'animation onExit et onEntry. 
+
+\section{Conclusion}
+Ce chapitre nous a permit de voir la progression du premier sprint d'intégration et de l'élaboration de ses éléments les plus importants. 
+\end{document}

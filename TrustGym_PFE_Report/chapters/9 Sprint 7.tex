@@ -1,0 +1,362 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../img/}}{\subfix{../architectures images/}}}
+\begin{document}
+\chapter{Sprint 7 : Application Mobile, Centre KPI et Assistant IA}
+
+%──────────────────────────────────────────────
+\section{Introduction}
+%──────────────────────────────────────────────
+
+Ce dernier sprint est consacr\'{e} au d\'{e}veloppement de l'application mobile destin\'{e}e aux adh\'{e}rents, \`{a} la mise en place du centre d'indicateurs cl\'{e}s de performance (\acrshort{kpi}), ainsi qu'\`{a} l'int\'{e}gration d'un assistant intelligent bas\'{e} sur l'intelligence artificielle. Ces trois volets constituent les derni\`{e}res briques fonctionnelles de la plateforme TrustGym, compl\'{e}tant ainsi l'\'{e}cosyst\`{e}me compos\'{e} du backend, du tableau de bord web, de l'int\'{e}gration mat\'{e}rielle et, d\'{e}sormais, de l'application mobile et des fonctionnalit\'{e}s avanc\'{e}es d'analytique et d'\acrshort{ai}.
+
+%──────────────────────────────────────────────
+\section{Sprint Backlog}
+%──────────────────────────────────────────────
+
+Le tableau~\ref{tab:sprint7_backlog} pr\'{e}sente le backlog du Sprint 7 avec les user stories associ\'{e}es.
+
+\begin{longtable}{|c|p{10cm}|c|}
+\caption{Sprint Backlog -- Sprint 7} \label{tab:sprint7_backlog} \\
+\hline
+\textbf{ID} & \textbf{User Story} & \textbf{Priorit\'{e}} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{User Story} & \textbf{Priorit\'{e}} \\
+\hline
+\endhead
+\hline
+\endfoot
+
+US-7.1 & En tant qu'adh\'{e}rent, je veux acc\'{e}der \`{a} une application mobile avec 4 onglets (Dashboard, Sessions, Analytique, Profil) pour naviguer facilement entre les fonctionnalit\'{e}s. & Haute \\
+\hline
+US-7.2 & En tant qu'adh\'{e}rent, je veux consulter un tableau de bord avec mes statistiques personnelles et des actions rapides pour avoir une vue d'ensemble de mon activit\'{e}. & Haute \\
+\hline
+US-7.3 & En tant qu'adh\'{e}rent, je veux visualiser les s\'{e}ances disponibles via un calendrier PlanningView pour planifier mes entra\^{i}nements. & Haute \\
+\hline
+US-7.4 & En tant qu'adh\'{e}rent, je veux consulter mes analytiques personnelles (pr\'{e}sence, occupation, r\'{e}servations de s\'{e}ances) pour suivre ma progression. & Moyenne \\
+\hline
+US-7.5 & En tant qu'adh\'{e}rent, je veux g\'{e}rer mon profil (modifier mes informations, consulter mon abonnement, me d\'{e}connecter) depuis l'application mobile. & Haute \\
+\hline
+US-7.6 & En tant qu'administrateur, je veux acc\'{e}der \`{a} un centre \acrshort{kpi} affichant l'occupation en direct, l'analyse des heures de pointe et les statistiques de pr\'{e}sence des membres. & Haute \\
+\hline
+US-7.7 & En tant qu'administrateur, je veux disposer d'un assistant \acrshort{ai} bas\'{e} sur le \acrshort{rag} utilisant OpenAI \cite{openai} gpt-4o-mini et text-embedding-3-small avec pgvector \cite{pgvector} pour r\'{e}pondre \`{a} mes questions. & Haute \\
+\hline
+US-7.8 & En tant qu'administrateur, je veux que les documents soient d\'{e}coup\'{e}s en chunks et stock\'{e}s dans la table \texttt{doc\_chunk} avec un syst\`{e}me de reranking pour am\'{e}liorer la pertinence des r\'{e}ponses. & Moyenne \\
+\hline
+US-7.9 & En tant qu'administrateur, je veux que l'historique des conversations \acrshort{ai} soit enregistr\'{e} via l'entit\'{e} AiChatLog pour pouvoir consulter les interactions pass\'{e}es. & Basse \\
+\hline
+US-7.10 & En tant que super administrateur, je veux que les modules \acrshort{ai} et \acrshort{kpi} Center soient prot\'{e}g\'{e}s par des guards \acrshort{saas} pour contr\^{o}ler l'acc\`{e}s selon les licences activ\'{e}es. & Haute \\
+\hline
+\end{longtable}
+
+%──────────────────────────────────────────────
+\section{Analyse}
+%──────────────────────────────────────────────
+
+\subsection{Diagramme de cas d'utilisation -- Application Mobile}
+
+La figure~\ref{fig:uc_mobile} illustre les cas d'utilisation de l'application mobile du point de vue de l'adh\'{e}rent.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.85, transform shape]
+
+% System box
+\node[systembox={Application Mobile TrustGym}, minimum width=9cm, minimum height=10cm] (sys) at (5, -4) {};
+
+% Actor
+\stickfigure{({-2.5, -4})}{Membre}
+
+% Use cases
+\node[usecase] (uc1) at (5, 0) {Consulter le tableau de bord};
+\node[usecase] (uc2) at (5, -1.8) {Visualiser les s\'{e}ances};
+\node[usecase] (uc3) at (5, -3.6) {Consulter les analytiques};
+\node[usecase] (uc4) at (5, -5.4) {G\'{e}rer mon profil};
+\node[usecase] (uc5) at (5, -7.2) {Consulter l'occupation en direct};
+\node[usecase] (uc6) at (5, -9) {Scanner un code QR};
+
+% Member links
+\draw (0, -4) -- (uc1.west);
+\draw (0, -4) -- (uc2.west);
+\draw (0, -4) -- (uc3.west);
+\draw (0, -4) -- (uc4.west);
+\draw (0, -4) -- (uc5.west);
+\draw (0, -4) -- (uc6.west);
+
+\end{tikzpicture}
+\caption{Diagramme de cas d'utilisation -- Application Mobile}
+\label{fig:uc_mobile}
+\end{figure}
+
+\subsection{Diagramme de cas d'utilisation -- Centre KPI et Assistant IA}
+
+La figure~\ref{fig:uc_kpi_ai} illustre les cas d'utilisation du centre \acrshort{kpi} et de l'assistant \acrshort{ai} du point de vue de l'administrateur.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.85, transform shape]
+
+% System box
+\node[systembox={Centre KPI et Assistant IA}, minimum width=9cm, minimum height=10cm] (sys) at (5, -4) {};
+
+% Actor
+\stickfigure{({-2.5, -4})}{Admin}
+
+% Use cases
+\node[usecase] (uc1) at (5, 0) {Consulter l'occupation en direct};
+\node[usecase] (uc2) at (5, -1.8) {Analyser les heures de pointe};
+\node[usecase] (uc3) at (5, -3.6) {Consulter les statistiques de pr\'{e}sence};
+\node[usecase] (uc4) at (5, -5.4) {Interroger l'assistant IA};
+\node[usecase] (uc5) at (5, -7.2) {Consulter l'historique des conversations};
+\node[usecase] (uc6) at (5, -9) {Ing\'{e}rer des documents RAG};
+
+% Admin links
+\draw (0, -4) -- (uc1.west);
+\draw (0, -4) -- (uc2.west);
+\draw (0, -4) -- (uc3.west);
+\draw (0, -4) -- (uc4.west);
+\draw (0, -4) -- (uc5.west);
+\draw (0, -4) -- (uc6.west);
+
+\end{tikzpicture}
+\caption{Diagramme de cas d'utilisation -- Centre KPI et Assistant IA}
+\label{fig:uc_kpi_ai}
+\end{figure}
+
+%──────────────────────────────────────────────
+\section{R\'{e}alisation}
+%──────────────────────────────────────────────
+
+\subsection{R\'{e}alisation Backend}
+
+\subsubsection{Module Application Mobile (MemberAppModule)}
+
+Le module \texttt{MemberAppModule} expose les endpoints sp\'{e}cifiques \`{a} l'application mobile. Il comprend deux contr\^{o}leurs principaux :
+
+\begin{itemize}
+    \item \textbf{MemberSessionController} : permet aux adh\'{e}rents de consulter les s\'{e}ances disponibles, de visualiser le planning et de g\'{e}rer leurs r\'{e}servations.
+    \item \textbf{MemberKpiController} : fournit les indicateurs personnels de l'adh\'{e}rent, tels que les statistiques de pr\'{e}sence, l'occupation en temps r\'{e}el et l'historique des r\'{e}servations.
+\end{itemize}
+
+Ces endpoints sont prot\'{e}g\'{e}s par le \texttt{MemberJwtGuard}, garantissant que seuls les membres authentifi\'{e}s via l'application mobile peuvent y acc\'{e}der.
+
+\subsubsection{Module Centre KPI (KpiCenterModule)}
+
+Le module \texttt{KpiCenterModule} fournit les indicateurs analytiques avanc\'{e}s pour les administrateurs. Ses fonctionnalit\'{e}s principales sont :
+
+\begin{outline}
+    \1 \textbf{Occupation en direct (Live Occupancy)}
+        \2 Calcul du nombre de membres actuellement pr\'{e}sents dans la salle.
+        \2 Logique : comptage des membres dont le dernier \'{e}v\'{e}nement d'acc\`{e}s est de type ENTRY dans une fen\^{e}tre de temps configurable (par d\'{e}faut 1 heure).
+        \2 Diffusion en temps r\'{e}el via l'\'{e}v\'{e}nement WebSocket \texttt{occupancy:updated} sur le namespace \texttt{/attendance}.
+    \1 \textbf{Analyse des heures de pointe (Peak Hours)}
+        \2 Agr\'{e}gation des donn\'{e}es d'acc\`{e}s pour identifier les cr\'{e}neaux horaires de forte affluence.
+        \2 Visualisation par jour de la semaine et par tranche horaire.
+    \1 \textbf{Analytique de pr\'{e}sence des membres}
+        \2 Statistiques de fr\'{e}quentation individuelle et globale.
+        \2 Taux de pr\'{e}sence par p\'{e}riode, tendances et comparaisons.
+\end{outline}
+
+L'acc\`{e}s au centre \acrshort{kpi} est conditionn\'{e} par le guard \acrshort{saas} v\'{e}rifiant l'activation du module \texttt{SaasModuleEnum.KpiCenter} pour la salle concern\'{e}e.
+
+\subsubsection{Module Intelligence Artificielle (AiModule)}
+
+Le module \texttt{AiModule} impl\'{e}mente un assistant intelligent bas\'{e} sur l'architecture \acrshort{rag} (Retrieval-Augmented Generation) \cite{lewis2020rag, gao2024rag_survey}. Son fonctionnement repose sur les composants suivants :
+
+\begin{outline}
+    \1 \textbf{Mod\`{e}le de chat} : OpenAI \texttt{gpt-4o-mini} \cite{openai}, utilis\'{e} pour g\'{e}n\'{e}rer des r\'{e}ponses contextualis\'{e}es \`{a} partir des documents r\'{e}cup\'{e}r\'{e}s.
+    \1 \textbf{Mod\`{e}le d'embeddings} : OpenAI \texttt{text-embedding-3-small}, utilis\'{e} pour convertir les requ\^{e}tes utilisateur et les documents en vecteurs num\'{e}riques.
+    \1 \textbf{Stockage vectoriel} : extension \texttt{pgvector} \cite{pgvector} de PostgreSQL \cite{postgre}, permettant la recherche de similarit\'{e} vectorielle directement dans la base de donn\'{e}es.
+    \1 \textbf{Table doc\_chunk} : les documents sont d\'{e}coup\'{e}s en morceaux (chunks) et stock\'{e}s dans la table \texttt{doc\_chunk} avec leurs embeddings associ\'{e}s.
+    \1 \textbf{Reranking} : apr\`{e}s la recherche vectorielle initiale, un m\'{e}canisme de reranking am\'{e}liore la pertinence des r\'{e}sultats en r\'{e}ordonnant les chunks r\'{e}cup\'{e}r\'{e}s.
+    \1 \textbf{Historique des conversations} : l'entit\'{e} \texttt{AiChatLog} enregistre chaque interaction (question de l'utilisateur et r\'{e}ponse de l'assistant) pour permettre le suivi et l'am\'{e}lioration continue.
+\end{outline}
+
+L'endpoint principal \texttt{POST /api/ai/chat} est r\'{e}serv\'{e} aux r\^{o}les Admin et SuperAdmin, et son acc\`{e}s est conditionn\'{e} par le guard \acrshort{saas} v\'{e}rifiant l'activation du module \texttt{SaasModuleEnum.Ai}.
+
+La figure~\ref{fig:rag_architecture} illustre l'architecture compl\`{e}te du pipeline \acrshort{rag} de l'assistant \acrshort{ai}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{RAG ARCHITECTURE.png}
+  \caption{Architecture du pipeline RAG -- Assistant IA TrustGym}
+  \label{fig:rag_architecture}
+\end{figure}
+
+Le flux de traitement d'une requ\^{e}te \acrshort{ai} se d\'{e}roule comme suit :
+
+\begin{enumerate}
+    \item L'administrateur envoie une question via \texttt{POST /api/ai/chat}.
+    \item La question est convertie en vecteur d'embedding via \texttt{text-embedding-3-small}.
+    \item Une recherche de similarit\'{e} vectorielle est effectu\'{e}e dans la table \texttt{doc\_chunk} via pgvector.
+    \item Les chunks r\'{e}cup\'{e}r\'{e}s sont r\'{e}ordonn\'{e}s par le m\'{e}canisme de reranking.
+    \item Les chunks les plus pertinents sont inject\'{e}s dans le contexte du mod\`{e}le \texttt{gpt-4o-mini}.
+    \item La r\'{e}ponse g\'{e}n\'{e}r\'{e}e est retourn\'{e}e \`{a} l'administrateur et enregistr\'{e}e dans \texttt{AiChatLog}.
+\end{enumerate}
+
+\subsection{Diagramme de s\'{e}quence}
+
+La figure~\ref{fig:sprint7-sequence} illustre le flux complet du pipeline \acrshort{rag} lors d'une interrogation de l'assistant \acrshort{ai}.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.72, transform shape]
+
+% Participants
+\node[sdactor] (ui) at (0, 0) {Dashboard};
+\node[sdactor] (api) at (3.2, 0) {NestJS API};
+\node[sdactor] (oai) at (6.8, 0) {OpenAI};
+\node[sdactor] (pg) at (10.4, 0) {pgvector};
+\node[sdactor] (rr) at (13.6, 0) {Reranker};
+
+% Lifelines
+\draw[dashed] (0, -0.35) -- (0, -16);
+\draw[dashed] (3.2, -0.35) -- (3.2, -16);
+\draw[dashed] (6.8, -0.35) -- (6.8, -16);
+\draw[dashed] (10.4, -0.35) -- (10.4, -16);
+\draw[dashed] (13.6, -0.35) -- (13.6, -16);
+
+% Messages
+\draw[sdmessage] (0, -1) -- node[above, font=\scriptsize] {POST /api/ai/chat} (3.2, -1);
+\node[font=\scriptsize\itshape, text=gray] at (1.6, -1.7) {question};
+
+\draw[sdmessage] (3.2, -2.5) -- node[above, font=\scriptsize, text width=2.5cm, align=center] {Embed question} (6.8, -2.5);
+\draw[sdreturn] (6.8, -3.5) -- node[above, font=\scriptsize] {vector [1536]} (3.2, -3.5);
+
+\draw[sdmessage] (3.2, -4.5) -- node[above, font=\scriptsize, text width=3cm, align=center] {Similarity search doc\_chunk} (10.4, -4.5);
+\draw[sdreturn] (10.4, -5.5) -- node[above, font=\scriptsize] {top-k chunks} (3.2, -5.5);
+
+\draw[sdmessage] (3.2, -6.5) -- node[above, font=\scriptsize, text width=3cm, align=center] {Rerank chunks} (13.6, -6.5);
+\draw[sdreturn] (13.6, -7.5) -- node[above, font=\scriptsize] {chunks reclass\'{e}s} (3.2, -7.5);
+
+\draw[sdmessage] (3.2, -9) -- node[above, font=\scriptsize, text width=3cm, align=center] {Chat completion avec contexte} (6.8, -9);
+\node[font=\scriptsize\itshape, text=gray] at (5, -9.7) {gpt-4o-mini};
+\draw[sdreturn] (6.8, -10.5) -- node[above, font=\scriptsize] {R\'{e}ponse g\'{e}n\'{e}r\'{e}e} (3.2, -10.5);
+
+\draw[sdmessage] (3.2, -11.5) -- node[above, font=\scriptsize, text width=3cm, align=center] {INSERT AiChatLog} (10.4, -11.5);
+\draw[sdreturn] (10.4, -12.5) -- node[above, font=\scriptsize] {OK} (3.2, -12.5);
+
+\draw[sdreturn] (3.2, -14) -- node[above, font=\scriptsize] {R\'{e}ponse + sources} (0, -14);
+
+\end{tikzpicture}
+\caption{Diagramme de s\'{e}quence -- Pipeline RAG de l'assistant IA}
+\label{fig:sprint7-sequence}
+\end{figure}
+
+\subsection{R\'{e}alisation Frontend Mobile}
+
+L'application mobile est d\'{e}velopp\'{e}e avec React Native \cite{reactnative} et Expo \acrshort{sdk} 54 \cite{expo}, utilisant Expo Router pour la navigation bas\'{e}e sur les fichiers.
+
+\subsubsection{Architecture de navigation}
+
+La structure de navigation repose sur Expo Router avec un layout racine \texttt{app/\_layout.tsx} et un syst\`{e}me d'onglets d\'{e}fini dans \texttt{app/(tabs)/} :
+
+\begin{outline}
+    \1 \textbf{DashboardScreen} : \'{e}cran d'accueil affichant le flux d'activit\'{e}, les statistiques personnelles et le statut de pr\'{e}sence de l'adh\'{e}rent.
+    \1 \textbf{SessionsScreen} : calendrier PlanningView permettant de visualiser et parcourir les s\'{e}ances disponibles.
+    \1 \textbf{AnalyticsScreen} : indicateurs personnels de performance, occupation en temps r\'{e}el et historique des r\'{e}servations.
+    \1 \textbf{ProfileScreen} : gestion des informations personnelles, consultation du statut d'abonnement et d\'{e}connexion.
+\end{outline}
+
+\subsubsection{Flux d'authentification}
+
+Le flux d'authentification mobile comprend plusieurs \'{e}tapes :
+
+\begin{enumerate}
+    \item \textbf{SignInScreen} : connexion avec email et mot de passe.
+    \item \textbf{SignUpScreen} : inscription en plusieurs \'{e}tapes (v\'{e}rification de l'email, confirmation d'identit\'{e}).
+    \item \textbf{VerifyEmailScreen} : saisie du code de v\'{e}rification envoy\'{e} par email.
+    \item \textbf{SetPasswordScreen} : d\'{e}finition du mot de passe pour finaliser l'inscription.
+\end{enumerate}
+
+Le token \acrshort{jwt} est stock\'{e} dans AsyncStorage via le service \texttt{src/services/auth-storage.ts} et v\'{e}rifi\'{e} au lancement de l'application via \texttt{GET /api/auth/member/verify}.
+
+\subsubsection{Client API et temps r\'{e}el}
+
+Le client \acrshort{api} (\texttt{src/services/api.ts}) est bas\'{e} sur \texttt{fetch} et attache automatiquement le header \texttt{Authorization: Bearer <token>} \`{a} chaque requ\^{e}te.
+
+La communication en temps r\'{e}el est assur\'{e}e par Socket.IO \cite{socketio} sur le namespace \texttt{/attendance}. Le hook \texttt{useOccupancyRealtime} combine :
+
+\begin{itemize}
+    \item L'\'{e}coute des \'{e}v\'{e}nements WebSocket \texttt{occupancy:updated} pour les mises \`{a} jour instantan\'{e}es.
+    \item Un polling toutes les 30 secondes comme m\'{e}canisme de secours.
+\end{itemize}
+
+L'application est \'{e}galement con\c{c}ue pour fonctionner en mode hors ligne : les requ\^{e}tes React Query \cite{tanstack} sont mises en pause lorsque la connexion est perdue et reprennent automatiquement lors de la reconnexion.
+
+\subsubsection{Configuration de l'environnement}
+
+La variable d'environnement \texttt{EXPO\_PUBLIC\_API\_URL} d\'{e}finie dans le fichier \texttt{.env} d\'{e}termine l'adresse de l'\acrshort{api} selon le contexte d'ex\'{e}cution :
+
+\begin{itemize}
+    \item Simulateur iOS / Web : \texttt{http://localhost:3002/api}
+    \item \'{E}mulateur Android : \texttt{http://10.0.2.2:3002/api}
+    \item Appareil physique : \texttt{http://<ip-locale>:3002/api}
+\end{itemize}
+
+\subsection{R\'{e}alisation Frontend Web (KPI et IA)}
+
+Le tableau de bord web int\`{e}gre deux nouvelles fonctionnalit\'{e}s majeures dans ce sprint :
+
+\subsubsection{Centre KPI}
+
+La page du centre \acrshort{kpi} utilise le hook \texttt{useKpi} pour r\'{e}cup\'{e}rer et afficher les indicateurs analytiques. L'occupation en temps r\'{e}el est mise \`{a} jour via les \'{e}v\'{e}nements WebSocket \texttt{occupancy:updated}, assurant une visualisation instantan\'{e}e du nombre de membres pr\'{e}sents dans la salle.
+
+\subsubsection{Interface de l'assistant IA}
+
+L'interface de chat \acrshort{ai} est impl\'{e}ment\'{e}e avec le hook \texttt{useAiChat}, offrant :
+
+\begin{itemize}
+    \item Une zone de conversation avec historique des messages.
+    \item Un champ de saisie pour formuler des questions en langage naturel.
+    \item L'affichage des r\'{e}ponses g\'{e}n\'{e}r\'{e}es par l'assistant \acrshort{rag}.
+    \item Un indicateur de chargement pendant le traitement de la requ\^{e}te.
+\end{itemize}
+
+\subsection{Interfaces r\'{e}alis\'{e}es}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Tableau de bord mobile}\vspace{2cm}}}
+  \caption{\'{E}cran d'accueil de l'application mobile avec statistiques personnelles}
+  \label{fig:sprint7-mobile-dashboard}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Planning des s\'{e}ances sur mobile}\vspace{2cm}}}
+  \caption{Vue PlanningView du calendrier des s\'{e}ances sur mobile}
+  \label{fig:sprint7-mobile-sessions}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Profil membre sur mobile}\vspace{2cm}}}
+  \caption{\'{E}cran de profil avec informations et statut d'abonnement}
+  \label{fig:sprint7-mobile-profile}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Centre KPI}\vspace{2cm}}}
+  \caption{Centre KPI avec occupation en direct et analyse des heures de pointe}
+  \label{fig:sprint7-kpi-center}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Assistant IA}\vspace{2cm}}}
+  \caption{Interface de chat de l'assistant IA bas\'{e} sur le RAG}
+  \label{fig:sprint7-ai-chat}
+\end{figure}
+
+%──────────────────────────────────────────────
+\section{Conclusion}
+%──────────────────────────────────────────────
+
+Ce septi\`{e}me et dernier sprint a permis de compl\'{e}ter la plateforme TrustGym avec ses derni\`{e}res briques fonctionnelles. L'application mobile offre d\'{e}sormais aux adh\'{e}rents un acc\`{e}s complet \`{a} leurs informations, s\'{e}ances et analytiques personnelles. Le centre \acrshort{kpi} dote les administrateurs d'outils d'analyse avanc\'{e}s pour piloter l'activit\'{e} de la salle, tandis que l'assistant \acrshort{ai} bas\'{e} sur le \acrshort{rag} leur permet d'interroger la documentation de mani\`{e}re conversationnelle.
+
+Avec l'ach\`{e}vement de ce sprint, la plateforme TrustGym couvre d\'{e}sormais l'int\'{e}gralit\'{e} du p\'{e}rim\`{e}tre fonctionnel d\'{e}fini : gestion des membres et des abonnements, contr\^{o}le d'acc\`{e}s physique, gestion des coachs et des s\'{e}ances, boutique et gestion de stock, finance et facturation, application mobile, centre \acrshort{kpi} et assistant \acrshort{ai}. L'ensemble constitue une solution \acrshort{saas} compl\`{e}te et int\'{e}gr\'{e}e pour la gestion de salles de sport.
+
+\end{document}

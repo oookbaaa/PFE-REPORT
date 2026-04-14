@@ -1,0 +1,3696 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.13)  13 APR 2026 14:37
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./main.tex
+(main.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
+Document Class: report 2025/01/22 v1.4n Standard LaTeX document class
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count275
+\c@chapter=\count276
+\c@section=\count277
+\c@subsection=\count278
+\c@subsubsection=\count279
+\c@paragraph=\count280
+\c@subparagraph=\count281
+\c@figure=\count282
+\c@table=\count283
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen148
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/preprint\fullpage.st
+y
+Package: fullpage 1999/02/23 1.1 (PWD)
+\FP@margin=\skip51
+)
+   defining Unicode char U+0301 (decimal 769)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.st
+y
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip52
+\f@nch@offset@elh=\skip53
+\f@nch@offset@erh=\skip54
+\f@nch@offset@olh=\skip55
+\f@nch@offset@orh=\skip56
+\f@nch@offset@elf=\skip57
+\f@nch@offset@erf=\skip58
+\f@nch@offset@olf=\skip59
+\f@nch@offset@orf=\skip60
+\f@nch@height=\skip61
+\f@nch@footalignment=\skip62
+\f@nch@widthL=\skip63
+\f@nch@widthC=\skip64
+\f@nch@widthR=\skip65
+\@temptokenb=\toks19
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpage.st
+y
+Package: lastpage 2025/08/14 v2.1h lastpage: 2.09 or 2e? (HMM)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpage2e.
+sty
+Package: lastpage2e 2025/08/14 v2.1h Decide which 2e lastpage version to use (H
+MM)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpagemod
+ern.sty
+Package: lastpagemodern 2025-08-14 v2.1h Refers to last page's name (HMM; JPG)
+\c@lastpagecount=\count284
+) 
+))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
+Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
+\LTleft=\skip66
+\LTright=\skip67
+\LTpre=\skip68
+\LTpost=\skip69
+\LTchunksize=\count285
+\LTcapwidth=\dimen149
+\LT@head=\box53
+\LT@firsthead=\box54
+\LT@foot=\box55
+\LT@lastfoot=\box56
+\LT@gbox=\box57
+\LT@cols=\count286
+\LT@rows=\count287
+\c@LT@tables=\count288
+\c@LT@chunks=\count289
+\LT@p@ftn=\toks20
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.st
+y
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.st
+y
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+ (C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphic
+s.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.
+def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen150
+\Gin@req@width=\dimen151
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/wrapfig\wrapfig.sty
+\wrapoverhang=\dimen152
+\WF@size=\dimen153
+\c@WF@wrappedlines=\count290
+\WF@box=\box58
+\WF@everypar=\toks22
+Package: wrapfig 2003/01/31  v 3.6
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.s
+ty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen154
+\captionmargin=\dimen155
+\caption@leftmargin=\dimen156
+\caption@rightmargin=\dimen157
+\caption@width=\dimen158
+\caption@indent=\dimen159
+\caption@parindent=\dimen160
+\caption@hangindent=\dimen161
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count291
+\c@continuedfloat=\count292
+Package caption Info: longtable package is loaded.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcaption.st
+y
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+)
+Package caption Info: wrapfig package is loaded.
+)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count293
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count294
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.st
+y
+Package: setspace 2022/12/04 v6.7b set line spacing
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.st
+y
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen162
+\lightrulewidth=\dimen163
+\cmidrulewidth=\dimen164
+\belowrulesep=\dimen165
+\belowbottomsep=\dimen166
+\aboverulesep=\dimen167
+\abovetopsep=\dimen168
+\cmidrulesep=\dimen169
+\cmidrulekern=\dimen170
+\defaultaddspace=\dimen171
+\@cmidla=\count295
+\@cmidlb=\count296
+\@aboverulesep=\dimen172
+\@belowrulesep=\dimen173
+\@thisruleclass=\count297
+\@lastruleclass=\count298
+\@thisrulewidth=\dimen174
+) (C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjustbox.
+sty
+Package: adjustbox 2025/02/26 v1.3c Adjusting TeX boxes (trim, clip, ...)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.te
+x
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.t
+ex
+\XKV@toks=\toks23
+\XKV@tempa@toks=\toks24
+)
+\XKV@depth=\count299
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjcalc.st
+y
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\trimclip.s
+ty
+Package: trimclip 2025/02/21 v1.2a Trim and clip general TeX material
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/collectbox\collectbo
+x.sty
+Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
+\collectedbox=\box59
+)
+\tc@llx=\dimen175
+\tc@lly=\dimen176
+\tc@urx=\dimen177
+\tc@ury=\dimen178
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\tc-pdftex.
+def
+File: tc-pdftex.def 2025/02/26 v2.3 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen179
+\adjbox@Height=\dimen180
+\adjbox@Depth=\dimen181
+\adjbox@Totalheight=\dimen182
+\adjbox@pwidth=\dimen183
+\adjbox@pheight=\dimen184
+\adjbox@pdepth=\dimen185
+\adjbox@ptotalheight=\dimen186
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.
+sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count300
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/varwidth\varwidth.st
+y
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box60
+\sift@deathcycles=\count301
+\@vwid@loff=\dimen187
+\@vwid@roff=\dimen188
+)
+==> First Aid for varwidth.sty applied!
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/fourier\fourier.sty
+Package: fourier 2024/09/08 2.4 fourier-GUTenberg package
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+)
+Now handling font encoding FML ...
+... no UTF-8 mapping file for font encoding FML
+Now handling font encoding FMS ...
+... no UTF-8 mapping file for font encoding FMS
+Now handling font encoding FMX ...
+... no UTF-8 mapping file for font encoding FMX
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+futs on input line 1
+16.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/fourier\t1futs.fd
+File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
+))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
+Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/fourier\fourier-orns
+.sty
+Package: fourier-orns 2024/09/08 2.4 fourier-ornaments package
+)
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 64.
+LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
+(Font)              `operators' in the math version `normal' on input line 64.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> T1/futs/m/n on input line 64.
+LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
+(Font)              `operators' in the math version `bold' on input line 64.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> T1/futs/m/n on input line 64.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  T1/futs/m/n --> T1/futs/b/n on input line 65.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 73.
+LaTeX Font Info:    Encoding `OML' has changed to `FML' for symbol font
+(Font)              `letters' in the math version `normal' on input line 73.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> FML/futmi/m/it on input line 73.
+LaTeX Font Info:    Encoding `OML' has changed to `FML' for symbol font
+(Font)              `letters' in the math version `bold' on input line 73.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> FML/futmi/m/it on input line 73.
+\symotherletters=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  FML/futmi/m/it --> FML/futmi/b/it on input line 75.
+LaTeX Font Info:    Overwriting symbol font `otherletters' in version `bold'
+(Font)                  FML/futm/m/it --> FML/futm/b/it on input line 76.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 77.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 79.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 80.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 81.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 82.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 83.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 84.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 86.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 87.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 127.
+LaTeX Font Info:    Encoding `OMS' has changed to `FMS' for symbol font
+(Font)              `symbols' in the math version `normal' on input line 127.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> FMS/futm/m/n on input line 127.
+LaTeX Font Info:    Encoding `OMS' has changed to `FMS' for symbol font
+(Font)              `symbols' in the math version `bold' on input line 127.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> FMS/futm/m/n on input line 127.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 128.
+LaTeX Font Info:    Encoding `OMX' has changed to `FMX' for symbol font
+(Font)              `largesymbols' in the math version `normal' on input line 1
+28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> FMX/futm/m/n on input line 128.
+LaTeX Font Info:    Encoding `OMX' has changed to `FMX' for symbol font
+(Font)              `largesymbols' in the math version `bold' on input line 128
+.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> FMX/futm/m/n on input line 128.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 129.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> T1/futs/bx/n on input line 129.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> T1/futs/bx/n on input line 129.
+LaTeX Font Info:    Redeclaring math alphabet \mathrm on input line 130.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 131.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> T1/futs/m/it on input line 131.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> T1/futs/m/it on input line 131.
+LaTeX Font Info:    Redeclaring math alphabet \mathcal on input line 132.
+LaTeX Font Info:    Redeclaring math symbol \parallel on input line 148.
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 162.
+LaTeX Font Info:    Redeclaring math symbol \varkappa on input line 200.
+LaTeX Font Info:    Redeclaring math symbol \varvarrho on input line 201.
+LaTeX Font Info:    Redeclaring math delimiter \Vert on input line 224.
+LaTeX Font Info:    Redeclaring math delimiter \vert on input line 229.
+LaTeX Font Info:    Redeclaring math delimiter \Downarrow on input line 239.
+LaTeX Font Info:    Redeclaring math delimiter \backslash on input line 241.
+LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 243.
+LaTeX Font Info:    Redeclaring math delimiter \langle on input line 245.
+LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 247.
+LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 249.
+LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 251.
+LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 253.
+LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 255.
+LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 257.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 261.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 262.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 263.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 264.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 265.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 266.
+LaTeX Font Info:    Redeclaring math accent \check on input line 267.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 268.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 269.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 270.
+\symUfutm=\mathgroup5
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.
+sty
+Package: microtype 2026/03/01 v3.2d Micro-typographical refinements (RS)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.st
+y
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count302
+)
+\MT@toks=\toks25
+\MT@tempbox=\box61
+\MT@count=\count303
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1084.
+LaTeX Info: Redefining \leftprotrusion on input line 1085.
+\MT@prot@toks=\toks26
+LaTeX Info: Redefining \rightprotrusion on input line 1104.
+LaTeX Info: Redefining \textls on input line 1449.
+\MT@outer@kern=\dimen189
+LaTeX Info: Redefining \microtypecontext on input line 2053.
+LaTeX Info: Redefining \textmicrotypecontext on input line 2070.
+\MT@listname@count=\count304
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype-
+pdftex.def
+File: microtype-pdftex.def 2026/03/01 v3.2d Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 944.
+LaTeX Info: Redefining \lslig on input line 944.
+\MT@outer@space=\skip70
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.
+cfg
+File: microtype.cfg 2026/03/01 v3.2d microtype main configuration file (RS)
+)
+LaTeX Info: Redefining \microtypesetup on input line 3065.
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2025/07/09 v2.17z AMS math features
+\@mathmargin=\skip71
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks27
+\ex@=\dimen190
+)) (C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.st
+y
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen191
+) (C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count305
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count306
+\leftroot@=\count307
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count308
+\DOTSCASE@=\count309
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box62
+\strutbox@=\box63
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen192
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count310
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count311
+\dotsspace@=\muskip17
+\c@parentequation=\count312
+\dspbrk@lvl=\count313
+\tag@help=\toks28
+\row@=\count314
+\column@=\count315
+\maxfields@=\count316
+\andhelp@=\toks29
+\eqnshift@=\dimen193
+\alignsep@=\dimen194
+\tagshift@=\dimen195
+\tagwidth@=\dimen196
+\totwidth@=\dimen197
+\lineht@=\dimen198
+\@envbody=\toks30
+\multlinegap=\skip72
+\multlinetaggap=\skip73
+\mathdisplay@stack=\toks31
+LaTeX Info: Redefining \[ on input line 2950.
+LaTeX Info: Redefining \] on input line 2951.
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.st
+y
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup6
+\symAMSb=\mathgroup7
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+LaTeX Font Info:    Redeclaring math symbol \square on input line 141.
+)
+LaTeX Font Info:    Redeclaring math symbol \blacksquare on input line 48.
+LaTeX Font Info:    Redeclaring math symbol \vDash on input line 60.
+LaTeX Font Info:    Redeclaring math symbol \leftleftarrows on input line 63.
+LaTeX Font Info:    Redeclaring math symbol \rightrightarrows on input line 64.
+
+LaTeX Font Info:    Redeclaring math symbol \leqslant on input line 101.
+LaTeX Font Info:    Redeclaring math symbol \geqslant on input line 108.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleright on input line 1
+20.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleleft on input line 12
+1.
+LaTeX Font Info:    Redeclaring math symbol \complement on input line 165.
+LaTeX Font Info:    Redeclaring math symbol \intercal on input line 166.
+LaTeX Font Info:    Redeclaring math symbol \nleqslant on input line 181.
+LaTeX Font Info:    Redeclaring math symbol \ngeqslant on input line 182.
+LaTeX Font Info:    Redeclaring math symbol \varsubsetneq on input line 203.
+LaTeX Font Info:    Redeclaring math symbol \subsetneqq on input line 207.
+LaTeX Font Info:    Redeclaring math symbol \nparallel on input line 215.
+LaTeX Font Info:    Redeclaring math symbol \nvDash on input line 221.
+LaTeX Font Info:    Redeclaring math symbol \nexists on input line 235.
+LaTeX Font Info:    Redeclaring math symbol \smallsetminus on input line 251.
+LaTeX Font Info:    Redeclaring math symbol \curvearrowleft on input line 257.
+LaTeX Font Info:    Redeclaring math symbol \curvearrowright on input line 258.
+
+LaTeX Font Info:    Redeclaring math symbol \varkappa on input line 260.
+LaTeX Font Info:    Redeclaring math symbol \hslash on input line 262.
+) (C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count317
+\float@exts=\toks32
+\float@box=\box64
+\@float@everytoks=\toks33
+\@floatcapt=\box65
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/todonotes\todonotes.
+sty
+Package: todonotes 2024/01/05 v1.1.7 Todonotes source and documentation.
+Package: todonotes 2024/01/05
+ (C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+) (C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.c
+fg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.l
+tx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\ti
+kz.sty
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.s
+ty
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs
+.sty
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfu
+til-common.tex
+\pgfutil@everybye=\toks34
+\pgfutil@tempdima=\dimen199
+\pgfutil@tempdimb=\dimen256
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfu
+til-latex.def
+\pgfutil@abb=\box66
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfr
+cs.code.tex
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.t
+ex)
+Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
+))
+Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfco
+re.sty
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfs
+ys.sty
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
+fsys.code.tex
+Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfk
+eys.code.tex
+\pgfkeys@pathtoks=\toks35
+\pgfkeys@temptoks=\toks36
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfk
+eyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks37
+))
+\pgf@x=\dimen257
+\pgf@y=\dimen258
+\pgf@xa=\dimen259
+\pgf@ya=\dimen260
+\pgf@xb=\dimen261
+\pgf@yb=\dimen262
+\pgf@xc=\dimen263
+\pgf@yc=\dimen264
+\pgf@xd=\dimen265
+\pgf@yd=\dimen266
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count318
+\c@pgf@countb=\count319
+\c@pgf@countc=\count320
+\c@pgf@countd=\count321
+\t@pgf@toka=\toks38
+\t@pgf@tokb=\toks39
+\t@pgf@tokc=\toks40
+\pgf@sys@id@count=\count322
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
+f.cfg
+File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
+fsys-pdftex.def
+File: pgfsys-pdftex.def 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
+fsys-common-pdf.def
+File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
+fsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfsyssoftpath@smallbuffer@items=\count323
+\pgfsyssoftpath@bigbuffer@items=\count324
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
+fsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+core.code.tex
+Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.c
+ode.tex
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathut
+il.code.tex)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathpa
+rser.code.tex
+\pgfmath@dimen=\dimen267
+\pgfmath@count=\count325
+\pgfmath@box=\box67
+\pgfmath@toks=\toks41
+\pgfmath@stack@operand=\toks42
+\pgfmath@stack@operation=\toks43
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.code.tex)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.basic.code.tex)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.trigonometric.code.tex)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.random.code.tex)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.comparison.code.tex)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.base.code.tex)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.round.code.tex)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.misc.code.tex)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.integerarithmetics.code.tex)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathca
+lc.code.tex)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfl
+oat.code.tex
+\c@pgfmathroundto@lastzeros=\count326
+))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.co
+de.tex)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corepoints.code.tex
+File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@picminx=\dimen268
+\pgf@picmaxx=\dimen269
+\pgf@picminy=\dimen270
+\pgf@picmaxy=\dimen271
+\pgf@pathminx=\dimen272
+\pgf@pathmaxx=\dimen273
+\pgf@pathminy=\dimen274
+\pgf@pathmaxy=\dimen275
+\pgf@xx=\dimen276
+\pgf@xy=\dimen277
+\pgf@yx=\dimen278
+\pgf@yy=\dimen279
+\pgf@zx=\dimen280
+\pgf@zy=\dimen281
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@path@lastx=\dimen282
+\pgf@path@lasty=\dimen283
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corepathusage.code.tex
+File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@shorten@end@additional=\dimen284
+\pgf@shorten@start@additional=\dimen285
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corescopes.code.tex
+File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfpic=\box68
+\pgf@hbox=\box69
+\pgf@layerbox@main=\box70
+\pgf@picture@serial@count=\count327
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+coregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgflinewidth=\dimen286
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+coretransformations.code.tex
+File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@pt@x=\dimen287
+\pgf@pt@y=\dimen288
+\pgf@pt@temp=\dimen289
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corequick.code.tex
+File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+coreobjects.code.tex
+File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corearrows.code.tex
+File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowsep=\dimen290
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+coreshade.code.tex
+File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@max=\dimen291
+\pgf@sys@shading@range@num=\count328
+\pgf@shadingcount=\count329
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+coreimage.code.tex
+File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+coreexternal.code.tex
+File: pgfcoreexternal.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfexternal@startupbox=\box71
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corelayers.code.tex
+File: pgfcorelayers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+coretransparency.code.tex
+File: pgfcoretransparency.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corepatterns.code.tex
+File: pgfcorepatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corerdf.code.tex
+File: pgfcorerdf.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmod
+uleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfnodeparttextbox=\box72
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmod
+uleplot.code.tex
+File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pg
+fcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@nodesepstart=\dimen292
+\pgf@nodesepend=\dimen293
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pg
+fcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
+))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor
+.sty
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkey
+s.sty
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfk
+eys.code.tex))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.c
+ode.tex))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgff
+or.code.tex
+Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
+\pgffor@iter=\dimen294
+\pgffor@skip=\dimen295
+\pgffor@stack=\toks44
+\pgffor@toks=\toks45
+))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz\tikz.code.tex
+Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgfl
+ibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@plot@mark@count=\count330
+\pgfplotmarksize=\dimen296
+)
+\tikz@lastx=\dimen297
+\tikz@lasty=\dimen298
+\tikz@lastxsaved=\dimen299
+\tikz@lastysaved=\dimen300
+\tikz@lastmovetox=\dimen301
+\tikz@lastmovetoy=\dimen302
+\tikzleveldistance=\dimen303
+\tikzsiblingdistance=\dimen304
+\tikz@figbox=\box73
+\tikz@figbox@bg=\box74
+\tikz@tempbox=\box75
+\tikz@tempbox@bg=\box76
+\tikztreelevel=\count331
+\tikznumberofchildren=\count332
+\tikznumberofcurrentchild=\count333
+\tikz@fig@count=\count334
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmod
+ulematrix.code.tex
+File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfmatrixcurrentrow=\count335
+\pgfmatrixcurrentcolumn=\count336
+\pgf@matrix@numberofcolumns=\count337
+)
+\tikz@expandcount=\count338
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count339
+\calc@Bcount=\count340
+\calc@Adimen=\dimen305
+\calc@Bdimen=\dimen306
+\calc@Askip=\skip74
+\calc@Bskip=\skip75
+LaTeX Info: Redefining \setlength on input line 86.
+LaTeX Info: Redefining \addtolength on input line 87.
+\calc@Ccount=\count341
+\calc@Cskip=\skip76
+)
+\c@@todonotes@numberoftodonotes=\count342
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.st
+y
+Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.
+sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdef
+inekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescap
+e.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.st
+y
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexc
+mds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarer
+r.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.st
+y
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\get
+titlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.
+sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count343
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringen
+c.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\@linkdim=\dimen307
+\Hy@linkcounter=\count344
+\Hy@pagecounter=\count345
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.st
+y
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count346
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 4066.
+Package hyperref Info: Hyper figures OFF on input line 4195.
+Package hyperref Info: Link nesting OFF on input line 4200.
+Package hyperref Info: Hyper index ON on input line 4203.
+Package hyperref Info: Plain pages OFF on input line 4210.
+Package hyperref Info: Backreferencing OFF on input line 4215.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4462.
+\c@Hy@tempcnt=\count347
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4801.
+\XeTeXLinkMargin=\dimen308
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintc
+alc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count348
+\Field@Width=\dimen309
+\Fld@charsize=\dimen310
+Package hyperref Info: Hyper figures OFF on input line 6078.
+Package hyperref Info: Link nesting OFF on input line 6083.
+Package hyperref Info: Hyper index ON on input line 6086.
+Package hyperref Info: backreferencing OFF on input line 6093.
+Package hyperref Info: Link coloring ON on input line 6096.
+Package hyperref Info: Link coloring with OCG OFF on input line 6103.
+Package hyperref Info: PDF/A mode OFF on input line 6108.
+\Hy@abspage=\count349
+\c@Item=\count350
+\c@Hfootnote=\count351
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
+\Fld@listcount=\count352
+\c@bookmark@seq@number=\count353
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerun
+filecheck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniq
+uecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+84.
+)
+\Hy@SectionHShift=\skip77
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.st
+y
+Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
+ (C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count354
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+\c@tabx@nest=\count355
+\c@listtotal=\count356
+\c@listcount=\count357
+\c@liststart=\count358
+\c@liststop=\count359
+\c@citecount=\count360
+\c@citetotal=\count361
+\c@multicitecount=\count362
+\c@multicitetotal=\count363
+\c@instcount=\count364
+\c@maxnames=\count365
+\c@minnames=\count366
+\c@maxitems=\count367
+\c@minitems=\count368
+\c@citecounter=\count369
+\c@maxcitecounter=\count370
+\c@savedcitecounter=\count371
+\c@uniquelist=\count372
+\c@uniquename=\count373
+\c@refsection=\count374
+\c@refsegment=\count375
+\c@maxextratitle=\count376
+\c@maxextratitleyear=\count377
+\c@maxextraname=\count378
+\c@maxextradate=\count379
+\c@maxextraalpha=\count380
+\c@abbrvpenalty=\count381
+\c@highnamepenalty=\count382
+\c@lownamepenalty=\count383
+\c@maxparens=\count384
+\c@parenlevel=\count385
+\blx@tempcnta=\count386
+\blx@tempcntb=\count387
+\blx@tempcntc=\count388
+\c@blx@maxsection=\count389
+\blx@maxsegment@0=\count390
+\blx@notetype=\count391
+\blx@parenlevel@text=\count392
+\blx@parenlevel@foot=\count393
+\blx@sectionciteorder@0=\count394
+\blx@sectionciteorderinternal@0=\count395
+\blx@entrysetcounter=\count396
+\blx@biblioinstance=\count397
+\labelnumberwidth=\skip78
+\labelalphawidth=\skip79
+\biblabelsep=\skip80
+\bibitemsep=\skip81
+\bibnamesep=\skip82
+\bibinitsep=\skip83
+\bibparsep=\skip84
+\bibhang=\skip85
+\blx@bcfin=\read3
+\blx@bcfout=\write4
+\blx@langwohyphens=\language79
+\c@mincomprange=\count398
+\c@maxcomprange=\count399
+\c@mincompwidth=\count400
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
+File: blx-dm.def 2025/07/10 v3.21 biblatex datamodel (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count401
+\c@savedafterword=\count402
+\c@annotator=\count403
+\c@savedannotator=\count404
+\c@author=\count405
+\c@savedauthor=\count406
+\c@bookauthor=\count407
+\c@savedbookauthor=\count408
+\c@commentator=\count409
+\c@savedcommentator=\count410
+\c@editor=\count411
+\c@savededitor=\count412
+\c@editora=\count413
+\c@savededitora=\count414
+\c@editorb=\count415
+\c@savededitorb=\count416
+\c@editorc=\count417
+\c@savededitorc=\count418
+\c@foreword=\count419
+\c@savedforeword=\count420
+\c@holder=\count421
+\c@savedholder=\count422
+\c@introduction=\count423
+\c@savedintroduction=\count424
+\c@namea=\count425
+\c@savednamea=\count426
+\c@nameb=\count427
+\c@savednameb=\count428
+\c@namec=\count429
+\c@savednamec=\count430
+\c@translator=\count431
+\c@savedtranslator=\count432
+\c@shortauthor=\count433
+\c@savedshortauthor=\count434
+\c@shorteditor=\count435
+\c@savedshorteditor=\count436
+\c@labelname=\count437
+\c@savedlabelname=\count438
+\c@institution=\count439
+\c@savedinstitution=\count440
+\c@lista=\count441
+\c@savedlista=\count442
+\c@listb=\count443
+\c@savedlistb=\count444
+\c@listc=\count445
+\c@savedlistc=\count446
+\c@listd=\count447
+\c@savedlistd=\count448
+\c@liste=\count449
+\c@savedliste=\count450
+\c@listf=\count451
+\c@savedlistf=\count452
+\c@location=\count453
+\c@savedlocation=\count454
+\c@organization=\count455
+\c@savedorganization=\count456
+\c@origlocation=\count457
+\c@savedoriglocation=\count458
+\c@origpublisher=\count459
+\c@savedorigpublisher=\count460
+\c@publisher=\count461
+\c@savedpublisher=\count462
+\c@language=\count463
+\c@savedlanguage=\count464
+\c@origlanguage=\count465
+\c@savedoriglanguage=\count466
+\c@pageref=\count467
+\c@savedpageref=\count468
+\shorthandwidth=\skip86
+\shortjournalwidth=\skip87
+\shortserieswidth=\skip88
+\shorttitlewidth=\skip89
+\shortauthorwidth=\skip90
+\shorteditorwidth=\skip91
+\locallabelnumberwidth=\skip92
+\locallabelalphawidth=\skip93
+\localshorthandwidth=\skip94
+\localshortjournalwidth=\skip95
+\localshortserieswidth=\skip96
+\localshorttitlewidth=\skip97
+\localshortauthorwidth=\skip98
+\localshorteditorwidth=\skip99
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.
+def
+File: blx-compat.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.de
+f
+File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
+\c@textcitecount=\count469
+\c@textcitetotal=\count470
+\c@textcitemaxnames=\count471
+\c@biburlbigbreakpenalty=\count472
+\c@biburlbreakpenalty=\count473
+\c@biburlnumpenalty=\count474
+\c@biburlucpenalty=\count475
+\c@biburllcpenalty=\count476
+\biburlbigskip=\muskip19
+\biburlnumskip=\muskip20
+\biburlucskip=\muskip21
+\biburllcskip=\muskip22
+\c@smartand=\count477
+)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric
+.bbx
+File: numeric.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standar
+d.bbx
+File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count478
+\c@bbx:relatedtotal=\count479
+))
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric
+.cbx
+File: numeric.cbx 2025/07/10 v3.21 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cf
+g
+File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2025-12-24 L3 programming layer (loader) 
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-
+pdftex.def
+File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count480
+))
+Package biblatex Info: ... and expl3
+(biblatex)             2025-12-24 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-ex
+pl3.sty
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xp
+arse.sty
+Package: xparse 2025-10-09 L3 Experimental document command parser
+)
+Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
+))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2025/12/11 v25.17 The multilingual framework for LuaLaTeX, pdfLa
+TeX and XeLaTeX
+\babel@savecnt=\count481
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
+ne 2068.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
+ne 2070.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input lin
+e 2072.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input lin
+e 2073.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) 
+on input line 2074.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) 
+on input line 2076.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
+on input line 2101.
+\U@D=\dimen311
+\l@unhyphenated=\language80
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def
+)
+\bbl@readstream=\read4
+\bbl@dirlevel=\count482
+Package babel Info: Configuration files are deprecated, as
+(babel)             they can break document portability.
+(babel)             Reported on input line 4196.
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/fr\ba
+bel-french.tex)
+Package babel Info: Importing font and identification data for french
+(babel)             from babel-fr.ini. Reported on input line 4320.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/babel-french\frenc
+h.ldf
+Language: french 2025-08-15 v4.0e French support from the babel system
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/babel-french\frenc
+h3.ldf
+Language: french 2025-08-15 v3.7e French support from the babel system
+\FB@stdchar=\count483
+Package babel Info: Making : an active character on input line 273.
+Package babel Info: Making ; an active character on input line 274.
+Package babel Info: Making ! an active character on input line 275.
+Package babel Info: Making ? an active character on input line 276.
+\FBguill@level=\count484
+\FBold@everypar=\toks46
+\FB@Mht=\dimen312
+\mc@charclass=\count485
+\mc@charfam=\count486
+\mc@charslot=\count487
+\std@mcc=\count488
+\dec@mcc=\count489
+\FB@pardim=\dimen313
+\listindentFB=\dimen314
+\descindentFB=\dimen315
+\labelindentFB=\dimen316
+\labelwidthFB=\dimen317
+\leftmarginFB=\dimen318
+\parindentFFN=\dimen319
+\FBfnindent=\dimen320
+)))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/carlisle\scalefnt.st
+y)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.st
+y
+Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
+\csq@reset=\count490
+\csq@gtype=\count491
+\csq@glevel=\count492
+\csq@qlevel=\count493
+\csq@maxlvl=\count494
+\csq@tshold=\count495
+\csq@ltx@everypar=\toks47
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.de
+f
+File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.cf
+g
+File: csquotes.cfg 
+))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.st
+y
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip100
+\multirow@cntb=\count496
+\multirow@dima=\skip101
+\bigstrutjot=\dimen321
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pdfpages.st
+y
+Package: pdfpages 2026/03/30 v0.6h Insert pages of external PDF documents (AM)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
+Package: eso-pic 2025/12/10 v3.0d eso-pic (RN)
+\ESO@tempdima=\dimen322
+\ESO@tempdimb=\dimen323
+)
+\AM@pagewidth=\dimen324
+\AM@pageheight=\dimen325
+\AM@fboxrule=\dimen326
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pppdftex.de
+f
+File: pppdftex.def 2026/03/30 v0.6h Pdfpages driver for pdfTeX (AM)
+)
+\pdfpages@includegraphics@status=\count497
+\AM@pagebox=\box77
+\AM@global@opts=\toks48
+\AM@pagecnt=\count498
+\AM@toc@title=\toks49
+\AM@lof@heading=\toks50
+\c@AM@survey=\count499
+\AM@templatesizebox=\box78
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/outlines\outlines.st
+y
+Package: outlines 2012/1/23 1.1 Ch. Pecheur
+) (C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\pifont.sty
+Package: pifont 2020/03/25 PSNFSS-v9.3 Pi font support (SPQR) 
+LaTeX Font Info:    Trying to load font information for U+pzd on input line 63.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
+
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/pagecolor\pagecolor.
+sty
+Package: pagecolor 2025-01-28 v1.2d Provides thepagecolor (HMM)
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shap
+es\pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shap
+es\pgflibraryshapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shap
+es\pgflibraryshapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shap
+es\pgflibraryshapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibraryshapes.callouts.code.tex
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shap
+es\pgflibraryshapes.callouts.code.tex))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shap
+es\pgflibraryshapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfnodepartlowerbox=\box79
+\pgfnodeparttwobox=\box80
+\pgfnodepartthreebox=\box81
+\pgfnodepartfourbox=\box82
+\pgfnodeparttwentybox=\box83
+\pgfnodepartnineteenbox=\box84
+\pgfnodeparteighteenbox=\box85
+\pgfnodepartseventeenbox=\box86
+\pgfnodepartsixteenbox=\box87
+\pgfnodepartfifteenbox=\box88
+\pgfnodepartfourteenbox=\box89
+\pgfnodepartthirteenbox=\box90
+\pgfnodeparttwelvebox=\box91
+\pgfnodepartelevenbox=\box92
+\pgfnodeparttenbox=\box93
+\pgfnodepartninebox=\box94
+\pgfnodeparteightbox=\box95
+\pgfnodepartsevenbox=\box96
+\pgfnodepartsixbox=\box97
+\pgfnodepartfivebox=\box98
+)))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgfl
+ibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowinset=\dimen327
+\pgfarrowlength=\dimen328
+\pgfarrowwidth=\dimen329
+\pgfarrowlinewidth=\dimen330
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibraryfit.code.tex
+File: tikzlibraryfit.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibrarydecorations.markings.code.tex
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibrarydecorations.code.tex
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmod
+uledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen331
+\pgfdecoratedremainingdistance=\dimen332
+\pgfdecoratedinputsegmentcompleteddistance=\dimen333
+\pgfdecoratedinputsegmentremainingdistance=\dimen334
+\pgf@decorate@distancetomove=\dimen335
+\pgf@decorate@repeatstate=\count500
+\pgfdecorationsegmentamplitude=\dimen336
+\pgfdecorationsegmentlength=\dimen337
+)
+\tikz@lib@dec@box=\box99
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/deco
+rations\pgflibrarydecorations.markings.code.tex))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.st
+y
+Package: geometry 2026/03/07 v6.0 Page Geometry
+ (C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count501
+\Gm@cntv=\count502
+\c@Gm@tempcnt=\count503
+\Gm@bindingoffset=\dimen338
+\Gm@wd@mp=\dimen339
+\Gm@odd@mp=\dimen340
+\Gm@even@mp=\dimen341
+\Gm@layoutwidth=\dimen342
+\Gm@layoutheight=\dimen343
+\Gm@layouthoffset=\dimen344
+\Gm@layoutvoffset=\dimen345
+\Gm@dimlist=\toks51
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cf
+g))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/subfiles\subfiles.st
+y
+Package: subfiles 2020/11/14 v2.2 Multi-file projects (package)
+ (C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/import\import.sty
+Package: import 2020/04/01  v 6.2
+))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/glossaries/base\glos
+saries.sty
+Package: glossaries 2026/03/06 v5.0 (NLCT)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/mfirstuc\mfirstuc.st
+y
+Package: mfirstuc 2025/04/03 v2.09 (NLCT)
+\@glsmfirst=\toks52
+\@glsmrest=\toks53
+) (C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/xfor\xfor.sty
+Package: xfor 2009/02/05 v1.05 (NLCT)
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/tracklang\tracklang.
+sty
+Package: tracklang 2025/03/11 v1.6.6 (NLCT) Track Languages
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/generic/tracklang\tracklan
+g.tex)
+Package tracklang Info: Tracking dialect `french' (language `french') on input 
+line 264.
+Package tracklang Info: Tracking dialect `french' (language `french') on input 
+line 264.
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/translator\translato
+r.sty
+Package: translator 2021-05-31 v1.12d Easy translation of strings in LaTeX
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/glossaries-french\gl
+ossaries-french.ldf
+File: glossaries-french.ldf 2016/12/12 v1.1
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/datatool\datatool-ba
+se.sty
+Package: datatool-base 2025/12/04 v3.4.3 (NLCT)
+\l__datatool_tmpa_int=\count504
+\l__datatool_tmpb_int=\count505
+\l__datatool_tmpc_int=\count506
+\l__datatool_tmpd_int=\count507
+\l__datatool_count_int=\count508
+\l__datatool_tmp_datatype_int=\count509
+\l__datatool_tmpa_dim=\dimen346
+\l__datatool_tmpb_dim=\dimen347
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/datatool\datatool-l3
+fp.def
+File: datatool-l3fp.def 2025/12/04 v3.4.3 (NLCT)
+)
+\@dtl@toks=\toks54
+\@dtl@tmpcount=\count510
+\dtl@tmplength=\skip102
+\l__datatool_measure_box=\box100
+\dtl@sortresult=\count511
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/datatool\datatool-ut
+f8.ldf
+File: datatool-utf8.ldf 2025/12/04 v3.4.3 (NLCT)
+)
+\@dtl@datatype=\count512
+\c_datatool_unknown_int=\count513
+\l__datatool_year_int=\count514
+\l__datatool_month_int=\count515
+\l__datatool_day_int=\count516
+\l__datatool_hour_int=\count517
+\l__datatool_minute_int=\count518
+\l__datatool_second_int=\count519
+\l__datatool_tzhour_int=\count520
+\l__datatool_tzminute_int=\count521
+\l__datatool_julian_int=\count522
+\l__datatool_local_julian_int=\count523
+\l__datatool_prefix_int=\count524
+\l__datatool_suffix_int=\count525
+\@dtl@foreach@level=\count526
+
+
+Package tracklang Warning: No `datatool' support for dialect `french'  on input
+ line 9924.
+
+\dtl@codeA=\count527
+\dtl@codeB=\count528
+)
+\gls@level=\count529
+\@gls@tmpb=\toks55
+\gls@tmplen=\skip103
+\l__glossaries_tmpa_dim=\dimen348
+\l__glossaries_tmpb_dim=\dimen349
+\glskeylisttok=\toks56
+\glslabeltok=\toks57
+\glsshorttok=\toks58
+\glslongtok=\toks59
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/glossaries/styles\gl
+ossary-hypernav.sty
+Package: glossary-hypernav 2026/03/06 v5.0 (NLCT)
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/glossaries/styles\gl
+ossary-list.sty
+Package: glossary-list 2026/03/06 v5.0 (NLCT)
+\glslistdottedwidth=\skip104
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/glossaries/styles\gl
+ossary-long.sty
+Package: glossary-long 2026/03/06 v5.0 (NLCT)
+\glsdescwidth=\skip105
+\glspagelistwidth=\skip106
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/glossaries/styles\gl
+ossary-super.sty
+Package: glossary-super 2026/03/06 v5.0 (NLCT)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/supertabular\superta
+bular.sty
+Package: supertabular 2025/06/26 v4.2d the supertabular environment
+\c@tracingst=\count530
+\ST@wd=\dimen350
+\ST@rightskip=\skip107
+\ST@leftskip=\skip108
+\ST@parfillskip=\skip109
+\ST@pageleft=\dimen351
+\ST@headht=\dimen352
+\ST@tailht=\dimen353
+\ST@pagesofar=\dimen354
+\ST@pboxht=\dimen355
+\ST@rowht=\dimen356
+\ST@prevht=\dimen357
+\ST@toadd=\dimen358
+\ST@dimen=\dimen359
+\ST@pbox=\box101
+))
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/glossaries/styles\gl
+ossary-tree.sty
+Package: glossary-tree 2026/03/06 v5.0 (NLCT)
+\l__glossaries_tree_max_known_level_int=\count531
+\l__glossaries_tree_offset_dim=\dimen360
+\l__glossaries_tree_namewidth_dim=\dimen361
+\l__glossaries_tree_symbolwidth_dim=\dimen362
+\l__glossaries_tree_prenamesym_width_dim=\dimen363
+\l__glossaries_tree_presubnamesym_width_dim=\dimen364
+\l__glossaries_tree_namewidth_padding_dim=\dimen365
+\l__glossaries_tree_symbolwidth_padding_dim=\dimen366
+\l__glossaries_tree_namesymbolwidth_dim=\dimen367
+\l__glossaries_tree_namesymbolwidth_padding_dim=\dimen368
+\l__glossaries_tree_level_int=\count532
+\glstreeindent=\skip110
+))
+\glswrite=\write5
+\glo@main@file=\write6
+\openout6 = `main.glo'.
+
+Package glossaries Info: Writing glossary file main.glo on input line 119.
+\glo@acronym@file=\write7
+\openout7 = `main.acn'.
+
+Package glossaries Info: Writing glossary file main.acn on input line 119.
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'french'.
+ (main.aux
+Package babel Info: 'french' activates 'french' shorthands.
+(babel)             Reported on input line 20.
+)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 173.
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 173.
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 173.
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 173.
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 173.
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 173.
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 173.
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 173.
+LaTeX Font Info:    Trying to load font information for FML+futm on input line 
+173.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/fourier\fmlfutm.fd
+File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
+)
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 173.
+LaTeX Font Info:    Trying to load font information for FMS+futm on input line 
+173.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/fourier\fmsfutm.fd
+File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
+)
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 173.
+LaTeX Font Info:    Trying to load font information for FMX+futm on input line 
+173.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/fourier\fmxfutm.fd
+File: fmxfutm.fd futm-extension
+)
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 173.
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 173.
+LaTeX Font Info:    ... okay on input line 173.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf
+.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count533
+\scratchdimen=\dimen369
+\scratchbox=\box102
+\nofMPsegments=\count534
+\nofMParguments=\count535
+\everyMPshowfont=\toks60
+\MPscratchCnt=\count536
+\MPscratchDim=\dimen370
+\MPnumerator=\count537
+\makeMPintoPDFobject=\count538
+\everyMPtoPDFconversion=\toks61
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopd
+f-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sy
+s.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: french babel package is loaded.
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: supertabular package is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 173.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 173.
+Package microtype Info: Patching varwidth to enable character protrusion.
+\MT@vwid@leftmargin=\dimen371
+\MT@vwid@rightmargin=\dimen372
+LaTeX Info: Redefining \microtypecontext on input line 173.
+Package microtype Info: Applying patch `item' on input line 173.
+Package microtype Info: Applying patch `toc' on input line 173.
+Package microtype Info: Applying patch `eqnum' on input line 173.
+Package microtype Info: Applying patch `footnote' on input line 173.
+Package microtype Info: Applying patch `verbatim' on input line 173.
+LaTeX Info: Redefining \microtypesetup on input line 173.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `alltext-nott'.
+Package microtype Info: Patching command `\showhyphens'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `futs' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+Package hyperref Info: Link coloring ON on input line 173.
+ (main.out) (main.out)
+\@outlinefile=\write8
+\openout8 = `main.out'.
+
+Package biblatex Info: Trying to load language 'french'...
+Package biblatex Info: ... file 'french.lbx' found.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\french.
+lbx
+File: french.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout4 = `main.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' not found.
+
+No file main.bbl.
+Package biblatex Info: Reference section=0 on input line 173.
+Package biblatex Info: Reference segment=0 on input line 173.
+LaTeX Info: Redefining \degres on input line 173.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.
+sty
+Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape-
+nometadata.sty
+Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PD
+F (HO)
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=702.78308pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-38.1381pt
+* \headheight=15.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=56.9055pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+<pdf/front_cover.pdf, id=785, 597.73312pt x 845.40843pt>
+File: pdf/front_cover.pdf Graphic file (type pdf)
+<use pdf/front_cover.pdf>
+Package pdftex.def Info: pdf/front_cover.pdf  used on input line 179.
+(pdftex.def)             Requested size: 597.73166pt x 845.40636pt.
+<pdf/front_cover.pdf, id=787, page=1, 597.73312pt x 845.40843pt>
+File: pdf/front_cover.pdf Graphic file (type pdf)
+<use pdf/front_cover.pdf, page 1>
+Package pdftex.def Info: pdf/front_cover.pdf , page1 used on input line 179.
+(pdftex.def)             Requested size: 597.73166pt x 845.40636pt.
+File: pdf/front_cover.pdf Graphic file (type pdf)
+<use pdf/front_cover.pdf, page 1>
+Package pdftex.def Info: pdf/front_cover.pdf , page1 used on input line 179.
+(pdftex.def)             Requested size: 598.01439pt x 845.80624pt.
+File: pdf/front_cover.pdf Graphic file (type pdf)
+<use pdf/front_cover.pdf, page 1>
+Package pdftex.def Info: pdf/front_cover.pdf , page1 used on input line 179.
+(pdftex.def)             Requested size: 598.01439pt x 845.80624pt.
+File: pdf/front_cover.pdf Graphic file (type pdf)
+<use pdf/front_cover.pdf, page 1>
+Package pdftex.def Info: pdf/front_cover.pdf , page1 used on input line 179.
+(pdftex.def)             Requested size: 598.01439pt x 845.80624pt.
+File: pdf/front_cover.pdf Graphic file (type pdf)
+<use pdf/front_cover.pdf, page 1>
+Package pdftex.def Info: pdf/front_cover.pdf , page1 used on input line 179.
+(pdftex.def)             Requested size: 598.01439pt x 845.80624pt.
+[0
+
+\openout5 = `main.ist'.
+
+
+
+ <./pdf/front_cover.pdf>]
+<pdf/signature_cover.pdf, id=818, 597.73312pt x 845.40843pt>
+File: pdf/signature_cover.pdf Graphic file (type pdf)
+<use pdf/signature_cover.pdf>
+Package pdftex.def Info: pdf/signature_cover.pdf  used on input line 185.
+(pdftex.def)             Requested size: 597.73166pt x 845.40636pt.
+<pdf/signature_cover.pdf, id=820, page=1, 597.73312pt x 845.40843pt>
+File: pdf/signature_cover.pdf Graphic file (type pdf)
+<use pdf/signature_cover.pdf, page 1>
+Package pdftex.def Info: pdf/signature_cover.pdf , page1 used on input line 185
+.
+(pdftex.def)             Requested size: 597.73166pt x 845.40636pt.
+File: pdf/signature_cover.pdf Graphic file (type pdf)
+<use pdf/signature_cover.pdf, page 1>
+Package pdftex.def Info: pdf/signature_cover.pdf , page1 used on input line 185
+.
+(pdftex.def)             Requested size: 598.01439pt x 845.80624pt.
+File: pdf/signature_cover.pdf Graphic file (type pdf)
+<use pdf/signature_cover.pdf, page 1>
+Package pdftex.def Info: pdf/signature_cover.pdf , page1 used on input line 185
+.
+(pdftex.def)             Requested size: 598.01439pt x 845.80624pt.
+File: pdf/signature_cover.pdf Graphic file (type pdf)
+<use pdf/signature_cover.pdf, page 1>
+Package pdftex.def Info: pdf/signature_cover.pdf , page1 used on input line 185
+.
+(pdftex.def)             Requested size: 598.01439pt x 845.80624pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.0}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.185 ..., fitpaper=true]{pdf/signature_cover.pdf}
+                                                  
+File: pdf/signature_cover.pdf Graphic file (type pdf)
+<use pdf/signature_cover.pdf, page 1>
+Package pdftex.def Info: pdf/signature_cover.pdf , page1 used on input line 185
+.
+(pdftex.def)             Requested size: 598.01439pt x 845.80624pt.
+ [0
+
+
+ <./pdf/signature_cover.pdf>] (main.toc
+LaTeX Font Info:    Trying to load font information for FML+futmi on input line
+ 3.
+
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/fourier\fmlfutmi.fd
+File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
+)
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 11.03998pt on input line 3.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 8.27998pt on input line 3.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 6.43999pt on input line 3.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 11.03998pt on input line 3.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 8.27998pt on input line 3.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 6.43999pt on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+ (C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+(C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+) [1
+
+
+{C:/Users/BEDHIAFI/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/B
+EDHIAFI/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.76 ...nnexion Mobile}{37}{subsubsection.4.4.3.2}
+                                                  % [2]
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.117 ...}Architecture}{51}{subsubsection.6.4.2.1}
+                                                  % [3]
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.158 ...berline {8.5}Conclusion}{72}{section.8.5}
+                                                  % [4])
+\tf@toc=\write9
+\openout9 = `main.toc'.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.193 \cleardoublepage
+                       [5] (main.lof
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.40 ...sence par code QR}}{61}{figure.caption.43}
+                                                  % [1
+
+
+
+])
+\tf@lof=\write10
+\openout10 = `main.lof'.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.202 \cleardoublepage
+                       [2] (main.lot)
+\tf@lot=\write11
+\openout11 = `main.lot'.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.211 \clearpage
+                 [1
+
+
+
+] (main.acr
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1 ...ysection[\glossarytoctitle]{\glossarytitle}
+                                                  \glossarypreamble [1
+
+
+])
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.221 \clearpage
+                 [2
+
+
+] (sections/Remerciements.tex
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.24 \clearpage
+                [1
+
+
+]) (sections/Introduction Generale.tex)
+(chapters/0 Cadre General.tex [1
+
+]
+Chapitre 1.
+<img/trust_link_logo.jpg, id=1280, 200.75pt x 200.75pt>
+File: img/trust_link_logo.jpg Graphic file (type jpg)
+<use img/trust_link_logo.jpg>
+Package pdftex.def Info: img/trust_link_logo.jpg  used on input line 19.
+(pdftex.def)             Requested size: 182.09486pt x 182.10689pt.
+[2
+
+]
+<img/trustgym-logo.png, id=1289, 414.54875pt x 191.71625pt>
+File: img/trustgym-logo.png Graphic file (type png)
+<use img/trustgym-logo.png>
+Package pdftex.def Info: img/trustgym-logo.png  used on input line 39.
+(pdftex.def)             Requested size: 159.33821pt x 73.68665pt.
+ [3 <./img/trust_link_logo.jpg> <./img/trustgym-logo.png>] [4]
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [5]
+
+LaTeX Warning: File `glofox-logo.png' not found on input line 109.
+
+
+! Package pdftex.def Error: File `glofox-logo.png' not found: using draft setti
+ng.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.109 ...cs[width=0.25\textwidth]{glofox-logo.png}
+                                                  
+? 
+
+LaTeX Warning: Citation 'glofox' on page 6 undefined on input line 114.
+
+
+LaTeX Warning: File `gymmaster-logo.png' not found on input line 128.
+
+
+! Package pdftex.def Error: File `gymmaster-logo.png' not found: using draft se
+tting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.128 ...width=0.28\textwidth]{gymmaster-logo.png}
+                                                  
+? 
+
+LaTeX Warning: Citation 'gymmaster' on page 6 undefined on input line 133.
+
+[6] [7] [8]) (chapters/1 Approche.tex [9]
+Chapitre 2.
+
+LaTeX Warning: Citation 'dev_methodology' on page 10 undefined on input line 15
+.
+
+[10
+
+]
+
+LaTeX Warning: Citation 'schwaber2020scrum' on page 11 undefined on input line 
+30.
+
+
+LaTeX Warning: Citation 'scrum' on page 11 undefined on input line 30.
+
+
+LaTeX Warning: File `agile.png' not found on input line 52.
+
+
+! Package pdftex.def Error: File `agile.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.52 ...egraphics[width=0.75\textwidth]{agile.png}
+                                                  
+? 
+[11]
+<img/Technologie utilisee.png, id=1365, 810.02625pt x 357.13425pt>
+File: img/Technologie utilisee.png Graphic file (type png)
+<use img/Technologie utilisee.png>
+Package pdftex.def Info: img/Technologie utilisee.png  used on input line 67.
+(pdftex.def)             Requested size: 386.96027pt x 170.61052pt.
+ [12]
+
+LaTeX Warning: Citation 'nextjs' on page 13 undefined on input line 74.
+
+
+LaTeX Warning: Citation 'typescript' on page 13 undefined on input line 75.
+
+
+LaTeX Warning: Citation 'tailwind' on page 13 undefined on input line 76.
+
+
+LaTeX Warning: Citation 'tanstack' on page 13 undefined on input line 77.
+
+
+LaTeX Warning: Citation 'reactnative' on page 13 undefined on input line 79.
+
+
+LaTeX Warning: Citation 'expo' on page 13 undefined on input line 80.
+
+
+LaTeX Warning: Citation 'nativewind' on page 13 undefined on input line 81.
+
+
+LaTeX Warning: Citation 'nestjs' on page 13 undefined on input line 83.
+
+
+LaTeX Warning: Citation 'typeorm' on page 13 undefined on input line 84.
+
+
+LaTeX Warning: Citation 'passport' on page 13 undefined on input line 85.
+
+
+LaTeX Warning: Citation 'postgre' on page 13 undefined on input line 87.
+
+[13 <./img/Technologie utilisee.png>]
+
+LaTeX Warning: Citation 'openai' on page 14 undefined on input line 89.
+
+
+LaTeX Warning: Citation 'pgvector' on page 14 undefined on input line 90.
+
+
+LaTeX Warning: Citation 'socketio' on page 14 undefined on input line 92.
+
+
+LaTeX Warning: Citation 'zkteco' on page 14 undefined on input line 95.
+
+
+LaTeX Warning: Citation 'hikvision' on page 14 undefined on input line 96.
+
+
+LaTeX Warning: Citation 'pm2' on page 14 undefined on input line 97.
+
+
+LaTeX Warning: Citation 'ngrok' on page 14 undefined on input line 98.
+
+
+LaTeX Warning: Citation 'aws' on page 14 undefined on input line 100.
+
+
+LaTeX Warning: Citation 'helmet' on page 14 undefined on input line 101.
+
+[14]
+
+LaTeX Warning: Citation 'nextauth' on page 15 undefined on input line 118.
+
+
+LaTeX Warning: Citation 'nextintl' on page 15 undefined on input line 118.
+
+
+LaTeX Warning: Citation 'rhf' on page 15 undefined on input line 118.
+
+
+LaTeX Warning: Citation 'yup' on page 15 undefined on input line 118.
+
+<architectures images//ARCHITECTURE LOGIQUE.png, id=1399, 604.50844pt x 785.183
+44pt>
+File: architectures images//ARCHITECTURE LOGIQUE.png Graphic file (type png)
+<use architectures images//ARCHITECTURE LOGIQUE.png>
+Package pdftex.def Info: architectures images//ARCHITECTURE LOGIQUE.png  used o
+n input line 127.
+(pdftex.def)             Requested size: 455.24411pt x 591.30629pt.
+[15]
+Overfull \hbox (16.2472pt too wide) in paragraph at lines 132--133
+\T1/cmtt/m/n/12 /attendance\T1/futs/m/n/12 (-20) . Le ser-vice \T1/cmtt/m/n/12 
+PgListenerService \T1/futs/m/n/12 (-20) écoute le ca-nal Post-greSQL \T1/cmtt/m
+/n/12 access_log_channel
+ []
+
+[16 <./architectures images//ARCHITECTURE LOGIQUE.png>]
+<architectures images//ARCHITECTURE PHYSIQUE.png, id=1411, 554.07pt x 679.03688
+pt>
+File: architectures images//ARCHITECTURE PHYSIQUE.png Graphic file (type png)
+<use architectures images//ARCHITECTURE PHYSIQUE.png>
+Package pdftex.def Info: architectures images//ARCHITECTURE PHYSIQUE.png  used 
+on input line 140.
+(pdftex.def)             Requested size: 409.71692pt x 502.12714pt.
+ [17 <./architectures images//ARCHITECTURE PHYSIQUE.png>]
+Overfull \hbox (15.95844pt too wide) in paragraph at lines 161--162
+[]\T1/futs/b/n/12 (-20) ModuleGuard \T1/futs/m/n/12 (-20) : Contrôle d'ac-cès a
+ux mo-dules [][][][]\T1/futs/b/n/12 (-20) SaaS[][][] \T1/futs/m/n/12 (-20) via 
+le dé-co-ra-teur \T1/cmtt/m/n/12 @RequiresModule()\T1/futs/m/n/12 (-20) ,
+ []
+
+
+LaTeX Warning: Citation 'vscode' on page 18 undefined on input line 176.
+
+
+LaTeX Warning: Citation 'postman' on page 18 undefined on input line 181.
+
+
+LaTeX Warning: Citation 'swagger' on page 18 undefined on input line 182.
+
+
+LaTeX Warning: Citation 'git' on page 18 undefined on input line 184.
+
+[18]
+<architectures images//ARCHITECTURE CICD.png, id=1435, 1541.76pt x 1027.84pt>
+File: architectures images//ARCHITECTURE CICD.png Graphic file (type png)
+<use architectures images//ARCHITECTURE CICD.png>
+Package pdftex.def Info: architectures images//ARCHITECTURE CICD.png  used on i
+nput line 213.
+(pdftex.def)             Requested size: 455.24411pt x 303.49248pt.
+ [19]) (chapters/2 Exigences.tex [20 <./architectures images//ARCHITECTURE CICD
+.png (PNG copy)>]
+Chapitre 3.
+[21
+
+] [22]
+
+LaTeX Warning: Citation 'functional_req' on page 23 undefined on input line 94.
+
+
+
+Overfull \hbox (12.60948pt too wide) in paragraph at lines 94--95
+[]\T1/futs/m/n/12 (-20) Les exi-gences non fonc-tion-nelles ga-ran-tissent la q
+ua-lité glo-bale du sys-tème [[]] : 
+ []
+
+
+LaTeX Warning: Citation 'rfc6455' on page 23 undefined on input line 105.
+
+
+LaTeX Warning: Citation 'bezemer2010multitenancy' on page 23 undefined on input
+ line 107.
+
+[23] [24] [25]
+Underfull \hbox (badness 5548) in paragraph at lines 209--209
+[]|\T1/futs/m/n/12 (+20) Authentification et ges-
+ []
+
+
+Underfull \hbox (badness 3492) in paragraph at lines 211--211
+[]|[][][][]\T1/futs/b/n/12 (+20) CRUD[][][] \T1/futs/m/n/12 (+20) com-plet des 
+membres, re-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
+[]|\T1/futs/m/n/12 (+20) Application mo-bile
+ []
+
+
+Underfull \hbox (badness 1789) in paragraph at lines 225--225
+[]|\T1/futs/m/n/12 (+20) Gestion des pro-duits, des four-nis-
+ []
+
+ignored error: Infinite glue shrinkage found in box being split [26]
+
+LaTeX Warning: Citation 'class_diag' on page 27 undefined on input line 240.
+
+
+LaTeX Warning: Citation 'fowler2003uml' on page 27 undefined on input line 240.
+
+
+
+Overfull \hbox (3.88988pt too wide) in paragraph at lines 248--249
+[]\T1/futs/b/n/12 (-20) Access \T1/futs/m/n/12 (-20) : en-re-gis-tre-ment d'un 
+évé-ne-ment d'en-trée ou de sor-tie, avec le type (\T1/cmtt/m/n/12 ENTRY\T1/fut
+s/m/n/12 (-20) /\T1/cmtt/m/n/12 EXIT\T1/futs/m/n/12 (-20) )
+ []
+
+[27]
+<img/class diagram.png, id=1513, 3262.1875pt x 3355.53625pt>
+File: img/class diagram.png Graphic file (type png)
+<use img/class diagram.png>
+Package pdftex.def Info: img/class diagram.png  used on input line 262.
+(pdftex.def)             Requested size: 455.24411pt x 468.23584pt.
+) (chapters/3 Sprint 1.tex [28 <./img/class diagram.png>] [29]
+Chapitre 4.
+
+Overfull \hbox (5.32083pt too wide) in alignment at lines 13--17
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (5.32083pt too wide) in alignment at lines 17--21
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (5.32083pt too wide) in alignment at lines 21--23
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 25--25
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+[]|\T1/futs/m/n/12 (+20) En tant qu'ad-mi-nis-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+\T1/futs/m/n/12 (+20) tra-teur, je veux me
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+\T1/futs/m/n/12 (+20) connec-ter via mon
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+[]|\T1/futs/m/n/12 (+20) Implémenter le end-point
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+\T1/cmtt/m/n/12 POST /api/auth/login
+ []
+
+
+Underfull \hbox (badness 3954) in paragraph at lines 25--26
+\T1/futs/m/n/12 (+20) avec gé-né-ra-tion de to-ken
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 27--27
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+[]|\T1/futs/m/n/12 (+20) Mettre en place
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+\T1/cmtt/m/n/12 JwtAuthGuard \T1/futs/m/n/12 (+20) et
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+\T1/cmtt/m/n/12 JwtStrategy \T1/futs/m/n/12 (+20) pour la vé-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
+[]|\T1/futs/m/n/12 (+20) Intégrer Pas-sport.js avec
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 32--32
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
+[]|\T1/futs/m/n/12 (+20) Implémenter \T1/cmtt/m/n/12 POST
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
+\T1/cmtt/m/n/12 /api/auth/member/login
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 34--34
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--35
+[]|\T1/futs/m/n/12 (+20) Créer \T1/cmtt/m/n/12 GET
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--35
+\T1/cmtt/m/n/12 /api/auth/member/verify
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 36--36
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 39--39
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 5847) in paragraph at lines 39--39
+\T1/futs/m/n/12 (+20) uti-li-sa-teurs avec des
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 41--41
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
+[]|\T1/futs/m/n/12 (+20) En tant qu'ad-min,
+ []
+
+
+Underfull \hbox (badness 5064) in paragraph at lines 41--41
+\T1/futs/m/n/12 (+20) je veux pro-té-ger les
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 43--43
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 1314) in paragraph at lines 43--43
+[]|\T1/futs/m/n/12 (+20) En tant qu'ad-min, je
+ []
+
+
+Underfull \hbox (badness 3333) in paragraph at lines 43--44
+[]|\T1/futs/m/n/12 (+20) Implémenter \T1/cmtt/m/n/12 ModuleGuard
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
+[]|\T1/futs/m/n/12 (+20) Mettre en place le
+ []
+
+
+Underfull \hbox (badness 4084) in paragraph at lines 46--47
+\T1/cmtt/m/n/12 ValidationPipe \T1/futs/m/n/12 (+20) glo-bal et
+ []
+
+
+Underfull \hbox (badness 1107) in paragraph at lines 48--48
+[]|\T1/futs/m/n/12 (+20) Configurer Hel-met et
+ []
+
+
+Overfull \hbox (5.32083pt too wide) in alignment at lines 23--53
+ [] [] [] [] 
+ []
+
+ignored error: Infinite glue shrinkage found in box being split [30
+
+]
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 109.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 109.
+ [31]
+[32]
+Overfull \hbox (97.46344pt too wide) in paragraph at lines 141--142
+[]\T1/futs/m/n/12 (-20) Il sai-sit son adresse email. Le sys-tème vé-ri-fie son
+ exis-tence via \T1/cmtt/m/n/12 POST /api/auth/member/check-email\T1/futs/m/n/1
+2 (-20) . 
+ []
+
+
+Overfull \hbox (72.69232pt too wide) in paragraph at lines 144--145
+[]\T1/futs/m/n/12 (-20) Le membre sai-sit le code reçu et le sys-tème le vé-ri-
+fie via \T1/cmtt/m/n/12 POST /api/auth/member/verify-email\T1/futs/m/n/12 (-20)
+ . 
+ []
+
+[33]
+
+LaTeX Warning: Citation 'jwt_rfc7519' on page 34 undefined on input line 215.
+
+
+LaTeX Warning: Citation 'passport' on page 34 undefined on input line 215.
+
+[34]
+
+LaTeX Warning: Citation 'sandhu1996rbac' on page 35 undefined on input line 238
+.
+
+
+LaTeX Warning: Citation 'yup' on page 35 undefined on input line 262.
+
+
+LaTeX Warning: Citation 'nextintl' on page 35 undefined on input line 262.
+
+[35] [36]
+
+LaTeX Warning: Citation 'yup' on page 37 undefined on input line 304.
+
+) (chapters/4 Sprint 2.tex [37]
+Chapitre 5.
+
+Overfull \hbox (5.32083pt too wide) in alignment at lines 13--17
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (5.32083pt too wide) in alignment at lines 17--21
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (5.32083pt too wide) in alignment at lines 21--23
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 25--25
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 1314) in paragraph at lines 25--25
+[]|\T1/futs/m/n/12 (+20) En tant qu'ad-min, je
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+\T1/futs/m/n/12 (+20) nom, date de nais-sance,
+ []
+
+
+Underfull \hbox (badness 6842) in paragraph at lines 25--26
+\T1/futs/m/n/12 (+20) genre, adresse, CIN, té-lé-
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 27--27
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 1314) in paragraph at lines 27--27
+[]|\T1/futs/m/n/12 (+20) En tant qu'ad-min, je
+ []
+
+
+Underfull \hbox (badness 3049) in paragraph at lines 27--28
+[]|\T1/futs/m/n/12 (+20) Associer des membres en
+ []
+
+
+Underfull \hbox (badness 4217) in paragraph at lines 27--28
+\T1/futs/m/n/12 (+20) tant que dé-pen-dants (pa-
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 29--29
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--29
+[]|\T1/futs/m/n/12 (+20) En tant qu'ad-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--29
+\T1/futs/m/n/12 (+20) min, je veux blo-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--29
+\T1/futs/m/n/12 (+20) quer/débloquer un
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
+[]|\T1/futs/m/n/12 (+20) Implémenter \T1/cmtt/m/n/12 isBlocked
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 31--31
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 1314) in paragraph at lines 31--31
+[]|\T1/futs/m/n/12 (+20) En tant qu'ad-min, je
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--31
+\T1/futs/m/n/12 (+20) veux re-cher-cher les
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 34--34
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 1314) in paragraph at lines 34--34
+[]|\T1/futs/m/n/12 (+20) En tant qu'ad-min, je
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--35
+[]|\T1/futs/m/n/12 (+20) Implémenter
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--35
+\T1/cmtt/m/n/12 GymSubscription \T1/futs/m/n/12 (+20) :
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 36--36
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--36
+[]|\T1/futs/m/n/12 (+20) En tant qu'ad-min,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--36
+\T1/futs/m/n/12 (+20) je veux ins-crire un
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--37
+[]|\T1/futs/m/n/12 (+20) Créer
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--37
+\T1/cmtt/m/n/12 MemberGymSubscription
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 38--38
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--38
+[]|\T1/futs/m/n/12 (+20) En tant qu'ad-min,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--38
+\T1/futs/m/n/12 (+20) je veux gé-rer les
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 41--41
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 2990) in paragraph at lines 41--41
+[]|\T1/futs/m/n/12 (+20) En tant que cais-sier,
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 43--43
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 46--46
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 1314) in paragraph at lines 46--46
+[]|\T1/futs/m/n/12 (+20) En tant qu'ad-min, je
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 49--49
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 1314) in paragraph at lines 49--49
+[]|\T1/futs/m/n/12 (+20) En tant qu'ad-min, je
+ []
+
+
+Underfull \hbox (badness 1424) in paragraph at lines 49--49
+\T1/futs/m/n/12 (+20) veux gé-rer les co-ti-sa-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+[]|\T1/cmtt/m/n/12 AnnualFee \T1/futs/m/n/12 (+20) et
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+\T1/cmtt/m/n/12 MemberAnnualFee \T1/futs/m/n/12 (+20) pour
+ []
+
+
+Overfull \hbox (5.32083pt too wide) in alignment at lines 23--54
+ [] [] [] [] 
+ []
+
+ignored error: Infinite glue shrinkage found in box being split [38
+
+] [39]
+Overfull \hbox (36.48167pt too wide) in paragraph at lines 124--125
+[]\T1/futs/m/n/12 (-20) L'administrateur ac-cède à la liste des membres via \T1
+/cmtt/m/n/12 GET /api/member/partner/paginate\T1/futs/m/n/12 (-20) . 
+ []
+
+
+Overfull \hbox (60.49713pt too wide) in paragraph at lines 126--127
+[]\T1/futs/m/n/12 (-20) Il sé-lec-tionne un membre pour consul-ter sa fiche dé-
+taillée via \T1/cmtt/m/n/12 GET /api/member/profile/:id\T1/futs/m/n/12 (-20) . 
+
+ []
+
+[40] [41]
+Overfull \hbox (37.81898pt too wide) in paragraph at lines 194--195
+[]\T1/futs/m/n/12 (-20) Le contrô-leur \T1/cmtt/m/n/12 MemberController \T1/fut
+s/m/n/12 (-20) ex-pose les end-points sui-vants, tous pro-té-gés par \T1/cmtt/m
+/n/12 JwtAuthGuard
+ []
+
+
+Overfull \hbox (14.68747pt too wide) in paragraph at lines 206--207
+[]\T1/futs/m/n/12 (-20) Le \T1/cmtt/m/n/12 GymSubscriptionModule \T1/futs/m/n/1
+2 (-20) dé-fi-nit les for-mules d'abon-ne-ment avec deux types : \T1/cmtt/m/n/1
+2 PER_MONTH
+ []
+
+
+Overfull \hbox (54.41347pt too wide) in paragraph at lines 216--217
+\T1/futs/m/n/12 (-20) membre et par an-née, confi-gu-rables au ni-veau du par-t
+e-naire (\T1/cmtt/m/n/12 isAnnualFeeEnabled\T1/futs/m/n/12 (-20) , \T1/cmtt/m/n
+/12 annualFeeAmount\T1/futs/m/n/12 (-20) ). 
+ []
+
+
+LaTeX Warning: Citation 'tanstack' on page 42 undefined on input line 222.
+
+[42] [43]) (chapters/5 Sprint 3.tex [44]
+Chapitre 6.
+
+LaTeX Warning: Citation 'zkteco' on page 45 undefined on input line 9.
+
+
+LaTeX Warning: Citation 'hikvision' on page 45 undefined on input line 9.
+
+
+LaTeX Warning: Citation 'socketio' on page 45 undefined on input line 9.
+
+
+LaTeX Warning: Citation 'postgre' on page 45 undefined on input line 9.
+
+
+Overfull \hbox (5.32083pt too wide) in alignment at lines 13--17
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (5.32083pt too wide) in alignment at lines 17--21
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (5.32083pt too wide) in alignment at lines 21--23
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 25--25
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 3118) in paragraph at lines 25--26
+\T1/futs/m/n/12 (+20) portes avec IP, port, type
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+\T1/futs/m/n/12 (+20) de [][][][]\T1/futs/b/n/12 (+20) SDK[][][] \T1/futs/m/n/1
+2 (+20) (PULL, PUSH-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+\T1/futs/m/n/12 (+20) ATTENDANCE, PUSH-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+\T1/futs/m/n/12 (+20) SECURITY, HIK-VI-SION,
+ []
+
+
+Underfull \hbox (badness 2088) in paragraph at lines 25--26
+\T1/futs/m/n/12 (+20) STAN-DA-LONE) et nu-méro
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 27--27
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 6592) in paragraph at lines 27--28
+[]|\T1/futs/m/n/12 (+20) Configurer les plages ho-
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 29--29
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 32--32
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 34--34
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 2990) in paragraph at lines 34--34
+[]|\T1/futs/m/n/12 (+20) En tant que cais-sier,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--34
+\T1/futs/m/n/12 (+20) je veux en-re-gis-trer
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--34
+\T1/futs/m/n/12 (+20) ma-nuel-le-ment une
+ []
+
+
+Underfull \hbox (badness 4967) in paragraph at lines 34--35
+[]|\T1/futs/m/n/12 (+20) Permettre l'en-re-gis-tre-ment
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 36--36
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 1237) in paragraph at lines 36--37
+[]|\T1/futs/m/n/12 (+20) Ajouter des filtres avan-cés
+ []
+
+
+Underfull \hbox (badness 6380) in paragraph at lines 36--37
+\T1/futs/m/n/12 (+20) par date, membre, porte,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--42
+[]|\T1/futs/m/n/12 (+20) Développer le ser-vice
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--42
+\T1/futs/m/n/12 (+20) NestJS (port 8080) pour
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
+[]|\T1/futs/m/n/12 (+20) Configurer ngrok et
+ []
+
+
+LaTeX Warning: Citation 'ngrok' on page 45 undefined on input line 43.
+
+
+LaTeX Warning: Citation 'pm2' on page 45 undefined on input line 43.
+
+
+Underfull \hbox (badness 1960) in paragraph at lines 43--44
+[]|\T1/futs/m/n/12 (+20) Mettre en place le tun-nel
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
+[]|\T1/futs/m/n/12 (+20) Développer
+ []
+
+
+Underfull \hbox (badness 2435) in paragraph at lines 45--46
+\T1/cmtt/m/n/12 start-trustgym.bat \T1/futs/m/n/12 (+20) pour
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 48--48
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
+[]|\T1/futs/m/n/12 (+20) Calculer l'oc-cu-pa-tion en
+ []
+
+
+Underfull \hbox (badness 5403) in paragraph at lines 48--49
+\T1/futs/m/n/12 (+20) le der-nier évé-ne-ment est
+ []
+
+
+Underfull \hbox (badness 7468) in paragraph at lines 48--49
+\T1/futs/m/n/12 (+20) EN-TRY dans une fe-nêtre
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
+\T1/futs/m/n/12 (+20) confi-gu-rable (dé-faut : 1
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
+[]|\T1/futs/m/n/12 (+20) Mettre en place So-
+ []
+
+
+Underfull \hbox (badness 3849) in paragraph at lines 50--51
+\T1/futs/m/n/12 (+20) cket.IO sur le na-mes-pace
+ []
+
+
+Underfull \hbox (badness 2486) in paragraph at lines 50--51
+\T1/cmtt/m/n/12 /attendance \T1/futs/m/n/12 (+20) avec l'évé-ne-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+[]|\T1/futs/m/n/12 (+20) Implémenter
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+\T1/futs/m/n/12 (+20) Post-greSQL LIS-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
+[]|\T1/futs/m/n/12 (+20) Configurer
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 55--55
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 1253) in paragraph at lines 55--55
+\T1/futs/m/n/12 (+20) teur, je veux en-voyer
+ []
+
+
+Underfull \hbox (badness 4193) in paragraph at lines 55--55
+\T1/futs/m/n/12 (+20) des com-mandes aux
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
+\T1/futs/m/n/12 (+20) mandes (\T1/cmtt/m/n/12 DeviceCommand\T1/futs/m/n/12 (+20
+) )
+ []
+
+
+Underfull \hbox (badness 1303) in paragraph at lines 55--56
+\T1/futs/m/n/12 (+20) pour pi-lo-ter les dis-po-si-tifs
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 57--57
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--57
+[]|\T1/futs/m/n/12 (+20) En tant qu'ad-mi-nis-
+ []
+
+
+Overfull \hbox (0.65494pt too wide) in paragraph at lines 59--59
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 2653) in paragraph at lines 59--60
+\T1/futs/m/n/12 (+20) mises à jour des bundles
+ []
+
+
+Overfull \hbox (5.32083pt too wide) in alignment at lines 23--64
+ [] [] [] [] 
+ []
+
+ignored error: Infinite glue shrinkage found in box being split [45
+
+]
+ignored error: Infinite glue shrinkage found in box being split [46] [47]
+[48]
+Overfull \hbox (49.25589pt too wide) in paragraph at lines 142--143
+[]\T1/futs/m/n/12 (-20) Chaque nou-vel évé-ne-ment d'en-trée ou de sor-tie dé-c
+lenche l'évé-ne-ment \T1/cmtt/m/n/12 occupancy:updated\T1/futs/m/n/12 (-20) . 
+ []
+
+[49]
+
+LaTeX Warning: Citation 'socketio' on page 50 undefined on input line 192.
+
+
+Overfull \hbox (78.40428pt too wide) in paragraph at lines 200--201
+\T1/futs/m/n/12 (-20) siques (syn-chro-ni-sa-tion de cartes, ou-ver-ture à dis-
+tance, re-dé-mar-rage). Les mo-dules \T1/cmtt/m/n/12 BundleDashboardModule\T1/f
+uts/m/n/12 (-20) ,
+ []
+
+[50]
+<architectures images//ARCHITECTURE MACHINES.png, id=1702, 1541.76pt x 1027.84p
+t>
+File: architectures images//ARCHITECTURE MACHINES.png Graphic file (type png)
+<use architectures images//ARCHITECTURE MACHINES.png>
+Package pdftex.def Info: architectures images//ARCHITECTURE MACHINES.png  used 
+on input line 217.
+(pdftex.def)             Requested size: 455.24411pt x 303.49248pt.
+
+
+LaTeX Warning: Citation 'ngrok' on page 51 undefined on input line 225.
+
+
+LaTeX Warning: Citation 'pm2' on page 51 undefined on input line 226.
+
+[51 <./architectures images//ARCHITECTURE MACHINES.png (PNG copy)>]
+
+LaTeX Warning: Citation 'tanstack' on page 52 undefined on input line 282.
+
+[52] [53]) (chapters/6 Sprint 4.tex [54]
+Chapitre 7.
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--31
+[]\T1/futs/m/n/12 (+20) Gestion des
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 35--36
+\T1/futs/m/n/12 (+20) contrô-ler la dis-po-ni-bi-lité du
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--38
+[]\T1/futs/m/n/12 (+20) Gestion des
+ []
+
+
+Overfull \hbox (6.77219pt too wide) in paragraph at lines 40--40
+[]|\T1/futs/m/n/12 (-20) Consultation| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
+[]\T1/futs/m/n/12 (+20) Planification
+ []
+
+
+Underfull \hbox (badness 1552) in paragraph at lines 43--44
+[]|\T1/futs/m/n/12 (+20) Créer des séances avec date,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+\T1/futs/m/n/12 (+20) type (OPEN, RE-SER-VA-TION,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+\T1/futs/m/n/12 (+20) CLO-SED) et nombre maxi-
+ []
+
+
+Underfull \hbox (badness 1009) in paragraph at lines 43--44
+\T1/futs/m/n/12 (+20) mum de places pour le type
+ []
+
+
+Underfull \hbox (badness 3108) in paragraph at lines 45--46
+[]|\T1/futs/m/n/12 (+20) Définir les dis-po-ni-bi-li-tés ho-
+ []
+
+
+Overfull \hbox (6.77219pt too wide) in paragraph at lines 47--47
+[]|\T1/futs/m/n/12 (-20) Consultation| 
+ []
+
+
+Underfull \hbox (badness 1038) in paragraph at lines 47--48
+[]|\T1/futs/m/n/12 (+20) Visualiser le plan-ning heb-do-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--50
+[]\T1/futs/m/n/12 (+20) Invitations
+ []
+
+
+Overfull \hbox (14.88132pt too wide) in paragraph at lines 50--50
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Overfull \hbox (1.73485pt too wide) in paragraph at lines 52--52
+[]|\T1/futs/m/n/12 (-20) Notification| 
+ []
+
+
+Overfull \hbox (14.88132pt too wide) in paragraph at lines 55--55
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Overfull \hbox (14.88132pt too wide) in paragraph at lines 58--58
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
+[]|\T1/futs/m/n/12 (+20) Enregistrer les paie-ments
+ []
+
+
+Overfull \hbox (6.77219pt too wide) in paragraph at lines 60--60
+[]|\T1/futs/m/n/12 (-20) Consultation| 
+ []
+
+ignored error: Infinite glue shrinkage found in box being split [55
+
+] [56]
+[57] [58]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\acrshort' on input line 179.
+
+[59]
+
+LaTeX Warning: Citation 'nestjs' on page 60 undefined on input line 217.
+
+
+Overfull \hbox (18.66371pt too wide) in paragraph at lines 224--225
+[]\T1/cmtt/m/n/12 RESERVATION \T1/futs/m/n/12 (-20) : Séance sur ré-ser-va-tion
+ avec un nombre maxi-mum de places (\T1/cmtt/m/n/12 maxSlots\T1/futs/m/n/12 (-2
+0) ). 
+ []
+
+[60]
+Overfull \hbox (2.14339pt too wide) in paragraph at lines 229--230
+[]\T1/futs/b/n/12 (-20) SessionPaymentModule \T1/futs/m/n/12 (-20) : Ges-tion d
+es paie-ments liés aux séances de coa-ching payantes.
+ []
+
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 280.
+[61] [62]) (chapters/7 Sprint 5.tex [63]
+Chapitre 8.
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--31
+[]\T1/futs/m/n/12 (+20) Gestion des
+ []
+
+
+Overfull \hbox (6.77219pt too wide) in paragraph at lines 33--33
+[]|\T1/futs/m/n/12 (-20) Consultation| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--36
+[]\T1/futs/m/n/12 (+20) Gestion des
+ []
+
+
+Overfull \hbox (6.77219pt too wide) in paragraph at lines 38--38
+[]|\T1/futs/m/n/12 (-20) Consultation| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
+[]\T1/futs/m/n/12 (+20) Achats four-
+ []
+
+
+Overfull \hbox (14.88132pt too wide) in paragraph at lines 43--43
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 3679) in paragraph at lines 43--43
+\T1/futs/m/n/12 (+20) teur, je veux que le
+ []
+
+
+Underfull \hbox (badness 3291) in paragraph at lines 43--44
+[]|\T1/futs/m/n/12 (+20) Le stock de la salle concer-
+ []
+
+
+Overfull \hbox (6.77219pt too wide) in paragraph at lines 46--46
+[]|\T1/futs/m/n/12 (-20) Consultation| 
+ []
+
+
+Overfull \hbox (14.88132pt too wide) in paragraph at lines 48--48
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 3354) in paragraph at lines 48--49
+[]|\T1/futs/m/n/12 (+20) Être no-ti-fié lorsque le stock
+ []
+
+
+Underfull \hbox (badness 5681) in paragraph at lines 51--51
+[]\T1/futs/m/n/12 (+20) Transferts de
+ []
+
+
+Overfull \vbox (8.29199pt too high) detected at line 51
+ []
+
+
+Overfull \hbox (14.88132pt too wide) in paragraph at lines 51--51
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+[]|\T1/futs/m/n/12 (+20) Effectuer des mou-ve-ments
+ []
+
+
+Underfull \hbox (badness 4660) in paragraph at lines 51--52
+\T1/futs/m/n/12 (+20) de stock d'une salle source
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--54
+[]\T1/futs/m/n/12 (+20) Ventes aux
+ []
+
+
+Overfull \hbox (14.88132pt too wide) in paragraph at lines 54--54
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 1308) in paragraph at lines 54--54
+\T1/futs/m/n/12 (+20) veux vendre des pro-
+ []
+
+
+Overfull \hbox (14.88132pt too wide) in paragraph at lines 56--56
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
+[]\T1/futs/m/n/12 (+20) Feature flag
+ []
+
+
+Overfull \vbox (8.49pt too high) detected at line 59
+ []
+
+
+Underfull \hbox (badness 3138) in paragraph at lines 59--60
+\T1/futs/m/n/12 (+20) tique via le \T1/cmtt/m/n/12 ModuleGuard \T1/futs/m/n/12 
+(+20) et
+ []
+
+ignored error: Infinite glue shrinkage found in box being split [64
+
+] [65]
+[66] [67] [68]
+
+LaTeX Warning: Citation 'nestjs' on page 69 undefined on input line 218.
+
+
+Overfull \hbox (0.78894pt too wide) in paragraph at lines 223--224
+[]\T1/futs/b/n/12 (-20) SupplierPurchaseModule \T1/futs/m/n/12 (-20) : En-re-gi
+s-tre-ment des achats au-près des four-nis-seurs. Chaque
+ []
+
+
+Overfull \hbox (1.99086pt too wide) in paragraph at lines 224--225
+[]\T1/futs/b/n/12 (-20) ProductStockModule \T1/futs/m/n/12 (-20) : Ges-tion de 
+l'in-ven-taire par salle de sport. L'en-tité \T1/cmtt/m/n/12 ProductStock
+ []
+
+[69]
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 7.35999pt on input line 259.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 6.25598pt on input line 259.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 7.35999pt on input line 259.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 6.25598pt on input line 259.
+
+Overfull \hbox (41.04836pt too wide) in paragraph at lines 284--285
+[]\T1/futs/b/n/12 (-20) Catalogue pro-duits (\T1/cmtt/m/n/12 articles/\T1/futs/
+b/n/12 (-20) ) \T1/futs/m/n/12 (-20) : Page de lis-ting des pro-duits avec com-
+po-sant \T1/cmtt/m/n/12 CardComponent
+ []
+
+[70] [71]) (chapters/8 Sprint 6.tex [72]
+Chapitre 9.
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--31
+[]\T1/futs/m/n/12 (+20) Portefeuille
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--31
+[]|\T1/futs/m/n/12 (+20) En tant qu'ad-mi-nis-
+ []
+
+
+Underfull \hbox (badness 1377) in paragraph at lines 31--31
+\T1/futs/m/n/12 (+20) tra-teur, je veux gé-rer
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--31
+\T1/futs/m/n/12 (+20) les por-te-feuilles des
+ []
+
+
+Overfull \hbox (14.88132pt too wide) in paragraph at lines 33--33
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--36
+[]\T1/futs/m/n/12 (+20) Journal du
+ []
+
+
+Overfull \hbox (6.77219pt too wide) in paragraph at lines 36--36
+[]|\T1/futs/m/n/12 (-20) Consultation| 
+ []
+
+
+Underfull \hbox (badness 3333) in paragraph at lines 36--36
+\T1/futs/m/n/12 (+20) l'his-to-rique des tran-
+ []
+
+
+Overfull \hbox (6.77219pt too wide) in paragraph at lines 38--38
+[]|\T1/futs/m/n/12 (-20) Consultation| 
+ []
+
+
+Underfull \hbox (badness 3525) in paragraph at lines 38--39
+\T1/futs/m/n/12 (+20) to-rique des mou-ve-ments de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
+[]\T1/futs/m/n/12 (+20) Gestion de
+ []
+
+
+Overfull \hbox (14.88132pt too wide) in paragraph at lines 41--41
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Overfull \hbox (6.77219pt too wide) in paragraph at lines 43--43
+[]|\T1/futs/m/n/12 (-20) Consultation| 
+ []
+
+
+Underfull \hbox (badness 1708) in paragraph at lines 43--44
+[]|\T1/futs/m/n/12 (+20) Visualiser les écri-tures quo-ti-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--46
+[]\T1/futs/m/n/12 (+20) Facturation
+ []
+
+
+Overfull \hbox (14.88132pt too wide) in paragraph at lines 50--50
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--53
+[]\T1/futs/m/n/12 (+20) Intégration
+ []
+
+
+Overfull \vbox (7.872pt too high) detected at line 53
+ []
+
+
+Overfull \hbox (14.88132pt too wide) in paragraph at lines 53--53
+[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
+ []
+
+
+Underfull \hbox (badness 2573) in paragraph at lines 53--53
+\T1/futs/m/n/12 (+20) teur, je veux lier les
+ []
+
+
+Underfull \hbox (badness 3780) in paragraph at lines 53--53
+\T1/futs/m/n/12 (+20) four-nis-seurs aux fac-
+ []
+
+
+Overfull \vbox (8.29199pt too high) detected at line 56
+ []
+
+
+Overfull \hbox (6.77219pt too wide) in paragraph at lines 56--56
+[]|\T1/futs/m/n/12 (-20) Consultation| 
+ []
+
+
+Underfull \hbox (badness 1509) in paragraph at lines 56--57
+\T1/futs/m/n/12 (+20) ments liés aux abon-ne-ments
+ []
+
+ignored error: Infinite glue shrinkage found in box being split [73
+
+] [74]
+[75]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\acrshort' on input line 150.
+
+[76] [77]
+
+LaTeX Warning: Citation 'nestjs' on page 78 undefined on input line 225.
+
+[78] [79] [80]
+
+LaTeX Warning: Citation 'aws' on page 81 undefined on input line 344.
+
+) (chapters/9 Sprint 7.tex [81]
+Chapitre 10.
+
+LaTeX Warning: Citation 'openai' on page 82 undefined on input line 43.
+
+
+LaTeX Warning: Citation 'pgvector' on page 82 undefined on input line 43.
+
+
+Underfull \hbox (badness 1377) in paragraph at lines 45--45
+\T1/futs/m/n/12 (+20) soient dé-cou-pés en chunks et sto-ckés dans la table
+ []
+
+ignored error: Infinite glue shrinkage found in box being split [82
+
+] [83]
+[84]
+
+LaTeX Warning: Citation 'lewis2020rag' on page 85 undefined on input line 165.
+
+
+LaTeX Warning: Citation 'gao2024rag_survey' on page 85 undefined on input line 
+165.
+
+
+LaTeX Warning: Citation 'openai' on page 85 undefined on input line 168.
+
+
+LaTeX Warning: Citation 'pgvector' on page 85 undefined on input line 170.
+
+
+LaTeX Warning: Citation 'postgre' on page 85 undefined on input line 170.
+
+[85]
+Overfull \hbox (15.09177pt too wide) in paragraph at lines 176--177
+\T1/futs/m/n/12 (-20) son ac-cès est condi-tionné par le guard [][][][]\T1/futs
+/b/n/12 (-20) SaaS[][][] \T1/futs/m/n/12 (-20) vé-ri-fiant l'ac-ti-va-tion du m
+o-dule \T1/cmtt/m/n/12 SaasModuleEnum.Ai\T1/futs/m/n/12 (-20) . 
+ []
+
+<architectures images//RAG ARCHITECTURE.png, id=1985, 1773.62625pt x 594.22pt>
+File: architectures images//RAG ARCHITECTURE.png Graphic file (type png)
+<use architectures images//RAG ARCHITECTURE.png>
+Package pdftex.def Info: architectures images//RAG ARCHITECTURE.png  used on in
+put line 182.
+(pdftex.def)             Requested size: 455.24411pt x 152.51694pt.
+[86 <./architectures images//RAG ARCHITECTURE.png>]
+
+LaTeX Warning: Citation 'reactnative' on page 87 undefined on input line 249.
+
+
+LaTeX Warning: Citation 'expo' on page 87 undefined on input line 249.
+
+[87]
+Overfull \hbox (6.50941pt too wide) in paragraph at lines 273--274
+[]\T1/futs/m/n/12 (-20) Le to-ken [][][][]\T1/futs/b/n/12 (-20) JWT[][][] \T1/f
+uts/m/n/12 (-20) est sto-cké dans AsyncS-to-rage via le ser-vice \T1/cmtt/m/n/1
+2 src/services/auth-storage.ts
+ []
+
+
+LaTeX Warning: Citation 'socketio' on page 88 undefined on input line 279.
+
+
+LaTeX Warning: Citation 'tanstack' on page 88 undefined on input line 286.
+
+[88] [89]) (sections/Conclusion Generale.tex [90]
+Overfull \hbox (0.40761pt too wide) in paragraph at lines 14--15
+[]\T1/futs/m/n/12 (-20) Une \T1/futs/b/n/12 (-20) ap-pli-ca-tion mo-bile \T1/fu
+ts/m/n/12 (-20) conçue avec React Na-tive et Expo SDK 54, of-frant aux membres
+ []
+
+[91]) [92]
+
+LaTeX Warning: Empty bibliography on input line 242.
+
+<pdf/back_cover.pdf, id=2056, 598.235pt x 845.1575pt>
+File: pdf/back_cover.pdf Graphic file (type pdf)
+<use pdf/back_cover.pdf>
+Package pdftex.def Info: pdf/back_cover.pdf  used on input line 246.
+(pdftex.def)             Requested size: 598.23354pt x 845.15544pt.
+<pdf/back_cover.pdf, id=2058, page=1, 598.235pt x 845.1575pt>
+File: pdf/back_cover.pdf Graphic file (type pdf)
+<use pdf/back_cover.pdf, page 1>
+Package pdftex.def Info: pdf/back_cover.pdf , page1 used on input line 246.
+(pdftex.def)             Requested size: 598.23354pt x 845.15544pt.
+File: pdf/back_cover.pdf Graphic file (type pdf)
+<use pdf/back_cover.pdf, page 1>
+Package pdftex.def Info: pdf/back_cover.pdf , page1 used on input line 246.
+(pdftex.def)             Requested size: 598.34306pt x 845.31018pt.
+File: pdf/back_cover.pdf Graphic file (type pdf)
+<use pdf/back_cover.pdf, page 1>
+Package pdftex.def Info: pdf/back_cover.pdf , page1 used on input line 246.
+(pdftex.def)             Requested size: 598.34306pt x 845.31018pt.
+File: pdf/back_cover.pdf Graphic file (type pdf)
+<use pdf/back_cover.pdf, page 1>
+Package pdftex.def Info: pdf/back_cover.pdf , page1 used on input line 246.
+(pdftex.def)             Requested size: 598.34306pt x 845.31018pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.0}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.246 ...ges=1, fitpaper=true]{pdf/back_cover.pdf}
+                                                  
+File: pdf/back_cover.pdf Graphic file (type pdf)
+<use pdf/back_cover.pdf, page 1>
+Package pdftex.def Info: pdf/back_cover.pdf , page1 used on input line 246.
+(pdftex.def)             Requested size: 598.34306pt x 845.31018pt.
+ [0
+
+
+
+
+ <./pdf/back_cover.pdf>]
+
+enddocument/afterlastpage (AED): lastpage setting LastPage.
+(main.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: FCD4FD5E7E890A9115921C249E73090C;36634.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 50699 strings out of 467871
+ 1013781 string characters out of 5416924
+ 1894236 words of memory out of 5000000
+ 77668 multiletter control sequences out of 15000+600000
+ 783799 words of font info for 507 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 99i,17n,108p,2474b,2330s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\BEDHIAFI\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\e
+ctt1200.pk><C:/Users/BEDHIAFI/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+fourier/fourier-ms.pfb><C:/Users/BEDHIAFI/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/symbols/msam10.pfb><C:/Users/BEDHIAFI/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Users/BEDHIAFI/AppData/Local/
+Programs/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Users/BEDHIAFI/AppData/
+Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on main.pdf (106 pages, 5317163 bytes).
+PDF statistics:
+ 2268 PDF objects out of 2487 (max. 8388607)
+ 515 named destinations out of 1000 (max. 500000)
+ 102527 words of extra memory for PDF output out of 106986 (max. 10000000)
+

@@ -1,0 +1,270 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../img/}}{\subfix{../architectures images/}}}
+\begin{document}
+\chapter{Sp\'{e}cification des Exigences}
+
+\section{Introduction}
+Ce chapitre a pour objectif de d\'{e}finir de mani\`{e}re pr\'{e}cise les exigences du projet TrustGym. Nous y identifions les diff\'{e}rents acteurs du syst\`{e}me, les besoins fonctionnels et non fonctionnels, les cas d'utilisation, le product backlog, ainsi que le diagramme de classes. Cette sp\'{e}cification constitue le socle sur lequel repose l'ensemble du d\'{e}veloppement de la plateforme.
+
+\section{Sp\'{e}cification des exigences}
+
+\subsection{Identification des Acteurs}
+Le syst\`{e}me TrustGym fait intervenir quatre acteurs principaux, chacun disposant de permissions et de fonctionnalit\'{e}s sp\'{e}cifiques :
+
+\begin{itemize}
+  \item \textbf{SuperAdmin} : responsable de la gestion globale de la plateforme \acrshort{saas}. Il g\`{e}re les partenaires, les salles de sport, les modules \acrshort{saas} (activation/d\'{e}sactivation via feature flags), le registre des portes d'acc\`{e}s, les bundles de modules et les utilisateurs de la plateforme.
+
+  \item \textbf{Admin} : administrateur d'une salle de sport sp\'{e}cifique. Il dispose d'un acc\`{e}s complet \`{a} la gestion de sa salle : membres, coachs, abonnements, contr\^{o}le d'acc\`{e}s, boutique, finance, centre \acrshort{kpi} et assistant \acrshort{ai}.
+
+  \item \textbf{Caissier} : op\'{e}rateur au niveau de la caisse. Il prend en charge l'inscription des membres, l'encaissement des paiements, l'enr\^{o}lement aux abonnements et les ventes en boutique. Il dispose d'un acc\`{e}s restreint par rapport \`{a} l'Admin.
+
+  \item \textbf{Membre} (application mobile) : adh\'{e}rent de la salle de sport. Il acc\`{e}de \`{a} son tableau de bord, consulte les s\'{e}ances, r\'{e}serve des cr\'{e}neaux, visualise l'occupation en temps r\'{e}el et g\`{e}re son profil via l'application mobile d\'{e}di\'{e}e.
+\end{itemize}
+
+\subsection{Besoins Fonctionnels}
+Les besoins fonctionnels de TrustGym sont organis\'{e}s par acteur :
+
+\subsubsection{Pour les SuperAdmins}
+\begin{outline}
+  \1 Gestion des partenaires (ajout, modification, suppression, consultation)
+  \1 Gestion des salles de sport (cr\'{e}ation, configuration, cl\'{e} API du bridge)
+  \1 Gestion des modules \acrshort{saas} : activation et d\'{e}sactivation des fonctionnalit\'{e}s par salle
+    \2 Module \acrshort{ai} (Assistant intelligent)
+    \2 Module Boutique
+    \2 Module Coachs
+    \2 Module Centre \acrshort{kpi}
+    \2 Module Finance
+    \2 Module Acc\`{e}s (contr\^{o}le d'acc\`{e}s physique)
+  \1 Gestion du registre des portes d'acc\`{e}s
+  \1 Gestion des bundles de modules
+  \1 Gestion des utilisateurs de la plateforme
+\end{outline}
+
+\subsubsection{Pour les Admins}
+\begin{outline}
+  \1 Tableau de bord \acrshort{kpi} avec indicateurs cl\'{e}s de performance
+  \1 Gestion des membres (\acrshort{crud} complet, recherche, filtrage)
+  \1 Gestion des abonnements (cr\'{e}ation, affectation, renouvellement, historique)
+  \1 Contr\^{o}le d'acc\`{e}s
+    \2 Gestion des entr\'{e}es et sorties
+    \2 Configuration des cr\'{e}neaux horaires
+    \2 Consultation de l'historique d'acc\`{e}s
+    \2 Suivi de l'occupation en temps r\'{e}el
+  \1 Gestion des coachs (ajout, modification, affectation aux disciplines)
+  \1 Planification des s\'{e}ances (cr\'{e}ation, modification, calendrier)
+  \1 Boutique
+    \2 Gestion des produits et des cat\'{e}gories
+    \2 Gestion des fournisseurs
+    \2 Gestion du stock et des transferts inter-salles
+  \1 Finance
+    \2 Portefeuille pr\'{e}pay\'{e} (wallet)
+    \2 Facturation \acrshort{b2b} et g\'{e}n\'{e}ration de factures \acrshort{pdf}
+    \2 Gestion de la caisse (ouverture, cl\^{o}ture, journal)
+  \1 Assistant \acrshort{ai} bas\'{e} sur le \acrshort{rag}
+\end{outline}
+
+\subsubsection{Pour les Caissiers}
+\begin{outline}
+  \1 Inscription de nouveaux membres
+  \1 Enr\^{o}lement des membres aux abonnements
+  \1 Encaissement des paiements (esp\`{e}ces, ch\`{e}que)
+  \1 Enregistrement des acc\`{e}s manuels
+  \1 Ventes en boutique
+  \1 Rechargement des portefeuilles membres
+\end{outline}
+
+\subsubsection{Pour les Membres (application mobile)}
+\begin{outline}
+  \1 Inscription multi-\'{e}tapes s\'{e}curis\'{e}e
+    \2 V\'{e}rification de l'adresse e-mail
+    \2 Confirmation par code \acrshort{otp}
+    \2 Saisie des informations d'identit\'{e}
+    \2 D\'{e}finition du mot de passe
+  \1 Tableau de bord personnel avec informations d'abonnement
+  \1 Consultation des s\'{e}ances avec vue calendrier
+  \1 R\'{e}servation de cr\'{e}neaux pour les s\'{e}ances de type RESERVATION
+  \1 Statistiques et analytique
+    \2 Historique de pr\'{e}sence
+    \2 Taux d'occupation en temps r\'{e}el
+    \2 Heures de pointe
+  \1 Gestion du profil
+\end{outline}
+
+\subsection{Besoins non fonctionnels}
+Les exigences non fonctionnelles garantissent la qualit\'{e} globale du syst\`{e}me \cite{functional_req} :
+
+\begin{itemize}
+  \item \textbf{Performance} : utilisation du \acrshort{ssr} via Next.js pour un rendu rapide c\^{o}t\'{e} serveur. Mise en cache intelligente gr\^{a}ce \`{a} TanStack React Query avec un \texttt{staleTime} de 2 minutes et un cache de 15 minutes, r\'{e}duisant significativement les requ\^{e}tes r\'{e}seau.
+
+  \item \textbf{Scalabilit\'{e}} : architecture modulaire NestJS permettant l'ajout de nouveaux modules sans impact sur les existants. D\'{e}ploiement sur \acrshort{vps} OVH avec PM2 pour une orchestration fiable des processus en production.
+
+  \item \textbf{S\'{e}curit\'{e}} : double syst\`{e}me d'authentification \acrshort{jwt} (Admin/Membre). Protection des en-t\^{e}tes HTTP via Helmet. Configuration \texttt{CORS} restrictive. Contr\^{o}le d'acc\`{e}s bas\'{e} sur les r\^{o}les (\acrshort{rbac}). \texttt{ModuleGuard} pour la gestion des fonctionnalit\'{e}s \acrshort{saas} par salle.
+
+  \item \textbf{Convivialit\'{e}} : internationalisation compl\`{e}te avec support du fran\c{c}ais, de l'arabe et de l'anglais, incluant la gestion automatique du mode RTL pour l'arabe. Interface responsive gr\^{a}ce \`{a} Tailwind \acrshort{css}.
+
+  \item \textbf{Temps r\'{e}el} : communication en temps r\'{e}el via WebSocket \cite{rfc6455} (Socket.IO) pour la mise \`{a} jour instantan\'{e}e du taux d'occupation. M\'{e}canisme de polling toutes les 30 secondes en cas de d\'{e}connexion du WebSocket comme solution de repli.
+
+  \item \textbf{Multi-tenant} : architecture multi-locataire \cite{bezemer2010multitenancy} avec isolation des donn\'{e}es par partenaire et par salle, permettant \`{a} plusieurs cha\^{i}nes de salles de sport de coexister sur la m\^{e}me instance de la plateforme.
+\end{itemize}
+
+\section{Analyse des besoins}
+
+\subsection{Diagramme de cas d'utilisation global}
+Le diagramme de cas d'utilisation global (figure~\ref{fig:use_case_global}) illustre les interactions entre les quatre acteurs principaux et le syst\`{e}me TrustGym. Les cas d'utilisation sont r\'{e}partis par acteur, refl\'{e}tant les diff\'{e}rents niveaux d'acc\`{e}s et de responsabilit\'{e}s au sein de la plateforme.
+
+\begin{figure}[H]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tikzpicture}[
+    actor/.style={},
+    uc/.style={draw, ellipse, minimum width=2.6cm, minimum height=0.9cm, text width=2.4cm, align=center, font=\scriptsize},
+    sys/.style={draw, dashed, rounded corners=5pt, inner sep=8pt}
+  ]
+
+  % System boundary
+  \node[sys, minimum width=10cm, minimum height=16cm] (system) at (5,0) {};
+  \node[font=\small\bfseries, anchor=north] at (system.north) {Syst\`{e}me TrustGym};
+
+  % --- SuperAdmin (left top) ---
+  \stickfigure{(-2.5, 5)}{SuperAdmin}
+  \node[uc] (uc1) at (3.5, 7) {G\'{e}rer les partenaires};
+  \node[uc] (uc2) at (3.5, 5.7) {G\'{e}rer les salles};
+  \node[uc] (uc3) at (3.5, 4.4) {G\'{e}rer les modules SaaS};
+  \node[uc] (uc4) at (3.5, 3.1) {G\'{e}rer les portes};
+
+  \draw (-2.5, 5) -- (uc1);
+  \draw (-2.5, 5) -- (uc2);
+  \draw (-2.5, 5) -- (uc3);
+  \draw (-2.5, 5) -- (uc4);
+
+  % --- Admin (left middle) ---
+  \stickfigure{(-2.5, 0)}{Admin}
+  \node[uc] (uc5) at (3.5, 1.8) {G\'{e}rer les membres};
+  \node[uc] (uc6) at (3.5, 0.5) {G\'{e}rer les abonnements};
+  \node[uc] (uc7) at (3.5, -0.8) {Contr\^{o}ler les acc\`{e}s};
+  \node[uc] (uc8) at (3.5, -2.1) {G\'{e}rer les coachs};
+  \node[uc] (uc9) at (3.5, -3.4) {Planifier les s\'{e}ances};
+
+  \draw (-2.5, 0) -- (uc5);
+  \draw (-2.5, 0) -- (uc6);
+  \draw (-2.5, 0) -- (uc7);
+  \draw (-2.5, 0) -- (uc8);
+  \draw (-2.5, 0) -- (uc9);
+
+  % --- Right side use cases ---
+  \node[uc] (uc10) at (7.5, 1.8) {G\'{e}rer la boutique};
+  \node[uc] (uc11) at (7.5, 0.5) {G\'{e}rer la finance};
+  \node[uc] (uc12) at (7.5, -0.8) {Consulter les KPI};
+  \node[uc] (uc13) at (7.5, -2.1) {Utiliser l'assistant IA};
+
+  \draw (-2.5, 0) -- (uc10);
+  \draw (-2.5, 0) -- (uc11);
+  \draw (-2.5, 0) -- (uc12);
+  \draw (-2.5, 0) -- (uc13);
+
+  % --- Caissier (left bottom) ---
+  \stickfigure{(-2.5, -5.5)}{Caissier}
+  \node[uc] (uc14) at (3.5, -4.7) {Inscrire un membre};
+  \node[uc] (uc15) at (3.5, -6) {Encaisser un paiement};
+  \node[uc] (uc16) at (3.5, -7.3) {Vendre un produit};
+
+  \draw (-2.5, -5.5) -- (uc14);
+  \draw (-2.5, -5.5) -- (uc15);
+  \draw (-2.5, -5.5) -- (uc16);
+  \draw (-2.5, -5.5) -- (uc5);
+  \draw (-2.5, -5.5) -- (uc7);
+
+  % --- Membre (left bottom) ---
+  \stickfigure{(-2.5, -9.5)}{Membre}
+  \node[uc] (uc17) at (7.5, -3.4) {S'inscrire (mobile)};
+  \node[uc] (uc18) at (7.5, -4.7) {Consulter les s\'{e}ances};
+  \node[uc] (uc19) at (7.5, -6) {R\'{e}server une s\'{e}ance};
+  \node[uc] (uc20) at (7.5, -7.3) {Consulter l'occupation};
+
+  \draw (-2.5, -9.5) -- (uc17);
+  \draw (-2.5, -9.5) -- (uc18);
+  \draw (-2.5, -9.5) -- (uc19);
+  \draw (-2.5, -9.5) -- (uc20);
+
+  \end{tikzpicture}
+  }%
+  \caption{Diagramme de cas d'utilisation global de TrustGym}
+  \label{fig:use_case_global}
+\end{figure}
+
+\subsection{Product Backlog}
+Le tableau~\ref{tab:product_backlog} pr\'{e}sente le product backlog de TrustGym, class\'{e} par ordre d'importance. Chaque \'{e}l\'{e}ment repr\'{e}sente une fonctionnalit\'{e} majeure du syst\`{e}me, avec une \'{e}valuation de son importance sur une \'{e}chelle de 0 \`{a} 100.
+
+\begin{longtable}{|c|p{4.5cm}|p{6.5cm}|c|}
+\hline
+\textbf{ID} & \textbf{Titre} & \textbf{Description} & \textbf{Importance} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Titre} & \textbf{Description} & \textbf{Importance} \\
+\hline
+\endhead
+\hline
+\endfoot
+1 & Authentification et gestion des utilisateurs & Mise en place du double syst\`{e}me \acrshort{jwt} (Admin/Membre), gestion des r\^{o}les et permissions, s\'{e}curisation des endpoints. & 100 \\
+\hline
+2 & Gestion des membres & \acrshort{crud} complet des membres, recherche, filtrage, consultation des profils et historiques. & 100 \\
+\hline
+3 & Gestion des abonnements & Cr\'{e}ation des types d'abonnements, affectation aux membres, suivi des \'{e}ch\'{e}ances et renouvellements. & 90 \\
+\hline
+4 & Contr\^{o}le d'acc\`{e}s & Gestion des entr\'{e}es/sorties, configuration des cr\'{e}neaux horaires, historique d'acc\`{e}s, calcul de l'occupation en temps r\'{e}el. & 90 \\
+\hline
+5 & Int\'{e}gration mat\'{e}rielle & Communication avec les terminaux ZKTeco et Hikvision via le module machine handler. & 90 \\
+\hline
+6 & Application mobile membre & Interface mobile compl\`{e}te : inscription multi-\'{e}tapes, tableau de bord, s\'{e}ances, statistiques, profil. & 90 \\
+\hline
+7 & Gestion des coachs & Ajout et gestion des coachs, affectation aux disciplines, gestion des disponibilit\'{e}s. & 80 \\
+\hline
+8 & Gestion des s\'{e}ances & Planification des s\'{e}ances, affectation des coachs, vue calendrier, gestion des inscriptions. & 80 \\
+\hline
+9 & Boutique et stock & Gestion des produits, des fournisseurs, suivi des stocks, enregistrement des ventes. & 70 \\
+\hline
+10 & Finance et facturation & G\'{e}n\'{e}ration de factures \acrshort{b2b}, suivi des paiements, gestion de la caisse, rapports financiers. & 70 \\
+\hline
+11 & Portefeuille pr\'{e}pay\'{e} & Syst\`{e}me de wallet pour les membres, rechargement, d\'{e}bit automatique, historique des transactions. & 60 \\
+\hline
+12 & Centre \acrshort{kpi} & Tableaux de bord analytiques, indicateurs de performance, graphiques et rapports. & 60 \\
+\hline
+13 & Assistant \acrshort{ai} (\acrshort{rag}) & Assistant intelligent utilisant OpenAI et pgvector pour r\'{e}pondre aux questions des administrateurs. & 50 \\
+\hline
+\caption{Product Backlog de TrustGym}
+\label{tab:product_backlog}
+\end{longtable}
+
+\subsection{Diagramme de classes}
+Le diagramme de classes (figure~\ref{fig:class_diagram}) repr\'{e}sente la structure statique du syst\`{e}me TrustGym et les relations entre ses principales entit\'{e}s \cite{class_diag, fowler2003uml}. Les entit\'{e}s cl\'{e}s du syst\`{e}me sont :
+
+\begin{itemize}
+  \item \textbf{User} : repr\'{e}sente les utilisateurs du back-office (Admin, Caissier). Poss\`{e}de un r\^{o}le, des informations d'authentification (\texttt{email}, \texttt{password}, \texttt{cardId}, \texttt{pin}) et est rattach\'{e} \`{a} un partenaire et une salle.
+  \item \textbf{Member} : adh\'{e}rent de la salle avec ses donn\'{e}es personnelles (\texttt{firstName}, \texttt{lastName}, \texttt{cin}, \texttt{dateOfBirth}), son statut de blocage et son mot de passe applicatif pour le mobile.
+  \item \textbf{Gym} : entit\'{e} centrale repr\'{e}sentant une salle de sport, avec sa configuration (\texttt{sdk}, \texttt{gymDomain}, \texttt{bridgeApiKey}) et ses modules activ\'{e}s.
+  \item \textbf{Partner} : partenaire \acrshort{saas} propri\'{e}taire d'une ou plusieurs salles, avec ses informations fiscales (\texttt{taxIdentificationNumber}, \texttt{tva}, \texttt{timbre}).
+  \item \textbf{Door} : porte physique d'acc\`{e}s \'{e}quip\'{e}e d'un dispositif ZKTeco ou Hikvision, avec configuration r\'{e}seau (\texttt{ip}, \texttt{port}, \texttt{sdk}).
+  \item \textbf{Access} : enregistrement d'un \'{e}v\'{e}nement d'entr\'{e}e ou de sortie, avec le type (\texttt{ENTRY}/\texttt{EXIT}) et l'autorisation.
+  \item \textbf{GymSubscription} : type d'abonnement (\texttt{PER\_MONTH} ou \texttt{PER\_SESSION}) avec prix, dur\'{e}e et nombre maximal de cr\'{e}neaux.
+  \item \textbf{Payment} : transaction financi\`{e}re li\'{e}e \`{a} un abonnement, avec type de paiement, montant et statut.
+  \item \textbf{Coach} : entra\^{i}neur avec son tarif horaire, sa carte d'acc\`{e}s et ses disciplines.
+  \item \textbf{Session} : s\'{e}ance planifi\'{e}e avec type (\texttt{OPEN}, \texttt{RESERVATION}, \texttt{CLOSE}), cr\'{e}neau horaire et nombre de places.
+  \item \textbf{Product} : article en vente dans la boutique, avec prix unitaire et cat\'{e}gorie.
+  \item \textbf{Supplier} : fournisseur de produits pour la boutique.
+  \item \textbf{Invoice} : facture \acrshort{b2b} avec informations client, taux de taxe, timbre fiscal et fichier \acrshort{pdf} g\'{e}n\'{e}r\'{e}.
+  \item \textbf{Wallet} : portefeuille pr\'{e}pay\'{e} d'un membre, avec solde courant et historique des mouvements via \textbf{WalletEntry}.
+  \item \textbf{AiChatLog} : historique des conversations avec l'assistant \acrshort{ai}, stockant les questions et r\'{e}ponses.
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{class diagram.png}
+  \caption{Diagramme de classes global de TrustGym}
+  \label{fig:class_diagram}
+\end{figure}
+
+\section{Conclusion}
+Dans ce chapitre, nous avons d\'{e}fini les sp\'{e}cifications compl\`{e}tes du projet TrustGym. Nous avons identifi\'{e} les quatre acteurs principaux du syst\`{e}me (SuperAdmin, Admin, Caissier et Membre), d\'{e}taill\'{e} les besoins fonctionnels par acteur, et \'{e}tabli les exigences non fonctionnelles en termes de performance, scalabilit\'{e}, s\'{e}curit\'{e}, convivialit\'{e} et temps r\'{e}el. Le product backlog a permis de prioriser les treize fonctionnalit\'{e}s majeures, le diagramme de cas d'utilisation global a illustr\'{e} les interactions entre les acteurs et le syst\`{e}me, et le diagramme de classes a pos\'{e} les bases de la mod\'{e}lisation des donn\'{e}es. Ces sp\'{e}cifications serviront de r\'{e}f\'{e}rence tout au long des sept sprints de d\'{e}veloppement pr\'{e}sent\'{e}s dans les chapitres suivants.
+
+\end{document}

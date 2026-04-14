@@ -1,0 +1,346 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../img/}}{\subfix{../architectures images/}}}
+\begin{document}
+
+\chapter{Sprint 3 : Contr\^{o}le d'Acc\`{e}s et Int\'{e}gration Mat\'{e}rielle}
+
+\section{Introduction}
+
+Le troisi\`{e}me sprint repr\'{e}sente un tournant technique majeur dans le projet TrustGym en introduisant l'int\'{e}gration avec le mat\'{e}riel physique de contr\^{o}le d'acc\`{e}s. Ce sprint couvre la gestion des portes connect\'{e}es (ZKTeco \cite{zkteco} et Hikvision \cite{hikvision}), l'enregistrement des \'{e}v\'{e}nements d'entr\'{e}e et de sortie, le calcul de l'occupation en temps r\'{e}el, ainsi que la mise en place de l'architecture du Machine Handler -- un pont logiciel entre les dispositifs physiques et l'\acrshort{api} TrustGym. La communication temps r\'{e}el via WebSocket \cite{socketio} et le m\'{e}canisme PostgreSQL \cite{postgre} \texttt{LISTEN/NOTIFY} assurent une r\'{e}activit\'{e} imm\'{e}diate sur le tableau de bord et l'application mobile.
+
+\section{Sprint Backlog}
+
+\begin{longtable}{|p{3cm}|p{2.5cm}|p{4cm}|p{5cm}|}
+\hline
+\textbf{Epic} & \textbf{Nature} & \textbf{User Story} & \textbf{Description} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Epic} & \textbf{Nature} & \textbf{User Story} & \textbf{Description} \\
+\hline
+\endhead
+\hline
+\endfoot
+
+\multirow{3}{3cm}{Gestion des Portes} & Fonctionnalit\'{e} & En tant qu'administrateur, je veux configurer une porte connect\'{e}e & Impl\'{e}menter le \acrshort{crud} des portes avec IP, port, type de \acrshort{sdk} (PULL, PUSH-ATTENDANCE, PUSH-SECURITY, HIKVISION, STANDALONE) et num\'{e}ro de s\'{e}rie. \\
+\cline{2-4}
+& Fonctionnalit\'{e} & En tant qu'administrateur, je veux g\'{e}rer les cr\'{e}neaux horaires & Configurer les plages horaires d'ouverture et les restrictions d'acc\`{e}s par cr\'{e}neau. \\
+\cline{2-4}
+& Fonctionnalit\'{e} & En tant qu'administrateur, je veux g\'{e}rer les cr\'{e}neaux horaires des partenaires & Permettre aux partenaires de d\'{e}finir leurs propres horaires d'acc\`{e}s. \\
+\hline
+
+\multirow{3}{3cm}{\'{E}v\'{e}nements d'Acc\`{e}s} & Fonctionnalit\'{e} & En tant qu'administrateur, je veux voir l'historique d'acc\`{e}s & Enregistrer et afficher les \'{e}v\'{e}nements d'acc\`{e}s avec date, heure, cardId, statut d'autorisation et type (ENTRY/EXIT). \\
+\cline{2-4}
+& Fonctionnalit\'{e} & En tant que caissier, je veux enregistrer manuellement une entr\'{e}e/sortie & Permettre l'enregistrement manuel d'\'{e}v\'{e}nements d'acc\`{e}s depuis le tableau de bord. \\
+\cline{2-4}
+& Fonctionnalit\'{e} & En tant qu'administrateur, je veux filtrer l'historique d'acc\`{e}s & Ajouter des filtres avanc\'{e}s par date, membre, porte, type et statut d'autorisation. \\
+\hline
+
+\multirow{4}{3cm}{Machine Handler} & T\^{a}che & Mettre en place le service Python & D\'{e}velopper le service Python (port 8000) pour la communication directe avec les dispositifs ZKTeco et Hikvision. \\
+\cline{2-4}
+& T\^{a}che & Mettre en place le service NestJS relais & D\'{e}velopper le service NestJS (port 8080) pour relayer les \'{e}v\'{e}nements vers \texttt{trustgym-api}. \\
+\cline{2-4}
+& T\^{a}che & Configurer ngrok et PM2 & Mettre en place le tunnel ngrok \cite{ngrok} pour l'exposition externe et PM2 \cite{pm2} pour la gestion des processus. \\
+\cline{2-4}
+& T\^{a}che & Cr\'{e}er le lanceur Windows & D\'{e}velopper \texttt{start-trustgym.bat} pour le d\'{e}marrage automatis\'{e} de l'ensemble des services. \\
+\hline
+
+\multirow{3}{3cm}{Temps R\'{e}el} & Fonctionnalit\'{e} & En tant qu'administrateur, je veux voir l'occupation en temps r\'{e}el & Calculer l'occupation en comptant les membres dont le dernier \'{e}v\'{e}nement est ENTRY dans une fen\^{e}tre configurable (d\'{e}faut : 1 heure). \\
+\cline{2-4}
+& T\^{a}che & Impl\'{e}menter le WebSocket & Mettre en place Socket.IO sur le namespace \texttt{/attendance} avec l'\'{e}v\'{e}nement \texttt{occupancy:updated}. \\
+\cline{2-4}
+& T\^{a}che & Impl\'{e}menter PostgreSQL LISTEN/NOTIFY & Configurer \texttt{PgListenerService} pour la propagation en temps r\'{e}el des \'{e}v\'{e}nements d'acc\`{e}s. \\
+\hline
+
+\multirow{3}{3cm}{Commandes et Bundles} & Fonctionnalit\'{e} & En tant qu'administrateur, je veux envoyer des commandes aux dispositifs & Impl\'{e}menter la file de commandes (\texttt{DeviceCommand}) pour piloter les dispositifs ZKTeco/Hikvision. \\
+\cline{2-4}
+& Fonctionnalit\'{e} & En tant qu'administrateur, je veux suivre l'\'{e}tat des handlers & Cr\'{e}er le tableau de bord des bundles (\texttt{BundleDashboard}) avec statut et flux de configuration. \\
+\cline{2-4}
+& Fonctionnalit\'{e} & En tant qu'administrateur, je veux mettre \`{a} jour les handlers & Impl\'{e}menter le module de mises \`{a} jour des bundles (\texttt{BundleUpdate}). \\
+\hline
+
+\caption{Sprint Backlog -- Sprint 3}
+\label{tab:sprint3-backlog}
+\end{longtable}
+
+\section{Analyse}
+
+\subsection{Diagramme de cas d'utilisation}
+
+La figure \ref{fig:sprint3-usecase} pr\'{e}sente le diagramme de cas d'utilisation du Sprint 3 couvrant le contr\^{o}le d'acc\`{e}s et l'int\'{e}gration mat\'{e}rielle.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.85, transform shape]
+
+% System box
+\node[systembox={Syst\`{e}me TrustGym -- Contr\^{o}le d'Acc\`{e}s}, minimum width=10cm, minimum height=12cm] (sys) at (5.5, -5) {};
+
+% Actors (all on the left)
+\stickfigure{(-2.5, -1.5)}{Admin}
+\stickfigure{(-2.5, -5)}{Caissier}
+\stickfigure{(-2.5, -9)}{Membre}
+
+% Use cases
+\node[usecase] (uc1) at (5.5, 0) {Configurer une porte};
+\node[usecase] (uc2) at (5.5, -1.8) {G\'{e}rer les cr\'{e}neaux horaires};
+\node[usecase] (uc3) at (5.5, -3.6) {Consulter l'historique d'acc\`{e}s};
+\node[usecase] (uc4) at (5.5, -5.4) {Enregistrer manuellement un acc\`{e}s};
+\node[usecase] (uc5) at (5.5, -7.2) {Consulter l'occupation en temps r\'{e}el};
+\node[usecase] (uc6) at (5.5, -9) {Envoyer une commande au dispositif};
+\node[usecase] (uc7) at (5.5, -10.8) {Suivre l'\'{e}tat des handlers};
+
+% Admin links
+\draw (-1, -1.5) -- (uc1.west);
+\draw (-1, -1.5) -- (uc2.west);
+\draw (-1, -1.5) -- (uc3.west);
+\draw (-1, -1.5) -- (uc5.west);
+\draw (-1, -1.5) -- (uc6.west);
+\draw (-1, -1.5) -- (uc7.west);
+
+% Caissier links
+\draw (-1, -5) -- (uc3.west);
+\draw (-1, -5) -- (uc4.west);
+
+% Membre links
+\draw (-1, -9) -- (uc5.west);
+
+\end{tikzpicture}
+\caption{Diagramme de cas d'utilisation -- Sprint 3}
+\label{fig:sprint3-usecase}
+\end{figure}
+
+\subsection{Description textuelle des cas d'utilisation}
+
+\subsubsection{Cas d'utilisation : Configurer une Porte Connect\'{e}e}
+
+\begin{itemize}
+  \item \textbf{Acteur principal} : Administrateur
+  \item \textbf{Pr\'{e}conditions} : L'acteur est authentifi\'{e} avec les droits d'administration. Un dispositif physique (ZKTeco ou Hikvision) est install\'{e} et accessible sur le r\'{e}seau.
+  \item \textbf{Sc\'{e}nario principal} :
+  \begin{enumerate}
+    \item L'administrateur acc\`{e}de \`{a} la page de gestion des portes.
+    \item Il cr\'{e}e une nouvelle porte en sp\'{e}cifiant l'adresse IP, le port et le num\'{e}ro de s\'{e}rie.
+    \item Il s\'{e}lectionne le type de \acrshort{sdk} correspondant au mod\`{e}le du dispositif.
+    \item Le syst\`{e}me tente une connexion de test avec le dispositif.
+    \item La porte est enregistr\'{e}e et appara\^{i}t dans la liste des portes actives.
+  \end{enumerate}
+  \item \textbf{Sc\'{e}nario alternatif} : Si le dispositif n'est pas joignable, le syst\`{e}me affiche un message d'erreur de connexion.
+  \item \textbf{Postconditions} : La porte est configur\'{e}e et pr\^{e}te \`{a} recevoir des \'{e}v\'{e}nements d'acc\`{e}s.
+\end{itemize}
+
+\subsubsection{Cas d'utilisation : Consulter l'Occupation en Temps R\'{e}el}
+
+\begin{itemize}
+  \item \textbf{Acteur principal} : Administrateur / Membre (mobile)
+  \item \textbf{Pr\'{e}conditions} : Au moins une porte est configur\'{e}e et op\'{e}rationnelle.
+  \item \textbf{Sc\'{e}nario principal} :
+  \begin{enumerate}
+    \item L'utilisateur acc\`{e}de au tableau de bord (web) ou \`{a} l'\'{e}cran d'accueil (mobile).
+    \item Le syst\`{e}me calcule le nombre de membres pr\'{e}sents en analysant les derniers \'{e}v\'{e}nements d'acc\`{e}s.
+    \item L'occupation est affich\'{e}e en temps r\'{e}el et mise \`{a} jour automatiquement via WebSocket.
+    \item Chaque nouvel \'{e}v\'{e}nement d'entr\'{e}e ou de sortie d\'{e}clenche l'\'{e}v\'{e}nement \texttt{occupancy:updated}.
+  \end{enumerate}
+  \item \textbf{Postconditions} : L'utilisateur visualise l'occupation actuelle de la salle.
+\end{itemize}
+
+\subsubsection{Cas d'utilisation : Enregistrer Manuellement un Acc\`{e}s}
+
+\begin{itemize}
+  \item \textbf{Acteur principal} : Caissier / Administrateur
+  \item \textbf{Pr\'{e}conditions} : Le membre est identifi\'{e} et une porte est configur\'{e}e.
+  \item \textbf{Sc\'{e}nario principal} :
+  \begin{enumerate}
+    \item Le caissier acc\`{e}de \`{a} la page d'enregistrement manuel.
+    \item Il recherche le membre par nom ou num\'{e}ro de carte.
+    \item Il s\'{e}lectionne la porte et le type d'\'{e}v\'{e}nement (entr\'{e}e ou sortie).
+    \item Le syst\`{e}me enregistre l'\'{e}v\'{e}nement et met \`{a} jour l'occupation.
+  \end{enumerate}
+  \item \textbf{Sc\'{e}nario alternatif} : Si le membre est bloqu\'{e}, l'\'{e}v\'{e}nement est enregistr\'{e} avec le statut \texttt{isAuthorized = false}.
+  \item \textbf{Postconditions} : L'\'{e}v\'{e}nement d'acc\`{e}s est persist\'{e} et l'occupation est recalcul\'{e}e.
+\end{itemize}
+
+\section{R\'{e}alisation}
+
+\subsection{Backend}
+
+\subsubsection{Module d'Acc\`{e}s}
+
+Le \texttt{AccessModule} g\`{e}re l'entit\'{e} \texttt{Access} qui repr\'{e}sente chaque \'{e}v\'{e}nement d'entr\'{e}e ou de sortie. L'entit\'{e} est index\'{e}e sur les champs \texttt{doorId}, \texttt{dateTime}, \texttt{accessType} et \texttt{memberId} pour garantir des performances optimales lors des requ\^{e}tes de filtrage et du calcul d'occupation. Chaque enregistrement contient la date, l'heure, le \texttt{cardId} du membre, le statut d'autorisation (\texttt{isAuthorized}) et le type d'acc\`{e}s (\texttt{ENTRY} ou \texttt{EXIT}).
+
+\subsubsection{Module Porte}
+
+Le \texttt{DoorModule} g\`{e}re l'entit\'{e} \texttt{Door} d\'{e}crivant chaque dispositif physique de contr\^{o}le d'acc\`{e}s. Les champs principaux incluent l'adresse IP, le port, le type de \acrshort{sdk} et le num\'{e}ro de s\'{e}rie. Le type de \acrshort{sdk} d\'{e}termine le protocole de communication utilis\'{e} :
+
+\begin{itemize}
+  \item \textbf{PULL} : le syst\`{e}me interroge p\'{e}riodiquement le dispositif pour r\'{e}cup\'{e}rer les \'{e}v\'{e}nements.
+  \item \textbf{PUSH-ATTENDANCE / PUSH-SECURITY} : le dispositif ZKTeco envoie les \'{e}v\'{e}nements au serveur.
+  \item \textbf{HIKVISION} : protocole sp\'{e}cifique aux cam\'{e}ras et contr\^{o}leurs Hikvision.
+  \item \textbf{STANDALONE} : fonctionnement autonome sans connexion r\'{e}seau permanente.
+\end{itemize}
+
+\subsubsection{Module ZKTeco}
+
+Le \texttt{ZkecoModule} sert de pont entre l'\acrshort{api} et les dispositifs ZKTeco. Il traduit les commandes m\'{e}tier (ouverture de porte, synchronisation des cartes) en appels compatibles avec le \acrshort{sdk} ZKTeco.
+
+\subsubsection{Modules Cr\'{e}neaux Horaires}
+
+Les modules \texttt{TimeSlotModule} et \texttt{PartnerTimeSlotModule} g\`{e}rent les plages horaires d'ouverture de la salle et les restrictions d'acc\`{e}s. Les cr\'{e}neaux d\'{e}finissent les p\'{e}riodes pendant lesquelles l'acc\`{e}s est autoris\'{e}, permettant une gestion flexible des horaires par jour de la semaine.
+
+\subsubsection{Module WebSocket}
+
+Le \texttt{WebSocketModule} impl\'{e}mente la communication temps r\'{e}el via Socket.IO \cite{socketio}. L'\texttt{AccessGateway} \'{e}coute sur le namespace \texttt{/attendance} et diffuse les \'{e}v\'{e}nements d'acc\`{e}s et les mises \`{a} jour d'occupation. Le \texttt{PgListenerService} utilise le m\'{e}canisme PostgreSQL \texttt{LISTEN/NOTIFY} pour d\'{e}tecter les insertions dans la table d'acc\`{e}s et d\'{e}clencher imm\'{e}diatement la propagation aux clients connect\'{e}s.
+
+\subsubsection{Calcul de l'Occupation en Direct}
+
+L'occupation en temps r\'{e}el est calcul\'{e}e en comptant les membres dont le dernier \'{e}v\'{e}nement d'acc\`{e}s \`{a} une porte de la salle est de type \texttt{ENTRY}, dans une fen\^{e}tre temporelle configurable (par d\'{e}faut 1 heure). Ce m\'{e}canisme \'{e}vite les faux positifs li\'{e}s aux membres qui auraient quitt\'{e} la salle sans badger en sortie. Chaque nouvel \'{e}v\'{e}nement d\'{e}clenche l'\'{e}v\'{e}nement WebSocket \texttt{occupancy:updated}.
+
+\subsubsection{Modules Commandes et Bundles}
+
+Le \texttt{DeviceCommandModule} g\`{e}re une file de commandes destin\'{e}es aux dispositifs physiques (synchronisation de cartes, ouverture \`{a} distance, red\'{e}marrage). Les modules \texttt{BundleDashboardModule}, \texttt{BundleSetupModule} et \texttt{BundleUpdateModule} permettent respectivement le suivi de l'\'{e}tat des handlers, leur configuration initiale et leur mise \`{a} jour \`{a} distance.
+
+\subsection{Machine Handler}
+
+\subsubsection{Architecture}
+
+Le Machine Handler adopte une architecture \`{a} deux couches pour assurer la fiabilit\'{e} de la communication avec le mat\'{e}riel :
+
+\begin{itemize}
+  \item \textbf{Service Python} (port 8000) : communique directement avec les dispositifs physiques ZKTeco et Hikvision via leurs \acrshort{sdk}s respectifs. Ce service g\`{e}re la connexion bas niveau, la lecture des \'{e}v\'{e}nements et l'envoi de commandes.
+  \item \textbf{Service NestJS} (port 8080) : sert de relais entre le service Python et l'\acrshort{api} principale \texttt{trustgym-api}. Il normalise les donn\'{e}es, g\`{e}re les retentatives en cas d'\'{e}chec et maintient un journal des \'{e}v\'{e}nements.
+\end{itemize}
+
+La figure \ref{fig:arch_machines} illustre l'architecture compl\`{e}te du Machine Handler et le flux de donn\'{e}es entre les diff\'{e}rentes couches.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{ARCHITECTURE MACHINES.png}
+  \caption{Architecture du Machine Handler -- Communication mat\'{e}rielle}
+  \label{fig:arch_machines}
+\end{figure}
+
+\subsubsection{Infrastructure}
+
+\begin{itemize}
+  \item \textbf{ngrok} \cite{ngrok} : cr\'{e}e un tunnel s\'{e}curis\'{e} exposant le service NestJS (port 8080) sur Internet, permettant aux dispositifs install\'{e}s en mode PUSH d'envoyer leurs \'{e}v\'{e}nements m\^{e}me derri\`{e}re un NAT.
+  \item \textbf{PM2} \cite{pm2} : orchestre les processus Python et NestJS, assurant le red\'{e}marrage automatique en cas de crash et la gestion des journaux.
+  \item \textbf{start-trustgym.bat} : script Windows de d\'{e}marrage automatis\'{e} qui lance s\'{e}quentiellement ngrok, le service Python et le service NestJS via PM2.
+\end{itemize}
+
+\subsection{Diagramme de s\'{e}quence}
+
+La figure \ref{fig:sprint3-sequence} illustre le flux temps r\'{e}el d'un \'{e}v\'{e}nement d'acc\`{e}s, depuis la d\'{e}tection par le dispositif physique jusqu'\`{a} la mise \`{a} jour du tableau de bord.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.78, transform shape]
+
+% Participants
+\node[sdactor] (dev) at (0, 0) {Dispositif};
+\node[sdactor] (py) at (3, 0) {Python 8000};
+\node[sdactor] (nest) at (6, 0) {NestJS 8080};
+\node[sdactor] (api) at (9, 0) {trustgym-api};
+\node[sdactor] (pg) at (12, 0) {PostgreSQL};
+\node[sdactor] (ws) at (15, 0) {Dashboard};
+
+% Lifelines
+\draw[dashed] (0, -0.35) -- (0, -13);
+\draw[dashed] (3, -0.35) -- (3, -13);
+\draw[dashed] (6, -0.35) -- (6, -13);
+\draw[dashed] (9, -0.35) -- (9, -13);
+\draw[dashed] (12, -0.35) -- (12, -13);
+\draw[dashed] (15, -0.35) -- (15, -13);
+
+% Messages
+\draw[sdmessage] (0, -1) -- node[above, font=\scriptsize] {Badge RFID} (3, -1);
+\draw[sdmessage] (3, -2) -- node[above, font=\scriptsize] {POST /event} (6, -2);
+\draw[sdmessage] (6, -3) -- node[above, font=\scriptsize] {POST /api/access} (9, -3);
+\draw[sdmessage] (9, -4) -- node[above, font=\scriptsize] {INSERT access} (12, -4);
+\draw[sdreturn] (12, -5) -- node[above, font=\scriptsize] {OK} (9, -5);
+
+% LISTEN/NOTIFY flow
+\draw[sdmessage] (12, -6.5) -- node[above, font=\scriptsize] {NOTIFY access\_log\_channel} (9, -6.5);
+\node[font=\scriptsize\itshape, text=gray] at (10.5, -7.2) {PgListenerService};
+
+\draw[sdmessage] (9, -8) -- node[above, font=\scriptsize] {Calcul occupation} (12, -8);
+\draw[sdreturn] (12, -9) -- node[above, font=\scriptsize] {count: 42} (9, -9);
+
+\draw[sdmessage] (9, -10.5) -- node[above, font=\scriptsize, text width=3.5cm, align=center] {emit occupancy:updated} (15, -10.5);
+\node[font=\scriptsize\itshape, text=gray] at (12, -11.2) {Socket.IO /attendance};
+
+\draw[sdreturn] (6, -12) -- node[above, font=\scriptsize] {200 OK} (3, -12);
+
+\end{tikzpicture}
+\caption{Diagramme de s\'{e}quence -- Flux temps r\'{e}el d'un \'{e}v\'{e}nement d'acc\`{e}s}
+\label{fig:sprint3-sequence}
+\end{figure}
+
+\subsection{Frontend Web}
+
+\subsubsection{Historique d'Acc\`{e}s}
+
+La page d'historique (\texttt{historique}) affiche l'ensemble des \'{e}v\'{e}nements d'acc\`{e}s sous forme de tableau paginable. Des filtres avanc\'{e}s permettent de rechercher par plage de dates, par membre, par porte, par type d'\'{e}v\'{e}nement (entr\'{e}e/sortie) et par statut d'autorisation. Les donn\'{e}es sont r\'{e}cup\'{e}r\'{e}es via TanStack Query \cite{tanstack} avec un \texttt{staleTime} adapt\'{e} \`{a} la fr\'{e}quence de mise \`{a} jour.
+
+\subsubsection{Enregistrement Manuel}
+
+La page d'enregistrement manuel (\texttt{enregistrer}) permet aux caissiers et administrateurs de consigner un \'{e}v\'{e}nement d'acc\`{e}s sans passage physique par un dispositif. Cette fonctionnalit\'{e} est utile en cas de dysfonctionnement du mat\'{e}riel ou pour les visiteurs.
+
+\subsubsection{Gestion des Cr\'{e}neaux Horaires}
+
+La page de gestion des horaires (\texttt{horaire}) offre une interface visuelle pour d\'{e}finir les plages d'ouverture par jour de la semaine. Les cr\'{e}neaux sont repr\'{e}sent\'{e}s sous forme de blocs colorables sur une grille temporelle.
+
+\subsection{Frontend Mobile}
+
+\subsubsection{Occupation en Temps R\'{e}el}
+
+Le hook \texttt{useOccupancyRealtime} combine deux m\'{e}canismes pour garantir la fra\^{i}cheur des donn\'{e}es d'occupation :
+
+\begin{itemize}
+  \item \textbf{Socket.IO} : \'{e}coute l'\'{e}v\'{e}nement \texttt{occupancy:updated} sur le namespace \texttt{/attendance} pour les mises \`{a} jour instantan\'{e}es. Chaque r\'{e}ception invalide le cache React Query associ\'{e}.
+  \item \textbf{Polling} : une requ\^{e}te de rafra\^{i}chissement est effectu\'{e}e toutes les 30 secondes en compl\'{e}ment du WebSocket, assurant la r\'{e}silience en cas de d\'{e}connexion temporaire.
+\end{itemize}
+
+Les requ\^{e}tes sont automatiquement mises en pause lorsque l'appareil perd la connectivit\'{e} r\'{e}seau et reprennent d\`{e}s le retour de la connexion, \'{e}vitant ainsi les erreurs inutiles et l'\'{e}puisement de la batterie.
+
+\subsection{Interfaces r\'{e}alis\'{e}es}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Historique des \'{e}v\'{e}nements d'acc\`{e}s}\vspace{2cm}}}
+  \caption{Page d'historique des acc\`{e}s avec filtres avanc\'{e}s}
+  \label{fig:sprint3-access-history}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Occupation en temps r\'{e}el sur le tableau de bord}\vspace{2cm}}}
+  \caption{Indicateur d'occupation en direct sur le tableau de bord web}
+  \label{fig:sprint3-occupancy}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Configuration des portes connect\'{e}es}\vspace{2cm}}}
+  \caption{Interface de configuration des portes et dispositifs de contr\^{o}le d'acc\`{e}s}
+  \label{fig:sprint3-doors}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Gestion des cr\'{e}neaux horaires}\vspace{2cm}}}
+  \caption{Interface de gestion des plages horaires d'ouverture}
+  \label{fig:sprint3-timeslots}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Tableau de bord des bundles}\vspace{2cm}}}
+  \caption{Suivi de l'\'{e}tat des Machine Handlers}
+  \label{fig:sprint3-bundles}
+\end{figure}
+
+\section{Conclusion}
+
+Le Sprint 3 a permis de r\'{e}aliser l'une des fonctionnalit\'{e}s les plus diff\'{e}renciantes de TrustGym : le contr\^{o}le d'acc\`{e}s physique int\'{e}gr\'{e}. L'architecture du Machine Handler, avec sa double couche Python/NestJS, offre une abstraction robuste des sp\'{e}cificit\'{e}s mat\'{e}rielles. La communication temps r\'{e}el via WebSocket et PostgreSQL \texttt{LISTEN/NOTIFY} garantit une r\'{e}activit\'{e} imm\'{e}diate tant sur le tableau de bord web que sur l'application mobile. Le Sprint 4 s'appuiera sur cette infrastructure pour aborder la gestion des coachs et des s\'{e}ances d'entra\^{i}nement.
+
+\end{document}

@@ -1,0 +1,106 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+\begin{document}
+\chapter{Spécification des exigences}
+\section{Introduction}
+Ce chapitre sera dédié à l'identification des besoins fonctionnels des acteurs qui interagissent avec le système, des besoins non fonctionnelles qui améliore la qualité du système, mais également, on y parlera de la présentation du plan de travail à travers les itérations et le product backlog. 
+\section{Spécification des exigences}
+Afin d'atteindre les différents objectifs du projet, et de comprendre les fonctionnalités du système, l'identification des besoins des acteurs, la production des diagrammes nécessaires et enfin une description textuelle des cas d'utilisations principaux.  
+
+\subsection{Identification des Acteurs}
+Un acteur est une personne ou un autre élément système qui s'attend à un ou plusieurs services offerts par l'application; Il intéragit directement avec le système étudié.
+\newline Les acteurs du système sont: 
+\begin{itemize}
+  \item \textbf{Client}: Les principaux utilisateurs de l'application; n'importe quel utilisateur qui crée un compte pour ouvrir une cagnotte. 
+  \item \textbf{Administrateur}: Les administrateurs qui gère l'application du côté du dashboard admin. 
+  \item \textbf{Organisation}: Les organisations partenaires qui vont s'allier à Watto et permettre aux utilisateurs de consommer les vouchers et les cartes cadeaux. Ils ont leur propres dashboard où ils peuvent supervisé leur vente, gérer leur produits et encaissé les factures. 
+  \item \textbf{Sous Organisation}: Les magasins liés aux organisations. Chaque magasin a son propre compte lié à une organisation dans lequel on pourra suivre sa consommation et son avancée.
+\end{itemize}
+\newpage
+\subsection{Besoins Fonctionnels}
+Les besoins fonctionnels sont les spécifications des fonctionnalités du produit qui se doivent d'être implémenté pour subvenir aux besoins de l'utilisateur.\cite{functional_req}
+\newline
+Pour mieux comprendre les besoins fonctionnels, on les a séparer en 3 catégories:
+\begin{outline}
+ \1 Pour les administrateurs:
+    \2 \textbf{KPI Center}: La première page du dashboard, dans laquelle les administrateurs peuvent voir toutes les statistiques de leur entreprise, que ce soit celle de ventes, des utilisteurs enregistrés, des organisations partenaires, etc.
+    \2 \textbf{Gestion d'utilisateurs}: Les administrateurs peuvent gérer les utilisateurs à ajouter, on parle ici spécifiquement d'administrateurs et de rôles d'utilisateurs qui peuvent accéder à l'admin dashboard. 
+    \2 \textbf{Gestion d'organisation}: Les administrateurs peuvent gérer les organisations, y compris valider leur extrait RNE et leur patente, etc.\2 \textbf{Gestion de magasins}: Les administrateurs peuvent gérer les magasins associés aux organisations. 
+    \2 \textbf{Gestion de caissiers}: Les administrateurs peuvent gérer les comptes sous organisations ou caissier qui sont eux même liés aux magasins. 
+    \2 \textbf{Gestion de clients}: Les administrateurs peuvent gérer les clients à ajouter et valider leur papiers (CIN, Passeport ou carte séjour).
+    \2 \textbf{Gestion de cagnottes}: Les administrateurs peuvent gérer les cagnottes existantes en les modifiant ou supprimant mais également en les gelant si il y a un cas extrême. 
+    \2 \textbf{Gestion de cartes cadeaux}: Les administrateurs peuvent gérer les cartes cadeaux existantes, pour superviser et intervenir en cas d'évènements exceptionnels. 
+    \2 \textbf{Centre de transactions}: Les administrateurs ont une vision globale sur toutes les transactions effectués sur la plateforme Watto. 
+    \2 \textbf{Gestion de factures}: Les administrateurs peuvent gérer les factures à ajouter, mettre à jour leur statut et intervenir pour les modifier ou supprimer en cas extrême. (les factures sont spécifiques aux organisations partenaires)  
+    \2 \textbf{Gestion de virements}: Les administrateurs ont une vision globale sur tous les virements effectués et peuvent les accepter ou les rejeter. 
+    \2 \textbf{Centre d'alertes}: Les administrateurs ont une vision globale sur toutes activités de l'application. 
+\1 Pour les organisations: 
+    \2 \textbf{KPI Center}: La première page du dashboard, dans laquelle les organisations peuvent voir toutes les statistiques de leur organisation avec Watto.
+    \2 \textbf{Gestion d'utilisateurs}: Les organisations peuvent ajouter et gérer les utilisateurs qui peuvent gérer l'organisation et accéder à la dashboard organisation. 
+    \2 \textbf{Gestion de magasins}: Les organisations peuvent gérer les magasins à ajouter.  
+    \2 \textbf{Gestion de paiements}: Les organisations ont ici une vision gloable sur tous les paiements effectués à travers la plateforme Watto sur leur compte et leur nature.  
+    \2 \textbf{Gestion de factures}: Les organisations ont ici une vision sur la liste des factures à leur compte de la part de Watto. 
+ \1 Pour les clients: 
+    \2 \textbf{Création de compte}: Tous les invités peuvent créer un compte Watto client 
+    \2 \textbf{Gestion de compte}: Tous les clients peuvent gérer leur compte
+    \2 \textbf{Gestion de cagnottes}: Tous les clients peuvent gérer leur cagnotte comme bon leur semble avec certaines limites appliqués en cas de transferts d'argent sur la cagnotte
+    \2 \textbf{Manipulation d'argent cagnotte}: Tous les clients peuvent: 
+        \3 \textbf{Transférer l'argent de la cagnotte sur leur compte} 
+        \3 \textbf{Acheter un voucher à partir de la cagnotte à dépenser chez un partenaire} 
+        \3 \textbf{Offrir la cagnotte}
+    \2 \textbf{Gestion de documents}: Tous les utilisateurs peuvent ajouter leur documents (CIN, Passeport ou carte séjour) pour être valider et pouvoir accéder aux fonctionnalités de l'application, et peuvent également gérer ces documents. 
+    \2 \textbf{Gestion de RIB}: Tous les utilisateurs peuvent gérer leurs RIB. 
+    \2 \textbf{Gestion de cartes cadeaux}: Tous les utilisateurs peuvent acheter, et dépenser des cartes cadeaux chez des magasins partenaires. 
+    \2 \textbf{Centre de notifications}: Tous les utilisateurs peuvent avoir une vision sur leurs notifications et transferts. 
+\end{outline}
+\subsection{Besoins non fonctionnels}
+Besoins non fonctionnelles sont les spécifications qui décrivent les capacités et contraintes du système. \cite{functional_req}
+\newline Les besoins non fonctionnels du système sont:
+\begin{itemize}
+  \item \textbf{Performance}: En prenant en considération la nature de la plateforme, le temps de réponse court est une obligation, c'est pour cela que l'application doit être très performante, e.g., il faut, qu'à travers ses fonctionnalités, on aie atteint tous les besoins des utilisateurs de façon optimale. Cela sera garanti grâce à l'utilisation de la fonctionnalité \acrfull{ssr} du framework Next.js.   
+   \item \textbf{Scalabilité}: On se doit d'assurer que même sous les charges de travails les plus hautes on peut assurer nos besoins en performance. Cela sera pris en charge par le service Edge de Vercel.
+   \item \textbf{Sécurité}: Pour une plateforme comme Watto, la sécurité est un élément primordial au bon fonctionnement de l'application dû aux large flux de transactions d'argent. Grâce à la librairie robuste Nextauth et Passport on pourra s'assurer de la sécurité des comptes, les routes et les endpoints api. Plusieurs audit sécurité seront également effectués tout au long du projet. 
+  \item \textbf{Convivialité}: L'application se doit d'être intuitive et facile d'utilisation à n'importe qui. En effet, l'interface utilisateur se doit d'être accessible à tout le monde à partir de 18 au vu de sa nature et de sa clientèle. Cela sera assuré par une équipe de ingénieur frontend plus que capable et de Tailwind pour assurer les besoins en UI/UX de l'application. 
+  \end{itemize}
+  
+\section{Analyse des besoins}
+L'analyse des besoins est une phase critique dans la considérations des contraintes, des risque et des autres facteurs utiles à garantir que le travail ou le processus soient en accord avec le besoin du client. 
+\subsection{Diagramme de cas d'utilisation}
+La première étape est de fournir un vision générale aux différentes fonctionnalités offertes par l'application (tels vu auparavant), en utilisant un diagramme de cas d'utilisation global. Les cas d'utilisations seront détaillés par diverses itéraions à developper. 
+\newline
+Ci-dessous, vous trouverez un diagramme de cas d'utilisation global qui résume les fonctionnalités du système en les divisant en 3 parties: 
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=\textwidth, height=0.57\paperheight, keepaspectratio]{img/bilel-diag-usecase-client.png}
+    \caption{Diagramme de cas d'utilisation Client}
+    \label{fig:scrum_process}
+    \end{center}
+\end{figure}
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=\textwidth, height=0.57\paperheight, keepaspectratio]{img/bilel-diag-usecase-administrateur.png}
+    \caption{Diagramme de cas d'utilisation Administrateur}
+    \label{fig:scrum_process}
+    \end{center}
+\end{figure}
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=\textwidth, height=0.57\paperheight, keepaspectratio]{img/bilel-diag-usecase-organisation.png}
+    \caption{Diagramme de cas d'utilisation Organisation}
+    \label{fig:scrum_process}
+    \end{center}
+\end{figure}
+\newpage
+\subsection{Diagramme de classe}
+La prochaine étape est de créer un plan du système en créant un diagramme de classe global pour modéliser les objets qui seront compris dans le système ainsi que leurs relations. \cite{class_diag}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-diag-class.jpg}
+    \caption{Diagramme de classe global}
+    \label{fig:globalclassdiagram}
+\end{figure}
+
+\section{Conclusion}
+Ce chapitre nous a offert une image plus claire du projet et une vision nette du sujet en décrivant les besoins fonctionnels et non fonctionnels, les acteurs, en identifiant les prochaines itérations à planifier et organiser le temps qu'il nous faudra pour le projet. Il nous a ensuite aider à modéliser le système à travers le diagramme de classe global et identifier les fonctionnalités de l'application à travers un diagramme de cas d'utilisation globale sur les différentes itérations. Avec cela en tête, le prochaine chapitre présentera l'architecture système. 
+
+\end{document}

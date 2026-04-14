@@ -1,0 +1,264 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../img/}}{\subfix{../architectures images/}}}
+\begin{document}
+
+\chapter{Sprint 2 : Gestion des Membres et des Abonnements}
+
+\section{Introduction}
+
+Le deuxi\`{e}me sprint se concentre sur le c\oe ur m\'{e}tier de toute salle de sport : la gestion des membres et de leurs abonnements. Ce sprint couvre l'ensemble du cycle de vie d'un adh\'{e}rent, depuis son inscription avec ses donn\'{e}es personnelles jusqu'\`{a} la gestion de ses abonnements, le suivi des paiements et des \'{e}ch\'{e}ances. Il introduit \'{e}galement la gestion des liens familiaux entre membres, les conventions de groupe et les cotisations annuelles, constituant ainsi le socle fonctionnel sur lequel reposeront les sprints suivants.
+
+\section{Sprint Backlog}
+
+\begin{longtable}{|p{3cm}|p{2.5cm}|p{4cm}|p{5cm}|}
+\hline
+\textbf{Epic} & \textbf{Nature} & \textbf{User Story} & \textbf{Description} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Epic} & \textbf{Nature} & \textbf{User Story} & \textbf{Description} \\
+\hline
+\endhead
+\hline
+\endfoot
+
+\multirow{4}{3cm}{Gestion des Membres} & Fonctionnalit\'{e} & En tant qu'admin, je veux cr\'{e}er un nouveau membre & Impl\'{e}menter le \acrshort{crud} des membres avec les champs : nom, date de naissance, genre, adresse, CIN, t\'{e}l\'{e}phone, cardId et PIN. \\
+\cline{2-4}
+& Fonctionnalit\'{e} & En tant qu'admin, je veux g\'{e}rer les liens familiaux & Associer des membres en tant que d\'{e}pendants (parent/enfant, conjoint). \\
+\cline{2-4}
+& Fonctionnalit\'{e} & En tant qu'admin, je veux bloquer/d\'{e}bloquer un membre & Impl\'{e}menter \texttt{isBlocked} pour restreindre l'acc\`{e}s. \\
+\cline{2-4}
+& Fonctionnalit\'{e} & En tant qu'admin, je veux rechercher les membres & Filtres par nom, CIN, num\'{e}ro de carte et statut. \\
+\hline
+
+\multirow{3}{3cm}{Gestion des Abonnements} & Fonctionnalit\'{e} & En tant qu'admin, je veux cr\'{e}er des formules & Impl\'{e}menter \texttt{GymSubscription} : \texttt{PER\_MONTH} et \texttt{SESSION}. \\
+\cline{2-4}
+& Fonctionnalit\'{e} & En tant qu'admin, je veux inscrire un membre & Cr\'{e}er \texttt{MemberGymSubscription} avec dates et statut. \\
+\cline{2-4}
+& Fonctionnalit\'{e} & En tant qu'admin, je veux g\'{e}rer les \'{e}ch\'{e}ances & Suivre les dates d'\'{e}ch\'{e}ance et alerter sur les retards. \\
+\hline
+
+\multirow{2}{3cm}{Paiements} & Fonctionnalit\'{e} & En tant que caissier, je veux enregistrer un paiement & Suivi avec montant, type, statut, date d'\'{e}ch\'{e}ance. \\
+\cline{2-4}
+& Fonctionnalit\'{e} & En tant que caissier, je veux g\'{e}rer les ch\`{e}ques & Champs banque et num\'{e}ro de ch\`{e}que. \\
+\hline
+
+Conventions & Fonctionnalit\'{e} & En tant qu'admin, je veux cr\'{e}er des conventions & Conventions de groupe avec r\'{e}duction et tarifs pr\'{e}f\'{e}rentiels. \\
+\hline
+
+Cotisations & Fonctionnalit\'{e} & En tant qu'admin, je veux g\'{e}rer les cotisations annuelles & \texttt{AnnualFee} et \texttt{MemberAnnualFee} pour le suivi. \\
+\hline
+
+\caption{Sprint Backlog -- Sprint 2}
+\label{tab:sprint2-backlog}
+\end{longtable}
+
+\section{Analyse}
+
+\subsection{Diagramme de cas d'utilisation}
+
+La figure~\ref{fig:sprint2-usecase} illustre les cas d'utilisation du Sprint 2 couvrant la gestion des membres, des abonnements et des paiements.
+
+\begin{figure}[H]
+\centering
+\resizebox{0.95\textwidth}{!}{%
+\begin{tikzpicture}[
+  uc/.style={draw, ellipse, minimum width=2.8cm, minimum height=0.9cm, text width=2.6cm, align=center, font=\scriptsize},
+  sys/.style={draw, dashed, rounded corners=5pt, inner sep=10pt}
+]
+
+\node[sys, minimum width=9cm, minimum height=10cm] (system) at (5,0) {};
+\node[font=\small\bfseries, anchor=north] at (system.north) {Sprint 2 -- Membres \& Abonnements};
+
+% Admin (left)
+\stickfigure{(-2, 2)}{Admin}
+\node[uc] (uc1) at (3.5, 4) {G\'{e}rer les membres};
+\node[uc] (uc2) at (3.5, 2.5) {Cr\'{e}er une formule d'abonnement};
+\node[uc] (uc3) at (3.5, 1) {Inscrire un membre};
+\node[uc] (uc4) at (3.5, -0.5) {G\'{e}rer les conventions};
+\node[uc] (uc5) at (3.5, -2) {G\'{e}rer les cotisations};
+
+\draw (-2, 2) -- (uc1);
+\draw (-2, 2) -- (uc2);
+\draw (-2, 2) -- (uc3);
+\draw (-2, 2) -- (uc4);
+\draw (-2, 2) -- (uc5);
+
+% Caissier (left bottom)
+\stickfigure{(-2, -4)}{Caissier}
+\node[uc] (uc6) at (3.5, -3.5) {Enregistrer un paiement};
+
+\draw (-2, -4) -- (uc6);
+\draw (-2, -4) -- (uc1);
+\draw (-2, -4) -- (uc3);
+
+% Right side use cases
+\node[uc] (uc7) at (7.5, 4) {G\'{e}rer les liens familiaux};
+\node[uc] (uc8) at (7.5, 2.5) {Bloquer / D\'{e}bloquer};
+\node[uc] (uc9) at (7.5, 1) {Consulter l'historique};
+\node[uc] (uc10) at (7.5, -0.5) {G\'{e}rer les \'{e}ch\'{e}ances};
+
+\draw (-2, 2) -- (uc7);
+\draw (-2, 2) -- (uc8);
+\draw (-2, 2) -- (uc9);
+\draw (-2, 2) -- (uc10);
+
+% Include
+\draw[dashed, -{Stealth[length=2mm]}] (uc3) -- node[right, font=\tiny] {$\ll$include$\gg$} (uc6);
+
+\end{tikzpicture}
+}%
+\caption{Diagramme de cas d'utilisation -- Sprint 2}
+\label{fig:sprint2-usecase}
+\end{figure}
+
+\subsection{Description textuelle des cas d'utilisation}
+
+\subsubsection{Cas d'utilisation : G\'{e}rer les Membres}
+
+\begin{itemize}
+  \item \textbf{Acteur principal} : Administrateur / Caissier
+  \item \textbf{Pr\'{e}conditions} : L'acteur est authentifi\'{e} et dispose des droits n\'{e}cessaires.
+  \item \textbf{Sc\'{e}nario principal} :
+  \begin{enumerate}
+    \item L'administrateur acc\`{e}de \`{a} la liste des membres via \texttt{GET /api/member/partner/paginate}.
+    \item Il peut rechercher un membre par nom, CIN ou num\'{e}ro de carte.
+    \item Il s\'{e}lectionne un membre pour consulter sa fiche d\'{e}taill\'{e}e via \texttt{GET /api/member/profile/:id}.
+    \item Il peut modifier les informations personnelles via \texttt{PATCH /api/member/:id}.
+    \item Il peut ajouter des liens familiaux (d\'{e}pendants).
+    \item Il peut bloquer ou d\'{e}bloquer le membre via le champ \texttt{isBlocked}.
+  \end{enumerate}
+  \item \textbf{Sc\'{e}nario alternatif} : Lors de la cr\'{e}ation, si le CIN ou le \texttt{cardId} existe d\'{e}j\`{a}, le syst\`{e}me retourne une erreur de duplication v\'{e}rifi\'{e}e via \texttt{POST /api/member/check-uniqueness}.
+  \item \textbf{Postconditions} : Les modifications sont persist\'{e}es en base de donn\'{e}es.
+\end{itemize}
+
+\subsubsection{Cas d'utilisation : Inscrire un Membre \`{a} un Abonnement}
+
+\begin{itemize}
+  \item \textbf{Acteur principal} : Administrateur / Caissier
+  \item \textbf{Pr\'{e}conditions} : Le membre existe dans le syst\`{e}me et des formules sont configur\'{e}es.
+  \item \textbf{Sc\'{e}nario principal} :
+  \begin{enumerate}
+    \item L'administrateur ouvre la fiche du membre, onglet abonnements.
+    \item Il s\'{e}lectionne la formule d'abonnement souhait\'{e}e.
+    \item Il d\'{e}finit les dates de d\'{e}but et de fin de l'abonnement.
+    \item Il enregistre le paiement associ\'{e} (montant, type, \'{e}ch\'{e}ance).
+    \item Le syst\`{e}me cr\'{e}e l'entr\'{e}e \texttt{MemberGymSubscription} et les \'{e}ch\'{e}ances correspondantes.
+  \end{enumerate}
+  \item \textbf{Postconditions} : Le membre est associ\'{e} \`{a} l'abonnement avec un plan de paiement.
+\end{itemize}
+
+\subsection{Diagramme de s\'{e}quence : Inscription \`{a} un Abonnement}
+
+La figure~\ref{fig:sprint2-seq} illustre le flux d'inscription d'un membre \`{a} un abonnement avec enregistrement du paiement initial.
+
+\begin{figure}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}
+
+\node[sdactor] (admin) at (0,0) {Admin / Caissier};
+\node[sdactor] (frontend) at (4,0) {Dashboard Next.js};
+\node[sdactor] (api) at (9,0) {NestJS API};
+\node[sdactor] (db) at (14,0) {PostgreSQL};
+
+\draw[dashed] (admin.south) -- ++(0,-10);
+\draw[dashed] (frontend.south) -- ++(0,-10);
+\draw[dashed] (api.south) -- ++(0,-10);
+\draw[dashed] (db.south) -- ++(0,-10);
+
+\draw[sdmessage] (0,-1.2) -- node[above, font=\scriptsize] {1: S\'{e}lectionner formule + dates} (4,-1.2);
+\draw[sdmessage] (4,-2) -- node[above, font=\scriptsize] {2: POST /api/member-gym-subscription} (9,-2);
+\draw[sdmessage] (9,-2.8) -- node[above, font=\scriptsize] {3: INSERT MemberGymSubscription} (14,-2.8);
+\draw[sdreturn] (14,-3.6) -- node[above, font=\scriptsize] {4: subscription cr\'{e}\'{e}e} (9,-3.6);
+\draw[sdmessage] (9,-4.4) -- node[above, font=\scriptsize] {5: INSERT Payment(amount, dueDate)} (14,-4.4);
+\draw[sdreturn] (14,-5.2) -- node[above, font=\scriptsize] {6: payment cr\'{e}\'{e}} (9,-5.2);
+\draw[sdreturn] (9,-6) -- node[above, font=\scriptsize] {7: \{subscription, payment\}} (4,-6);
+\draw[sdmessage] (4,-6.8) -- node[above, font=\scriptsize] {8: invalidateQueries('members')} (4,-7.6);
+\draw[sdreturn] (4,-8) -- node[above, font=\scriptsize] {9: Mise \`{a} jour de la fiche membre} (0,-8);
+
+\end{tikzpicture}
+}%
+\caption{Diagramme de s\'{e}quence -- Inscription \`{a} un abonnement}
+\label{fig:sprint2-seq}
+\end{figure}
+
+\section{R\'{e}alisation}
+
+\subsection{Backend}
+
+\subsubsection{Module Membre}
+
+Le \texttt{MemberModule} g\`{e}re l'entit\'{e} \texttt{Member} qui regroupe les informations personnelles de chaque adh\'{e}rent : \texttt{firstName}, \texttt{lastName}, \texttt{dateOfBirth}, \texttt{gender}, \texttt{address}, \texttt{city}, \texttt{cin}, \texttt{phone}, ainsi que les identifiants d'acc\`{e}s physique (\texttt{cardId} pour la carte \acrshort{rfid} et \texttt{pin}). Le champ \texttt{isBlocked} permet de suspendre temporairement l'acc\`{e}s d'un membre. L'entit\'{e} est li\'{e}e au portefeuille du membre (\texttt{Wallet} via OneToOne) et peut \^{e}tre associ\'{e}e \`{a} d'autres membres via les relations familiales.
+
+Le contr\^{o}leur \texttt{MemberController} expose les endpoints suivants, tous prot\'{e}g\'{e}s par \texttt{JwtAuthGuard} et \texttt{RolesGuard} :
+\begin{itemize}
+  \item \texttt{POST /api/member} : cr\'{e}ation d'un nouveau membre.
+  \item \texttt{POST /api/member/check-uniqueness} : v\'{e}rification de l'unicit\'{e} des champs (CIN, email, cardId).
+  \item \texttt{PATCH /api/member/:id} : mise \`{a} jour des informations.
+  \item \texttt{PATCH /api/member/change-card-id} : modification du num\'{e}ro de carte \acrshort{rfid}.
+  \item \texttt{GET /api/member/partner/paginate} : liste pagin\'{e}e par partenaire.
+  \item \texttt{GET /api/member/profile/:id} : fiche d\'{e}taill\'{e}e du membre.
+\end{itemize}
+
+\subsubsection{Module Abonnement}
+
+Le \texttt{GymSubscriptionModule} d\'{e}finit les formules d'abonnement avec deux types : \texttt{PER\_MONTH} (mensuel avec \texttt{durationInMonths}) et \texttt{PER\_SESSION} (par s\'{e}ance avec \texttt{numberOfSessions}). Le champ \texttt{maxSlots} limite le nombre de r\'{e}servations simultan\'{e}es pour les s\'{e}ances de type RESERVATION.
+
+Le \texttt{MemberGymSubscriptionModule} g\`{e}re le lien entre un membre et sa formule, tra\c{c}ant les dates de d\'{e}but/fin et le statut. La relation ManyToMany entre \texttt{GymSubscription} et \texttt{Gym} permet de partager des formules entre plusieurs salles d'un m\^{e}me partenaire.
+
+\subsubsection{Module Paiement}
+
+Le \texttt{PaymentModule} centralise le suivi financier. Chaque enregistrement contient : \texttt{amount} (total), \texttt{payedAmount} (montant effectivement pay\'{e}), \texttt{typeOfPayment} (esp\`{e}ces, ch\`{e}que, virement), \texttt{isPaid} (statut), \texttt{dueDate} (\'{e}ch\'{e}ance), et pour les ch\`{e}ques : \texttt{bank} et \texttt{checkNumber}.
+
+\subsubsection{Modules Convention et Cotisations}
+
+Le \texttt{ConventionModule} g\`{e}re les accords de groupe permettant des tarifs pr\'{e}f\'{e}rentiels. Le \texttt{AnnualFeeModule} et \texttt{MemberAnnualFeeModule} suivent les cotisations obligatoires par membre et par ann\'{e}e, configurables au niveau du partenaire (\texttt{isAnnualFeeEnabled}, \texttt{annualFeeAmount}).
+
+\subsection{Frontend Web}
+
+\subsubsection{Liste des Membres}
+
+La page de liste des membres offre une vue tabulaire avec recherche en temps r\'{e}el et filtres avanc\'{e}s (par statut d'abonnement, statut de blocage, convention). La pagination est g\'{e}r\'{e}e c\^{o}t\'{e} serveur via TanStack Query \cite{tanstack} pour optimiser les performances.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Liste des membres}\vspace{2cm}}}
+  \caption{Interface de liste des membres avec filtres de recherche}
+  \label{fig:sprint2-member-list}
+\end{figure}
+
+\subsubsection{Fiche D\'{e}taill\'{e}e du Membre}
+
+La page de d\'{e}tail regroupe l'ensemble des informations dans une interface \`{a} onglets :
+\begin{itemize}
+  \item \textbf{Informations personnelles} : donn\'{e}es d'identit\'{e} \'{e}ditables.
+  \item \textbf{Abonnements} : historique et abonnement actif, possibilit\'{e} de renouvellement.
+  \item \textbf{\'{E}ch\'{e}ances} : tableau des paiements dus et effectu\'{e}s.
+  \item \textbf{Famille} : liens familiaux via le \texttt{FamilyDialog}.
+  \item \textbf{Cotisations} : suivi des cotisations annuelles.
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Fiche d\'{e}taill\'{e}e d'un membre}\vspace{2cm}}}
+  \caption{Fiche d\'{e}taill\'{e}e d'un membre avec onglets}
+  \label{fig:sprint2-member-detail}
+\end{figure}
+
+\subsubsection{Gestion des Abonnements}
+
+L'interface de gestion des formules permet de cr\'{e}er, modifier et d\'{e}sactiver des formules. Un dialogue d\'{e}di\'{e} g\`{e}re l'inscription d'un membre avec s\'{e}lection de la formule, d\'{e}finition des dates et enregistrement du paiement initial.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Gestion des abonnements}\vspace{2cm}}}
+  \caption{Interface de gestion des formules d'abonnement}
+  \label{fig:sprint2-subscription}
+\end{figure}
+
+\section{Conclusion}
+
+Le Sprint 2 a permis d'impl\'{e}menter le c\oe ur fonctionnel de TrustGym : la gestion compl\`{e}te des membres et de leurs abonnements. Le syst\`{e}me couvre d\'{e}sormais l'ensemble du cycle de vie d'un adh\'{e}rent, du suivi de ses informations personnelles \`{a} la gestion de ses paiements, en passant par les conventions de groupe et les cotisations annuelles. Le module membre constitue l'\'{e}l\'{e}ment central auquel se rattachent les fonctionnalit\'{e}s des sprints suivants. Le Sprint 3 abordera le contr\^{o}le d'acc\`{e}s physique et l'int\'{e}gration des terminaux ZKTeco et Hikvision.
+
+\end{document}

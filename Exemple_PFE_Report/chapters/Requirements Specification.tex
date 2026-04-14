@@ -1,0 +1,151 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+\begin{document}
+\chapter{Requirements Specification}
+\section{Introduction}
+This chapter will identify the functional requirements for actors to interact with the system, non-functional requirements that improve the software quality of the system, also, it will include a presentation of the work plan through the iterations and the product backlog.
+\section{Requirements Specification}
+In order to meet the specific points of the project, and to understand the functionalities of the system, the identification of the actor's needs, the production of the use case diagram, a textual description of the main use cases, the class diagram and finally the system sequence diagram is required.
+\subsection{Actors Identification}
+An actor is a person or another computer system that expects one or more services offered by the application. It interacts directly with the system under study.\newline The actors of the system are:
+\begin{itemize}
+  \item \textbf{Applicants}: They are the main consumers of the application; any visitor who creates an account to look for a remote job in Europe.
+  \item \textbf{Admins}: They are the administrators who will handle everything via the admins' dashboard.
+\end{itemize}
+\newpage
+\subsection{Functional Requirements}
+Functional requirements are the specifications of the product's functions (features) that must be implemented to meet user expectations.\cite{functional_req}
+\newline
+To better understand the functional requirements, they are separated into two categories:
+\begin{outline}
+ \1 For admins:
+   \2 \textbf{Applicants management}: admins can view applicant's profile, their application's history
+   \2 \textbf{Positions management}: admins can create, update, delete job openings for the applicants
+   \2 \textbf{Applications management}: admins can view and update job applications of applicants
+   \2 \textbf{Clients management}: admins will handle keeping all client's information up-to-date
+   \2 \textbf{Orders management}: admins will handle all job openings orders for the positions
+   \2 \textbf{Sessions management}: admins will keep track of all applicants activities on the platform
+   \2 \textbf{Assessments management}: admins will handle reviewing the coding challenges done by applicants as well as creating and updating them
+ \1 For applicants: 
+    \2 \textbf{Account Creation}: all guests can create new applicants accounts
+    \2 \textbf{Account management}: all applicants can authenticate and manage their profile through adding and updating any related information (technical skills, language skills, experience etc...)
+    \2 \textbf{Positions listing}: all applicants can browse through the available job listings provided by the admins
+    \2 \textbf{Applications consulting}: all applicants can consult their application's status after submitting
+    \2 \textbf{Assessments access}: all applicants will be able to take different assessments presented by the admins
+ \1 Shared: 
+    \2 \textbf{Contact Management}: Applicants and admins can contact each other via a chat section
+\end{outline}
+\subsection{Non-functional Requirements}
+Non-functional requirements are the specifications that describe the system's operational capabilities and constraints.\cite{functional_req}
+\newline The non-functional requirements of the system are :
+\begin{itemize}
+  \item \textbf{Performance}: Considering the nature of the platform, short response time is a must-have that is why software must be high performant, i.e., it must, through its functionalities, meet all user requirements optimally. This will be guaranteed by utilizing the \acrfull{ssr} feature in the Nuxt Framework.
+   \item \textbf{Scalability}: Scalability assesses the highest workloads under which the system will still meet the performance requirements. This will be handled by Netlify Edge service.
+   
+  \item \textbf{Conviviality}: The future software must be easy to use. In fact, the user interface must be user-friendly, i.e., simple, ergonomic and adapted to the target user. This is made possible by implementing the  component library DaisyUI. 
+\end{itemize}
+\newpage
+\section{Requirements Analysis}
+Requirement analysis is a critical phase for considering constraints, risks and any other relevant factors, to ensure that the work or process meets the customer's needs.
+\subsection{Use case diagram}
+The first step is to provide an overview of the various functionalities offered by the application, using a global use case diagram. The use cases will be detailed in the various iterations to be developed.
+\newline
+Presented below is the global use case diagram of the system:
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=\textwidth, height=0.57\paperheight, keepaspectratio]{img/Global Use Case diagram.png}
+    \caption{Global Use Case Diagram}
+    \label{fig:scrum_process}
+    \end{center}
+\end{figure}
+
+\subsection{Product Backlog}
+The next step is to provide a prioritized list of the elements or functionalities needed to achieve the project's objectives, which will be illustrated through the product backlog. It is mainly used to keep track of tasks.
+
+The table below shows the project's global product backlog:
+\begin{longtable}{{|c |c| p{0.30\linewidth}| c|}}
+    \hline
+      ID  & Title & Description & Importance  \\
+       \hline 
+       1 &
+       Authentication management &
+       As a future applicant, I can create my own account to get access to the job listings platform.  &
+       100\\
+       \hline 
+       2 &
+       Account Management&
+       As an applicant, I can authenticate and update my personal details and add new information regarding my skills, experience etc... , &
+       80\\
+       \hline 
+       3 &
+       Browse Positions &
+       As an applicant, I have access to all available job listings.  &
+       80\\
+       \hline 
+       4 &
+       Consult Applications &
+       As an applicant, I can keep track of all my job applications.  &
+       70\\
+       \hline
+       5 &
+       Contact Management &
+       As an applicant or admin, I can contact an applicant/admin via chat section.  &
+       60\\
+       \hline
+        6 &
+       Assessments Access &
+       As an applicant, I can receive coding challenges that will help me assess my technical skills.  &
+       50\\
+       \hline
+       7 &
+       Manage Applicants &
+       As an admin, I can view all applicant-related information like applications history and assessments history.  &
+       90\\
+       \hline
+       8 &
+       Manage Positions &
+       As an admin, I can view, update, remove or create job openings.  &
+       90\\
+        \hline
+       9 &
+       Manage Applications &
+       As an admin, I can view and update job applications .  &
+       70\\
+        \hline
+       10 &
+       Manage Clients &
+       As an admin, I can view all client-related information, update any information and create new clients.  &
+       100\\
+       \hline
+       11 &
+       Manage Orders &
+       As an admin, I can view the order history and create new orders for clients.  &
+       100\\
+       \hline
+       12 &
+       Manage Sessions &
+       As an admin, I can keep track of applicant's activities on the platform and use them for data analysis.  &
+       60\\
+       \hline
+       13 &
+       Manage Assessments &
+       As an admin, I can handle preparing new assessments, review assessments submissions by applicants or update existing assessments templates.  &
+       50\\
+       \hline
+       
+    \caption{Product Backlog}
+    \label{tab:product_backlog}
+\end{longtable}
+\newpage
+\subsection{Class diagram}
+The next step will be to create the blueprints of the system by using the global class diagram to model the objects that comprise the system and display the relationships between them.\cite{class_diag}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/Global Class diagram.png}
+    \caption{Global Class Diagram}
+    \label{fig:globalclassdiagram}
+\end{figure}
+
+\section{Conclusion}
+This chapter offered a clearer picture of the project and a clearer vision of the subject by describing the functional and non-functional requirements, the actors, and the product backlog as a first step, then by identifying the iterations to plan and organize the time devoted to the project. It then helped model the system's object through the global class diagram and translate the application's functionalities into a global use case diagram, which will be detailed in the following chapters on the various iterations. With this in mind, the next chapter will present the software architecture.
+\end{document}

@@ -1,0 +1,243 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+\begin{document}
+\chapter{Sprint 2: Débogage du MVP et Refonte de l'UI}
+ \section{Introduction}
+ Durant le deuxième sprint qui s'étale sur une durée de 2 mois et une semaine on a pris en charge le débogage du MVP et la refonte de l'interface utilisateur du dashboard utilisateur.  
+ \section{Analyse et lecture du code pré-existant}
+Une première itération sur l'interface et les fonctionnalités du dashboard client a été faite dans une durée très minime avant que l'on puisse l'aborder, en effet l'UI du dashboard et le résultat énoncé proposent énormément de différence. C'est là où nous entrons en jeu, dans un premier temps il s'agira d'étudier les fonctionnalités et les interfaces demandé par l'utilisateur. 
+Une étude des besoins fonctionnelles et non fonctionnelles a déjà été faite au préalable donc il nous suffit juste de voir les différences et en quoi le résultat établis dans la première itération n'a pas suffit aux clients. 
+En voici quelques exemples: 
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-notifications-mockup.png}
+    \caption{\textbf{Maquette} Notifications / Accueil dashboard client}
+    \label{fig:maquettenotifications}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-notifications-old.png}
+    \caption{\textbf{Résultat} première itération}
+    \label{fig:premièreitérationnotifications}
+    \caption*{\textbf{Description:} On peut déjà voir quelques problèmes qui sautent aux yeux: 
+    \begin{itemize}
+\item La barre de navigation est très serrée par rapport à la maquette et les icônes ne sont pas respectées
+\item La taille du logo, les fonts et la taille des textes ne sont pas respectées
+\item La lecture d'images ne marche pas
+\item Les titres et sous titres n'ont aucun rapport avec les titres et sous titres demandés par le client
+\item Le formattage de la date n'a pas été fait
+    \end{itemize}
+    }
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-documents-mockup.png}
+    \caption{\textbf{Maquette} Gestion de Documents}
+    \label{fig:maquettegestiondocuments}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-documents-old.png}
+    \caption{\textbf{Résultat} première itération}
+    \label{fig:premièreitérationgestiondocuments}
+    \caption*{
+    \begin{itemize}
+        \item La distanciation entre lignes, taille et police du texte ne sont pas respectés dans la section texte à gauche
+        \item Les documents énoncés dans la partie droite sont alignés au centre et sont trop petit
+        \item L'ajout de documents et leur téléchargement est non fonctionnel
+        \item Le bouton Ajouter est trop petit
+        \item Il manque un cadre à la section de droite 
+    \end{itemize}
+    }
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-documents-mockup.png}
+    \caption{\textbf{Maquette} Gestion de Documents}
+    \label{fig:maquettegestiondocuments}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-documents-old.png}
+    \caption{\textbf{Résultat} première itération}
+    \label{fig:premièreitérationgestiondocuments}
+    \caption*{
+    \begin{itemize}
+        \item La distanciation entre lignes, taille et police du texte ne sont pas respectés dans la section texte à gauche
+        \item Les documents énoncés dans la partie droite sont alignés au centre et sont trop petit
+        \item L'ajout de documents et leur téléchargement est non fonctionnel
+        \item Le bouton Ajouter est trop petit
+        \item Il manque un cadre à la section de droite 
+    \end{itemize}
+    }
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-cagnottes-mockup.png}
+    \caption{\textbf{Maquette} Liste de Cagnottes}
+    \label{fig:maquettelistcagnottes}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-cagnottes-old.png}
+    \caption{\textbf{Résultat} première itération}
+    \label{fig:premièreitérationlistecagnottes}
+    \caption*{
+    \begin{itemize}
+        \item Le tab pannel à gauche n'est pas correctement stylisé: non respect des tailles et du background
+        \item Le chargement des images des cagnottes ne marche pas
+        \item La taille des texte dans le composant dédié au JackpotListItem qui est affiché pour les deux exemples sont trop petites par rapport à la maquette
+        \item Les boutons dans le JackpotListItem ne sont pas respectés (un bouton inutile en plus, les tailles ne sont pas respectés et la plupart sont non fonctionnels)  
+    \end{itemize}
+    }
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-cta-mockup.png}
+    \caption{\textbf{Maquette} Call to action cagnotte}
+    \label{fig:maquettectaagnottes}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-cta-old.png}
+    \caption{\textbf{Résultat} première itération}
+    \label{fig:premièreitérationctacagnottes}
+    \caption*{
+    \begin{itemize}
+        \item Le conteneur de tout le composant n'est pas limité à une largeur précise et peut donc s'étaler jusqu'à ne plus respecter les tailles demandés dans la maquette 
+        \item Le montant disponible est un montant arbitraire non fonctionnel
+        \item Les tailles de tous les textes quelques soit le composant ne sont pas respectés
+        \item Les sous composants représentants les différentes actions sont non fonctionnels   
+    \end{itemize}
+    }
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-docs-upload-mockup.png}
+    \caption{\textbf{Maquette} upload de documents}
+    \label{fig:maquettedocsupload}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-docs-upload-old.png}
+    \caption{\textbf{Résultat} première itération}
+    \label{fig:premièreitérationdocsupload}
+    \caption*{
+    \begin{itemize}
+        \item Les tailles de tous les textes quelques soit le composant ne sont pas respectés
+        \item Le sous titre est inexistant
+        \item Les boutons sont non fonctionnels 
+        \item Les textes affichés sont incorrects. 
+        \item Irrespect des proportions des boutons d'actions \textbf{Envoyer} et \textbf{Retour}
+    \end{itemize}
+    }
+\end{figure}
+
+Comme on peut le voir sur ces quelques exemples il existe plusieurs problèmes lors de la première itération pré-établies avant d'être transmise vers nous. Après avoir vu et analyser les différences, on doit désormais faire marcher les outils non fonctionnels et passer au nettoyage des inexactitude de l'interface. 
+\newpage
+\section{Exécution}
+Au fil du projet, les besoins du client Watto a changé et l'interface utilisateur a changé par rapport à la maquette. Cependant les différences restent notable et le résultat est mieux adapté au besoin d'un client qui éventuellement utilisera le dashboard. 
+Voici les résultats énoncés après la phase de refonte et débogage pour quelques interfaces: 
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-notifications-new.png}
+    \caption{\textbf{Résultat Notifications} deuxième itération }
+    \label{fig:deuxièmeitérationnotifications}
+\end{figure}
+\textbf{Description:} On peut déjà voir les corrections établies: 
+    \begin{itemize}
+\item La barre de navigation a été étalée pour prendre tout l'espace disponible et les îcones ont été mises à jours
+\item La taille du logo, les fonts et la taille des textes ont été modifiés après un passage sur le fichier de configuration de tailwind pour pré-configurer les fonts par défaut et les tailles selon les besoins du client. 
+\item Grâce à un système de stockage mise en place pour communiquer avec l'interface cloud d'Amazon AWS, la lecture d'images et son stockage ont été rendu disponible (l'image sur les notifications est une image placeholder vu que la data qu'on utilise est principalement composées de données de test)
+\item Les titres et sous titres ont été mise à jour grâce à des énumérations de notifications possibles selon les actions effectués.
+\item Le formattage de la date a été corrigé grâce à une simple fonction qui exploite le potentiel de l'objet js natif \textbf{Date}.
+    \end{itemize}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-documents-new.png}
+    \caption{\textbf{Résultat Gestion  de Documents} deuxième itération}
+    \label{fig:deuxièmeitérationgestiondocuments}
+\end{figure}
+
+    \begin{itemize}
+        \item On a corrigé la distance verticale entre le titre et les paragraphes mais vu le contenu corrigé du paragraphe, on n'a pas pu respecté à 100\% les proportions de la maquette vu que celle ci est adapté à un paragraphe bien plus allégé. On a également corrigé la taille des textes.
+        \item Les titres des documents ont été alignés sur la gauche cependant le format des images (front et back) a été gardé car il y a deux scénarios à prendre en compte lors de la gestion des documents. En effet un utilisateur peut:  
+        \begin{itemize}
+            \item Upload une seule image et cocher front et back et donc avoir le même résultat dans les 2 sections 
+            \item Upload le front et le back d'un document séparement
+        \end{itemize}
+        \item L'ajout des documents et leur téléchargement est désormais fonctionnels grâce au AWS storage évoqué précédemment.
+        \item Le bouton ajouter reste le même mais a été agrandi 
+        \item Un cadre a été ajouté
+    \end{itemize}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-cagnottes-new.png}
+    \caption{\textbf{Résultat Liste Cagnottes} deuxième itération}
+    \label{fig:deuxièmeitérationlistecagnottes}
+\end{figure}
+    \begin{itemize}
+        \item Le tab pannel à gauche a été mis à jour pour respecter le style établis sur la maquette
+        \item Le chargement des images a été corrigé grâce au AWS Storage Service.
+        \item La taille des textes dans le composant JackpotListItem ont été adaptés pour correspondre aux tailles mentionnés dans la maquette
+
+        Les boutons dans le JackpotListItem ne sont pas respectés (un bouton inutile en plus, les tailles ne sont pas respectés et la plupart sont non fonctionnels)  
+        \item Une nouvelle fonctionnalité de mise à jour de statut de la cagnotte a été ajouté grâce à tout un nouveau système mise en place pour éviter les fraudes et mieux contrôler le fonctionnement des cagnottes. Le fonctionnement de ce système est mieux expliqué par ce diagramme d'état transition: 
+        \begin{figure}[H]
+          \centering
+            \includegraphics[width=\textwidth]{img/bilel-jackpot-state-transition.png}
+            \caption{\textbf{Diagramme d'état transition de la cagnotte}}
+            \label{fig:diagrammeétattransitioncagnotte}
+        \end{figure}        
+        \item Les boutons disponibles ont été mise à jour  et un bouton a été remplacé par un indicateur de status de jackpot
+
+    \end{itemize}
+    
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-cta-new.png}
+    \caption{\textbf{Résultat Call to action cagnottes} deuxième itération}
+    \label{fig:deuxièmeitérationctacagnottes}
+\end{figure}
+
+\begin{itemize}
+    \item La limite a été respecté grâce à la mise en place d'un wrapper qui va poser une limite maximale à certain modal. 
+    \item Le montant disponible est désormais une donnée correcte prise de l'api backend.
+    \item Les tailles des textes a été mise à jour pour respecter la maquette
+    \item Les sous composants représentants les différentes actions sont devenus fonctionnels. 
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-docs-upload-new.png}
+    \caption{\textbf{Résultat upload des documets} deuxième itération}
+    \label{fig:deuxièmeitérationdocsupload}
+\end{figure}
+\begin{itemize}
+    \item Les tailles des textes ont été mise à jour.
+    \item Le sous titre a été ajouté
+    \item Les boutons sont devenus fonctionnels et upload désormais les documents de façon correctes au AWS Storage. 
+    \item Les textes affichés ont été corrigés. 
+    \item Les proportions boutons d'actions \textbf{Envoyer} et \textbf{Retour} ont été mis à jour
+\end{itemize}
+
+
+\section{Conclusion}
+Ce chapitre nous a permit de voir la progression du deuxième sprint de débogage de la première itération et de sa refonte en UI grâce à quelques exemples, de l'analyser et de suivre la progression des nouveaux résultats.
+\end{document}

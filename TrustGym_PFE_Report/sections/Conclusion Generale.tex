@@ -1,0 +1,38 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../img/}}}
+\begin{document}
+\newpage
+\section*{Conclusion G\'{e}n\'{e}rale}
+\addcontentsline{toc}{section}{Conclusion G\'{e}n\'{e}rale}
+
+Ce projet, r\'{e}alis\'{e} dans le cadre du projet de fin d'\'{e}tudes au sein de l'entreprise TRUSTLINK, avait pour objectif de concevoir et d\'{e}velopper \textbf{TrustGym}, une plateforme \acrshort{saas} compl\`{e}te de gestion de salles de sport. Le projet a couvert l'ensemble du cycle de vie logiciel, de l'analyse des besoins jusqu'\`{a} la mise en production, en passant par la conception, le d\'{e}veloppement et les tests.
+
+La plateforme TrustGym se compose de quatre sous-projets interconnect\'{e}s :
+\begin{itemize}
+    \item Une \textbf{\acrshort{api} backend} construite avec NestJS 10, TypeORM et PostgreSQL 16, offrant plus de 50 modules m\'{e}tier avec une architecture modulaire et un syst\`{e}me d'authentification \acrshort{jwt} \`{a} double niveau (JwtAuthGuard pour le personnel, MemberJwtGuard pour les adh\'{e}rents).
+    \item Un \textbf{tableau de bord web} d\'{e}velopp\'{e} avec Next.js 15 et TanStack Query, destin\'{e} aux administrateurs et caissiers, int\'{e}grant l'internationalisation via next-intl (fran\c{c}ais, arabe RTL, anglais) et plus de 30 modules fonctionnels.
+    \item Une \textbf{application mobile} con\c{c}ue avec React Native et Expo SDK 54, offrant aux membres un acc\`{e}s \`{a} leur tableau de bord personnel, leurs s\'{e}ances, leurs statistiques et leur profil.
+    \item Un \textbf{gestionnaire mat\'{e}riel (Machine Handler)} int\'{e}grant Python et NestJS pour la communication avec les bornes ZKTeco et les cam\'{e}ras Hikvision, permettant le contr\^{o}le d'acc\`{e}s physique en temps r\'{e}el.
+\end{itemize}
+
+Le projet a suivi une approche Scrum structur\'{e}e en 7 sprints, couvrant successivement l'authentification et la gestion des utilisateurs, la gestion des membres et des abonnements, le contr\^{o}le d'acc\`{e}s et l'int\'{e}gration mat\'{e}rielle, la gestion des coachs et des s\'{e}ances, la boutique et le stock, la finance et la facturation, ainsi que l'application mobile avec le centre \acrshort{kpi} et l'assistant \acrshort{ai} bas\'{e} sur le \acrshort{rag}.
+
+Parmi les d\'{e}fis techniques relev\'{e}s au cours de ce projet, on peut citer :
+\begin{itemize}
+    \item L'int\'{e}gration mat\'{e}rielle avec les terminaux ZKTeco et Hikvision, n\'{e}cessitant une architecture \`{a} deux couches (Python + NestJS) avec ngrok pour l'exposition externe et PM2 pour l'orchestration des processus.
+    \item La mise en place du syst\`{e}me de temps r\'{e}el via Socket.IO et le m\'{e}canisme PostgreSQL LISTEN/NOTIFY pour la diffusion instantan\'{e}e de l'occupation en direct.
+    \item L'impl\'{e}mentation du pipeline \acrshort{rag} avec OpenAI text-embedding-3-small, pgvector et un m\'{e}canisme de reranking pour l'assistant \acrshort{ai} conversationnel.
+    \item La gestion multi-tenant avec le syst\`{e}me de partenaires, salles et modules \acrshort{saas} prot\'{e}g\'{e}s par le ModuleGuard et le SaasModuleEnum.
+    \item Le d\'{e}ploiement de l'infrastructure avec GitHub Actions pour le \acrshort{cicd}, Vercel pour le frontend et un \acrshort{vps} OVH pour le backend.
+\end{itemize}
+
+Les perspectives d'\'{e}volution de la plateforme TrustGym sont nombreuses :
+\begin{itemize}
+    \item L'int\'{e}gration d'un syst\`{e}me de paiement en ligne permettant aux membres de r\'{e}gler leurs abonnements et recharger leur portefeuille directement depuis l'application mobile.
+    \item L'enrichissement de l'assistant \acrshort{ai} avec des capacit\'{e}s d'analyse pr\'{e}dictive, permettant aux g\'{e}rants d'anticiper les tendances de fr\'{e}quentation et d'optimiser la planification des s\'{e}ances.
+    \item L'extension du support mat\'{e}riel pour int\'{e}grer de nouvelles marques de dispositifs de contr\^{o}le d'acc\`{e}s et de vid\'{e}osurveillance.
+    \item La mise en place d'une application mobile d\'{e}di\'{e}e aux administrateurs pour le suivi des indicateurs \acrshort{kpi} en mobilit\'{e}.
+\end{itemize}
+
+Avec une architecture modulaire, une couverture fonctionnelle compl\`{e}te et une int\'{e}gration mat\'{e}rielle innovante, TrustGym constitue une solution robuste et \'{e}volutive pour la gestion de salles de sport. Ce projet a permis de mettre en pratique l'ensemble des comp\'{e}tences acquises durant le cursus d'ing\'{e}nieur en technologies de l'information, tout en r\'{e}pondant \`{a} un besoin concret du march\'{e} tunisien du fitness.
+\end{document}

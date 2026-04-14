@@ -1,0 +1,221 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../img/}}{\subfix{../architectures images/}}}
+\begin{document}
+\chapter{Approche de D\'{e}veloppement et Technologies Utilis\'{e}es}
+
+\section{Introduction}
+Ce chapitre pr\'{e}sente les fondements m\'{e}thodologiques et technologiques du projet TrustGym. Nous d\'{e}taillons d'abord la m\'{e}thodologie Agile Scrum adopt\'{e}e pour organiser le d\'{e}veloppement en sprints successifs, puis nous pr\'{e}sentons la pile technologique compl\`{e}te utilis\'{e}e pour les diff\'{e}rentes couches du syst\`{e}me. Nous d\'{e}crivons ensuite l'architecture logique et physique de la plateforme, avant de d\'{e}tailler l'environnement de travail et les outils employ\'{e}s au quotidien.
+
+%──────────────────────────────────────────────
+\section{M\'{e}thodologie}
+%──────────────────────────────────────────────
+
+\subsection{M\'{e}thodologie Agile}
+
+Le choix d'une m\'{e}thodologie de d\'{e}veloppement logiciel est une d\'{e}cision cruciale qui influence directement la qualit\'{e}, les d\'{e}lais et le succ\`{e}s global d'un projet. Dans le cadre du projet TrustGym, nous avons opt\'{e} pour une approche Agile en raison de la complexit\'{e} du syst\`{e}me et de l'\'{e}volution constante des besoins fonctionnels \cite{dev_methodology}.
+
+La m\'{e}thodologie Agile repose sur un ensemble de valeurs et de principes qui privil\'{e}gient la flexibilit\'{e}, la collaboration et l'adaptation continue. Le Manifeste Agile, publi\'{e} en 2001, \'{e}nonce quatre valeurs fondamentales :
+
+\begin{itemize}
+    \item Les \textbf{individus et leurs interactions} plut\^{o}t que les processus et les outils.
+    \item Un \textbf{logiciel fonctionnel} plut\^{o}t qu'une documentation exhaustive.
+    \item La \textbf{collaboration avec le client} plut\^{o}t que la n\'{e}gociation contractuelle.
+    \item L'\textbf{adaptation au changement} plut\^{o}t que le suivi rigide d'un plan.
+\end{itemize}
+
+Ces valeurs sont soutenues par douze principes directeurs qui encouragent la livraison fr\'{e}quente de logiciels fonctionnels, l'accueil favorable des changements de besoins et l'am\'{e}lioration continue des processus. L'approche Agile est particuli\`{e}rement adapt\'{e}e aux projets o\`{u} les exigences \'{e}voluent rapidement, comme c'est le cas pour TrustGym o\`{u} les retours des salles de sport partenaires alimentent en continu le Product Backlog.
+
+\subsection{L'approche Scrum}
+
+Scrum est un cadre de travail Agile largement adopt\'{e} dans l'industrie du d\'{e}veloppement logiciel \cite{schwaber2020scrum}. Il fournit une structure l\'{e}g\`{e}re mais efficace pour g\'{e}rer des projets complexes \`{a} travers des cycles it\'{e}ratifs appel\'{e}s \textit{Sprints} \cite{scrum}.
+
+\begin{outline}
+    \1 \textbf{R\^{o}les Scrum}
+        \2 \textbf{Scrum Master} : Facilite le processus Scrum, \'{e}limine les obstacles et s'assure que l'\'{e}quipe respecte les pratiques Agile. Il agit comme un coach pour l'\'{e}quipe et prot\`{e}ge celle-ci des interf\'{e}rences ext\'{e}rieures.
+        \2 \textbf{Product Owner} : Repr\'{e}sente les parties prenantes et d\'{e}finit la vision du produit. Il est responsable de la gestion du Product Backlog et de la priorisation des fonctionnalit\'{e}s en fonction de la valeur m\'{e}tier.
+        \2 \textbf{\'{E}quipe de D\'{e}veloppement} : Groupe auto-organis\'{e} et pluridisciplinaire charg\'{e} de la conception, du d\'{e}veloppement et des tests du produit. L'\'{e}quipe s'engage collectivement sur les objectifs de chaque Sprint.
+    \1 \textbf{\'{E}v\'{e}nements Scrum}
+        \2 \textbf{Sprint Planning} : R\'{e}union de planification au d\'{e}but de chaque Sprint o\`{u} l'\'{e}quipe s\'{e}lectionne les \'{e}l\'{e}ments du Product Backlog \`{a} r\'{e}aliser et d\'{e}finit un objectif de Sprint.
+        \2 \textbf{Daily Standup} : R\'{e}union quotidienne de quinze minutes o\`{u} chaque membre partage ce qu'il a accompli, ce qu'il pr\'{e}voit de faire et les obstacles rencontr\'{e}s.
+        \2 \textbf{Sprint Review} : Pr\'{e}sentation des r\'{e}sultats du Sprint aux parties prenantes pour recueillir des retours et ajuster le Product Backlog en cons\'{e}quence.
+        \2 \textbf{Sprint Retrospective} : R\'{e}union d'am\'{e}lioration continue o\`{u} l'\'{e}quipe analyse ce qui a bien fonctionn\'{e}, ce qui peut \^{e}tre am\'{e}lior\'{e} et d\'{e}finit des actions concr\`{e}tes pour le prochain Sprint.
+    \1 \textbf{Artefacts Scrum}
+        \2 \textbf{Product Backlog} : Liste ordonn\'{e}e de toutes les fonctionnalit\'{e}s, am\'{e}liorations et corrections souhait\'{e}es pour le produit. Il est dynamique et \'{e}volue tout au long du projet.
+        \2 \textbf{Sprint Backlog} : Sous-ensemble du Product Backlog s\'{e}lectionn\'{e} pour le Sprint en cours, accompagn\'{e} d'un plan pour atteindre l'objectif du Sprint.
+        \2 \textbf{Incr\'{e}ment} : Somme de tous les \'{e}l\'{e}ments du Product Backlog compl\'{e}t\'{e}s pendant le Sprint, ajout\'{e}e aux incr\'{e}ments pr\'{e}c\'{e}dents. Chaque incr\'{e}ment doit \^{e}tre potentiellement livrable.
+\end{outline}
+
+La figure~\ref{fig:agile_scrum} illustre le processus Scrum appliqu\'{e} au sein du projet TrustGym, depuis la constitution du Product Backlog jusqu'\`{a} la livraison des incr\'{e}ments.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{agile logo.png}
+  \caption{Processus Agile appliqu\'{e} au projet TrustGym}
+  \label{fig:agile_scrum}
+\end{figure}
+
+Pour le projet TrustGym, nous avons organis\'{e} le d\'{e}veloppement en \textbf{sept sprints} d'une dur\'{e}e variable de deux \`{a} quatre semaines chacun, en fonction de la complexit\'{e} des fonctionnalit\'{e}s \`{a} impl\'{e}menter. L'encadrant entreprise M.~Bilel Taktak a jou\'{e} le r\^{o}le de Product Owner, tandis que l'encadrant acad\'{e}mique M.~Talel Zouari a assur\'{e} le suivi p\'{e}dagogique.
+
+%──────────────────────────────────────────────
+\section{Technologies Utilis\'{e}es}
+%──────────────────────────────────────────────
+
+Cette section pr\'{e}sente l'ensemble des technologies utilis\'{e}es dans le d\'{e}veloppement de la plateforme TrustGym. Le choix de ces technologies a \'{e}t\'{e} guid\'{e} par des crit\`{e}res de performance, de maintenabilit\'{e} et de compatibilit\'{e} avec les besoins fonctionnels du projet.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{Technologie utilisee.png}
+  \caption{Pile technologique de la plateforme TrustGym}
+  \label{fig:tech_stack}
+\end{figure}
+
+\begin{outline}
+    \1 \textbf{Frontend Web}
+        \2 \textbf{Next.js 15} : Framework React offrant le rendu c\^{o}t\'{e} serveur (\acrshort{ssr}), l'App Router pour une gestion avanc\'{e}e du routage, et le support natif de l'internationalisation (i18n) pour le fran\c{c}ais, l'arabe et l'anglais \cite{nextjs}.
+        \2 \textbf{TypeScript} : Sur-ensemble typ\'{e} de JavaScript qui am\'{e}liore la robustesse du code gr\^{a}ce au typage statique et \`{a} la d\'{e}tection pr\'{e}coce des erreurs \cite{typescript}.
+        \2 \textbf{Tailwind CSS} : Framework \acrshort{css} utilitaire permettant un d\'{e}veloppement rapide d'interfaces r\'{e}actives et coh\'{e}rentes \cite{tailwind}.
+        \2 \textbf{TanStack Query 5} : Biblioth\`{e}que de gestion de l'\'{e}tat serveur offrant la mise en cache automatique, la synchronisation en arri\`{e}re-plan et la gestion optimiste des donn\'{e}es \cite{tanstack}.
+    \1 \textbf{Frontend Mobile}
+        \2 \textbf{React Native} : Framework de d\'{e}veloppement mobile multiplateforme permettant de cr\'{e}er des applications natives pour iOS et Android \`{a} partir d'une base de code unique \cite{reactnative}.
+        \2 \textbf{Expo SDK 54} : Plateforme de d\'{e}veloppement qui simplifie la configuration, le d\'{e}ploiement et la mise \`{a} jour des applications React Native \cite{expo}.
+        \2 \textbf{NativeWind 4} : Adaptation de Tailwind \acrshort{css} pour React Native, permettant d'utiliser les m\^{e}mes classes utilitaires dans l'application mobile \cite{nativewind}.
+    \1 \textbf{Backend}
+        \2 \textbf{NestJS} : Framework Node.js progressif inspir\'{e} d'Angular, offrant une architecture modulaire robuste avec injection de d\'{e}pendances, d\'{e}corateurs et structure MVC \cite{nestjs}.
+        \2 \textbf{TypeORM} : \acrshort{orm} pour TypeScript et JavaScript, facilitant l'interaction avec la base de donn\'{e}es via des entit\'{e}s et des d\'{e}corateurs \cite{typeorm}.
+        \2 \textbf{Passport.js} : Middleware d'authentification pour Node.js, utilis\'{e} pour impl\'{e}menter l'authentification \acrshort{jwt} avec deux strat\'{e}gies distinctes : une pour les administrateurs et une pour les membres \cite{passport}.
+    \1 \textbf{Base de donn\'{e}es}
+        \2 \textbf{PostgreSQL 16} : Syst\`{e}me de gestion de base de donn\'{e}es relationnelle puissant et extensible, enrichi de l'extension pgvector pour le stockage et la recherche de vecteurs \cite{postgre}.
+    \1 \textbf{Intelligence Artificielle}
+        \2 \textbf{OpenAI} : Utilisation des mod\`{e}les \texttt{text-embedding-3-small} pour la g\'{e}n\'{e}ration d'embeddings et \texttt{gpt-4o-mini} pour l'assistant \acrshort{ai} int\'{e}gr\'{e} au tableau de bord \cite{openai}.
+        \2 \textbf{pgvector} : Extension PostgreSQL permettant la recherche vectorielle pour le syst\`{e}me \acrshort{rag} de l'assistant \acrshort{ai} \cite{pgvector}.
+    \1 \textbf{Temps r\'{e}el}
+        \2 \textbf{Socket.IO} : Biblioth\`{e}que de communication bidirectionnelle en temps r\'{e}el bas\'{e}e sur WebSocket, utilis\'{e}e pour la diffusion des \'{e}v\'{e}nements d'occupation et d'acc\`{e}s \cite{socketio}.
+        \2 \textbf{PostgreSQL LISTEN/NOTIFY} : M\'{e}canisme natif de PostgreSQL utilis\'{e} pour d\'{e}clencher des \'{e}v\'{e}nements en temps r\'{e}el lors de l'insertion d'un nouvel acc\`{e}s dans la base de donn\'{e}es.
+    \1 \textbf{Mat\'{e}riel}
+        \2 \textbf{ZKTeco SDK} : Kit de d\'{e}veloppement pour l'int\'{e}gration des terminaux de contr\^{o}le d'acc\`{e}s ZKTeco (mode Pull via TCP, port 4370) \cite{zkteco}.
+        \2 \textbf{Hikvision ISAPI} : Interface de programmation pour la communication avec les \'{e}quipements Hikvision (mode Push via HTTPS, port 80/443) \cite{hikvision}.
+        \2 \textbf{PM2} : Gestionnaire de processus Node.js utilis\'{e} pour orchestrer les services du Machine Handler en production \cite{pm2}.
+        \2 \textbf{ngrok} : Service de tunneling s\'{e}curis\'{e} permettant d'exposer les services locaux du Machine Handler sur Internet \cite{ngrok}.
+    \1 \textbf{Autres}
+        \2 \textbf{AWS S3} : Service de stockage d'objets utilis\'{e} pour h\'{e}berger les fichiers multim\'{e}dias (photos de membres, logos, factures) \cite{aws}.
+        \2 \textbf{Helmet.js} : Middleware de s\'{e}curit\'{e} pour Express/NestJS qui configure les en-t\^{e}tes HTTP pour prot\'{e}ger l'application contre les vuln\'{e}rabilit\'{e}s web courantes \cite{helmet}.
+        \2 \textbf{Nodemailer} : Biblioth\`{e}que Node.js pour l'envoi d'emails transactionnels (v\'{e}rification OTP, invitations aux s\'{e}ances) via SMTP.
+\end{outline}
+
+%──────────────────────────────────────────────
+\section{Architecture Syst\`{e}me}
+%──────────────────────────────────────────────
+
+L'architecture de TrustGym a \'{e}t\'{e} con\c{c}ue pour r\'{e}pondre aux besoins d'une plateforme \acrshort{saas} compl\`{e}te et \'{e}volutive. Elle repose sur une s\'{e}paration claire des responsabilit\'{e}s entre quatre sous-projets distincts, chacun r\'{e}pondant \`{a} un besoin sp\'{e}cifique du syst\`{e}me.
+
+\subsection{Architecture Logique}
+
+La plateforme TrustGym adopte une architecture client/serveur distribu\'{e}e compos\'{e}e de quatre sous-projets interconnect\'{e}s. La figure~\ref{fig:arch_logique} illustre les interactions entre les diff\'{e}rentes couches du syst\`{e}me.
+
+\begin{itemize}
+    \item \textbf{trustgym-api} : L'\acrshort{api} \acrshort{rest} centrale d\'{e}velopp\'{e}e avec NestJS constitue le c\oe{}ur du syst\`{e}me. Elle expose l'ensemble des endpoints consomm\'{e}s par les clients et g\`{e}re la logique m\'{e}tier, l'authentification, et la persistance des donn\'{e}es via TypeORM et PostgreSQL 16.
+
+    \item \textbf{trustgym-app} : Le tableau de bord d'administration d\'{e}velopp\'{e} avec Next.js 15, destin\'{e} aux administrateurs et aux caissiers. L'authentification est g\'{e}r\'{e}e via NextAuth.js \cite{nextauth}, l'internationalisation via next-intl \cite{nextintl}, et les formulaires via React Hook Form \cite{rhf} avec validation Yup \cite{yup}. Il consomme l'\acrshort{api} \acrshort{rest} et se connecte au namespace WebSocket \texttt{/attendance} pour recevoir les mises \`{a} jour d'occupation en temps r\'{e}el.
+
+    \item \textbf{trustgym-mobile} : L'application mobile d\'{e}velopp\'{e}e avec React Native et Expo \acrshort{sdk} 54, destin\'{e}e aux membres de la salle. Elle consomme \'{e}galement l'\acrshort{api} \acrshort{rest} avec un syst\`{e}me d'authentification \acrshort{jwt} s\'{e}par\'{e} via \texttt{MemberJwtGuard}.
+
+    \item \textbf{trustgym-machine-handler} : Le pont mat\'{e}riel compos\'{e} d'un service Python (port 8000) communiquant directement avec les appareils ZKTeco/Hikvision et d'un service NestJS (port 8080) transmettant les \'{e}v\'{e}nements \`{a} l'\acrshort{api} centrale.
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{ARCHITECTURE LOGIQUE.png}
+  \caption{Architecture logique de la plateforme TrustGym}
+  \label{fig:arch_logique}
+\end{figure}
+
+La communication en temps r\'{e}el est assur\'{e}e par Socket.IO via un namespace d\'{e}di\'{e} \texttt{/attendance}. Le service \texttt{PgListenerService} \'{e}coute le canal PostgreSQL \texttt{access\_log\_channel} et transmet les \'{e}v\'{e}nements d'entr\'{e}e/sortie aux clients connect\'{e}s, permettant la mise \`{a} jour instantan\'{e}e de l'occupation dans le tableau de bord et l'application mobile.
+
+\subsection{Architecture Physique}
+
+L'architecture physique de d\'{e}ploiement repose sur un serveur \acrshort{vps} OVH sous Ubuntu, o\`{u} Nginx agit comme reverse proxy vers les services backend. La figure~\ref{fig:arch_physique} illustre cette architecture.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{ARCHITECTURE PHYSIQUE.png}
+  \caption{Architecture physique de d\'{e}ploiement de TrustGym}
+  \label{fig:arch_physique}
+\end{figure}
+
+Le frontend web est d\'{e}ploy\'{e} sur Vercel via le \acrshort{cdn} Edge pour des performances optimales. L'application mobile est distribu\'{e}e via EAS Build pour les stores iOS et Android. Les services externes (AWS S3, Nodemailer, OpenAI) sont consomm\'{e}s par l'\acrshort{api} backend.
+
+\subsection{Architecture Modulaire}
+
+L'\acrshort{api} NestJS suit une architecture modulaire rigoureuse inspir\'{e}e du framework Angular. Chaque domaine fonctionnel est encapsul\'{e} dans un module autonome suivant le patron :
+
+\begin{center}
+    \textbf{Module} $\rightarrow$ \textbf{Controller} $\rightarrow$ \textbf{Service} $\rightarrow$ \textbf{Entity (TypeORM)}
+\end{center}
+
+Le syst\`{e}me compte plus de 50 modules de domaine enregistr\'{e}s dans le module racine \texttt{AppModule}. Le syst\`{e}me de s\'{e}curit\'{e} repose sur plusieurs couches de guards :
+
+\begin{itemize}
+    \item \textbf{JwtAuthGuard} : V\'{e}rification du token \acrshort{jwt} pour les administrateurs, caissiers et super-administrateurs.
+    \item \textbf{MemberJwtGuard} : V\'{e}rification du token \acrshort{jwt} sp\'{e}cifique aux membres de l'application mobile.
+    \item \textbf{RolesGuard} : Contr\^{o}le d'acc\`{e}s bas\'{e} sur les r\^{o}les (\acrshort{rbac}) via le d\'{e}corateur \texttt{@Roles()}.
+    \item \textbf{ModuleGuard} : Contr\^{o}le d'acc\`{e}s aux modules \acrshort{saas} via le d\'{e}corateur \texttt{@RequiresModule()}, permettant d'activer ou d\'{e}sactiver des fonctionnalit\'{e}s par partenaire (feature flags).
+\end{itemize}
+
+L'alias de chemin \texttt{@/*} est configur\'{e} pour pointer vers le r\'{e}pertoire \texttt{src/*} dans tous les sous-projets, assurant ainsi une coh\'{e}rence dans les imports et une meilleure lisibilit\'{e} du code.
+
+%──────────────────────────────────────────────
+\section{Environnement de Travail et Outils}
+%──────────────────────────────────────────────
+
+\subsection{Outils de D\'{e}veloppement}
+
+\begin{outline}
+    \1 \textbf{Mod\'{e}lisation}
+        \2 \textbf{StarUML} : Outil de mod\'{e}lisation UML utilis\'{e} pour la cr\'{e}ation des diagrammes de cas d'utilisation, de classes, de s\'{e}quence et d'activit\'{e}.
+    \1 \textbf{Environnement de d\'{e}veloppement int\'{e}gr\'{e} (\acrshort{ide})}
+        \2 \textbf{Visual Studio Code} : \'{E}diteur de code l\'{e}ger et extensible, optimis\'{e} pour le d\'{e}veloppement web et cloud avec un support natif de TypeScript, JavaScript et Node.js \cite{vscode}.
+    \1 \textbf{Gestion de Projet}
+        \2 \textbf{Linear} : Outil de gestion de projet Agile moderne utilis\'{e} pour le suivi des sprints, la planification du backlog et le suivi avanc\'{e} des t\^{a}ches au sein de l'\'{e}quipe, gr\^{a}ce \`{a} son interface fluide et ses cycles de sprint automatis\'{e}s.
+        \2 \textbf{Google Meet} : Plateforme de communication vid\'{e}o utilis\'{e}e pour les r\'{e}unions d'\'{e}quipe quotidiennes (stand-up), les sessions de Sprint Planning et de Sprint Review avec l'encadrant entreprise.
+    \1 \textbf{Tests \acrshort{api}}
+        \2 \textbf{Postman} : Plateforme de test et de documentation des \acrshort{api} \acrshort{rest}, utilis\'{e}e pour valider les endpoints avant l'int\'{e}gration frontend \cite{postman}.
+        \2 \textbf{Swagger} : Documentation interactive auto-g\'{e}n\'{e}r\'{e}e \`{a} partir des d\'{e}corateurs NestJS, accessible \`{a} l'adresse \texttt{/api/doc} \cite{swagger}.
+    \1 \textbf{Contr\^{o}le de Version}
+        \2 \textbf{Git} : Syst\`{e}me de contr\^{o}le de version distribu\'{e} utilis\'{e} pour g\'{e}rer le code source de tous les sous-projets \cite{git}.
+        \2 \textbf{GitHub} : Plateforme d'h\'{e}bergement de d\'{e}p\^{o}ts Git utilis\'{e}e pour la collaboration, les revues de code et la gestion des branches.
+\end{outline}
+
+\subsection{Mat\'{e}riel de D\'{e}veloppement}
+
+L'ensemble du d\'{e}veloppement a \'{e}t\'{e} r\'{e}alis\'{e} sur les configurations suivantes :
+\begin{itemize}
+    \item \textbf{Syst\`{e}me d'exploitation} : Windows 11 Pro
+    \item \textbf{Serveur de base de donn\'{e}es} : PostgreSQL 16 (port 5433)
+    \item \textbf{Mat\'{e}riel de test} : Terminaux ZKTeco C3-200 et cam\'{e}ras Hikvision SC705 pour le contr\^{o}le d'acc\`{e}s
+    \item \textbf{Appareils mobiles} : Simulateurs iOS/Android via Expo Go, tests sur appareils physiques
+\end{itemize}
+
+\subsection{Workflow de D\'{e}veloppement et CI/CD}
+
+Le processus de d\'{e}veloppement suit un workflow structur\'{e} int\'{e}grant une pipeline d'int\'{e}gration et de d\'{e}ploiement continus via GitHub Actions :
+
+\begin{enumerate}
+    \item \textbf{Planification} : D\'{e}finition des user stories dans Linear lors du Sprint Planning, avec attribution des priorit\'{e}s et estimation des charges.
+    \item \textbf{D\'{e}veloppement} : Cr\'{e}ation de branches feature sur Git, d\'{e}veloppement local avec hot reload (NestJS, Next.js, Expo).
+    \item \textbf{Tests} : Validation des endpoints via Swagger/Postman, tests manuels de l'interface, tests unitaires Jest.
+    \item \textbf{Revue de code} : Pull requests sur GitHub avec revue par l'encadrant entreprise.
+    \item \textbf{Int\'{e}gration continue} : GitHub Actions ex\'{e}cute automatiquement les \'{e}tapes de lint, test et build \`{a} chaque push.
+    \item \textbf{D\'{e}ploiement} : Le frontend est d\'{e}ploy\'{e} sur Vercel (Path A), le backend sur le \acrshort{vps} OVH via SSH et PM2 (Path B). Des notifications Discord informent l'\'{e}quipe du statut de chaque d\'{e}ploiement.
+\end{enumerate}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{ARCHITECTURE CICD.png}
+  \caption{Pipeline CI/CD via GitHub Actions}
+  \label{fig:cicd_pipeline}
+\end{figure}
+
+\section{Conclusion}
+Ce chapitre a permis de d\'{e}tailler les fondements m\'{e}thodologiques et technologiques du projet TrustGym. L'adoption de la m\'{e}thodologie Scrum a structur\'{e} le d\'{e}veloppement en sept sprints progressifs, tandis que la pile technologique choisie (NestJS, Next.js 15, React Native/Expo, PostgreSQL 16 avec pgvector) offre un \'{e}quilibre entre performance, maintenabilit\'{e} et \'{e}volutivit\'{e}. L'architecture distribu\'{e}e en quatre sous-projets, coupl\'{e}e \`{a} une pipeline \acrshort{cicd} automatis\'{e}e, garantit une livraison continue et fiable. Le chapitre suivant pr\'{e}sentera la sp\'{e}cification d\'{e}taill\'{e}e des exigences fonctionnelles et non fonctionnelles du syst\`{e}me.
+
+\end{document}

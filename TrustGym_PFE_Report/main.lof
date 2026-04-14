@@ -1,0 +1,69 @@
+\babel@toc {french}{}\relax 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Logo de TRUSTLINK}}{3}{figure.caption.8}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Logo de TrustGym}}{3}{figure.caption.9}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Logo Glofox}}{6}{figure.caption.10}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Logo GymMaster}}{6}{figure.caption.11}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Processus Agile appliqu\'{e} au projet TrustGym}}{12}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Pile technologique de la plateforme TrustGym}}{13}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Architecture logique de la plateforme TrustGym}}{16}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Architecture physique de d\'{e}ploiement de TrustGym}}{17}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Pipeline CI/CD via GitHub Actions}}{20}{figure.caption.17}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagramme de cas d'utilisation global de TrustGym}}{25}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Diagramme de classes global de TrustGym}}{28}{figure.caption.19}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagramme de cas d'utilisation -- Sprint 1}}{32}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Diagramme de s\'{e}quence -- Authentification administrateur}}{34}{figure.caption.21}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Page de connexion du tableau de bord web}}{36}{figure.caption.22}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Interface de gestion des utilisateurs du back-office}}{36}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Flux d'inscription multi-\'{e}tapes sur l'application mobile}}{37}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces \'{E}cran de connexion de l'application mobile}}{37}{figure.caption.25}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Diagramme de cas d'utilisation -- Sprint 2}}{40}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Diagramme de s\'{e}quence -- Inscription \`{a} un abonnement}}{41}{figure.caption.27}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Interface de liste des membres avec filtres de recherche}}{43}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Fiche d\'{e}taill\'{e}e d'un membre avec onglets}}{43}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Interface de gestion des formules d'abonnement}}{44}{figure.caption.30}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Diagramme de cas d'utilisation -- Sprint 3}}{48}{figure.caption.31}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Architecture du Machine Handler -- Communication mat\'{e}rielle}}{51}{figure.caption.32}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Diagramme de s\'{e}quence -- Flux temps r\'{e}el d'un \'{e}v\'{e}nement d'acc\`{e}s}}{52}{figure.caption.33}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Page d'historique des acc\`{e}s avec filtres avanc\'{e}s}}{53}{figure.caption.34}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Indicateur d'occupation en direct sur le tableau de bord web}}{53}{figure.caption.35}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Interface de configuration des portes et dispositifs de contr\^{o}le d'acc\`{e}s}}{54}{figure.caption.36}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Interface de gestion des plages horaires d'ouverture}}{54}{figure.caption.37}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Suivi de l'\'{e}tat des Machine Handlers}}{54}{figure.caption.38}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Diagramme de cas d'utilisation -- Sprint 4}}{57}{figure.caption.39}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Diagramme de s\'{e}quence -- V\'{e}rification de pr\'{e}sence par code QR}}{61}{figure.caption.43}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Page de gestion des coachs avec tableau filtrable}}{62}{figure.caption.44}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Vue calendrier hebdomadaire des s\'{e}ances planifi\'{e}es}}{62}{figure.caption.45}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Formulaire de cr\'{e}ation d'une s\'{e}ance avec s\'{e}lection du type}}{63}{figure.caption.46}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Interface de scan du code QR pour le pointage de pr\'{e}sence}}{63}{figure.caption.47}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Vue des s\'{e}ances disponibles sur l'application mobile}}{63}{figure.caption.48}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Diagramme de cas d'utilisation -- Sprint 5}}{66}{figure.caption.49}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Diagramme de s\'{e}quence -- Transfert de stock inter-salles}}{70}{figure.caption.53}%
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Page du catalogue produits avec cards visuelles}}{71}{figure.caption.54}%
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Tableau de bord de l'inventaire par salle de sport}}{71}{figure.caption.55}%
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Interface de transfert de stock entre salles}}{72}{figure.caption.56}%
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Page de vente de produits aux membres}}{72}{figure.caption.57}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Diagramme de cas d'utilisation -- Sprint 6}}{75}{figure.caption.58}%
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Diagramme de s\'{e}quence -- Cr\'{e}ation d'une facture B2B avec g\'{e}n\'{e}ration PDF}}{79}{figure.caption.62}%
+\contentsline {figure}{\numberline {9.3}{\ignorespaces Page de gestion des comptes pr\'{e}pay\'{e}s des membres}}{80}{figure.caption.63}%
+\contentsline {figure}{\numberline {9.4}{\ignorespaces Formulaire de cr\'{e}ation de facture avec lignes de d\'{e}tail}}{81}{figure.caption.64}%
+\contentsline {figure}{\numberline {9.5}{\ignorespaces Journal de caisse avec \'{e}critures quotidiennes}}{81}{figure.caption.65}%
+\contentsline {figure}{\numberline {9.6}{\ignorespaces Page de suivi des paiements avec historique des transactions}}{81}{figure.caption.66}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Diagramme de cas d'utilisation -- Application Mobile}}{84}{figure.caption.67}%
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Diagramme de cas d'utilisation -- Centre KPI et Assistant IA}}{84}{figure.caption.68}%
+\contentsline {figure}{\numberline {10.3}{\ignorespaces Architecture du pipeline RAG -- Assistant IA TrustGym}}{86}{figure.caption.69}%
+\contentsline {figure}{\numberline {10.4}{\ignorespaces Diagramme de s\'{e}quence -- Pipeline RAG de l'assistant IA}}{87}{figure.caption.70}%
+\contentsline {figure}{\numberline {10.5}{\ignorespaces \'{E}cran d'accueil de l'application mobile avec statistiques personnelles}}{89}{figure.caption.71}%
+\contentsline {figure}{\numberline {10.6}{\ignorespaces Vue PlanningView du calendrier des s\'{e}ances sur mobile}}{89}{figure.caption.72}%
+\contentsline {figure}{\numberline {10.7}{\ignorespaces \'{E}cran de profil avec informations et statut d'abonnement}}{89}{figure.caption.73}%
+\contentsline {figure}{\numberline {10.8}{\ignorespaces Centre KPI avec occupation en direct et analyse des heures de pointe}}{90}{figure.caption.74}%
+\contentsline {figure}{\numberline {10.9}{\ignorespaces Interface de chat de l'assistant IA bas\'{e} sur le RAG}}{90}{figure.caption.75}%

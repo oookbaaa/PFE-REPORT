@@ -1,0 +1,247 @@
+\documentclass[12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[myheadings]{fullpage}
+\DeclareUnicodeCharacter{0301}{\hspace{-1ex}\'{ }}
+% Package for headers
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{longtable}
+
+% For figures and stuff
+\usepackage{graphicx, wrapfig, subcaption, setspace, booktabs}
+\usepackage[T1]{fontenc}
+\usepackage[export]{adjustbox}
+
+% Change for different font sizes and families
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage{fourier}
+\usepackage[protrusion=true, expansion=true]{microtype}
+
+% Maths
+\usepackage{amsmath,amssymb}
+\usepackage{float}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+% Bibliography
+\usepackage{biblatex}
+\addbibresource{references.bib}
+
+%% Language and font encodings
+\usepackage[french]{babel}
+\usepackage{csquotes}
+
+\usepackage{multirow}
+
+%% PDF
+\usepackage{pdfpages}
+%% Outlines
+\usepackage{outlines}
+
+% More styles for bullets
+\usepackage{pifont}
+
+% Colors
+\usepackage{xcolor}
+\usepackage{pagecolor}
+\definecolor{darkred}{RGB}{139, 28, 38}
+
+% TikZ for UML diagrams
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows.meta, positioning, calc, fit, decorations.markings}
+
+% UML Use Case styles
+\tikzset{
+  actor/.style={
+    draw, minimum width=0.8cm, minimum height=1.2cm,
+    label={[font=\footnotesize]below:#1}
+  },
+  usecase/.style={
+    draw, ellipse, minimum width=2.8cm, minimum height=1cm,
+    text width=2.5cm, align=center, font=\footnotesize
+  },
+  systembox/.style={
+    draw, dashed, rounded corners, inner sep=10pt,
+    label={[font=\small\bfseries]above:#1}
+  }
+}
+
+% Sequence diagram styles
+\tikzset{
+  sdactor/.style={rectangle, draw, minimum width=2cm, minimum height=0.7cm, font=\footnotesize\bfseries},
+  sdmessage/.style={-{Stealth[length=2mm]}, font=\footnotesize},
+  sdreturn/.style={-{Stealth[length=2mm]}, dashed, font=\footnotesize},
+  sdactivation/.style={fill=blue!10, draw, minimum width=0.4cm},
+  sdnote/.style={draw, fill=yellow!20, font=\scriptsize, text width=2.5cm, align=center}
+}
+
+% Stick figure command for UML actors
+\newcommand{\stickfigure}[2]{%
+  \begin{scope}[shift={#1}]
+    \draw (0,0.35) circle (0.15cm);
+    \draw (0,0.2) -- (0,-0.15);
+    \draw (-0.2,0.1) -- (0.2,0.1);
+    \draw (0,-0.15) -- (-0.15,-0.4);
+    \draw (0,-0.15) -- (0.15,-0.4);
+    \node[font=\footnotesize, below] at (0,-0.45) {#2};
+  \end{scope}
+}
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+\renewcommand\footnoterule{\kern-3pt \hrule width 0.5\textwidth \kern 2.6pt}
+\onehalfspacing
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+%% Sets page size and margins
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\linespread{1.15}
+
+%% Graphics path
+\graphicspath{{img/}{"architectures images/"}}
+
+\usepackage{subfiles} % Best loaded last in the preamble
+
+\usepackage[acronym, toc, nonumberlist, nopostdot]{glossaries}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+
+% Header and footer information
+\setlength\headheight{15pt}
+\fancyhead[L]{5TWIN}
+\fancyhead[R]{Okba Bedhiafi}
+\fancyfoot[R]{\thepage}
+ \setlength {\marginparwidth }{2cm}
+
+%acronyms%
+\makeglossaries
+\newacronym{api}{API}{Application Programming Interface}
+\newacronym{jwt}{JWT}{JSON Web Token}
+\newacronym{orm}{ORM}{Object Relational Mapping}
+\newacronym{cicd}{CI/CD}{Continuous Integration and Continuous Delivery/Deployment}
+\newacronym{ssr}{SSR}{Server Side Rendering}
+\newacronym{css}{CSS}{Cascading Style Sheets}
+\newacronym{html}{HTML}{Hypertext Markup Language}
+\newacronym{js}{JS}{JavaScript}
+\newacronym{ts}{TS}{TypeScript}
+\newacronym{sql}{SQL}{Structured Query Language}
+\newacronym{ide}{IDE}{Integrated Development Environment}
+\newacronym{ui}{UI}{User Interface}
+\newacronym{ux}{UX}{User Experience}
+\newacronym{rest}{REST}{Representational State Transfer}
+\newacronym{crud}{CRUD}{Create, Read, Update, Delete}
+\newacronym{dto}{DTO}{Data Transfer Object}
+\newacronym{sdk}{SDK}{Software Development Kit}
+\newacronym{qr}{QR}{Quick Response}
+\newacronym{rag}{RAG}{Retrieval Augmented Generation}
+\newacronym{ai}{IA}{Intelligence Artificielle}
+\newacronym{kpi}{KPI}{Key Performance Indicator}
+\newacronym{rbac}{RBAC}{Role-Based Access Control}
+\newacronym{saas}{SaaS}{Software as a Service}
+\newacronym{json}{JSON}{JavaScript Object Notation}
+\newacronym{pdf}{PDF}{Portable Document Format}
+\newacronym{lts}{LTS}{Long Term Support}
+\newacronym{mvp}{MVP}{Minimum Viable Product}
+\newacronym{b2b}{B2B}{Business to Business}
+\newacronym{otp}{OTP}{One-Time Password}
+\newacronym{smtp}{SMTP}{Simple Mail Transfer Protocol}
+\newacronym{ws}{WS}{WebSocket}
+\newacronym{cdn}{CDN}{Content Delivery Network}
+\newacronym{vps}{VPS}{Virtual Private Server}
+\newacronym{rfid}{RFID}{Radio-Frequency Identification}
+\newacronym{http}{HTTP}{Hypertext Transfer Protocol}
+\newacronym{https}{HTTPS}{Hypertext Transfer Protocol Secure}
+\newacronym{tcp}{TCP}{Transmission Control Protocol}
+\newacronym{aws}{AWS}{Amazon Web Services}
+\newacronym{mvc}{MVC}{Model-View-Controller}
+\newacronym{url}{URL}{Uniform Resource Locator}
+\newacronym{uuid}{UUID}{Universally Unique Identifier}
+\newacronym{tls}{TLS}{Transport Layer Security}
+\newacronym{npm}{NPM}{Node Package Manager}
+\newacronym{nat}{NAT}{Network Address Translation}
+\newacronym{rtl}{RTL}{Right-to-Left}
+\newacronym{nfc}{NFC}{Near Field Communication}
+\newacronym{cors}{CORS}{Cross-Origin Resource Sharing}
+\newacronym{ssh}{SSH}{Secure Shell Protocol}
+\newacronym{eas}{EAS}{Expo Application Services}
+\newacronym{erp}{ERP}{Enterprise Resource Planning}
+
+\renewcommand*{\glstextformat}[1]{\textbf{\color{black}#1}}
+\hypersetup{citecolor=black}
+\begin{document}
+
+% ============================================================
+% COVER PAGE (included from external PDF)
+% ============================================================
+\clearpage\thispagestyle{empty}\addtocounter{page}{-1}
+\includepdf[pages=1, fitpaper=true]{pdf/front_cover.pdf}
+
+% ============================================================
+% VALIDATION FORM (included from external PDF)
+% ============================================================
+\clearpage\thispagestyle{empty}\addtocounter{page}{-1}
+\includepdf[pages=1, fitpaper=true]{pdf/signature_cover.pdf}
+
+\cleardoublepage
+\pagenumbering{gobble}
+{
+  \hypersetup{linkcolor=black}
+  \tableofcontents
+}
+\cleardoublepage
+\pagenumbering{arabic}
+
+\cleardoublepage
+\pagenumbering{gobble}
+{
+  \hypersetup{linkcolor=black}
+  \listoffigures
+}
+\cleardoublepage
+\pagenumbering{arabic}
+
+\pagenumbering{gobble}
+\clearpage
+{
+  \hypersetup{linkcolor=black}
+  \listoftables
+}
+\clearpage
+\pagenumbering{arabic}
+
+\pagenumbering{gobble}
+\clearpage
+{
+  \hypersetup{linkcolor=black}
+  \glsaddall
+  \printglossary[type=\acronymtype, title=Liste des Acronymes, toctitle=Liste des Acronymes]
+}
+\clearpage
+\pagenumbering{arabic}
+
+\subfile{sections/Remerciements}
+\subfile{sections/Introduction Generale}
+
+\subfile{chapters/0 Cadre General}
+\subfile{chapters/1 Approche}
+\subfile{chapters/2 Exigences}
+\subfile{chapters/3 Sprint 1}
+\subfile{chapters/4 Sprint 2}
+\subfile{chapters/5 Sprint 3}
+\subfile{chapters/6 Sprint 4}
+\subfile{chapters/7 Sprint 5}
+\subfile{chapters/8 Sprint 6}
+\subfile{chapters/9 Sprint 7}
+
+\subfile{sections/Conclusion Generale}
+
+\cleardoublepage
+\pagenumbering{gobble}
+\printbibliography
+\cleardoublepage
+\pagenumbering{arabic}
+\clearpage\thispagestyle{empty}\addtocounter{page}{-1}
+\includepdf[pages=1, fitpaper=true]{pdf/back_cover.pdf}
+\end{document}

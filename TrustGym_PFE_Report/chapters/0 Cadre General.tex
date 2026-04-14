@@ -1,0 +1,218 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../img/}}{\subfix{../architectures images/}}}
+\begin{document}
+\chapter{Cadre G\'{e}n\'{e}ral}
+
+\section{Introduction}
+Ce chapitre pr\'{e}sente le cadre g\'{e}n\'{e}ral du projet. Nous y introduisons l'entreprise d'accueil TRUSTLINK, le projet TrustGym, les probl\'{e}matiques identifi\'{e}es, une revue de la litt\'{e}rature, ainsi que la solution propos\'{e}e et ses objectifs.
+
+\section{Pr\'{e}sentation de l'organisme d'accueil}
+
+\subsection{Pr\'{e}sentation de l'entreprise d'accueil}
+TRUSTLINK est une entreprise tunisienne sp\'{e}cialis\'{e}e dans les solutions num\'{e}riques pour les entreprises. Fond\'{e}e par \textbf{Bilel Taktak}, TRUSTLINK s'est positionn\'{e}e comme un acteur cl\'{e} de la transformation digitale en Tunisie, en offrant des services de d\'{e}veloppement logiciel sur mesure, de conception de plateformes \acrshort{saas}, et d'accompagnement \`{a} la digitalisation des processus m\'{e}tier.
+
+\vspace{10pt}
+L'entreprise se distingue par son expertise dans les technologies modernes du web et du mobile, avec un accent particulier sur les architectures modulaires, les solutions cloud, et l'int\'{e}gration de syst\`{e}mes mat\'{e}riels. TRUSTLINK intervient aupr\`{e}s de divers secteurs d'activit\'{e}, notamment le fitness, la sant\'{e}, et le commerce, en proposant des solutions cl\'{e}s en main adapt\'{e}es aux besoins sp\'{e}cifiques de chaque client.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\textwidth]{img/trust_link_logo.jpg}
+  \caption{Logo de TRUSTLINK}
+  \label{fig:trustlink_logo}
+\end{figure}
+
+\subsection{Introduction au Projet}
+TrustGym est une plateforme \acrshort{saas} compl\`{e}te de gestion de salles de sport, con\c{c}ue pour r\'{e}pondre aux besoins croissants du secteur du fitness en Tunisie et dans la r\'{e}gion. Le projet est structur\'{e} en quatre sous-projets compl\'{e}mentaires :
+
+\begin{enumerate}
+  \item \textbf{trustgym-api} : Le backend \acrshort{rest} \acrshort{api} d\'{e}velopp\'{e} avec NestJS, TypeORM et PostgreSQL 16 avec pgvector. Il constitue le c\oe{}ur m\'{e}tier de la plateforme avec plus de 50 modules fonctionnels.
+  \item \textbf{trustgym-app} : Le tableau de bord web d'administration d\'{e}velopp\'{e} avec Next.js 15 et TanStack Query, permettant aux g\'{e}rants et coachs de piloter l'ensemble des op\'{e}rations.
+  \item \textbf{trustgym-mobile} : L'application mobile pour les adh\'{e}rents, d\'{e}velopp\'{e}e avec React Native et Expo \acrshort{sdk} 54, offrant un acc\`{e}s aux s\'{e}ances, \`{a} l'analytique et au profil personnel.
+  \item \textbf{trustgym-machine-handler} : Le module d'int\'{e}gration mat\'{e}rielle g\'{e}r\'{e} par PM2, combinant Python et NestJS pour communiquer avec les terminaux ZKTeco et Hikvision (portes et contr\^{o}le d'acc\`{e}s).
+\end{enumerate}
+
+\vspace{10pt}
+L'ensemble des sous-projets utilise \textbf{TypeScript} comme langage principal et \textbf{Yarn} comme gestionnaire de paquets, garantissant une coh\'{e}rence technique \`{a} travers toute la plateforme.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.35\textwidth]{img/trustgym-logo.png}
+  \caption{Logo de TrustGym}
+  \label{fig:trustgym_logo}
+\end{figure}
+
+\subsection{Description du projet}
+TrustGym couvre l'ensemble des besoins op\'{e}rationnels d'une salle de sport moderne. Les fonctionnalit\'{e}s cl\'{e}s de la plateforme sont :
+
+\begin{itemize}
+  \item \textbf{Gestion des membres} : inscription, profils, historique et suivi des adh\'{e}rents.
+  \item \textbf{Gestion des abonnements} : cr\'{e}ation de formules, renouvellements, p\'{e}riodes d'essai et notifications d'expiration.
+  \item \textbf{Contr\^{o}le d'acc\`{e}s physique} : int\'{e}gration avec des terminaux ZKTeco et Hikvision pour l'ouverture/fermeture automatique des portes.
+  \item \textbf{Suivi d'occupation en temps r\'{e}el} : calcul de l'occupation en direct via WebSocket, bas\'{e} sur les \'{e}v\'{e}nements d'entr\'{e}e/sortie.
+  \item \textbf{Gestion des coachs et des s\'{e}ances} : planification, affectation et suivi des sessions d'entra\^{i}nement.
+  \item \textbf{Boutique et gestion de stock} : vente de produits, suivi d'inventaire et gestion des fournisseurs.
+  \item \textbf{Finance et facturation} : g\'{e}n\'{e}ration de factures, suivi des paiements et rapports financiers.
+  \item \textbf{Portefeuille pr\'{e}pay\'{e} (Wallet)} : syst\`{e}me de solde rechargeable pour les adh\'{e}rents.
+  \item \textbf{Tableau de bord \acrshort{kpi}} : indicateurs cl\'{e}s de performance, analytique et visualisation des donn\'{e}es.
+  \item \textbf{Assistant \acrshort{ai} (\acrshort{rag})} : assistant intelligent bas\'{e} sur le Retrieval Augmented Generation, utilisant OpenAI et pgvector pour r\'{e}pondre aux questions des administrateurs.
+\end{itemize}
+
+\subsection{Structure du Rapport}
+Le pr\'{e}sent rapport est organis\'{e} en dix chapitres suivis d'une conclusion g\'{e}n\'{e}rale :
+
+\begin{outline}
+  \1 \textbf{Chapitre 1 -- Cadre G\'{e}n\'{e}ral} : pr\'{e}sentation de l'entreprise d'accueil, introduction au projet, probl\'{e}matiques et objectifs.
+  \1 \textbf{Chapitre 2 -- Approche de D\'{e}veloppement et Technologies} : m\'{e}thodologie Scrum, pile technologique et architecture syst\`{e}me.
+  \1 \textbf{Chapitre 3 -- Sp\'{e}cification des Exigences} : acteurs, besoins fonctionnels et non fonctionnels, diagrammes de cas d'utilisation et de classes.
+  \1 \textbf{Chapitre 4 -- Sprint 1} : Authentification et Gestion des Utilisateurs.
+  \1 \textbf{Chapitre 5 -- Sprint 2} : Gestion des Membres et des Abonnements.
+  \1 \textbf{Chapitre 6 -- Sprint 3} : Contr\^{o}le d'Acc\`{e}s et Int\'{e}gration Mat\'{e}rielle.
+  \1 \textbf{Chapitre 7 -- Sprint 4} : Gestion des Coachs et des S\'{e}ances.
+  \1 \textbf{Chapitre 8 -- Sprint 5} : Boutique et Gestion de Stock.
+  \1 \textbf{Chapitre 9 -- Sprint 6} : Finance, Facturation et Portefeuille.
+  \1 \textbf{Chapitre 10 -- Sprint 7} : Application Mobile, KPI et Assistant IA.
+  \1 \textbf{Conclusion G\'{e}n\'{e}rale} : Bilan du projet et perspectives.
+\end{outline}
+
+\section{Probl\'{e}matiques}
+
+\subsection{Point de vue TRUSTLINK}
+Du point de vue de TRUSTLINK, plusieurs d\'{e}fis majeurs ont motiv\'{e} le d\'{e}veloppement de TrustGym :
+
+\begin{itemize}
+  \item \textbf{Absence de solution locale adapt\'{e}e} : le march\'{e} tunisien du fitness manque de solutions num\'{e}riques compl\`{e}tes et abordables. Les plateformes internationales existantes sont co\^{u}teuses et mal adapt\'{e}es au contexte local.
+  \item \textbf{Multi-tenant \acrshort{saas}} : concevoir une plateforme capable de servir plusieurs salles de sport simultan\'{e}ment, avec une isolation des donn\'{e}es et une personnalisation par client (feature flags).
+  \item \textbf{Int\'{e}gration mat\'{e}rielle} : int\'{e}grer des \'{e}quipements de contr\^{o}le d'acc\`{e}s physique (ZKTeco et Hikvision) dans un \'{e}cosyst\`{e}me logiciel cloud, ce qui repr\'{e}sente un d\'{e}fi d'interop\'{e}rabilit\'{e} significatif.
+  \item \textbf{Suivi d'occupation en temps r\'{e}el} : fournir une visibilit\'{e} instantan\'{e}e sur le nombre de personnes pr\'{e}sentes dans la salle, un besoin renforc\'{e} depuis la pand\'{e}mie de COVID-19.
+  \item \textbf{Multi-plateforme} : offrir une exp\'{e}rience coh\'{e}rente sur le web (g\'{e}rants/coachs) et sur mobile (adh\'{e}rents), n\'{e}cessitant deux applications distinctes mais int\'{e}gr\'{e}es.
+\end{itemize}
+
+\subsection{Point de vue technique}
+D'un point de vue technique, le projet soul\`{e}ve plusieurs probl\'{e}matiques complexes :
+
+\begin{itemize}
+  \item \textbf{Architecture modulaire \`{a} grande \'{e}chelle} : structurer un backend de plus de 50 modules NestJS tout en maintenant la maintenabilit\'{e}, la testabilit\'{e} et les performances.
+  \item \textbf{Double syst\`{e}me d'authentification \acrshort{jwt}} : impl\'{e}menter deux cha\^{i}nes d'authentification distinctes (administrateurs via \texttt{JwtAuthGuard} et membres via \texttt{MemberJwtGuard}) avec des strat\'{e}gies et des flux de connexion diff\'{e}rents.
+  \item \textbf{Communication temps r\'{e}el (WebSocket)} : g\'{e}rer les \'{e}v\'{e}nements d'occupation en temps r\'{e}el via Socket.IO, avec invalidation du cache React Query c\^{o}t\'{e} client.
+  \item \textbf{Intelligence artificielle et pgvector} : impl\'{e}menter un assistant \acrshort{rag} en utilisant les embeddings OpenAI (\texttt{text-embedding-3-small}) stock\'{e}s dans PostgreSQL via l'extension pgvector.
+  \item \textbf{Pont mat\'{e}riel (Machine Handler)} : cr\'{e}er un pont logiciel fiable entre les \'{e}quipements physiques (ZKTeco/Hikvision) et l'\acrshort{api} cloud, g\'{e}r\'{e} par PM2 avec un service Python (port 8000) et un service NestJS (port 8080).
+  \item \textbf{Synchronisation multi-plateforme} : assurer la coh\'{e}rence des donn\'{e}es entre le tableau de bord web et l'application mobile, notamment pour les \'{e}tats de connexion, les abonnements et l'occupation en temps r\'{e}el.
+\end{itemize}
+
+\section{Revue de la Litt\'{e}rature}
+Avant de concevoir TrustGym, une \'{e}tude comparative des solutions existantes a \'{e}t\'{e} r\'{e}alis\'{e}e afin d'identifier les forces et les lacunes du march\'{e} actuel.
+
+\subsection{Glofox}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.25\textwidth]{glofox logo.png}
+  \caption{Logo Glofox}
+  \label{fig:glofox_logo}
+\end{figure}
+
+Glofox \cite{glofox} est une plateforme irlandaise de gestion de salles de sport et de studios de fitness fond\'{e}e en 2014, consid\'{e}r\'{e}e comme l'une des solutions les plus avanc\'{e}es du march\'{e} international. Malgr\'{e} ses fonctionnalit\'{e}s \'{e}tendues, elle pr\'{e}sente plusieurs limites dans le contexte tunisien :
+
+\begin{itemize}
+  \item Tarification en dollars/euros inadapt\'{e}e au march\'{e} local tunisien.
+  \item Absence d'int\'{e}gration native avec les \'{e}quipements ZKTeco et Hikvision, pr\'{e}pond\'{e}rants en Tunisie.
+  \item Pas de support multi-devises ni de gestion de portefeuille pr\'{e}pay\'{e} adapt\'{e} aux pratiques locales.
+  \item Interface et support exclusivement en anglais.
+  \item Absence d'assistant \acrshort{ai} int\'{e}gr\'{e} pour l'analyse op\'{e}rationnelle.
+\end{itemize}
+
+\subsection{GymMaster}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.28\textwidth]{gymmaster logo.png}
+  \caption{Logo GymMaster}
+  \label{fig:gymmaster_logo}
+\end{figure}
+
+GymMaster \cite{gymmaster} est un logiciel de gestion de salle de sport n\'{e}o-z\'{e}landais tr\`{e}s r\'{e}pandu dans la r\'{e}gion Asie-Pacifique et qui s'\'{e}tend progressivement vers les march\'{e}s internationaux. Ses limites sont :
+
+\begin{itemize}
+  \item Co\^{u}t \'{e}lev\'{e} par rapport aux budgets des petites et moyennes salles de sport tunisiennes.
+  \item Int\'{e}gration mat\'{e}rielle limit\'{e}e, ne supportant pas nativement les protocoles ZKTeco et Hikvision ISAPI.
+  \item Pas de module \acrshort{ai} ni de centre \acrshort{kpi} avanc\'{e} en temps r\'{e}el.
+  \item Absence de communication en temps r\'{e}el via WebSocket pour l'occupation en direct.
+  \item Non adapt\'{e} au march\'{e} tunisien (devises, langue arabe, r\`{e}glementation locale).
+\end{itemize}
+
+\subsection{Solutions locales traditionnelles}
+La majorit\'{e} des salles de sport en Tunisie utilisent encore des m\'{e}thodes de gestion manuelles :
+
+\begin{itemize}
+  \item Feuilles Excel ou registres papier pour le suivi des membres et des paiements.
+  \item Aucun suivi d'occupation en temps r\'{e}el.
+  \item Pas d'application mobile pour les adh\'{e}rents.
+  \item Absence d'analytique et de tableaux de bord \acrshort{kpi}.
+  \item Risque d'erreurs humaines et perte de donn\'{e}es.
+\end{itemize}
+
+\subsection{Synth\`{e}se comparative}
+Le tableau~\ref{tab:comparatif} r\'{e}sume la comparaison entre les solutions existantes et TrustGym.
+
+\begin{table}[H]
+\centering
+\caption{Tableau comparatif des solutions de gestion de salles de sport}
+\label{tab:comparatif}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Crit\`{e}re} & \textbf{Glofox} & \textbf{GymMaster} & \textbf{Excel/Papier} & \textbf{TrustGym} \\
+\hline
+Gestion des membres & \checkmark & \checkmark & Partiel & \checkmark \\
+\hline
+Abonnements & \checkmark & \checkmark & Partiel & \checkmark \\
+\hline
+Contr\^{o}le d'acc\`{e}s physique & Partiel & Partiel & -- & \checkmark \\
+\hline
+Occupation temps r\'{e}el & -- & -- & -- & \checkmark \\
+\hline
+Application mobile & \checkmark & \checkmark & -- & \checkmark \\
+\hline
+Boutique / Stock & \checkmark & \checkmark & -- & \checkmark \\
+\hline
+Facturation / Wallet & \checkmark & \checkmark & -- & \checkmark \\
+\hline
+Assistant \acrshort{ai} & -- & -- & -- & \checkmark \\
+\hline
+Adapt\'{e} au march\'{e} tunisien & -- & -- & \checkmark & \checkmark \\
+\hline
+Co\^{u}t abordable & -- & -- & \checkmark & \checkmark \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Solution et Objectifs}
+
+\subsection{Solution propos\'{e}e}
+TrustGym se positionne comme une solution diff\'{e}renciante en combinant les avantages des plateformes internationales avec une adaptation compl\`{e}te au contexte tunisien. Les principaux \'{e}l\'{e}ments diff\'{e}renciateurs sont :
+
+\begin{itemize}
+  \item \textbf{Plateforme centralis\'{e}e} : une seule solution couvrant l'ensemble des op\'{e}rations d'une salle de sport, \'{e}liminant le besoin de multiples outils fragment\'{e}s.
+  \item \textbf{Contr\^{o}le d'acc\`{e}s physique int\'{e}gr\'{e}} : communication directe avec les terminaux ZKTeco et Hikvision via le module Machine Handler, permettant l'ouverture/fermeture automatique des portes.
+  \item \textbf{Suivi d'occupation en temps r\'{e}el} : calcul instantan\'{e} du nombre de personnes pr\'{e}sentes dans la salle, diffus\'{e} via WebSocket et accessible sur le tableau de bord et l'application mobile.
+  \item \textbf{Application mobile d\'{e}di\'{e}e aux adh\'{e}rents} : une application React Native/Expo permettant aux membres de consulter leurs s\'{e}ances, suivre leur abonnement et visualiser l'occupation en temps r\'{e}el.
+  \item \textbf{Assistant intelligent (\acrshort{ai})} : un assistant bas\'{e} sur le \acrshort{rag} capable de r\'{e}pondre aux questions des administrateurs en exploitant la documentation et les donn\'{e}es de la plateforme.
+  \item \textbf{Mod\`{e}le \acrshort{saas} multi-tenant} : architecture con\c{c}ue pour servir plusieurs salles de sport avec isolation des donn\'{e}es et personnalisation via feature flags.
+\end{itemize}
+
+\subsection{Objectifs du projet}
+Les objectifs principaux du projet TrustGym sont les suivants :
+
+\begin{enumerate}
+  \item D\'{e}velopper un backend robuste et modulaire avec NestJS, capable de g\'{e}rer plus de 50 modules m\'{e}tier.
+  \item Concevoir un tableau de bord web intuitif avec Next.js 15 pour la gestion administrative et le suivi des \acrshort{kpi}.
+  \item Cr\'{e}er une application mobile performante avec React Native et Expo \acrshort{sdk} 54 pour les adh\'{e}rents.
+  \item Int\'{e}grer les \'{e}quipements de contr\^{o}le d'acc\`{e}s ZKTeco et Hikvision via un pont logiciel d\'{e}di\'{e}.
+  \item Impl\'{e}menter un syst\`{e}me de suivi d'occupation en temps r\'{e}el via WebSocket.
+  \item Mettre en place un assistant \acrshort{ai} bas\'{e} sur le \acrshort{rag} pour accompagner les administrateurs.
+  \item Assurer la scalabilit\'{e} de la plateforme gr\^{a}ce \`{a} une architecture \acrshort{saas} multi-tenant.
+\end{enumerate}
+
+\section{Conclusion}
+Ce chapitre a permis de poser le cadre g\'{e}n\'{e}ral du projet TrustGym. Nous avons pr\'{e}sent\'{e} l'entreprise d'accueil TRUSTLINK, d\'{e}crit le projet et ses fonctionnalit\'{e}s cl\'{e}s, identifi\'{e} les probl\'{e}matiques tant m\'{e}tier que techniques, et r\'{e}alis\'{e} une revue comparative des solutions existantes. La solution TrustGym se distingue par son approche int\'{e}gr\'{e}e, son adaptation au march\'{e} tunisien, et son int\'{e}gration mat\'{e}rielle unique. Le chapitre suivant d\'{e}taillera l'approche de d\'{e}veloppement adopt\'{e}e et les technologies utilis\'{e}es.
+
+\end{document}

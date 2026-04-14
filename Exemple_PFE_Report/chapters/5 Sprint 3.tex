@@ -1,0 +1,357 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+\begin{document}
+\chapter{Sprint 3: Implémentation de Nouvelles Fonctionnalités et Optimisation du Code}
+\section{Introduction}
+Après avoir pris le temps de nous familiariser avec le code existant et de corriger initialement les quelques bugs béants, Il était temps pour l'équipe de passer au dernier sprint. Un rush de deux mois qui va nous permettre de clôturer notre projet en nous concentrons sur de nouvelles fonctionnalités en touchant à toutes les couches du projet. 
+ \section{Sprint Backlog}
+Cette fois, vu que les fonctionnalités sont nombreuses et que l'on va aborder quelques exemples, nous allons présenter le Sprint Backlog pour comprendre le besoin du client 
+\newpage
+\begin{longtable}{|p{0.165\linewidth} |c| p{0.20\linewidth}| p{0.30\linewidth}|}
+    \hline
+    \textbf{Epic} & \textbf{Nature} & \textbf{User Story} & \textbf{Description} \\
+    \hline
+    \multirow{3}{*}{\textbf{Général}} &
+    \multirow{2}{*}{Tâche} & 
+    Refactorer Watto Admin
+    & Restructurer le code du dashboard admin de Watto.\\
+    \cline{2-4}
+    & 
+    \multirow{2}{*}{Fonctionnalités} &
+    \textbf{[AAA] Je veux pouvoir rechercher toutes les tables par leurs champs pertinents respectifs.}
+    & Ajouter la fonctionnalité permettant de rechercher toutes les tables par leurs champs pertinents respectifs quelques soit le type. \\
+    \cline{2-4}
+    & 
+    Bug fix & - & - \\
+    \hline
+    
+    \multirow{3}{*}{\textbf{Cartes cadeaux}} &
+    Tâche & -
+    & - \\
+    \cline{2-4}
+    &
+    \multirow{2}{*}{Fonctionnalités} &
+    [AAC] Je veux être interdit d'acheter des cartes cadeaux ou des bons d'achat dont le montant ne respecte pas les plages définies par les organisations.
+    & Ajouter la fonctionnalité permettant de refuser l'achat de cartes cadeaux ou de bons d'achat dont le montant ne respecte pas les plages définies par les organisations. \\
+    \cline{3-4}
+    &
+    & 
+    [AAC] Je veux pouvoir activer une carte cadeau.
+    & Ajout de la fonctionnalité permettant d'activer une carte cadeau. \\
+    \cline{3-4}
+    &
+    & 
+    [AAA] Je veux pouvoir mettre à jour le statut de la carte cadeau.
+    & Ajout de la fonctionnalité permettant de mettre à jour le statut de la carte cadeau.  \\
+    \cline{3-4}
+    &
+    & 
+    [AAC] Je veux être refusé d'acheter des cartes cadeaux ou des bons d'achat dont le montant ne respecte pas les plages définies par les organisations.
+    & Ajout de la fonctionnalité permettant de refuser l'achat de cartes cadeaux ou de bons d'achat dont le montant ne respecte pas les plages définies par les organisations.  \\
+    \cline{2-4}
+    &
+    Bug fix & 
+    Impossible d'offrir une carte cadeau.
+    & Corriger le système d'offrande de carte cadeaux. \\
+    \hline
+
+    
+    \multirow{3}{*}{\textbf{Utilisateurs}} &
+    Tâche & 
+    Refuser à l'utilisateur de mettre à jour certaines informations après la validation du profil
+    & Empêcher les utilisateurs de mettre à jour certaines informations après la validation du profil. \\
+    \cline{2-4}
+    &
+    \multirow{2}{*}{Fonctionnalités} &
+    [AAA] Je veux pouvoir geler un compte client et interdire la connexion.
+    & Ajout de la fonctionnalité permettant de geler un compte client et d'interdire la connexion. \\
+    \cline{3-4}
+    & 
+    &
+    [AAC] Je veux pouvoir déposer des montants dans la plage définie par les valeurs minimales et maximales de la cagnotte.
+    & Ajouter la fonctionnalité permettant de déposer des montants dans la plage définie par les valeurs minimales et maximales de la cagnotte. \\
+    \cline{3-4}
+    & 
+    &
+    \textbf{[AAA] Je veux pouvoir télécharger des documents clients}.
+    & Ajout de la fonctionnalité permettant de télécharger des documents clients. \\
+    \cline{3-4}
+    & 
+    &
+    [AAA] Je veux pouvoir choisir la catégorie liée à une organisation
+    & Ajout de la fonctionnalité permettant à l'utilisateur de choisir la catégorie d'une organisation. \\
+    \cline{3-4}
+    & 
+    &
+    [AAO] Je veux pouvoir accéder à ma page de profil
+    & Ajout de la fonctionnalité permettant à l'utilisateur d'accéder à sa page de profil. \\
+    \cline{3-4}
+    & 
+    &
+    \textbf{[AAA] Je veux pouvoir consulter la page de présentation d'une organisation}
+    & Ajout de la fonctionnalité permettant à l'utilisateur de consulter la page de présentation d'une organisation. \\
+    \cline{2-4}
+    &
+    \multirow{2}{*}{Bug fix} & 
+    [AAC] Erreur d'exécution non gérée lors de l'ajout de documents depuis le client Watto.
+    & Ajouter indicateur d'erreur lors de l'ajout de documents depuis le dashboard client Watto. \\
+    \cline{3-4}
+    & 
+    &
+    Mise en œuvre incorrecte des documents clients.
+    & Corriger l'implémentation incorrecte des documents clients. \\
+    \cline{3-4}
+    & 
+    &
+    [AAC] Inscription - validation manquante - aucun message si un champ obligatoire n'est pas rempli
+    & Ajouter une forme de validation au formulaire d'inscription.\\
+    \cline{3-4}
+    & 
+    &
+    [AAC] Inscription - erreur générée si aucune image n'est téléchargée
+    & Permettre à l'utilisateur de créer un compte sans forcément ajouter de photo de profil. \\
+    \hline
+
+    
+    \multirow{3}{*}{\textbf{Cagnottes}} &
+    Tâche & - & - & - \\ 
+    \cline{2-4}
+    &
+    \multirow{2}{*}{Fonctionnalités} &
+    [AAC] Je veux pouvoir demander le transfert de tout ou une partie du montant de la cagnotte.
+    & Ajouter la fonctionnalité permettant de demander le transfert de tout ou une partie du montant de la cagnotte.\\
+    \cline{3-4}
+    & 
+    &
+    [AAA] Je veux pouvoir geler une cagnotte.
+    & Ajouter la fonctionnalité permettant de geler une cagnotte.\\
+    \cline{3-4}
+    & 
+    &
+    [AAC] Je veux être refusé d'accéder à un jackpot gelé
+    & Empêcher l'utilisateur d'accéder à un jackpot gelé.\\
+    \cline{3-4}
+    & 
+    &
+    [AAC] Je veux pouvoir convertir une partie du solde de mon jackpot en un bon
+    & Ajout de la fonctionnalité permettant à l'utilisateur de convertir une partie de son solde de jackpot en un bon.\\
+    \cline{3-4}
+    & 
+    &
+    [AAA] Je veux pouvoir geler une cagnotte.
+    & Ajout de la fonctionnalité permettant de geler une cagnotte.\\
+    \cline{2-4}
+    &
+    \multirow{2}{*}{Bug fix} & 
+    Nombreuses fautes de frappe dans l'énumération des cagnottes.
+    & 
+    Corriger les fautes de frappes dans l'énumération des cagnottes.\\
+    \cline{3-4}
+    & 
+    &
+    [AAC] Problème lors de la tentative de modification de la date d'une cagnotte.
+    & Implémenter un endpoint fonctionnel pour la modification de la date d'une cagnotte.  \\
+    \cline{3-4}
+    & 
+    &
+    [AAC] Erreur manquante lors de la tentative de dépense d'argent provenant d'une cagnotte qui n'est plus le mien.
+    & Interdire à un utilisateur qui a offert une cagnotte de dépenser de l'argent à partir de cette dernière.\\
+    \cline{3-4}
+    & 
+    &
+    [AAC] Lien personnalisé pour la cagnotte ne fonctionne pas
+    & Implémenter un système de lien personnalisé pour la cagnotte fonctionnel.\\
+    \cline{3-4}
+    & 
+    &
+    [AAC] Calcul incorrect de ce que vous recevez lors de la dépense à partir d'une cagnotte
+    & Corriger le calcul incorrect de ce que vous recevez lors de la dépense à partir d'une cagnotte.\\
+    \cline{3-4}
+    & 
+    &
+    [AAC] Après avoir dépensé de l'argent à partir d'une cagnotte, le message est incorrect
+    & Modifier le message reçu après avoir dépensé de l'argent à partir d'une cagnotte.\\
+    \cline{3-4}
+    & 
+    &
+    [AAC] Si la cagnotte a été créé avec le mode fixe ou suggéré, un message est manquant.
+    & Ajouter un message indiquant que la cagnotte a été créée avec un mode fixe ou suggéré lorsqu'elle est active dans l'un de ces 2 modes. \\
+    \cline{3-4}
+    & 
+    &
+    [AAC] Après avoir dépensé de l'argent à partir d'une cagnotte, je m'attends à voir le montant disponible mis à jour.
+    & Corriger l'affichage incorrect du montant disponible après avoir dépensé de l'argent à partir d'une cagnotte.\\
+    \hline
+    
+    \multirow{3}{*}{\textbf{Transactions}} &
+    Tâche & - & - \\
+    \cline{2-4}
+    &
+    \multirow{2}{*}{Fonctionnalités} &
+    [AAA] Je veux pouvoir voir toutes les transactions de la plateforme Watto.
+    & Ajout de la fonctionnalité permettant de voir toutes les transactions effectuées sur la plateforme Watto.
+    \\
+    \cline{2-4}
+    &
+    Bug fix & 
+    Aucune validation côté serveur lors de la dépense d'argent par un partenaire.
+    & Ajouter une couche de validation au niveau du backend lors de n'importe quelle forme de transaction d'argent. \\
+    \hline
+    
+    \multirow{3}{*}{\textbf{RIB}} &
+    Tâche & - & - \\
+    \cline{2-4}
+    &
+    \multirow{2}{*}{Fonctionnalités} &
+    [AAO] Je veux pouvoir ajouter mon RIB
+    & Ajout de la fonctionnalité permettant à l'utilisateur d'ajouter son RIB.
+    \\
+    \cline{2-4}
+    &
+    \multirow{2}{*}{Bug fix} & 
+    [AAC] Lorsque j'ajoute un IBAN dans l'onglet RIB, ce RIB ajouté n'apparaît pas.
+    & Lors de l'ajout d'un IBAN le feedback du client n'est pas direct, il faut rafraîchir pour voir le résultat, il faut implémenter un refetch onSuccess après l'ajout de l'IBAN.
+    \\
+    \cline{3-4}
+    & 
+    &
+    [AAC] Erreur lors de la suppression du RIB
+    & Corriger l'erreur lors de la suppression du RIB.
+    \\
+    \hline
+    
+    \multirow{3}{*}{\textbf{Notifications}} &
+    Tâche & - & - \\
+    \cline{2-4}
+    &
+    \multirow{2}{*}{Fonctionnalités} &
+    \textbf{Implémenter un système de notifications}
+    & Ajouter un système de notifications par email fonctionnels et créer la template dynamique grâce au Bull Queue Management et à EJS. 
+    \\
+    \cline{2-4}
+    &
+    Bug fix & - & - \\
+    \hline
+\end{longtable}
+
+
+\newpage
+\section{Exécution}
+Même si les descriptions suffisent pour expliquer l'exécution du Sprint, on va s'attarder sur quelques exemples de fonctionnalités
+
+\subsection{Système de notifications}
+Pour implémenter un système de notifications complet au niveau du backend, il faut s'occuper de plusieurs paramètres en même temps. Certains exemples de choses à faire, sont par exemple: Gérer les erreurs, Logger les erreurs, stocker les logs, stocker les notifications, etc.. 
+\newline Vu que le système est secondaire et fonctionne, en quelques sortes, en parallèle de l'application principale, on va s'aider d'un système de gestion de file.
+\newline On a donc choisit de travailler avec la librairie intégrée dans Nestjs, Bull pour le queue management et SendGrid pour l'envoie d'emails. 
+\newline Pour que le système marche correctement il va tout d'abord falloir configurer Bull de sortes à ce qu'il soit intégré dans le App Module et que le service soit globale et disponible à travers toute l'application. C'est à dire, n'importe quel module créé dans l'application sera éligible à l'utilisation des méthodes intégrées dans notre service de mailing créé grâce à Bull.
+\newline Après avoir configuré notre système de file, on commence par :
+\begin{enumerate}
+\item Mettre en place notre service de consommation d'email qui va s'occuper d'appeler toutes les notifications, 
+\item Mettre en place les DTO (Data Transaction Object) pour permettre de limiter les paramètres dynamiques à ceux dont on va avoir besoin,
+\item Mettre en place les fonctions d'appels de notifications qui vont regrouper les paramètres dont on va avoir besoin pour créer un email SendGrid
+\item Créer les templates EJS avec les paramètres dynamiques nécessaires. 
+\end{enumerate}
+\vspace{5mm}
+Voici des exemples d'implémentation du mailing system pour 2 cas de figures: 
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-notification-system-exemple-participation-cagnotte-1.png}
+    \caption{\textbf{Mail} de notification pour participation cagnotte (Partie 1)}
+    \label{fig:maquettenotificationscagnotte1}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-notification-system-exemple-participation-cagnotte-2.png}
+    \caption{\textbf{Mail} de notification pour participation cagnotte (Partie 2)}
+    \label{fig:maquettenotificationscagnotte2}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-notification-system-exemple-activation-giftcard.png}
+    \caption{\textbf{Mail} de notification d'activation de carte cadeau}
+    \label{fig:maquettenotificationscartecadeau}
+\end{figure}
+
+\subsection{Système de recherche multitab dynamique pour les administateurs}
+Le système de recherche multitab dynamique est un système de recherche réutilisable que l'on va mettre en place pour rechercher une table à partir de n'importe quelle type de données. 
+Par exemple pour une table \textbf{Vente}, qui contient comme paramètres que l'on va afficher dans la table: référence, somme, quantité et date, on pourra mettre un unique composant réutilisable qui s'occupera de comprendre de quelle type de données il s'agit, d'afficher un input adapté et de retourner une donnée correct à un hook qui va s'occuper d'appeler l'endpoint qui gérera le filtrage et le querying. 
+Pour faire cela il s'agira de faire un acheminement étape par étape pour atteindre le résultat, 
+\begin{enumerate}
+    \item Tout d'abord, on commence par créer notre SearchHeader component, ce composant prend en paramètre:
+    \begin{itemize}
+        \item label: Le nom qui sera affiché à l'utilisateur lors de la recherche (le titre de l'input)
+        \item name: Le nom de l'input avec lequel on traitera l'entrée de l'utilasateur plus tard.  
+        \item type: Le type de l'input (text, number, date, checkbox, etc.). Ce paramètre est très important car la forme de l'input change selon le type retourné:
+            \begin{figure}[H]
+              \centering
+                \includegraphics[width=\textwidth]{img/bilel-filter-example-num.png}
+                \caption{\textbf{Exemple de filtre à input dynamique}}
+                \label{fig:filtreinputdynamique}
+                \caption*{
+                \begin{itemize}
+                    \item \textbf{1}: Pour les type textuelles (text, email, etc.)
+                    \item \textbf{2 et 4}: Pour le type select
+                    \item \textbf{3}: Pour le type checkbox
+                \end{itemize}
+                }
+            \end{figure}
+    \end{itemize}
+    \item On appelle ensuite le composant dans lequel on imbriquera le composant SearchHeader, le composant TableHeader. Dans ce composant, il s'agira de savoir si le header est searchable (un paramètre avec lequel on peut effectuer une recherche ou non) ou pas et dans lequel, en conséquence, on appellera soit le composant SearchHeader soit juste le \textbf{label} du paramètre en question. 
+    \item On va par la suite créer un hook useFilter qui prendra en paramètre les valeurs enregistrés dans les SearchHeader, y ajouté les paramètres de pagination skip et take, et appelé notre endpoint grâce au hook useQuery pris de la librairie React Query qui va s'occuper de plusieurs processus de validation automatiquement. 
+    \item Après nous être occupé du frontend, on passe au backend. On va donc créer un DTO avec les paramètres dont a besoin l'entité qu'on est en train de chercher, 
+    \item A la suite de quoi crée une fonction service avec un filtre personnalisé qui va s'occuper de gérer tous les types y compris les relations imbriqués entre classes (exemple: dans une entité \textbf{Cours} pour les cours d'études, il est essentiel de pouvoir chercher les cours par le nom des \textbf{Professeur} associés par exemple) 
+    \item On appellera enfin cette méthode dans la couche controller et cette méthode sera consommer par notre frontend. 
+\end{enumerate}
+
+\subsection{Mettre à jour les documents des utilisateurs par l'administrateur}
+Que ce soit pour les organisations ou pour les clients, il est essentiel de gérer les documents administratifs de validation de leur authenticité quand il s'agit de gérer des paiements et transactions en ligne. C'est donc pour cela qu'on a décidé d'implémenter un système de mise à jour et de vérification des documents via la dashboard administrateur. 
+Tout d'abord, on a séparé les documents en une entité à part entière qu'on a mise en relation avec les clients et les organisations. L'entité document a en paramètre tous ce dont aura besoin un client ou une organisation et celle ci va s'adapter à l'entité avec laquelle elle sera reliée.
+Pour un Client on aura besoin de : 
+\begin{itemize}
+    \item cinFront: la face avant de la carte CIN
+    \item cinBack: la face arrière de la carte CIN 
+    \item residencyFront: la face avant de la carte de séjour
+    \item residencyBack: la face arrière de la carte de séjour
+    \item passportFront: la face avant du passeport
+    \item passportBack: la face arrière du passeport   
+\end{itemize}
+Pour une Organisation on aura besoin de: 
+\begin{itemize}
+    \item rne: un document vérifiant la RNE de l'entreprise
+    \item patente: un docuemnt vérifiant la patente de l'entreprise 
+\end{itemize}
+
+On va ensuite implémenter la couche service au niveau du back dans laquelle on appellera les méthodes de gestion des documents. Tout de suite après on utilisera ce service comme provider pour les modules Client et Organisation et on pourra facilement implémenter la gestion des documents au niveau du backend. 
+Pour ce qui est du front end, il suffit de créer un modal d'affichage, de modification et d'ajout en même temps: 
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-docs-rne-example.png}
+    \caption{\textbf{Exemple de modal d'ajout et de modification de documents}}
+    \label{fig:modaldocs}
+\end{figure}
+Et d'ajouter un indicateurs qui va afficher, sans avoir à ouvrir le modal, si les documents sont déjà enregistrés: 
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-docs-indicateurs-example.png}
+    \caption{\textbf{Exemple indicateurs existences de documents}}
+    \label{fig:docsindicateur}
+    \caption*{
+    \begin{itemize}
+        \item \textbf{Bleu}: n'existe pas encore, invitation à l'ajouter
+        \item \textbf{Vert}: existe déjà, le modifier si besoin
+    \end{itemize}
+    }
+\end{figure}
+
+\subsection{Implémentation KPI général pour organisation}
+Pour cette exemple, il s'agira de consommer des API à partir du backend qui résumeront généralement les statistiques d'une organisation donnée et de les afficher au niveau du frontend dans le dashboard administrateur pour avoir une vision globale sur quelles sont les meilleurs partenaires de Watto:
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{img/bilel-org-kpi.png}
+    \caption{\textbf{KPI Center général d'organisation pour dashboard Administrateur}}
+    \label{fig:kpicenterorganisation}
+\end{figure}
+
+\section{Conclusion}
+Ce chapitre nous a permit de voir la progression du dernier sprint dans lequel on a pu rentrer plus en détails dans l'implémentation de nouvelles fonctionnalités et les problèmes à régler lors de cette dernière itération.
+\end{document}
