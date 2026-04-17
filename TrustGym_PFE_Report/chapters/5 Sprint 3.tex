@@ -189,11 +189,51 @@ Les modules \texttt{TimeSlotModule} et \texttt{PartnerTimeSlotModule} g\`{e}rent
 
 \subsubsection{Module WebSocket}
 
-Le \texttt{WebSocketModule} impl\'{e}mente la communication temps r\'{e}el via Socket.IO \cite{socketio}. L'\texttt{AccessGateway} \'{e}coute sur le namespace \texttt{/attendance} et diffuse les \'{e}v\'{e}nements d'acc\`{e}s et les mises \`{a} jour d'occupation. Le \texttt{PgListenerService} utilise le m\'{e}canisme PostgreSQL \texttt{LISTEN/NOTIFY} pour d\'{e}tecter les insertions dans la table d'acc\`{e}s et d\'{e}clencher imm\'{e}diatement la propagation aux clients connect\'{e}s.
+Le \texttt{WebSocketModule} impl\'{e}mente la communication temps r\'{e}el via Socket.IO \cite{socketio}. L'\texttt{AccessGateway} \'{e}coute sur le namespace \texttt{/attendance} et diffuse les \'{e}v\'{e}nements d'acc\`{e}s et les mises \`{a} jour d'occupation. L'architecture WebSocket repose sur les composants suivants :
+
+\begin{itemize}
+  \item \textbf{Trigger PostgreSQL NOTIFY} : un trigger sur la table \texttt{Access} \'{e}met un \'{e}v\'{e}nement \texttt{NOTIFY} \`{a} chaque insertion, contenant l'identifiant de l'enregistrement.
+  \item \textbf{PgListenerService} : service NestJS qui consomme les \'{e}v\'{e}nements \texttt{NOTIFY}, enrichit les donn\'{e}es (nom du membre, porte, statut) et d\'{e}clenche la diffusion.
+  \item \textbf{Namespace \texttt{/attendance}} : espace de noms Socket.IO d\'{e}di\'{e} avec des salles organis\'{e}es par salle de sport (\texttt{gym:<gymId>}).
+  \item \textbf{\'{E}v\'{e}nements} : \texttt{authenticate} (authentification du client), \texttt{auth:success}/\texttt{auth:error} (r\'{e}ponse), \texttt{attendance:recorded} (nouvel acc\`{e}s pour le tableau de bord admin) et \texttt{occupancy:updated} (mise \`{a} jour du nombre de membres pr\'{e}sents pour le mobile et le web).
+\end{itemize}
 
 \subsubsection{Calcul de l'Occupation en Direct}
 
 L'occupation en temps r\'{e}el est calcul\'{e}e en comptant les membres dont le dernier \'{e}v\'{e}nement d'acc\`{e}s \`{a} une porte de la salle est de type \texttt{ENTRY}, dans une fen\^{e}tre temporelle configurable (par d\'{e}faut 1 heure). Ce m\'{e}canisme \'{e}vite les faux positifs li\'{e}s aux membres qui auraient quitt\'{e} la salle sans badger en sortie. Chaque nouvel \'{e}v\'{e}nement d\'{e}clenche l'\'{e}v\'{e}nement WebSocket \texttt{occupancy:updated}.
+
+\subsubsection{Algorithme d'Autorisation d'Acc\`{e}s}
+
+L'autorisation d'acc\`{e}s suit un algorithme en six \'{e}tapes ex\'{e}cut\'{e} \`{a} chaque badge \acrshort{rfid} :
+
+\begin{enumerate}
+  \item \textbf{Identification} : recherche de la personne par \texttt{cardId} dans l'ordre : Member $\rightarrow$ Coach $\rightarrow$ User.
+  \item \textbf{V\'{e}rification du blocage} : si le membre est bloqu\'{e} (\texttt{isBlocked = true}), l'acc\`{e}s est refus\'{e}.
+  \item \textbf{V\'{e}rification de l'abonnement actif} : recherche d'un \texttt{MemberGymSubscription} valide (plage de dates ou sessions restantes $> 0$).
+  \item \textbf{V\'{e}rification de la porte} : contr\^{o}le via \texttt{GymSubscriptionDoor} que l'abonnement couvre la porte utilis\'{e}e.
+  \item \textbf{V\'{e}rification du cr\'{e}neau horaire} : contr\^{o}le via \texttt{SubscriptionTimeSlot} que l'heure actuelle est dans la plage autoris\'{e}e.
+  \item \textbf{D\'{e}cr\'{e}mentation} : si l'abonnement est de type \texttt{PER\_SESSION}, le compteur \texttt{numberOfSessions} est d\'{e}cr\'{e}ment\'{e}.
+\end{enumerate}
+
+L'enregistrement \texttt{Access} est cr\'{e}\'{e} avec le statut \texttt{isAuthorized} correspondant, puis les \'{e}v\'{e}nements WebSocket sont \'{e}mis.
+
+\subsubsection{Verrouillage des Dispositifs (DeviceLockService)}
+
+Le \texttt{DeviceLockService} impl\'{e}mente un mutex par dispositif, cl\'{e} sur le couple IP:port. Ce m\'{e}canisme est critique car les \acrshort{sdk}s ZKTeco n'autorisent pas les acc\`{e}s concurrents sur le m\^{e}me port COM ou la m\^{e}me connexion DLL. Sans ce verrouillage, deux requ\^{e}tes simultan\'{e}es vers le m\^{e}me dispositif provoqueraient un crash du service. Le mutex est acquis avant chaque op\'{e}ration mat\'{e}rielle et lib\'{e}r\'{e} automatiquement apr\`{e}s compl\'{e}tion, garantissant l'int\'{e}grit\'{e} des communications.
+
+\subsubsection{Protocole ADMS (Push-Mode EFace10)}
+
+Les dispositifs ZKTeco EFace10 fonctionnent en mode PUSH via le protocole ADMS (\textit{Automatic Data Master Server}). Le Machine Handler expose les endpoints suivants pour ces dispositifs :
+
+\begin{itemize}
+  \item \texttt{POST /iclock/registry} : enregistrement initial du dispositif aupr\`{e}s du serveur.
+  \item \texttt{GET /iclock/push} : configuration des options de polling du dispositif.
+  \item \texttt{GET /iclock/getrequest} : le dispositif interroge le serveur pour r\'{e}cup\'{e}rer les commandes en attente (synchronisation de cartes, red\'{e}marrage).
+  \item \texttt{POST /iclock/cdata} : envoi des donn\'{e}es de pointage depuis le dispositif.
+  \item \texttt{POST /iclock/devicecmd} : acquittement des commandes ex\'{e}cut\'{e}es.
+\end{itemize}
+
+L'entit\'{e} \texttt{DeviceCommand} g\`{e}re la file de commandes avec un suivi de statut : \texttt{queued} $\rightarrow$ \texttt{sent} $\rightarrow$ \texttt{acked} ou \texttt{failed}.
 
 \subsubsection{Modules Commandes et Bundles}
 
@@ -337,6 +377,20 @@ Les requ\^{e}tes sont automatiquement mises en pause lorsque l'appareil perd la 
   \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Tableau de bord des bundles}\vspace{2cm}}}
   \caption{Suivi de l'\'{e}tat des Machine Handlers}
   \label{fig:sprint3-bundles}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Enregistrement manuel d'un acc\`{e}s}\vspace{2cm}}}
+  \caption{Formulaire d'enregistrement manuel d'un \'{e}v\'{e}nement d'acc\`{e}s}
+  \label{fig:sprint3-manual-access}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Occupation en temps r\'{e}el sur l'application mobile}\vspace{2cm}}}
+  \caption{Affichage de l'occupation en direct sur l'\'{e}cran d'accueil mobile}
+  \label{fig:sprint3-mobile-occupancy}
 \end{figure}
 
 \section{Conclusion}

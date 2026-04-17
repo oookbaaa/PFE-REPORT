@@ -218,12 +218,14 @@ La figure~\ref{fig:sprint5-usecase} pr\'{e}sente le diagramme de cas d'utilisati
 La r\'{e}alisation backend de ce sprint s'articule autour de plusieurs modules NestJS \cite{nestjs} g\'{e}rant l'ensemble de la cha\^{i}ne logistique de la boutique :
 
 \begin{outline}
-    \1 \textbf{ProductModule} : Module de gestion des produits. L'entit\'{e} \texttt{Product} contient le nom, le prix unitaire (\texttt{unitPrice}), la r\'{e}f\'{e}rence au partenaire (\texttt{partnerId}) et l'image associ\'{e}e. Le service expose les op\'{e}rations \acrshort{crud} avec filtrage par partenaire.
+    \1 \textbf{ProductModule} : Module de gestion des produits. L'entit\'{e} \texttt{Product} contient le nom, le prix unitaire (\texttt{unitPrice}), la r\'{e}f\'{e}rence au partenaire (\texttt{partnerId}), la cat\'{e}gorie et l'image associ\'{e}e. Le service expose les op\'{e}rations \acrshort{crud} avec filtrage par partenaire.
+    \1 \textbf{ProductCategoryModule} : Module de classification des produits. L'entit\'{e} \texttt{ProductCategory} permet d'organiser les articles en cat\'{e}gories (compl\'{e}ments alimentaires, v\^{e}tements, accessoires, etc.). Le \acrshort{crud} est accessible via \texttt{/m/boutique/categories}.
     \1 \textbf{SupplierModule} : Gestion des fournisseurs. Permet de cr\'{e}er et de g\'{e}rer les fiches fournisseurs utilis\'{e}es pour les approvisionnements en produits.
     \1 \textbf{SupplierPurchaseModule} : Enregistrement des achats aupr\`{e}s des fournisseurs. Chaque achat comprend la quantit\'{e}, le prix d'achat et la date de r\'{e}ception. L'enregistrement d'un achat d\'{e}clenche automatiquement la mise \`{a} jour du stock de la salle concern\'{e}e.
     \1 \textbf{ProductStockModule} : Gestion de l'inventaire par salle de sport. L'entit\'{e} \texttt{ProductStock} associe un produit \`{a} une salle avec une quantit\'{e} disponible. Ce module est le point central du suivi des stocks.
     \1 \textbf{StockTransferModule} : Gestion des mouvements de stock inter-salles. Chaque transfert sp\'{e}cifie une salle source (\texttt{fromGym}), une salle destination (\texttt{toGym}), le produit et la quantit\'{e}. Le service v\'{e}rifie la disponibilit\'{e} du stock avant d'ex\'{e}cuter le transfert et met \`{a} jour les deux inventaires de mani\`{e}re transactionnelle.
     \1 \textbf{MemberPurchaseModule} : Gestion des ventes aux membres. Chaque vente enregistre le produit, la quantit\'{e}, le prix de vente et le membre acheteur. Le stock est automatiquement d\'{e}cr\'{e}ment\'{e} lors de la validation de la vente.
+    \1 \textbf{StockMovementModule} : Module de tra\c{c}abilit\'{e} des mouvements de stock. L'entit\'{e} \texttt{StockMovement} enregistre \textbf{chaque changement d'inventaire} avec la date, la quantit\'{e}, la raison du mouvement et l'utilisateur responsable. Ce journal constitue la piste d'audit compl\`{e}te des stocks, indispensable pour la comptabilit\'{e} et le suivi des pertes.
     \1 \textbf{ModuleGuard} : Garde de module \acrshort{saas} prot\'{e}geant l'acc\`{e}s \`{a} l'ensemble des endpoints de la boutique. L'\'{e}num\'{e}ration \texttt{SaasModuleEnum.Boutique} permet d'activer ou de d\'{e}sactiver le module selon l'abonnement du partenaire, assurant ainsi le mod\`{e}le multi-tenant de la plateforme.
 \end{outline}
 
@@ -317,6 +319,27 @@ L'interface web du tableau de bord d'administration int\`{e}gre un ensemble comp
   \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Interface de vente aux membres}\vspace{2cm}}}
   \caption{Page de vente de produits aux membres}
   \label{fig:sprint5-sale}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Gestion des cat\'{e}gories de produits}\vspace{2cm}}}
+  \caption{Interface de gestion des cat\'{e}gories de la boutique}
+  \label{fig:sprint5-categories}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Gestion des fournisseurs}\vspace{2cm}}}
+  \caption{Page de gestion des fiches fournisseurs}
+  \label{fig:sprint5-suppliers}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : R\'{e}ception de stock (achats fournisseurs)}\vspace{2cm}}}
+  \caption{Interface d'enregistrement des achats et r\'{e}ception de stock}
+  \label{fig:sprint5-stock-entry}
 \end{figure}
 
 %──────────────────────────────────────────────

@@ -163,6 +163,72 @@ Le syst\`{e}me compte plus de 50 modules de domaine enregistr\'{e}s dans le modu
 
 L'alias de chemin \texttt{@/*} est configur\'{e} pour pointer vers le r\'{e}pertoire \texttt{src/*} dans tous les sous-projets, assurant ainsi une coh\'{e}rence dans les imports et une meilleure lisibilit\'{e} du code.
 
+\subsection{Architecture Multi-Tenant}
+
+TrustGym adopte une architecture multi-locataire (\textit{multi-tenant}) hi\'{e}rarchique qui isole les donn\'{e}es de chaque client tout en partageant la m\^{e}me instance applicative. La hi\'{e}rarchie est la suivante :
+
+\begin{itemize}
+    \item \textbf{Plateforme} (TrustGym \acrshort{saas}) : instance unique h\'{e}bergeant l'ensemble des locataires.
+    \item \textbf{Partenaire} (\texttt{Partner}) : le locataire de premier niveau, repr\'{e}sentant une franchise ou un propri\'{e}taire de cha\^{i}ne de salles. Il d\'{e}tient la configuration fiscale (\texttt{taxIdentificationNumber}, \texttt{tva}, \texttt{timbre}), les param\`{e}tres de cotisation annuelle et les formules d'abonnement partag\'{e}es.
+    \item \textbf{Salle} (\texttt{Gym}) : le locataire de second niveau, repr\'{e}sentant un \'{e}tablissement physique. Chaque salle poss\`{e}de ses propres membres, coachs, utilisateurs, portes, stocks et \'{e}v\'{e}nements d'acc\`{e}s.
+\end{itemize}
+
+L'isolation des donn\'{e}es est assur\'{e}e par le champ \texttt{partnerId} pr\'{e}sent dans la majorit\'{e} des entit\'{e}s du syst\`{e}me. Chaque requ\^{e}te de base de donn\'{e}es est automatiquement filtr\'{e}e par \texttt{partnerId} (et optionnellement \texttt{gymId}) pour garantir qu'un partenaire ne puisse jamais acc\'{e}der aux donn\'{e}es d'un autre locataire.
+
+\subsection{Architecture de S\'{e}curit\'{e}}
+
+La s\'{e}curit\'{e} de TrustGym repose sur plusieurs couches compl\'{e}mentaires :
+
+\subsubsection{Double Syst\`{e}me JWT}
+
+Le syst\`{e}me impl\'{e}mente deux cha\^{i}nes d'authentification \acrshort{jwt} \cite{jwt_rfc7519} distinctes partageant le m\^{e}me secret (\texttt{JWT\_SECRET}) mais discrimin\'{e}es par un champ \texttt{type} dans le payload :
+
+\begin{itemize}
+    \item \textbf{Canal Admin/Caissier} : le token ne contient pas de champ \texttt{type}. Payload : \texttt{\{id, role, partnerId, gymId, sdk\}}. Valid\'{e} par \texttt{JwtStrategy} et prot\'{e}g\'{e} par \texttt{JwtAuthGuard}.
+    \item \textbf{Canal Membre (mobile)} : le token contient \texttt{type: 'member'}. Payload : \texttt{\{id, type: 'member'\}}. Valid\'{e} par \texttt{JwtMemberStrategy} et prot\'{e}g\'{e} par \texttt{MemberJwtGuard}.
+\end{itemize}
+
+Chaque garde rejette explicitement les tokens de l'autre canal, emp\^{e}chant toute utilisation crois\'{e}e.
+
+\subsubsection{Cha\^{i}ne de Gardes}
+
+Les routes prot\'{e}g\'{e}es utilisent une cha\^{i}ne de gardes d\'{e}clarative via des d\'{e}corateurs NestJS :
+
+\begin{center}
+    \texttt{@UseGuards(JwtAuthGuard, RolesGuard)} $\rightarrow$ \texttt{@Roles(RoleEnum.Admin)}
+\end{center}
+
+\begin{itemize}
+    \item \textbf{JwtAuthGuard} : valide le token et injecte l'utilisateur dans le contexte de la requ\^{e}te via \texttt{AsyncLocalStorage} pour la tra\c{c}abilit\'{e}.
+    \item \textbf{RolesGuard} : v\'{e}rifie que le r\^{o}le de l'utilisateur correspond aux r\^{o}les autoris\'{e}s par le d\'{e}corateur \texttt{@Roles()}.
+    \item \textbf{ModuleGuard} : v\'{e}rifie que le module \acrshort{saas} demand\'{e} est activ\'{e} pour le partenaire via \texttt{SaasModuleEnum}.
+\end{itemize}
+
+\subsubsection{Authentification Machine-\`{a}-Machine}
+
+La communication entre le Machine Handler et l'\acrshort{api} est s\'{e}curis\'{e}e par des cl\'{e}s \acrshort{api} :
+
+\begin{itemize}
+    \item \textbf{Cloud $\rightarrow$ Bridge} : en-t\^{e}te \texttt{x-bridge-key} avec comparaison temporellement s\^{u}re (\textit{timing-safe}) pour \'{e}viter les attaques par canal auxiliaire.
+    \item \textbf{Bridge $\rightarrow$ Python} : en-t\^{e}te \texttt{x-api-key} avec v\'{e}rification HMAC (\texttt{compare\_digest}).
+\end{itemize}
+
+\subsubsection{Impersonation SuperAdmin}
+
+Le syst\`{e}me permet au SuperAdmin d'impersonner un autre utilisateur pour le d\'{e}bogage et le support technique. Le token \acrshort{jwt} contient alors les champs \texttt{isImpersonation}, \texttt{impersonatedBy} et \texttt{impersonatorEmail}. La piste d'audit conserve l'identit\'{e} r\'{e}elle de l'op\'{e}rateur via \texttt{impersonatorEmail}, garantissant la tra\c{c}abilit\'{e} m\^{e}me lors d'une session d'impersonation.
+
+\subsection{Internationalisation (i18n)}
+
+Le tableau de bord web supporte trois langues via \texttt{next-intl} \cite{nextintl} :
+
+\begin{itemize}
+    \item \textbf{Fran\c{c}ais} (fr) : langue par d\'{e}faut.
+    \item \textbf{Arabe} (ar) : d\'{e}clenche automatiquement la mise en page \acrshort{rtl} (\textit{Right-to-Left}).
+    \item \textbf{Anglais} (en) : support complet.
+\end{itemize}
+
+Le routage est bas\'{e} sur la locale dans l'\acrshort{url} (\texttt{/[locale]/page}), g\'{e}r\'{e} par le middleware Next.js qui d\'{e}tecte la langue du navigateur et redirige automatiquement. Un composant \texttt{LanguageToggle} dans la barre de navigation permet \`{a} l'utilisateur de changer de langue \`{a} tout moment.
+
 %──────────────────────────────────────────────
 \section{Environnement de Travail et Outils}
 %──────────────────────────────────────────────

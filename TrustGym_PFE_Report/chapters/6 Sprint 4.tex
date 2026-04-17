@@ -40,7 +40,7 @@ Le tableau~\ref{tab:backlog_sprint4} pr\'{e}sente le backlog du Sprint 4 d\'{e}t
  & Consultation & En tant que membre, je veux voir les disciplines disponibles & Consulter la liste des disciplines propos\'{e}es par la salle de sport. \\
 \hline
 
-\multirow{3}{*}{\parbox{2.5cm}{Planification des s\'{e}ances}} & \acrshort{crud} & En tant qu'administrateur, je veux planifier des s\'{e}ances & Cr\'{e}er des s\'{e}ances avec date, heure de d\'{e}but, heure de fin, type (OPEN, RESERVATION, CLOSED) et nombre maximum de places pour le type RESERVATION. \\
+\multirow{3}{*}{\parbox{2.5cm}{Planification des s\'{e}ances}} & \acrshort{crud} & En tant qu'administrateur, je veux planifier des s\'{e}ances & Cr\'{e}er des s\'{e}ances avec date, heure de d\'{e}but, heure de fin, type (OPEN, RESERVATION, CLOSE) et nombre maximum de places pour le type RESERVATION. \\
 \cline{2-4}
  & \acrshort{crud} & En tant qu'administrateur, je veux g\'{e}rer les cr\'{e}neaux des coachs & D\'{e}finir les disponibilit\'{e}s horaires des coachs pour la planification des s\'{e}ances. \\
 \cline{2-4}
@@ -160,7 +160,7 @@ La figure~\ref{fig:sprint4-usecase} pr\'{e}sente le diagramme de cas d'utilisati
 \begin{enumerate}
     \item L'administrateur acc\`{e}de au module de planification des s\'{e}ances.
     \item Il s\'{e}lectionne la date, l'heure de d\'{e}but, l'heure de fin, le coach et la discipline.
-    \item Il choisit le type de s\'{e}ance : OPEN (libre), RESERVATION (sur r\'{e}servation avec nombre de places limit\'{e}) ou CLOSED (ferm\'{e}e).
+    \item Il choisit le type de s\'{e}ance : OPEN (libre), RESERVATION (sur r\'{e}servation avec nombre de places limit\'{e}) ou CLOSE (ferm\'{e}e).
     \item Pour le type RESERVATION, il d\'{e}finit le nombre maximum de places (maxSlots).
     \item Le syst\`{e}me v\'{e}rifie la disponibilit\'{e} du coach sur le cr\'{e}neau et enregistre la s\'{e}ance.
 \end{enumerate} \\
@@ -222,8 +222,8 @@ La r\'{e}alisation backend de ce sprint repose sur plusieurs modules NestJS \cit
     \1 \textbf{CoachSessionModule} : Module central de gestion des s\'{e}ances. L'entit\'{e} \texttt{Session} d\'{e}finit la date, l'heure de d\'{e}but, l'heure de fin et le type de s\'{e}ance via une \'{e}num\'{e}ration \`{a} trois valeurs :
         \2 \texttt{OPEN} : S\'{e}ance ouverte \`{a} tous les membres sans restriction.
         \2 \texttt{RESERVATION} : S\'{e}ance sur r\'{e}servation avec un nombre maximum de places (\texttt{maxSlots}).
-        \2 \texttt{CLOSED} : S\'{e}ance ferm\'{e}e, accessible uniquement sur invitation.
-    \1 \textbf{CoachTimeSlotModule} : Gestion des cr\'{e}neaux de disponibilit\'{e} des coachs. Permet de d\'{e}finir les plages horaires durant lesquelles un coach est disponible pour animer des s\'{e}ances.
+        \2 \texttt{CLOSE} : S\'{e}ance ferm\'{e}e, accessible uniquement sur invitation.
+    \1 \textbf{CoachTimeSlotModule} : Gestion des cr\'{e}neaux de disponibilit\'{e} des coachs. L'entit\'{e} \texttt{CoachTimeSlot} d\'{e}finit un planning hebdomadaire r\'{e}current pour chaque coach, tandis que l'entit\'{e} \texttt{TimeSlotHours} pr\'{e}cise les plages jour/heure sp\'{e}cifiques (par exemple : lundi 8h--12h, mercredi 14h--18h). Ces disponibilit\'{e}s sont v\'{e}rifi\'{e}es automatiquement lors de la cr\'{e}ation d'une s\'{e}ance pour \'{e}viter les conflits de planning.
     \1 \textbf{SessionInvitationModule} : Gestion des invitations aux s\'{e}ances. Int\`{e}gre le \textbf{EmailModule} pour l'envoi de notifications par e-mail aux membres invit\'{e}s, utilisant des templates personnalis\'{e}s.
     \1 \textbf{SessionQRCodeModule} : G\'{e}n\'{e}ration et validation des codes \acrshort{qr} pour le pointage de pr\'{e}sence. Chaque s\'{e}ance poss\`{e}de un code \acrshort{qr} unique permettant aux membres de confirmer leur participation via l'application mobile.
     \1 \textbf{SessionPaymentModule} : Gestion des paiements li\'{e}s aux s\'{e}ances de coaching payantes. Permet d'enregistrer les transactions et de suivre la r\'{e}mun\'{e}ration des coachs.
@@ -279,7 +279,7 @@ L'interface web du tableau de bord d'administration int\`{e}gre plusieurs pages 
 \begin{outline}
     \1 \textbf{Module Coachs (\texttt{coaches/})} : Page de listing des coachs avec tableau filtrable et paginable. Formulaire de cr\'{e}ation et de modification avec upload de photo de profil. Page de d\'{e}tail affichant les informations compl\`{e}tes du coach et ses statistiques.
     \1 \textbf{Module Disciplines (\texttt{cours/})} : Interface de gestion des disciplines sportives avec cr\'{e}ation, modification et association d'images.
-    \1 \textbf{Module S\'{e}ances (\texttt{seances/})} : Interface de gestion des s\'{e}ances avec diff\'{e}renciation visuelle selon le type (OPEN, RESERVATION, CLOSED). Formulaire de cr\'{e}ation avec s\'{e}lection du coach, de la discipline et configuration du type de s\'{e}ance.
+    \1 \textbf{Module S\'{e}ances (\texttt{seances/})} : Interface de gestion des s\'{e}ances avec diff\'{e}renciation visuelle selon le type (OPEN, RESERVATION, CLOSE). Formulaire de cr\'{e}ation avec s\'{e}lection du coach, de la discipline et configuration du type de s\'{e}ance.
     \1 \textbf{Module Planning (\texttt{planning/})} : Vue calendrier hebdomadaire affichant l'ensemble des s\'{e}ances planifi\'{e}es. Navigation temporelle et filtrage par coach ou discipline.
     \1 \textbf{Module Paiements (\texttt{paiement/})} : Suivi des paiements des coachs avec historique des transactions et g\'{e}n\'{e}ration de factures de r\'{e}mun\'{e}ration.
 \end{outline}
@@ -290,7 +290,7 @@ L'application mobile int\`{e}gre les fonctionnalit\'{e}s suivantes pour les memb
 
 \begin{outline}
     \1 \textbf{PlanningView} : Composant calendrier affichant les s\'{e}ances disponibles avec code couleur selon le type. Les membres peuvent visualiser les d\'{e}tails de chaque s\'{e}ance (coach, discipline, horaires, places disponibles).
-    \1 \textbf{Affichage des types de s\'{e}ances} : Diff\'{e}renciation visuelle des s\'{e}ances OPEN (acc\`{e}s libre), RESERVATION (places limit\'{e}es avec compteur) et CLOSED (sur invitation uniquement).
+    \1 \textbf{Affichage des types de s\'{e}ances} : Diff\'{e}renciation visuelle des s\'{e}ances OPEN (acc\`{e}s libre), RESERVATION (places limit\'{e}es avec compteur) et CLOSE (sur invitation uniquement).
     \1 \textbf{Scanner \acrshort{qr}} : Fonctionnalit\'{e} de scan de code \acrshort{qr} via \texttt{expo-camera} permettant aux membres de pointer leur pr\'{e}sence lors des s\'{e}ances, avec retour visuel de confirmation.
 \end{outline}
 
@@ -331,10 +331,24 @@ L'application mobile int\`{e}gre les fonctionnalit\'{e}s suivantes pour les memb
   \label{fig:sprint4-mobile-sessions}
 \end{figure}
 
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Gestion des disciplines}\vspace{2cm}}}
+  \caption{Interface de gestion des disciplines sportives}
+  \label{fig:sprint4-disciplines}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Paiements des coachs}\vspace{2cm}}}
+  \caption{Suivi des paiements et r\'{e}mun\'{e}rations des coachs}
+  \label{fig:sprint4-coach-payments}
+\end{figure}
+
 %──────────────────────────────────────────────
 \section{Conclusion}
 %──────────────────────────────────────────────
 
-Ce sprint a permis de mettre en place un syst\`{e}me complet de gestion des coachs et des s\'{e}ances d'entra\^{i}nement. La plateforme offre d\'{e}sormais la possibilit\'{e} de g\'{e}rer les profils des coachs, de d\'{e}finir des disciplines, de planifier des s\'{e}ances selon trois types distincts (OPEN, RESERVATION, CLOSED), d'inviter des membres par e-mail, de valider la pr\'{e}sence via code \acrshort{qr} et de suivre les paiements des coachs. Le prochain sprint sera consacr\'{e} \`{a} la boutique et \`{a} la gestion de stock.
+Ce sprint a permis de mettre en place un syst\`{e}me complet de gestion des coachs et des s\'{e}ances d'entra\^{i}nement. La plateforme offre d\'{e}sormais la possibilit\'{e} de g\'{e}rer les profils des coachs, de d\'{e}finir des disciplines, de planifier des s\'{e}ances selon trois types distincts (OPEN, RESERVATION, CLOSE), d'inviter des membres par e-mail, de valider la pr\'{e}sence via code \acrshort{qr} et de suivre les paiements des coachs. Le prochain sprint sera consacr\'{e} \`{a} la boutique et \`{a} la gestion de stock.
 
 \end{document}

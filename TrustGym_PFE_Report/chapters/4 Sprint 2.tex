@@ -211,9 +211,27 @@ Le \texttt{MemberGymSubscriptionModule} g\`{e}re le lien entre un membre et sa f
 
 Le \texttt{PaymentModule} centralise le suivi financier. Chaque enregistrement contient : \texttt{amount} (total), \texttt{payedAmount} (montant effectivement pay\'{e}), \texttt{typeOfPayment} (esp\`{e}ces, ch\`{e}que, virement), \texttt{isPaid} (statut), \texttt{dueDate} (\'{e}ch\'{e}ance), et pour les ch\`{e}ques : \texttt{bank} et \texttt{checkNumber}.
 
+\subsubsection{Synchronisation Automatique avec les Dispositifs}
+
+Lors de la cr\'{e}ation d'un membre ou de la modification de son \texttt{cardId}, le syst\`{e}me synchronise automatiquement les donn\'{e}es de la carte et du code PIN vers les terminaux ZKTeco et Hikvision de la salle. Le champ \texttt{isSynced} de l'entit\'{e} \texttt{Member} tra\c{c}e l'\'{e}tat de cette synchronisation. Le compteur \texttt{Gym.latestAddedPin} s'incr\'{e}mente \`{a} chaque nouvelle personne synchronis\'{e}e, garantissant l'unicit\'{e} des codes PIN sur le dispositif.
+
+\subsubsection{Validation d'Unicit\'{e} en Temps R\'{e}el}
+
+L'endpoint \texttt{POST /api/member/check-uniqueness} v\'{e}rifie en temps r\'{e}el l'unicit\'{e} des champs CIN, email, t\'{e}l\'{e}phone et \texttt{cardId} dans le p\'{e}rim\`{e}tre du partenaire. Cette v\'{e}rification s'\'{e}tend simultan\'{e}ment aux tables \texttt{Member}, \texttt{Coach} et \texttt{User}, \'{e}vitant toute collision d'identifiants entre les diff\'{e}rents types d'utilisateurs du syst\`{e}me.
+
+\subsubsection{D\'{e}cr\'{e}mentation des S\'{e}ances (PER\_SESSION)}
+
+Pour les abonnements de type \texttt{PER\_SESSION}, le champ \texttt{numberOfSessions} est d\'{e}cr\'{e}ment\'{e} automatiquement \`{a} chaque entr\'{e}e autoris\'{e}e du membre dans la salle (trait\'{e}e par le module d'acc\`{e}s du Sprint 3). Lorsque le compteur atteint z\'{e}ro, le membre est automatiquement bloqu\'{e} par le syst\`{e}me, emp\^{e}chant tout acc\`{e}s suppl\'{e}mentaire jusqu'au renouvellement de l'abonnement.
+
+\subsubsection{Cr\'{e}neaux Horaires d'Abonnement}
+
+L'entit\'{e} \texttt{SubscriptionTimeSlot} permet de restreindre les heures d'acc\`{e}s d'un abonnement. Cette fonctionnalit\'{e} est utilis\'{e}e pour les formules hors-pointe (par exemple, un abonnement valable uniquement de 6h \`{a} 14h). L'algorithme d'autorisation d'acc\`{e}s du Sprint 3 v\'{e}rifie ces restrictions avant d'autoriser l'entr\'{e}e.
+
 \subsubsection{Modules Convention et Cotisations}
 
-Le \texttt{ConventionModule} g\`{e}re les accords de groupe permettant des tarifs pr\'{e}f\'{e}rentiels. Le \texttt{AnnualFeeModule} et \texttt{MemberAnnualFeeModule} suivent les cotisations obligatoires par membre et par ann\'{e}e, configurables au niveau du partenaire (\texttt{isAnnualFeeEnabled}, \texttt{annualFeeAmount}).
+Le \texttt{ConventionModule} g\`{e}re les accords de groupe permettant des tarifs pr\'{e}f\'{e}rentiels. L'entit\'{e} \texttt{Convention} supporte deux types de r\'{e}duction : un montant fixe (\texttt{flatDiscount}) ou un pourcentage (\texttt{percentageDiscount}), appliqu\'{e} automatiquement lors de l'affectation d'un abonnement \`{a} un membre. Les conventions sont regroup\'{e}es en deux cat\'{e}gories : \textbf{Enterprise} (accords d'entreprise) et \textbf{Family} (regroupements familiaux).
+
+Le \texttt{AnnualFeeModule} et \texttt{MemberAnnualFeeModule} suivent les cotisations obligatoires par membre et par ann\'{e}e, configurables au niveau du partenaire (\texttt{isAnnualFeeEnabled}, \texttt{annualFeeAmount}). La cotisation annuelle est ind\'{e}pendante des abonnements et repr\'{e}sente g\'{e}n\'{e}ralement une assurance ou des frais d'inscription.
 
 \subsection{Frontend Web}
 
@@ -255,6 +273,28 @@ L'interface de gestion des formules permet de cr\'{e}er, modifier et d\'{e}sacti
   \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Gestion des abonnements}\vspace{2cm}}}
   \caption{Interface de gestion des formules d'abonnement}
   \label{fig:sprint2-subscription}
+\end{figure}
+
+\subsubsection{Conventions de Groupe}
+
+L'interface de gestion des conventions (\texttt{/m/conventions}) permet de cr\'{e}er et de g\'{e}rer les accords tarifaires pr\'{e}f\'{e}rentiels. L'administrateur d\'{e}finit le type de r\'{e}duction (montant fixe ou pourcentage) et la cat\'{e}gorie (Enterprise ou Family), puis associe la convention aux membres lors de l'affectation d'un abonnement.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Gestion des conventions de groupe}\vspace{2cm}}}
+  \caption{Interface de gestion des conventions avec types de r\'{e}duction}
+  \label{fig:sprint2-conventions}
+\end{figure}
+
+\subsubsection{\'{E}ch\'{e}ances de Paiement}
+
+La page des \'{e}ch\'{e}ances (\texttt{/m/members/echeances}) centralise le suivi de tous les paiements dus et effectu\'{e}s. Le caissier ou l'administrateur peut filtrer par date d'\'{e}ch\'{e}ance, par membre ou par statut (pay\'{e} / impay\'{e}), puis marquer un paiement comme encaiss\'{e} en pr\'{e}cisant le montant et le mode de r\`{e}glement.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Suivi des \'{e}ch\'{e}ances de paiement}\vspace{2cm}}}
+  \caption{Page de suivi des \'{e}ch\'{e}ances avec filtres par statut et par date}
+  \label{fig:sprint2-echeances}
 \end{figure}
 
 \section{Conclusion}

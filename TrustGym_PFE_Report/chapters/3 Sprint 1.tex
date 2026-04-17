@@ -239,6 +239,14 @@ Deux niveaux de contr\^{o}le d'acc\`{e}s ont \'{e}t\'{e} mis en place :
   \item \textbf{Contr\^{o}le modulaire} via \texttt{ModuleGuard} : le \texttt{SaasModuleEnum} d\'{e}finit les fonctionnalit\'{e}s disponibles par centre (Boutique, Coachs, Finance, Acc\`{e}s, \acrshort{kpi}, \acrshort{ai}), permettant une personnalisation par partenaire.
 \end{itemize}
 
+\subsubsection{Impersonation SuperAdmin}
+
+Le syst\`{e}me d'impersonation permet au SuperAdmin de se connecter en tant qu'un autre utilisateur tout en pr\'{e}servant la tra\c{c}abilit\'{e} compl\`{e}te. Le token \acrshort{jwt} g\'{e}n\'{e}r\'{e} lors d'une session d'impersonation contient les champs suppl\'{e}mentaires \texttt{isImpersonation}, \texttt{impersonatedBy} et \texttt{impersonatorEmail}, garantissant que toute action effectu\'{e}e est attribu\'{e}e au v\'{e}ritable op\'{e}rateur dans la piste d'audit.
+
+\subsubsection{Journal d'Audit des Connexions}
+
+L'entit\'{e} \texttt{LoginLog} enregistre l'ensemble des \'{e}v\'{e}nements de connexion et de d\'{e}connexion du back-office, avec horodatage, identifiant utilisateur et adresse IP. Ce journal est consultable par les administrateurs via l'interface \texttt{/m/login-logs}, offrant une visibilit\'{e} compl\`{e}te sur l'activit\'{e} d'authentification de la salle.
+
 \subsubsection{S\'{e}curit\'{e} Globale}
 
 La configuration globale de s\'{e}curit\'{e} dans \texttt{main.ts} inclut :
@@ -308,6 +316,17 @@ L'\'{e}cran \texttt{SignIn} permet la connexion par email et mot de passe. Le fo
   \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : \'{E}cran de connexion mobile}\vspace{2cm}}}
   \caption{\'{E}cran de connexion de l'application mobile}
   \label{fig:sprint1-mobile-signin}
+\end{figure}
+
+\subsubsection{Journal des Connexions}
+
+L'interface du journal des connexions (\texttt{/m/login-logs}) affiche l'historique complet des \'{e}v\'{e}nements d'authentification du back-office, permettant aux administrateurs de surveiller l'activit\'{e} de connexion de la salle.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Journal des connexions (Login Logs)}\vspace{2cm}}}
+  \caption{Journal d'audit des connexions et d\'{e}connexions}
+  \label{fig:sprint1-login-logs}
 \end{figure}
 
 \section{Conclusion}

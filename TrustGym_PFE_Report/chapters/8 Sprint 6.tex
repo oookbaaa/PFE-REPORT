@@ -227,14 +227,18 @@ La r\'{e}alisation backend de ce sprint repose sur plusieurs modules NestJS \cit
 \begin{outline}
     \1 \textbf{WalletModule} : Module de gestion des portefeuilles pr\'{e}pay\'{e}s. L'entit\'{e} \texttt{Wallet} associe un solde (\texttt{amount}) \`{a} chaque membre. Le service expose les op\'{e}rations de consultation du solde, de rechargement et de d\'{e}duction, avec v\'{e}rification de la suffisance du solde pour les d\'{e}bits.
     \1 \textbf{WalletEntryModule} : Gestion du journal des transactions du portefeuille. Chaque op\'{e}ration (rechargement ou d\'{e}duction) g\'{e}n\`{e}re une entr\'{e}e dans le journal, permettant une tra\c{c}abilit\'{e} compl\`{e}te des mouvements financiers. Le service offre des fonctionnalit\'{e}s de filtrage par date, par type d'op\'{e}ration et par membre.
-    \1 \textbf{CashRegisterModule} : Module de gestion de la caisse. Il g\`{e}re les soldes d'ouverture et de fermeture quotidiens, ainsi que le journal des \'{e}critures de caisse. Les transactions issues des diff\'{e}rents modules (paiements, ventes, rechargements) sont automatiquement refl\'{e}t\'{e}es dans le registre de caisse.
-    \1 \textbf{InvoiceModule} : Module de facturation \acrshort{b2b}. L'entit\'{e} \texttt{Invoice} contient l'ensemble des informations n\'{e}cessaires \`{a} une facture conforme :
-        \2 Informations client : \texttt{clientName}, \texttt{fiscalNumber}, \texttt{email}, \texttt{phone}.
+    \1 \textbf{CashRegisterModule} : Module de gestion de la caisse. Il g\`{e}re les soldes d'ouverture et de fermeture quotidiens via l'entit\'{e} \texttt{CashRegister}. L'entit\'{e} \texttt{CashRegisterLog} enregistre chaque transaction individuelle (paiement d'abonnement, vente boutique, rechargement de portefeuille) dans un journal d\'{e}taill\'{e}. Lors de la cl\^{o}ture de caisse, le syst\`{e}me compare le \textbf{solde th\'{e}orique} (solde d'ouverture + somme des transactions) au \textbf{solde r\'{e}el} saisi par le caissier, signalant automatiquement les \'{e}carts pour faciliter la r\'{e}conciliation.
+    \1 \textbf{InvoiceModule} : Module de facturation \acrshort{b2b}. L'entit\'{e} \texttt{Invoice} contient l'ensemble des informations n\'{e}cessaires \`{a} une facture conforme \`{a} la r\'{e}glementation fiscale tunisienne :
+        \2 Informations client : \texttt{clientName}, \texttt{fiscalNumber} (matricule fiscal du client), \texttt{email}, \texttt{phone}.
         \2 Dates : \texttt{date} (date d'\'{e}mission), \texttt{deadline} (date d'\'{e}ch\'{e}ance).
-        \2 Informations fiscales : \texttt{taxRate} (taux de TVA), \texttt{stamp} (timbre fiscal).
+        \2 Informations fiscales tunisiennes :
+            \3 \textbf{TVA} (\textit{Taxe sur la Valeur Ajout\'{e}e}) : taux de TVA en pourcentage, configur\'{e} au niveau du partenaire via \texttt{Partner.tva}. Obligatoire pour toute facture \acrshort{b2b} en Tunisie.
+            \3 \textbf{Timbre fiscal} : montant fixe du timbre gouvernemental (\texttt{stamp}), configur\'{e} via \texttt{Partner.timbre}. Taxe forfaitaire l\'{e}galement requise sur les factures tunisiennes.
+            \3 \textbf{Matricule fiscal} : identifiant fiscal unique du client (\texttt{fiscalNumber}), n\'{e}cessaire pour les transactions \acrshort{b2b}.
         \2 Mise en page : \texttt{logo}, \texttt{signature}.
-        \2 Montants calcul\'{e}s : \texttt{total}, \texttt{taxes}.
-        \2 Fichier g\'{e}n\'{e}r\'{e} : \texttt{fileUrl} (lien vers le \acrshort{pdf}).
+        \2 Montants calcul\'{e}s : \texttt{total} (TTC), \texttt{taxes} (montant de la TVA).
+        \2 Fichier g\'{e}n\'{e}r\'{e} : \texttt{fileUrl} (lien vers le \acrshort{pdf} h\'{e}berg\'{e} sur AWS S3 \cite{aws}).
+        \2 \textbf{Immutabilit\'{e}} : les informations du client et de la salle sont \textit{snapshot\'{e}es} au moment de la cr\'{e}ation (copies statiques, non des r\'{e}f\'{e}rences dynamiques), conformément aux pratiques comptables.
     \1 \textbf{InvoiceLineModule} : Gestion des lignes de d\'{e}tail de chaque facture. Chaque ligne comprend le produit, la quantit\'{e} et le prix unitaire. Le calcul des sous-totaux par ligne et du total g\'{e}n\'{e}ral est effectu\'{e} automatiquement par le service.
     \1 \textbf{Int\'{e}gration PaymentModule} : Le module de paiement existant est enrichi pour centraliser le suivi des paiements li\'{e}s aux abonnements des membres. Il fournit les donn\'{e}es n\'{e}cessaires au registre de caisse et aux rapports financiers.
 \end{outline}
@@ -335,6 +339,13 @@ L'interface web du tableau de bord d'administration int\`{e}gre un ensemble comp
   \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Suivi des paiements d'abonnements}\vspace{2cm}}}
   \caption{Page de suivi des paiements avec historique des transactions}
   \label{fig:sprint6-payments}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Aper\c{c}u d\'{e}taill\'{e} d'une facture PDF}\vspace{2cm}}}
+  \caption{Vue d\'{e}taill\'{e}e d'une facture g\'{e}n\'{e}r\'{e}e avec lignes, taxes et totaux}
+  \label{fig:sprint6-invoice-detail}
 \end{figure}
 
 %──────────────────────────────────────────────

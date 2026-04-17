@@ -16,7 +16,12 @@ Le syst\`{e}me TrustGym fait intervenir quatre acteurs principaux, chacun dispos
 
   \item \textbf{Admin} : administrateur d'une salle de sport sp\'{e}cifique. Il dispose d'un acc\`{e}s complet \`{a} la gestion de sa salle : membres, coachs, abonnements, contr\^{o}le d'acc\`{e}s, boutique, finance, centre \acrshort{kpi} et assistant \acrshort{ai}.
 
-  \item \textbf{Caissier} : op\'{e}rateur au niveau de la caisse. Il prend en charge l'inscription des membres, l'encaissement des paiements, l'enr\^{o}lement aux abonnements et les ventes en boutique. Il dispose d'un acc\`{e}s restreint par rapport \`{a} l'Admin.
+  \item \textbf{Caissier} : op\'{e}rateur au niveau de la caisse. Il prend en charge l'inscription des membres, l'encaissement des paiements, l'enr\^{o}lement aux abonnements et les ventes en boutique. Il dispose d'un acc\`{e}s restreint par rapport \`{a} l'Admin. En raison du taux de rotation \'{e}lev\'{e} des caissiers dans le march\'{e} tunisien des salles de sport (3 \`{a} 6 mois en moyenne), des restrictions strictes ont \'{e}t\'{e} mises en place :
+  \begin{itemize}
+    \item \textbf{Interdiction de suppression} : le Caissier ne peut supprimer aucune donn\'{e}e (membres, factures, abonnements, paiements).
+    \item \textbf{Interdiction de modification des param\`{e}tres} : il ne peut pas acc\'{e}der aux r\'{e}glages de la salle, aux formules d'abonnement, aux conventions ni aux salles.
+    \item \textbf{Interdiction d'acc\`{e}s aux rapports financiers} : les rapports de ventes, les journaux de connexion et les portefeuilles pr\'{e}pay\'{e}s sont r\'{e}serv\'{e}s \`{a} l'Admin.
+  \end{itemize}
 
   \item \textbf{Membre} (application mobile) : adh\'{e}rent de la salle de sport. Il acc\`{e}de \`{a} son tableau de bord, consulte les s\'{e}ances, r\'{e}serve des cr\'{e}neaux, visualise l'occupation en temps r\'{e}el et g\`{e}re son profil via l'application mobile d\'{e}di\'{e}e.
 \end{itemize}
@@ -263,6 +268,166 @@ Le diagramme de classes (figure~\ref{fig:class_diagram}) repr\'{e}sente la struc
   \caption{Diagramme de classes global de TrustGym}
   \label{fig:class_diagram}
 \end{figure}
+
+\subsection{Catalogue complet des entit\'{e}s}
+
+Le syst\`{e}me TrustGym repose sur \textbf{57 entit\'{e}s TypeORM} organis\'{e}es en neuf domaines fonctionnels. Le tableau~\ref{tab:entity_catalog} pr\'{e}sente l'ensemble des entit\'{e}s avec leur r\^{o}le dans le syst\`{e}me.
+
+\begin{longtable}{|c|p{3.8cm}|p{8.5cm}|}
+\hline
+\textbf{\#} & \textbf{Entit\'{e}} & \textbf{Description} \\
+\hline
+\endfirsthead
+\hline
+\textbf{\#} & \textbf{Entit\'{e}} & \textbf{Description} \\
+\hline
+\endhead
+\hline
+\endfoot
+
+\multicolumn{3}{|c|}{\textbf{Domaine : Noyau (Core)}} \\
+\hline
+1 & Partner & Partenaire \acrshort{saas} (franchise) ; informations fiscales, cotisation annuelle \\
+\hline
+2 & Gym & Salle de sport physique ; configuration bridge, cl\'{e} \acrshort{api}, heartbeat \\
+\hline
+3 & User & Utilisateur back-office (Admin, Caissier, SuperAdmin) ; cardId et PIN \\
+\hline
+4 & Role & R\^{o}les \acrshort{rbac} : SuperAdmin, Admin, Cashier, Coach, Member \\
+\hline
+5 & LoginLog & Journal d'audit des connexions/d\'{e}connexions \\
+\hline
+6 & RefreshToken & Suivi des tokens de rafra\^{i}chissement \\
+\hline
+7 & ResetPasswordOtp & Codes \acrshort{otp} pour la r\'{e}initialisation de mot de passe \\
+\hline
+
+\multicolumn{3}{|c|}{\textbf{Domaine : Membres}} \\
+\hline
+8 & Member & Adh\'{e}rent de la salle ; carte \acrshort{rfid}, PIN, mot de passe mobile \\
+\hline
+9 & MemberImage & R\'{e}f\'{e}rence S3 pour la photo du membre \\
+\hline
+10 & AccessMemberMember & Table de jointure pour les relations entre membres (famille) \\
+\hline
+
+\multicolumn{3}{|c|}{\textbf{Domaine : Abonnements et Paiements}} \\
+\hline
+11 & GymSubscription & Formule d'abonnement : prix, dur\'{e}e ou nombre de s\'{e}ances \\
+\hline
+12 & MemberGymSubscription & Instance d'abonnement : membre + formule + dates + paiements \\
+\hline
+13 & Payment & \'{E}ch\'{e}ance de paiement : montant, type, date, statut \\
+\hline
+14 & GymSubscriptionDoor & Liaison formule $\leftrightarrow$ porte autoris\'{e}e \\
+\hline
+15 & SubscriptionTimeSlot & Restrictions horaires pour les abonnements hors-pointe \\
+\hline
+16 & Convention & Groupe de r\'{e}duction (entreprise/famille) : montant fixe ou pourcentage \\
+\hline
+17 & MemberAnnualFee & Cotisation annuelle d'inscription par membre \\
+\hline
+
+\multicolumn{3}{|c|}{\textbf{Domaine : Contr\^{o}le d'Acc\`{e}s}} \\
+\hline
+18 & Door & Porte physique : IP, port, \acrshort{sdk}, direction (In/Out/InOut) \\
+\hline
+19 & Access & \'{E}v\'{e}nement d'entr\'{e}e/sortie : date, heure, autorisation, type \\
+\hline
+20 & DeviceCommand & File de commandes pour les dispositifs en mode PUSH \\
+\hline
+21 & DeviceSyncJob & Suivi des t\^{a}ches de synchronisation avec les dispositifs \\
+\hline
+
+\multicolumn{3}{|c|}{\textbf{Domaine : Coachs et S\'{e}ances}} \\
+\hline
+22 & Coach & Entra\^{i}neur : tarif horaire, carte d'acc\`{e}s, disponibilit\'{e}s \\
+\hline
+23 & CoachImage & R\'{e}f\'{e}rence S3 pour la photo du coach \\
+\hline
+24 & Discipline & Type d'activit\'{e} sportive (CrossFit, Boxe, Yoga, etc.) \\
+\hline
+25 & DisciplineImage & R\'{e}f\'{e}rence S3 pour l'image de la discipline \\
+\hline
+26 & Session & S\'{e}ance planifi\'{e}e : date, coach, discipline, type (OPEN/CLOSE/RESERVATION) \\
+\hline
+27 & SessionPayment & R\'{e}mun\'{e}ration du coach pour une s\'{e}ance \\
+\hline
+28 & SessionInvitation & R\'{e}servation d'un membre pour une s\'{e}ance \\
+\hline
+29 & SessionQRCode & Code \acrshort{qr} pour le pointage de pr\'{e}sence \\
+\hline
+30 & CoachTimeSlot & Cr\'{e}neaux de disponibilit\'{e} hebdomadaire du coach \\
+\hline
+31 & TimeSlotHours & Plages jour/heure sp\'{e}cifiques \\
+\hline
+32 & PartnerTimeSlot & Configuration horaire au niveau partenaire \\
+\hline
+
+\multicolumn{3}{|c|}{\textbf{Domaine : Boutique}} \\
+\hline
+33 & Product & Article en vente : nom, prix, cat\'{e}gorie \\
+\hline
+34 & ProductCategory & Classification des produits \\
+\hline
+35 & ProductImage & R\'{e}f\'{e}rence S3 pour l'image du produit \\
+\hline
+36 & ProductStock & Niveau d'inventaire par produit par salle \\
+\hline
+37 & MemberPurchase & Transaction de vente (POS) : membre achète un produit \\
+\hline
+38 & Supplier & Fournisseur de produits \\
+\hline
+39 & SupplierImage & R\'{e}f\'{e}rence S3 pour l'image du fournisseur \\
+\hline
+40 & SupplierPurchase & Commande d'achat aupr\`{e}s d'un fournisseur \\
+\hline
+41 & StockTransfer & Mouvement d'inventaire inter-salles \\
+\hline
+42 & StockMovement & Piste d'audit de tous les changements de stock \\
+\hline
+
+\multicolumn{3}{|c|}{\textbf{Domaine : Finance}} \\
+\hline
+43 & Wallet & Solde pr\'{e}pay\'{e} par membre \\
+\hline
+44 & WalletEntry & Transaction individuelle du portefeuille (cr\'{e}dit/d\'{e}bit) \\
+\hline
+45 & Invoice & Facture \acrshort{b2b} avec champs fiscaux tunisiens \\
+\hline
+46 & InvoiceLine & Ligne de d\'{e}tail sur une facture \\
+\hline
+47 & CashRegister & Solde de caisse par salle \\
+\hline
+48 & CashRegisterLog & Journal des transactions de caisse \\
+\hline
+
+\multicolumn{3}{|c|}{\textbf{Domaine : \acrshort{saas} et Plateforme}} \\
+\hline
+49 & GymPartnerSubscription & Abonnement \acrshort{saas} de la plateforme par partenaire \\
+\hline
+50 & PartnerSubscriptionType & D\'{e}finition des paliers (Core, Professional, Business, Enterprise) \\
+\hline
+51 & PartnerSubscriptionModule & Modules de fonctionnalit\'{e}s par palier d'abonnement \\
+\hline
+
+\multicolumn{3}{|c|}{\textbf{Domaine : Intelligence Artificielle}} \\
+\hline
+52 & AiChatLog & Historique des conversations \acrshort{ai} \\
+\hline
+53 & DocChunk & Morceaux de documents avec embeddings vectoriels pour le \acrshort{rag} \\
+\hline
+54 & AiActions & Suivi des actions de l'assistant \acrshort{ai} \\
+\hline
+
+\multicolumn{3}{|c|}{\textbf{Tables de jointure}} \\
+\hline
+55--57 & Tables de jointure & Relations ManyToMany (Gym$\leftrightarrow$Subscription, etc.) \\
+\hline
+
+\caption{Catalogue des 57 entit\'{e}s de la base de donn\'{e}es TrustGym}
+\label{tab:entity_catalog}
+\end{longtable}
 
 \section{Conclusion}
 Dans ce chapitre, nous avons d\'{e}fini les sp\'{e}cifications compl\`{e}tes du projet TrustGym. Nous avons identifi\'{e} les quatre acteurs principaux du syst\`{e}me (SuperAdmin, Admin, Caissier et Membre), d\'{e}taill\'{e} les besoins fonctionnels par acteur, et \'{e}tabli les exigences non fonctionnelles en termes de performance, scalabilit\'{e}, s\'{e}curit\'{e}, convivialit\'{e} et temps r\'{e}el. Le product backlog a permis de prioriser les treize fonctionnalit\'{e}s majeures, le diagramme de cas d'utilisation global a illustr\'{e} les interactions entre les acteurs et le syst\`{e}me, et le diagramme de classes a pos\'{e} les bases de la mod\'{e}lisation des donn\'{e}es. Ces sp\'{e}cifications serviront de r\'{e}f\'{e}rence tout au long des sept sprints de d\'{e}veloppement pr\'{e}sent\'{e}s dans les chapitres suivants.

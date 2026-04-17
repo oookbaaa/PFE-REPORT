@@ -160,6 +160,10 @@ Le module \texttt{KpiCenterModule} fournit les indicateurs analytiques avanc\'{e
 
 L'acc\`{e}s au centre \acrshort{kpi} est conditionn\'{e} par le guard \acrshort{saas} v\'{e}rifiant l'activation du module \texttt{SaasModuleEnum.KpiCenter} pour la salle concern\'{e}e.
 
+\paragraph{D\'{e}tection des membres silencieux et campagnes e-mail}
+
+Le centre \acrshort{kpi} inclut un m\'{e}canisme de d\'{e}tection des \textbf{membres silencieux} : les adh\'{e}rents n'ayant effectu\'{e} aucune visite depuis un nombre configurable de jours. L'administrateur peut s\'{e}lectionner ces membres inactifs et lancer une \textbf{campagne e-mail de r\'{e}engagement} en masse via AWS SES \cite{aws}. L'endpoint \texttt{POST /kpi-center/send-email} g\`{e}re l'envoi group\'{e} avec un template personnalis\'{e}.
+
 \subsubsection{Module Intelligence Artificielle (AiModule)}
 
 Le module \texttt{AiModule} impl\'{e}mente un assistant intelligent bas\'{e} sur l'architecture \acrshort{rag} (Retrieval-Augmented Generation) \cite{lewis2020rag, gao2024rag_survey}. Son fonctionnement repose sur les composants suivants :
@@ -283,7 +287,7 @@ La communication en temps r\'{e}el est assur\'{e}e par Socket.IO \cite{socketio}
     \item Un polling toutes les 30 secondes comme m\'{e}canisme de secours.
 \end{itemize}
 
-L'application est \'{e}galement con\c{c}ue pour fonctionner en mode hors ligne : les requ\^{e}tes React Query \cite{tanstack} sont mises en pause lorsque la connexion est perdue et reprennent automatiquement lors de la reconnexion.
+L'application est \'{e}galement con\c{c}ue pour fonctionner en mode hors ligne : les requ\^{e}tes React Query \cite{tanstack} sont mises en pause lorsque la connexion est perdue (d\'{e}tect\'{e}e via \texttt{@react-native-community/netinfo}) et reprennent automatiquement lors de la reconnexion. Ce comportement \'{e}vite les erreurs r\'{e}seau inutiles et pr\'{e}serve la batterie de l'appareil. En compl\'{e}ment, un polling toutes les 30 secondes assure la mise \`{a} jour de l'occupation m\^{e}me en cas de d\'{e}connexion temporaire du WebSocket.
 
 \subsubsection{Configuration de l'environnement}
 
@@ -339,9 +343,23 @@ L'interface de chat \acrshort{ai} est impl\'{e}ment\'{e}e avec le hook \texttt{u
 
 \begin{figure}[H]
   \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Analytique sur l'application mobile}\vspace{2cm}}}
+  \caption{\'{E}cran d'analytique mobile avec heures de pointe et statistiques personnelles}
+  \label{fig:sprint7-mobile-analytics}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
   \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Centre KPI}\vspace{2cm}}}
   \caption{Centre KPI avec occupation en direct et analyse des heures de pointe}
   \label{fig:sprint7-kpi-center}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : D\'{e}tection des membres silencieux et campagne e-mail}\vspace{2cm}}}
+  \caption{Interface de d\'{e}tection des membres inactifs avec envoi de campagne e-mail de r\'{e}engagement}
+  \label{fig:sprint7-silent-members}
 \end{figure}
 
 \begin{figure}[H]
@@ -350,6 +368,41 @@ L'interface de chat \acrshort{ai} est impl\'{e}ment\'{e}e avec le hook \texttt{u
   \caption{Interface de chat de l'assistant IA bas\'{e} sur le RAG}
   \label{fig:sprint7-ai-chat}
 \end{figure}
+
+\subsection{Processus Automatis\'{e}s (CRON Jobs)}
+
+La plateforme TrustGym repose sur un ensemble de t\^{a}ches planifi\'{e}es qui garantissent le fonctionnement autonome du syst\`{e}me sans intervention humaine. Le tableau~\ref{tab:cron_jobs} r\'{e}capitule les principaux processus automatis\'{e}s :
+
+\begin{longtable}{|p{4cm}|p{2.5cm}|p{7cm}|}
+\hline
+\textbf{Processus} & \textbf{Fr\'{e}quence} & \textbf{Description} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Processus} & \textbf{Fr\'{e}quence} & \textbf{Description} \\
+\hline
+\endhead
+\hline
+\endfoot
+
+Blocage des abonn\'{e}s expir\'{e}s & Toutes les 10 min & D\'{e}finit \texttt{isBlocked = true} pour les membres dont tous les abonnements sont expir\'{e}s. \\
+\hline
+D\'{e}blocage des abonn\'{e}s valides & Toutes les 10 min & R\'{e}active (\texttt{isBlocked = false}) les membres poss\'{e}dant un abonnement valide. \\
+\hline
+Synchronisation des acc\`{e}s & Toutes les 10 sec & Interroge les dispositifs physiques pour r\'{e}cup\'{e}rer les nouveaux \'{e}v\'{e}nements de badge. \\
+\hline
+Rappels d'expiration & Quotidien \`{a} 9h & Envoie un e-mail aux membres dont l'abonnement expire dans les 3 jours. \\
+\hline
+Initialisation AC Engine & D\'{e}marrage + 5 min & R\'{e}initialise les tables de fuseaux horaires sur les dispositifs STANDALONE apr\`{e}s coupure de courant. \\
+\hline
+Synchronisation horloge C3-200 & D\'{e}marrage + 1h & Synchronise l'horloge des dispositifs C3-200 avec le serveur pour \'{e}viter la d\'{e}rive temporelle. \\
+\hline
+Auto-rem\'{e}diation sync & 2x/jour (8h, 15h) & D\'{e}tecte et corrige automatiquement les d\'{e}synchronisations entre les dispositifs et la base de donn\'{e}es ; envoie un rapport par e-mail. \\
+\hline
+
+\caption{Processus automatis\'{e}s (CRON Jobs) de TrustGym}
+\label{tab:cron_jobs}
+\end{longtable}
 
 %──────────────────────────────────────────────
 \section{Conclusion}
