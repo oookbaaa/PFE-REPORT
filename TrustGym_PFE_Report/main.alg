@@ -109,8 +109,8 @@ Scanning input file main.acn...
    -- Illegal page number  or page_precedence rnaRA.
 !! Input index error (file = main.acn, line = 54):
    -- Illegal page number  or page_precedence rnaRA.
-.done (230 entries accepted, 54 rejected).
-Sorting entries.....done (1849 comparisons).
-Generating output file main.acr....done (160 lines written, 0 warnings).
+.done (258 entries accepted, 54 rejected).
+Sorting entries.....done (2071 comparisons).
+Generating output file main.acr....done (178 lines written, 0 warnings).
 Output written in main.acr.
 Transcript written in main.alg.

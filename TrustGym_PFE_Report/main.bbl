@@ -1,0 +1,923 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{aws}{misc}{}{}
+      \list{publisher}{1}{%
+        {Amazon}%
+      }
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labeltitlesource}{title}
+      \field{title}{Amazon S3}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://aws.amazon.com/s3
+      \endverb
+      \verb{url}
+      \verb https://aws.amazon.com/s3
+      \endverb
+    \endentry
+    \entry{bezemer2010multitenancy}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=5dcdabf8c600f81f6596c230a2a138a5}{%
+           family={Bezemer},
+           familyi={B\bibinitperiod},
+           given={Cor-Paul},
+           giveni={C\bibinithyphendelim P\bibinitperiod}}}%
+        {{hash=fed6d4f3fd7320636da1dc0f146a75d0}{%
+           family={Zaidman},
+           familyi={Z\bibinitperiod},
+           given={Andy},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{2bdf3c9168747accb8ad366b7d9a390c}
+      \strng{fullhash}{2bdf3c9168747accb8ad366b7d9a390c}
+      \strng{fullhashraw}{2bdf3c9168747accb8ad366b7d9a390c}
+      \strng{bibnamehash}{2bdf3c9168747accb8ad366b7d9a390c}
+      \strng{authorbibnamehash}{2bdf3c9168747accb8ad366b7d9a390c}
+      \strng{authornamehash}{2bdf3c9168747accb8ad366b7d9a390c}
+      \strng{authorfullhash}{2bdf3c9168747accb8ad366b7d9a390c}
+      \strng{authorfullhashraw}{2bdf3c9168747accb8ad366b7d9a390c}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the Joint ERCIM Workshop on Software Evolution (EVOL) and International Workshop on Principles of Software Evolution (IWPSE)}
+      \field{title}{Multi-Tenant SaaS Applications: Maintenance Dream or Nightmare?}
+      \field{year}{2010}
+      \field{pages}{88\bibrangedash 92}
+      \range{pages}{5}
+    \endentry
+    \entry{expo}{misc}{}{}
+      \list{publisher}{1}{%
+        {Expo}%
+      }
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labeltitlesource}{title}
+      \field{title}{Expo - Make any app}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://expo.dev
+      \endverb
+      \verb{url}
+      \verb https://expo.dev
+      \endverb
+    \endentry
+    \entry{rfc6455}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=1057c0ce811151df0862cf5b26064896}{%
+           family={Fette},
+           familyi={F\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+        {{hash=2f848d58c5d28e172fbc9ab51a059f6e}{%
+           family={Melnikov},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Internet Engineering Task Force (IETF)}%
+      }
+      \strng{namehash}{a384119ffa0f3414225b956a30c34bd9}
+      \strng{fullhash}{a384119ffa0f3414225b956a30c34bd9}
+      \strng{fullhashraw}{a384119ffa0f3414225b956a30c34bd9}
+      \strng{bibnamehash}{a384119ffa0f3414225b956a30c34bd9}
+      \strng{authorbibnamehash}{a384119ffa0f3414225b956a30c34bd9}
+      \strng{authornamehash}{a384119ffa0f3414225b956a30c34bd9}
+      \strng{authorfullhash}{a384119ffa0f3414225b956a30c34bd9}
+      \strng{authorfullhashraw}{a384119ffa0f3414225b956a30c34bd9}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{RFC 6455}
+      \field{title}{The WebSocket Protocol}
+      \field{year}{2011}
+    \endentry
+    \entry{fowler2003uml}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=312ac886938a9b2be4f8eb607567fe4c}{%
+           family={Fowler},
+           familyi={F\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley Professional}%
+      }
+      \strng{namehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{fullhash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{fullhashraw}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{bibnamehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authorbibnamehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authornamehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authorfullhash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authorfullhashraw}{312ac886938a9b2be4f8eb607567fe4c}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3}
+      \field{title}{UML Distilled: A Brief Guide to the Standard Object Modeling Language}
+      \field{year}{2003}
+    \endentry
+    \entry{functional_req}{misc}{}{}
+      \list{publisher}{1}{%
+        {AltexSoft}%
+      }
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labeltitlesource}{title}
+      \field{title}{Functional and Nonfunctional Requirements: Specification and Types}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://www.altexsoft.com/blog/business/functional-and-non-functional-requirements-specification-and-types
+      \endverb
+      \verb{url}
+      \verb https://www.altexsoft.com/blog/business/functional-and-non-functional-requirements-specification-and-types
+      \endverb
+    \endentry
+    \entry{gao2024rag_survey}{article}{}{}
+      \name{author}{9}{}{%
+        {{hash=572def57560315de76cedfc3e17c2eb2}{%
+           family={Gao},
+           familyi={G\bibinitperiod},
+           given={Yunfan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=bdc1e50b7faa4f8d1a9844199179e6c2}{%
+           family={Xiong},
+           familyi={X\bibinitperiod},
+           given={Yun},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=03e7985fe5e84b74e9f01c4cdbaaee9c}{%
+           family={Gao},
+           familyi={G\bibinitperiod},
+           given={Xinyu},
+           giveni={X\bibinitperiod}}}%
+        {{hash=16ccf3d9ea55a78a7d3dfea173515f1f}{%
+           family={Jia},
+           familyi={J\bibinitperiod},
+           given={Kangxiang},
+           giveni={K\bibinitperiod}}}%
+        {{hash=fd6e4a40c152c7e39a43964918a2c4a5}{%
+           family={Pan},
+           familyi={P\bibinitperiod},
+           given={Jinliu},
+           giveni={J\bibinitperiod}}}%
+        {{hash=efef66e4d4bad100544cfae4a2b3104b}{%
+           family={Bi},
+           familyi={B\bibinitperiod},
+           given={Yuxi},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=f59ef2d4288d687c75882fd75c94cd09}{%
+           family={Dai},
+           familyi={D\bibinitperiod},
+           given={Yi},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=5541cd69dde50ba09f8968212da6602c}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Jiawei},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9cca37a322a37778f7e30f057e2c2f90}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Haofen},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{f1678cfa142d8029151d4faacf40f176}
+      \strng{fullhash}{d439bedbf62a8843c8be1e435742e6a3}
+      \strng{fullhashraw}{d439bedbf62a8843c8be1e435742e6a3}
+      \strng{bibnamehash}{f1678cfa142d8029151d4faacf40f176}
+      \strng{authorbibnamehash}{f1678cfa142d8029151d4faacf40f176}
+      \strng{authornamehash}{f1678cfa142d8029151d4faacf40f176}
+      \strng{authorfullhash}{d439bedbf62a8843c8be1e435742e6a3}
+      \strng{authorfullhashraw}{d439bedbf62a8843c8be1e435742e6a3}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2312.10997}
+      \field{title}{Retrieval-Augmented Generation for Large Language Models: A Survey}
+      \field{year}{2024}
+    \endentry
+    \entry{glofox}{misc}{}{}
+      \list{publisher}{1}{%
+        {Glofox Ltd.}%
+      }
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labeltitlesource}{title}
+      \field{title}{Glofox -- Gym and Studio Management Software}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.glofox.com
+      \endverb
+      \verb{url}
+      \verb https://www.glofox.com
+      \endverb
+    \endentry
+    \entry{gymmaster}{misc}{}{}
+      \list{publisher}{1}{%
+        {Treshna Enterprises Ltd.}%
+      }
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labeltitlesource}{title}
+      \field{title}{GymMaster -- Gym Management System}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.gymmaster.com
+      \endverb
+      \verb{url}
+      \verb https://www.gymmaster.com
+      \endverb
+    \endentry
+    \entry{helmet}{misc}{}{}
+      \list{publisher}{1}{%
+        {Helmet}%
+      }
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labeltitlesource}{title}
+      \field{title}{Helmet.js - Secure Express apps}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://helmetjs.github.io
+      \endverb
+      \verb{url}
+      \verb https://helmetjs.github.io
+      \endverb
+    \endentry
+    \entry{hikvision}{misc}{}{}
+      \list{publisher}{1}{%
+        {Hikvision}%
+      }
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labeltitlesource}{title}
+      \field{title}{Hikvision}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.hikvision.com
+      \endverb
+      \verb{url}
+      \verb https://www.hikvision.com
+      \endverb
+    \endentry
+    \entry{jwt_rfc7519}{misc}{}{}
+      \name{author}{3}{}{%
+        {{hash=3656094aa90ce6b5927293e625dedee3}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=3ac7ec83304c92610359a406f07ad45a}{%
+           family={Bradley},
+           familyi={B\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=2764fe7207c045fdc85a76e2d51203a3}{%
+           family={Sakimura},
+           familyi={S\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Internet Engineering Task Force (IETF)}%
+      }
+      \strng{namehash}{5b3ff80030418207cdd5756912287da3}
+      \strng{fullhash}{5b3ff80030418207cdd5756912287da3}
+      \strng{fullhashraw}{5b3ff80030418207cdd5756912287da3}
+      \strng{bibnamehash}{5b3ff80030418207cdd5756912287da3}
+      \strng{authorbibnamehash}{5b3ff80030418207cdd5756912287da3}
+      \strng{authornamehash}{5b3ff80030418207cdd5756912287da3}
+      \strng{authorfullhash}{5b3ff80030418207cdd5756912287da3}
+      \strng{authorfullhashraw}{5b3ff80030418207cdd5756912287da3}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{RFC 7519}
+      \field{title}{JSON Web Token (JWT)}
+      \field{year}{2015}
+    \endentry
+    \entry{lewis2020rag}{article}{}{}
+      \name{author}{12}{}{%
+        {{hash=ecbe786a5668bf643d74bb24fe1c3cfe}{%
+           family={Lewis},
+           familyi={L\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod}}}%
+        {{hash=79978685fd7b37606022b06c0f6419a1}{%
+           family={Perez},
+           familyi={P\bibinitperiod},
+           given={Ethan},
+           giveni={E\bibinitperiod}}}%
+        {{hash=d205faec67355b6e0ec49f82a492324c}{%
+           family={Piktus},
+           familyi={P\bibinitperiod},
+           given={Aleksandra},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e1c32989a78998fe3c03c981d0da2dc7}{%
+           family={Petroni},
+           familyi={P\bibinitperiod},
+           given={Fabio},
+           giveni={F\bibinitperiod}}}%
+        {{hash=b24392ebfb2c0a35979fc689c389c649}{%
+           family={Karpukhin},
+           familyi={K\bibinitperiod},
+           given={Vladimir},
+           giveni={V\bibinitperiod}}}%
+        {{hash=78a420900f50a8470ad085fb05231bf6}{%
+           family={Goyal},
+           familyi={G\bibinitperiod},
+           given={Naman},
+           giveni={N\bibinitperiod}}}%
+        {{hash=4eadcf26f55e11fe4be834b52d9b7fdf}{%
+           family={Küttler},
+           familyi={K\bibinitperiod},
+           given={Heinrich},
+           giveni={H\bibinitperiod}}}%
+        {{hash=c97f53fdeeb04c28de19e3324cb4bc0a}{%
+           family={Lewis},
+           familyi={L\bibinitperiod},
+           given={Mike},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d4d56d3d370b3afd4ad2ebf985fbd3f8}{%
+           family={Yih},
+           familyi={Y\bibinitperiod},
+           given={Wen-tau},
+           giveni={W\bibinithyphendelim t\bibinitperiod}}}%
+        {{hash=b3ff4029884ead9928954ea33714192c}{%
+           family={Rocktäschel},
+           familyi={R\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=6cd024b217f3f2f8126e253b8c84d24d}{%
+           family={Riedel},
+           familyi={R\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ca01c762f4a52dd8a8548508f8d727c9}{%
+           family={Kiela},
+           familyi={K\bibinitperiod},
+           given={Douwe},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{f238c3bfc4b30650dd17e65c4aadfc66}
+      \strng{fullhash}{22489b764620b23a8cc8547a492f0763}
+      \strng{fullhashraw}{22489b764620b23a8cc8547a492f0763}
+      \strng{bibnamehash}{f238c3bfc4b30650dd17e65c4aadfc66}
+      \strng{authorbibnamehash}{f238c3bfc4b30650dd17e65c4aadfc66}
+      \strng{authornamehash}{f238c3bfc4b30650dd17e65c4aadfc66}
+      \strng{authorfullhash}{22489b764620b23a8cc8547a492f0763}
+      \strng{authorfullhashraw}{22489b764620b23a8cc8547a492f0763}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in Neural Information Processing Systems}
+      \field{title}{Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks}
+      \field{volume}{33}
+      \field{year}{2020}
+      \field{pages}{9459\bibrangedash 9474}
+      \range{pages}{16}
+    \endentry
+    \entry{nativewind}{misc}{}{}
+      \list{publisher}{1}{%
+        {NativeWind}%
+      }
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labeltitlesource}{title}
+      \field{title}{NativeWind}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.nativewind.dev
+      \endverb
+      \verb{url}
+      \verb https://www.nativewind.dev
+      \endverb
+    \endentry
+    \entry{nestjs}{misc}{}{}
+      \list{publisher}{1}{%
+        {NestJS}%
+      }
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labeltitlesource}{title}
+      \field{title}{NestJS - A progressive Node.js framework}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://nestjs.com
+      \endverb
+      \verb{url}
+      \verb https://nestjs.com
+      \endverb
+    \endentry
+    \entry{nextintl}{misc}{}{}
+      \list{publisher}{1}{%
+        {next-intl}%
+      }
+      \field{sortinit}{n}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labeltitlesource}{title}
+      \field{title}{next-intl - Internationalization for Next.js}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://next-intl-docs.vercel.app
+      \endverb
+      \verb{url}
+      \verb https://next-intl-docs.vercel.app
+      \endverb
+    \endentry
+    \entry{nextjs}{misc}{}{}
+      \list{publisher}{1}{%
+        {Vercel}%
+      }
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labeltitlesource}{title}
+      \field{title}{Next.js by Vercel}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://nextjs.org
+      \endverb
+      \verb{url}
+      \verb https://nextjs.org
+      \endverb
+    \endentry
+    \entry{nextauth}{misc}{}{}
+      \list{publisher}{1}{%
+        {NextAuth.js}%
+      }
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labeltitlesource}{title}
+      \field{title}{NextAuth.js}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://next-auth.js.org
+      \endverb
+      \verb{url}
+      \verb https://next-auth.js.org
+      \endverb
+    \endentry
+    \entry{ngrok}{misc}{}{}
+      \list{publisher}{1}{%
+        {ngrok Inc.}%
+      }
+      \field{sortinit}{n}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labeltitlesource}{title}
+      \field{title}{ngrok - Unified Ingress Platform}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://ngrok.com
+      \endverb
+      \verb{url}
+      \verb https://ngrok.com
+      \endverb
+    \endentry
+    \entry{openai}{misc}{}{}
+      \list{publisher}{1}{%
+        {OpenAI}%
+      }
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labeltitlesource}{title}
+      \field{title}{OpenAI API}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://platform.openai.com
+      \endverb
+      \verb{url}
+      \verb https://platform.openai.com
+      \endverb
+    \endentry
+    \entry{passport}{misc}{}{}
+      \list{publisher}{1}{%
+        {Passport}%
+      }
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labeltitlesource}{title}
+      \field{title}{Passport.js}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.passportjs.org
+      \endverb
+      \verb{url}
+      \verb https://www.passportjs.org
+      \endverb
+    \endentry
+    \entry{pgvector}{misc}{}{}
+      \list{publisher}{1}{%
+        {pgvector}%
+      }
+      \field{sortinit}{p}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labeltitlesource}{title}
+      \field{title}{pgvector - Open-source vector similarity search for Postgres}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://github.com/pgvector/pgvector
+      \endverb
+      \verb{url}
+      \verb https://github.com/pgvector/pgvector
+      \endverb
+    \endentry
+    \entry{pm2}{misc}{}{}
+      \list{publisher}{1}{%
+        {Keymetrics}%
+      }
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labeltitlesource}{title}
+      \field{title}{PM2 - Advanced Node.js Process Manager}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://pm2.keymetrics.io
+      \endverb
+      \verb{url}
+      \verb https://pm2.keymetrics.io
+      \endverb
+    \endentry
+    \entry{postgre}{misc}{}{}
+      \list{publisher}{1}{%
+        {PostgreSQL}%
+      }
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labeltitlesource}{title}
+      \field{title}{PostgreSQL}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.postgresql.org/about
+      \endverb
+      \verb{url}
+      \verb https://www.postgresql.org/about
+      \endverb
+    \endentry
+    \entry{postman}{misc}{}{}
+      \list{publisher}{1}{%
+        {Postman}%
+      }
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labeltitlesource}{title}
+      \field{title}{Postman}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.postman.com
+      \endverb
+      \verb{url}
+      \verb https://www.postman.com
+      \endverb
+    \endentry
+    \entry{git}{misc}{}{}
+      \list{publisher}{1}{%
+        {Atlassian}%
+      }
+      \field{sortinit}{Q}
+      \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
+      \field{labeltitlesource}{title}
+      \field{title}{Qu'est-ce que Git ?}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.atlassian.com/fr/git/tutorials/what-is-git
+      \endverb
+      \verb{url}
+      \verb https://www.atlassian.com/fr/git/tutorials/what-is-git
+      \endverb
+    \endentry
+    \entry{class_diag}{misc}{}{}
+      \list{publisher}{1}{%
+        {IBM}%
+      }
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labeltitlesource}{title}
+      \field{title}{Rational Software Modeler}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://www.ibm.com/docs/en/rsm/7.5.0?topic=structure-class-diagrams
+      \endverb
+      \verb{url}
+      \verb https://www.ibm.com/docs/en/rsm/7.5.0?topic=structure-class-diagrams
+      \endverb
+    \endentry
+    \entry{rhf}{misc}{}{}
+      \list{publisher}{1}{%
+        {React Hook Form}%
+      }
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labeltitlesource}{title}
+      \field{title}{React Hook Form}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://react-hook-form.com
+      \endverb
+      \verb{url}
+      \verb https://react-hook-form.com
+      \endverb
+    \endentry
+    \entry{reactnative}{misc}{}{}
+      \list{publisher}{1}{%
+        {Meta}%
+      }
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labeltitlesource}{title}
+      \field{title}{React Native}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://reactnative.dev
+      \endverb
+      \verb{url}
+      \verb https://reactnative.dev
+      \endverb
+    \endentry
+    \entry{sandhu1996rbac}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=f3b7d57399ba1dbf13fcbf28b2ad7555}{%
+           family={Sandhu},
+           familyi={S\bibinitperiod},
+           given={Ravi\bibnamedelima S.},
+           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=095a4cce348eec9d581b278c22ab6129}{%
+           family={Coyne},
+           familyi={C\bibinitperiod},
+           given={Edward\bibnamedelima J.},
+           giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=777d2f53710ab0c09bf75c63fafceaa1}{%
+           family={Feinstein},
+           familyi={F\bibinitperiod},
+           given={Hal\bibnamedelima L.},
+           giveni={H\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=fea1de53df3d07042f925374a93d347e}{%
+           family={Youman},
+           familyi={Y\bibinitperiod},
+           given={Charles\bibnamedelima E.},
+           giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{52a6131784323a5e6bed6b08eea50cb3}
+      \strng{fullhash}{10d614baecb582aa4916c475ba89caef}
+      \strng{fullhashraw}{10d614baecb582aa4916c475ba89caef}
+      \strng{bibnamehash}{52a6131784323a5e6bed6b08eea50cb3}
+      \strng{authorbibnamehash}{52a6131784323a5e6bed6b08eea50cb3}
+      \strng{authornamehash}{52a6131784323a5e6bed6b08eea50cb3}
+      \strng{authorfullhash}{10d614baecb582aa4916c475ba89caef}
+      \strng{authorfullhashraw}{10d614baecb582aa4916c475ba89caef}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Computer}
+      \field{number}{2}
+      \field{title}{Role-Based Access Control Models}
+      \field{volume}{29}
+      \field{year}{1996}
+      \field{pages}{38\bibrangedash 47}
+      \range{pages}{10}
+    \endentry
+    \entry{schwaber2020scrum}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=ee6f08fcba839e09471a0bc69152b6a5}{%
+           family={Schwaber},
+           familyi={S\bibinitperiod},
+           given={Ken},
+           giveni={K\bibinitperiod}}}%
+        {{hash=6e3f26f6f816a26c6ab36bc7a899bcde}{%
+           family={Sutherland},
+           familyi={S\bibinitperiod},
+           given={Jeff},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Scrum.org}%
+      }
+      \strng{namehash}{303ea1dc92fd8c772eac56316b2074ef}
+      \strng{fullhash}{303ea1dc92fd8c772eac56316b2074ef}
+      \strng{fullhashraw}{303ea1dc92fd8c772eac56316b2074ef}
+      \strng{bibnamehash}{303ea1dc92fd8c772eac56316b2074ef}
+      \strng{authorbibnamehash}{303ea1dc92fd8c772eac56316b2074ef}
+      \strng{authornamehash}{303ea1dc92fd8c772eac56316b2074ef}
+      \strng{authorfullhash}{303ea1dc92fd8c772eac56316b2074ef}
+      \strng{authorfullhashraw}{303ea1dc92fd8c772eac56316b2074ef}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Disponible sur scrum.org}
+      \field{title}{The Scrum Guide: The Definitive Guide to Scrum: The Rules of the Game}
+      \field{year}{2020}
+    \endentry
+    \entry{socketio}{misc}{}{}
+      \list{publisher}{1}{%
+        {Socket.IO}%
+      }
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labeltitlesource}{title}
+      \field{title}{Socket.IO}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://socket.io
+      \endverb
+      \verb{url}
+      \verb https://socket.io
+      \endverb
+    \endentry
+    \entry{swagger}{misc}{}{}
+      \list{publisher}{1}{%
+        {SmartBear}%
+      }
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labeltitlesource}{title}
+      \field{title}{Swagger - API Documentation}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://swagger.io
+      \endverb
+      \verb{url}
+      \verb https://swagger.io
+      \endverb
+    \endentry
+    \entry{tailwind}{misc}{}{}
+      \list{publisher}{1}{%
+        {Tailwind Labs}%
+      }
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeltitlesource}{title}
+      \field{title}{Tailwind CSS}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://tailwindcss.com
+      \endverb
+      \verb{url}
+      \verb https://tailwindcss.com
+      \endverb
+    \endentry
+    \entry{tanstack}{misc}{}{}
+      \list{publisher}{1}{%
+        {TanStack}%
+      }
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeltitlesource}{title}
+      \field{title}{TanStack Query}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://tanstack.com/query
+      \endverb
+      \verb{url}
+      \verb https://tanstack.com/query
+      \endverb
+    \endentry
+    \entry{dev_methodology}{misc}{}{}
+      \list{publisher}{1}{%
+        {Segue Technologies}%
+      }
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeltitlesource}{title}
+      \field{title}{The Benefits of Adhering to Software Development Methodology Concepts}
+      \field{year}{2015}
+      \verb{urlraw}
+      \verb https://www.seguetech.com/benefits-adhering-software-development-methodology-concepts
+      \endverb
+      \verb{url}
+      \verb https://www.seguetech.com/benefits-adhering-software-development-methodology-concepts
+      \endverb
+    \endentry
+    \entry{typeorm}{misc}{}{}
+      \list{publisher}{1}{%
+        {TypeORM}%
+      }
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeltitlesource}{title}
+      \field{title}{TypeORM - Amazing ORM for TypeScript and JavaScript}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://typeorm.io
+      \endverb
+      \verb{url}
+      \verb https://typeorm.io
+      \endverb
+    \endentry
+    \entry{typescript}{misc}{}{}
+      \list{publisher}{1}{%
+        {Microsoft}%
+      }
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeltitlesource}{title}
+      \field{title}{TypeScript}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.typescriptlang.org/
+      \endverb
+      \verb{url}
+      \verb https://www.typescriptlang.org/
+      \endverb
+    \endentry
+    \entry{vscode}{misc}{}{}
+      \list{publisher}{1}{%
+        {Microsoft}%
+      }
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labeltitlesource}{title}
+      \field{title}{Visual Studio Code}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://code.visualstudio.com
+      \endverb
+      \verb{url}
+      \verb https://code.visualstudio.com
+      \endverb
+    \endentry
+    \entry{scrum}{misc}{}{}
+      \list{publisher}{1}{%
+        {Scrum.org}%
+      }
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labeltitlesource}{title}
+      \field{title}{What is Scrum?}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://www.scrum.org/resources/what-scrum-module
+      \endverb
+      \verb{url}
+      \verb https://www.scrum.org/resources/what-scrum-module
+      \endverb
+    \endentry
+    \entry{yup}{misc}{}{}
+      \list{publisher}{1}{%
+        {Yup}%
+      }
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{labeltitlesource}{title}
+      \field{title}{Yup - Schema validation}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://github.com/jquense/yup
+      \endverb
+      \verb{url}
+      \verb https://github.com/jquense/yup
+      \endverb
+    \endentry
+    \entry{zkteco}{misc}{}{}
+      \list{publisher}{1}{%
+        {ZKTeco}%
+      }
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labeltitlesource}{title}
+      \field{title}{ZKTeco - Security Solutions}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.zkteco.com
+      \endverb
+      \verb{url}
+      \verb https://www.zkteco.com
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

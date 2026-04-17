@@ -102,7 +102,7 @@
 
 \usepackage{subfiles} % Best loaded last in the preamble
 
-\usepackage[acronym, toc, nonumberlist, nopostdot]{glossaries}
+\usepackage[acronym, toc, nonumberlist, nopostdot, nogroupskip]{glossaries}
 
 
 \pagestyle{fancy}
@@ -116,7 +116,7 @@
  \setlength {\marginparwidth }{2cm}
 
 %acronyms%
-\makeglossaries
+\makenoidxglossaries
 \newacronym{api}{API}{Application Programming Interface}
 \newacronym{jwt}{JWT}{JSON Web Token}
 \newacronym{orm}{ORM}{Object Relational Mapping}
@@ -190,33 +190,26 @@
   \hypersetup{linkcolor=black}
   \tableofcontents
 }
-\cleardoublepage
+\clearpage
 \pagenumbering{arabic}
 
-\cleardoublepage
 \pagenumbering{gobble}
 {
   \hypersetup{linkcolor=black}
   \listoffigures
 }
-\cleardoublepage
-\pagenumbering{arabic}
-
-\pagenumbering{gobble}
 \clearpage
+
 {
   \hypersetup{linkcolor=black}
   \listoftables
 }
 \clearpage
-\pagenumbering{arabic}
 
-\pagenumbering{gobble}
-\clearpage
 {
   \hypersetup{linkcolor=black}
   \glsaddall
-  \printglossary[type=\acronymtype, title=Liste des Acronymes, toctitle=Liste des Acronymes]
+  \printnoidxglossary[type=\acronymtype, title=Liste des Acronymes, toctitle=Liste des Acronymes, sort=word]
 }
 \clearpage
 \pagenumbering{arabic}
