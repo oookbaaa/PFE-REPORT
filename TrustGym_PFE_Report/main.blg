@@ -1,15 +1,15 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'main.blg'
-[88] biber-MSWIN64:342> INFO - === 
-[121] Biber.pm:421> INFO - Reading 'main.bcf'
-[208] Biber.pm:1002> INFO - Found 42 citekeys in bib section 0
-[218] Biber.pm:4487> INFO - Processing section 0
-[227] Biber.pm:4678> INFO - Looking for bibtex file 'references.bib' for section 0
-[329] bibtex.pm:1713> INFO - LaTeX decoding ...
-[408] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
-[518] UCollate.pm:68> INFO - Overriding locale 'fr-FR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[518] UCollate.pm:68> INFO - Overriding locale 'fr-FR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[518] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'fr-FR'
-[519] Biber.pm:4313> INFO - No sort tailoring available for locale 'fr-FR'
-[540] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[549] bbl.pm:779> INFO - Output to main.bbl
+[451] biber-MSWIN64:342> INFO - === 
+[725] Biber.pm:421> INFO - Reading 'main.bcf'
+[868] Biber.pm:1002> INFO - Found 42 citekeys in bib section 0
+[884] Biber.pm:4487> INFO - Processing section 0
+[928] Biber.pm:4678> INFO - Looking for bibtex file 'references.bib' for section 0
+[1032] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1105] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[1301] UCollate.pm:68> INFO - Overriding locale 'fr-FR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1301] UCollate.pm:68> INFO - Overriding locale 'fr-FR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1301] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'fr-FR'
+[1302] Biber.pm:4313> INFO - No sort tailoring available for locale 'fr-FR'
+[1458] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[1468] bbl.pm:779> INFO - Output to main.bbl

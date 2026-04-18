@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.13)  17 APR 2026 12:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.13)  18 APR 2026 15:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1986,47 +1986,152 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.117 ...ine {6.2}Sprint Backlog}{51}{section.6.2}
+l.117 ...ine {6.2}Sprint Backlog}{54}{section.6.2}
                                                   % [3]
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.157 ...ne {7.4}R\'{e}alisation}{68}{section.7.4}
+l.157 ...ne {7.4}R\'{e}alisation}{73}{section.7.4}
                                                   % [4]
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.197 ...mberline {10.3}Analyse}{94}{section.10.3}
-                                                  % [5]
-Overfull \hbox (1.19994pt too wide) detected at line 213
+Overfull \hbox (1.19994pt too wide) detected at line 191
  []\T1/futs/m/n/12 100
  []
 
 
-Overfull \hbox (1.19994pt too wide) detected at line 214
- []\T1/futs/m/n/12 100
+Overfull \hbox (1.19994pt too wide) detected at line 192
+ []\T1/futs/m/n/12 101
  []
 
 
-Overfull \hbox (1.19994pt too wide) detected at line 215
- []\T1/futs/m/n/12 100
- []
-
-
-Overfull \hbox (1.19994pt too wide) detected at line 216
- []\T1/futs/m/n/12 102
- []
-
-
-Overfull \hbox (1.19994pt too wide) detected at line 217
+Overfull \hbox (1.19994pt too wide) detected at line 193
  []\T1/futs/m/n/12 103
  []
 
 
-Overfull \hbox (1.19994pt too wide) detected at line 218
+Overfull \hbox (1.19994pt too wide) detected at line 195
  []\T1/futs/m/n/12 104
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 196
+ []\T1/futs/m/n/12 104
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.197 ...berline {10.3}Analyse}{105}{section.10.3}
+                                                  % [5]
+Overfull \hbox (1.19994pt too wide) detected at line 197
+ []\T1/futs/m/n/12 105
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 198
+ []\T1/futs/m/n/12 105
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 199
+ []\T1/futs/m/n/12 106
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 200
+ []\T1/futs/m/n/12 107
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 201
+ []\T1/futs/m/n/12 107
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 202
+ []\T1/futs/m/n/12 107
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 203
+ []\T1/futs/m/n/12 107
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 204
+ []\T1/futs/m/n/12 107
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 205
+ []\T1/futs/m/n/12 108
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 206
+ []\T1/futs/m/n/12 109
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 207
+ []\T1/futs/m/n/12 109
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 208
+ []\T1/futs/m/n/12 109
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 209
+ []\T1/futs/m/n/12 110
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 210
+ []\T1/futs/m/n/12 110
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 211
+ []\T1/futs/m/n/12 110
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 212
+ []\T1/futs/m/n/12 110
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 213
+ []\T1/futs/m/n/12 111
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 214
+ []\T1/futs/m/n/12 111
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 215
+ []\T1/futs/m/n/12 112
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 216
+ []\T1/futs/m/n/12 117
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 217
+ []\T1/futs/m/n/12 118
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 218
+ []\T1/futs/m/n/12 119
  []
 
 )
@@ -2044,33 +2149,83 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.39 ...{o}le d'acc\`{e}s}}{61}{figure.caption.40}
+l.39 ...{o}le d'acc\`{e}s}}{65}{figure.caption.40}
                                                   % [1
 
 
 ]
-Overfull \hbox (1.19994pt too wide) detected at line 77
+Overfull \hbox (1.19994pt too wide) detected at line 66
  []\T1/futs/m/n/12 100
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 67
+ []\T1/futs/m/n/12 101
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 68
+ []\T1/futs/m/n/12 102
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 69
+ []\T1/futs/m/n/12 102
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 70
+ []\T1/futs/m/n/12 103
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 71
+ []\T1/futs/m/n/12 103
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 73
+ []\T1/futs/m/n/12 106
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 74
+ []\T1/futs/m/n/12 106
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 75
+ []\T1/futs/m/n/12 108
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 76
+ []\T1/futs/m/n/12 109
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 77
+ []\T1/futs/m/n/12 112
  []
 
 
 Overfull \hbox (1.19994pt too wide) detected at line 78
- []\T1/futs/m/n/12 100
+ []\T1/futs/m/n/12 113
  []
 
 
 Overfull \hbox (1.19994pt too wide) detected at line 79
- []\T1/futs/m/n/12 101
+ []\T1/futs/m/n/12 114
  []
 
 
 Overfull \hbox (1.19994pt too wide) detected at line 80
- []\T1/futs/m/n/12 101
+ []\T1/futs/m/n/12 114
  []
 
 
 Overfull \hbox (1.19994pt too wide) detected at line 81
- []\T1/futs/m/n/12 101
+ []\T1/futs/m/n/12 115
  []
 
 
@@ -2080,7 +2235,7 @@ Overfull \hbox (2.06392pt too wide) detected at line 82
 
 
 Overfull \hbox (1.19994pt too wide) detected at line 82
- []\T1/futs/m/n/12 101
+ []\T1/futs/m/n/12 116
  []
 
 
@@ -2088,7 +2243,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.83 ...\'{e} sur le RAG}}{102}{figure.caption.89}
+l.83 ...\'{e} sur le RAG}}{117}{figure.caption.89}
                                                   % [2]
 Overfull \hbox (2.06392pt too wide) detected at line 83
 \T1/futs/m/n/12 10.11 
@@ -2096,7 +2251,7 @@ Overfull \hbox (2.06392pt too wide) detected at line 83
 
 
 Overfull \hbox (1.19994pt too wide) detected at line 83
- []\T1/futs/m/n/12 102
+ []\T1/futs/m/n/12 117
  []
 
 )
@@ -2110,8 +2265,13 @@ een already used, duplicate ignored
                    \relax 
 l.201 \clearpage
                  [3] (main.lot
+Overfull \hbox (1.19994pt too wide) detected at line 30
+ []\T1/futs/m/n/12 104
+ []
+
+
 Overfull \hbox (1.19994pt too wide) detected at line 31
- []\T1/futs/m/n/12 102
+ []\T1/futs/m/n/12 118
  []
 
 )
@@ -2169,7 +2329,7 @@ l.24 \clearpage
 
 ]
 Chapitre 1.
-<img/trust_link_logo.jpg, id=1459, 200.75pt x 200.75pt>
+<img/trust_link_logo.jpg, id=1463, 200.75pt x 200.75pt>
 File: img/trust_link_logo.jpg Graphic file (type jpg)
 <use img/trust_link_logo.jpg>
 Package pdftex.def Info: img/trust_link_logo.jpg  used on input line 19.
@@ -2177,7 +2337,7 @@ Package pdftex.def Info: img/trust_link_logo.jpg  used on input line 19.
 [2
 
 ]
-<img/trustgym-logo.png, id=1468, 414.54875pt x 191.71625pt>
+<img/trustgym-logo.png, id=1472, 414.54875pt x 191.71625pt>
 File: img/trustgym-logo.png Graphic file (type png)
 <use img/trustgym-logo.png>
 Package pdftex.def Info: img/trustgym-logo.png  used on input line 39.
@@ -2188,12 +2348,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
  [5]
-<img/glofox logo.png, id=1496, 129.48375pt x 48.18pt>
+<img/glofox logo.png, id=1500, 129.48375pt x 48.18pt>
 File: img/glofox logo.png Graphic file (type png)
 <use img/glofox logo.png>
 Package pdftex.def Info: img/glofox logo.png  used on input line 109.
 (pdftex.def)             Requested size: 113.81102pt x 42.34998pt.
-<img/gymmaster logo.png, id=1499, 329.23pt x 154.5775pt>
+<img/gymmaster logo.png, id=1503, 329.23pt x 154.5775pt>
 File: img/gymmaster logo.png Graphic file (type png)
 <use img/gymmaster logo.png>
 Package pdftex.def Info: img/gymmaster logo.png  used on input line 128.
@@ -2201,7 +2361,7 @@ Package pdftex.def Info: img/gymmaster logo.png  used on input line 128.
  [6 <./img/glofox logo.png> <./img/gymmaster logo.png (PNG copy)>] [7])
 (chapters/1 Approche.tex [8]
 Chapitre 2.
-<img/agile logo.png, id=1538, 303.1325pt x 167.62625pt>
+<img/agile logo.png, id=1542, 303.1325pt x 167.62625pt>
 File: img/agile logo.png Graphic file (type png)
 <use img/agile logo.png>
 Package pdftex.def Info: img/agile logo.png  used on input line 30.
@@ -2209,18 +2369,18 @@ Package pdftex.def Info: img/agile logo.png  used on input line 30.
 [9
 
 ] [10 <./img/agile logo.png>]
-<img/scrum logo.png, id=1556, 1164.35pt x 903.375pt>
+<img/scrum logo.png, id=1560, 1164.35pt x 903.375pt>
 File: img/scrum logo.png Graphic file (type png)
 <use img/scrum logo.png>
 Package pdftex.def Info: img/scrum logo.png  used on input line 59.
 (pdftex.def)             Requested size: 386.96027pt x 300.22368pt.
-<img/Technologie utilisee.png, id=1557, 810.02625pt x 357.13425pt>
+<img/Technologie utilisee.png, id=1561, 810.02625pt x 357.13425pt>
 File: img/Technologie utilisee.png Graphic file (type png)
 <use img/Technologie utilisee.png>
 Package pdftex.def Info: img/Technologie utilisee.png  used on input line 74.
 (pdftex.def)             Requested size: 386.96027pt x 170.61052pt.
  [11 <./img/scrum logo.png>] [12 <./img/Technologie utilisee.png>] [13]
-<architectures images//ARCHITECTURE LOGIQUE.png, id=1635, 604.50844pt x 785.183
+<architectures images//ARCHITECTURE LOGIQUE.png, id=1639, 604.50844pt x 785.183
 44pt>
 File: architectures images//ARCHITECTURE LOGIQUE.png Graphic file (type png)
 <use architectures images//ARCHITECTURE LOGIQUE.png>
@@ -2235,7 +2395,7 @@ PgListenerService \T1/futs/m/n/12 (-20) écoute le ca-nal Post-greSQL \T1/cmtt/m
  []
 
 [15 <./architectures images//ARCHITECTURE LOGIQUE.png>]
-<architectures images//ARCHITECTURE PHYSIQUE.png, id=1652, 554.07pt x 679.03688
+<architectures images//ARCHITECTURE PHYSIQUE.png, id=1656, 554.07pt x 679.03688
 pt>
 File: architectures images//ARCHITECTURE PHYSIQUE.png Graphic file (type png)
 <use architectures images//ARCHITECTURE PHYSIQUE.png>
@@ -2257,7 +2417,7 @@ gu-ra-tion fis-cale (\T1/cmtt/m/n/12 taxIdentificationNumber\T1/futs/m/n/12 (-2
  []
 
 [17] [18] [19]
-<architectures images//ARCHITECTURE CICD.png, id=1702, 1541.76pt x 1027.84pt>
+<architectures images//ARCHITECTURE CICD.png, id=1706, 1541.76pt x 1027.84pt>
 File: architectures images//ARCHITECTURE CICD.png Graphic file (type png)
 <use architectures images//ARCHITECTURE CICD.png>
 Package pdftex.def Info: architectures images//ARCHITECTURE CICD.png  used on i
@@ -2302,7 +2462,7 @@ Overfull \hbox (3.88988pt too wide) in paragraph at lines 253--254
 s/m/n/12 (-20) /\T1/cmtt/m/n/12 EXIT\T1/futs/m/n/12 (-20) )
  []
 
-<img/class diagram.png, id=1785, 3262.1875pt x 3355.53625pt>
+<img/class diagram.png, id=1789, 3262.1875pt x 3355.53625pt>
 File: img/class diagram.png Graphic file (type png)
 <use img/class diagram.png>
 Package pdftex.def Info: img/class diagram.png  used on input line 267.
@@ -2562,7 +2722,47 @@ fie via \T1/cmtt/m/n/12 POST /api/auth/member/verify-email\T1/futs/m/n/12 (-20)
  . 
  []
 
-[36] [37] [38] [39] [40]) (chapters/4 Sprint 2.tex [41]
+[36] [37] [38]
+<img/capture/Page de connexion web.png, id=1898, 593.96906pt x 469.755pt>
+File: img/capture/Page de connexion web.png Graphic file (type png)
+<use img/capture/Page de connexion web.png>
+Package pdftex.def Info: img/capture/Page de connexion web.png  used on input l
+ine 274.
+(pdftex.def)             Requested size: 455.26398pt x 360.05669pt.
+<img/capture/Gestion des utilisateurs superadmin.png, id=1899, 1147.28625pt x 6
+28.14674pt>
+File: img/capture/Gestion des utilisateurs superadmin.png Graphic file (type pn
+g)
+<use img/capture/Gestion des utilisateurs superadmin.png>
+Package pdftex.def Info: img/capture/Gestion des utilisateurs superadmin.png  u
+sed on input line 285.
+(pdftex.def)             Requested size: 455.23007pt x 249.24146pt.
+ [39 <./img/capture/Page de connexion web.png>]
+<img/capture/flux-inscription.jpeg, id=1908, 1204.5pt x 575.90157pt>
+File: img/capture/flux-inscription.jpeg Graphic file (type jpg)
+<use img/capture/flux-inscription.jpeg>
+Package pdftex.def Info: img/capture/flux-inscription.jpeg  used on input line 
+305.
+(pdftex.def)             Requested size: 455.25195pt x 217.66734pt.
+ [40 <./img/capture/Gestion des utilisateurs superadmin.png>]
+<img/capture/ecran-connexion-mobile.jpeg, id=1920, 556.32843pt x 709.14937pt>
+File: img/capture/ecran-connexion-mobile.jpeg Graphic file (type jpg)
+<use img/capture/ecran-connexion-mobile.jpeg>
+Package pdftex.def Info: img/capture/ecran-connexion-mobile.jpeg  used on input
+ line 316.
+(pdftex.def)             Requested size: 413.5102pt x 527.09961pt.
+ [41 <./img/capture/flux-inscription.jpeg>]
+<img/capture/Journal des connexions (Login Logs).png, id=1925, 1142.46825pt x 6
+23.32875pt>
+File: img/capture/Journal des connexions (Login Logs).png Graphic file (type pn
+g)
+<use img/capture/Journal des connexions (Login Logs).png>
+Package pdftex.def Info: img/capture/Journal des connexions (Login Logs).png  u
+sed on input line 327.
+(pdftex.def)             Requested size: 455.25337pt x 248.38547pt.
+ [42 <./img/capture/ecran-connexion-mobile.jpeg>])
+(chapters/4 Sprint 2.tex [43 <./img/capture/Journal des connexions (Login Logs)
+.png>]
 Chapitre 5.
 
 Overfull \hbox (5.32083pt too wide) in alignment at lines 13--17
@@ -2735,965 +2935,4 @@ Overfull \hbox (0.65494pt too wide) in paragraph at lines 43--43
  []
 
 
-Overfull \hbox (0.65494pt too wide) in paragraph at lines 46--46
-[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
- []
-
-
-Underfull \hbox (badness 1314) in paragraph at lines 46--46
-[]|\T1/futs/m/n/12 (+20) En tant qu'ad-min, je
- []
-
-
-Overfull \hbox (0.65494pt too wide) in paragraph at lines 49--49
-[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
- []
-
-
-Underfull \hbox (badness 1314) in paragraph at lines 49--49
-[]|\T1/futs/m/n/12 (+20) En tant qu'ad-min, je
- []
-
-
-Underfull \hbox (badness 1424) in paragraph at lines 49--49
-\T1/futs/m/n/12 (+20) veux gé-rer les co-ti-sa-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
-[]|\T1/cmtt/m/n/12 AnnualFee \T1/futs/m/n/12 (+20) et
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
-\T1/cmtt/m/n/12 MemberAnnualFee \T1/futs/m/n/12 (+20) pour
- []
-
-
-Overfull \hbox (5.32083pt too wide) in alignment at lines 23--54
- [] [] [] [] 
- []
-
-ignored error: Infinite glue shrinkage found in box being split [42
-
-] [43]
-Overfull \hbox (36.48167pt too wide) in paragraph at lines 124--125
-[]\T1/futs/m/n/12 (-20) L'administrateur ac-cède à la liste des membres via \T1
-/cmtt/m/n/12 GET /api/member/partner/paginate\T1/futs/m/n/12 (-20) . 
- []
-
-
-Overfull \hbox (60.49713pt too wide) in paragraph at lines 126--127
-[]\T1/futs/m/n/12 (-20) Il sé-lec-tionne un membre pour consul-ter sa fiche dé-
-taillée via \T1/cmtt/m/n/12 GET /api/member/profile/:id\T1/futs/m/n/12 (-20) . 
-
- []
-
-[44] [45]
-Overfull \hbox (37.81898pt too wide) in paragraph at lines 194--195
-[]\T1/futs/m/n/12 (-20) Le contrô-leur \T1/cmtt/m/n/12 MemberController \T1/fut
-s/m/n/12 (-20) ex-pose les end-points sui-vants, tous pro-té-gés par \T1/cmtt/m
-/n/12 JwtAuthGuard
- []
-
-
-Overfull \hbox (14.68747pt too wide) in paragraph at lines 206--207
-[]\T1/futs/m/n/12 (-20) Le \T1/cmtt/m/n/12 GymSubscriptionModule \T1/futs/m/n/1
-2 (-20) dé-fi-nit les for-mules d'abon-ne-ment avec deux types : \T1/cmtt/m/n/1
-2 PER_MONTH
- []
-
-[46] [47] [48] [49]) (chapters/5 Sprint 3.tex [50]
-Chapitre 6.
-
-Overfull \hbox (5.32083pt too wide) in alignment at lines 13--17
- [] [] [] [] 
- []
-
-
-Overfull \hbox (5.32083pt too wide) in alignment at lines 17--21
- [] [] [] [] 
- []
-
-
-Overfull \hbox (5.32083pt too wide) in alignment at lines 21--23
- [] [] [] [] 
- []
-
-
-Overfull \hbox (0.65494pt too wide) in paragraph at lines 25--25
-[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
- []
-
-
-Underfull \hbox (badness 3118) in paragraph at lines 25--26
-\T1/futs/m/n/12 (+20) portes avec IP, port, type
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
-\T1/futs/m/n/12 (+20) de [][][][]\T1/futs/b/n/12 (+20) SDK[][][] \T1/futs/m/n/1
-2 (+20) (PULL, PUSH-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
-\T1/futs/m/n/12 (+20) ATTENDANCE, PUSH-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
-\T1/futs/m/n/12 (+20) SECURITY, HIK-VI-SION,
- []
-
-
-Underfull \hbox (badness 2088) in paragraph at lines 25--26
-\T1/futs/m/n/12 (+20) STAN-DA-LONE) et nu-méro
- []
-
-
-Overfull \hbox (0.65494pt too wide) in paragraph at lines 27--27
-[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
- []
-
-
-Underfull \hbox (badness 6592) in paragraph at lines 27--28
-[]|\T1/futs/m/n/12 (+20) Configurer les plages ho-
- []
-
-
-Overfull \hbox (0.65494pt too wide) in paragraph at lines 29--29
-[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
- []
-
-
-Overfull \hbox (0.65494pt too wide) in paragraph at lines 32--32
-[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
- []
-
-
-Overfull \hbox (0.65494pt too wide) in paragraph at lines 34--34
-[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
- []
-
-
-Underfull \hbox (badness 2990) in paragraph at lines 34--34
-[]|\T1/futs/m/n/12 (+20) En tant que cais-sier,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 34--34
-\T1/futs/m/n/12 (+20) je veux en-re-gis-trer
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 34--34
-\T1/futs/m/n/12 (+20) ma-nuel-le-ment une
- []
-
-
-Underfull \hbox (badness 4967) in paragraph at lines 34--35
-[]|\T1/futs/m/n/12 (+20) Permettre l'en-re-gis-tre-ment
- []
-
-
-Overfull \hbox (0.65494pt too wide) in paragraph at lines 36--36
-[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
- []
-
-
-Underfull \hbox (badness 1237) in paragraph at lines 36--37
-[]|\T1/futs/m/n/12 (+20) Ajouter des filtres avan-cés
- []
-
-
-Underfull \hbox (badness 6380) in paragraph at lines 36--37
-\T1/futs/m/n/12 (+20) par date, membre, porte,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 41--42
-[]|\T1/futs/m/n/12 (+20) Développer le ser-vice
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 41--42
-\T1/futs/m/n/12 (+20) NestJS (port 8080) pour
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 43--43
-[]|\T1/futs/m/n/12 (+20) Configurer ngrok et
- []
-
-
-Underfull \hbox (badness 1960) in paragraph at lines 43--44
-[]|\T1/futs/m/n/12 (+20) Mettre en place le tun-nel
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--46
-[]|\T1/futs/m/n/12 (+20) Développer
- []
-
-
-Underfull \hbox (badness 2435) in paragraph at lines 45--46
-\T1/cmtt/m/n/12 start-trustgym.bat \T1/futs/m/n/12 (+20) pour
- []
-
-
-Overfull \hbox (0.65494pt too wide) in paragraph at lines 48--48
-[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 48--49
-[]|\T1/futs/m/n/12 (+20) Calculer l'oc-cu-pa-tion en
- []
-
-
-Underfull \hbox (badness 5403) in paragraph at lines 48--49
-\T1/futs/m/n/12 (+20) le der-nier évé-ne-ment est
- []
-
-
-Underfull \hbox (badness 7468) in paragraph at lines 48--49
-\T1/futs/m/n/12 (+20) EN-TRY dans une fe-nêtre
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 48--49
-\T1/futs/m/n/12 (+20) confi-gu-rable (dé-faut : 1
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 50--51
-[]|\T1/futs/m/n/12 (+20) Mettre en place So-
- []
-
-
-Underfull \hbox (badness 3849) in paragraph at lines 50--51
-\T1/futs/m/n/12 (+20) cket.IO sur le na-mes-pace
- []
-
-
-Underfull \hbox (badness 2486) in paragraph at lines 50--51
-\T1/cmtt/m/n/12 /attendance \T1/futs/m/n/12 (+20) avec l'évé-ne-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 52--52
-[]|\T1/futs/m/n/12 (+20) Implémenter
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 52--52
-\T1/futs/m/n/12 (+20) Post-greSQL LIS-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 52--53
-[]|\T1/futs/m/n/12 (+20) Configurer
- []
-
-
-Overfull \hbox (0.65494pt too wide) in paragraph at lines 55--55
-[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
- []
-
-
-Underfull \hbox (badness 1253) in paragraph at lines 55--55
-\T1/futs/m/n/12 (+20) teur, je veux en-voyer
- []
-
-
-Underfull \hbox (badness 4193) in paragraph at lines 55--55
-\T1/futs/m/n/12 (+20) des com-mandes aux
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
-\T1/futs/m/n/12 (+20) mandes (\T1/cmtt/m/n/12 DeviceCommand\T1/futs/m/n/12 (+20
-) )
- []
-
-
-Underfull \hbox (badness 1303) in paragraph at lines 55--56
-\T1/futs/m/n/12 (+20) pour pi-lo-ter les dis-po-si-tifs
- []
-
-
-Overfull \hbox (0.65494pt too wide) in paragraph at lines 57--57
-[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 57--57
-[]|\T1/futs/m/n/12 (+20) En tant qu'ad-mi-nis-
- []
-
-
-Overfull \hbox (0.65494pt too wide) in paragraph at lines 59--59
-[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
- []
-
-
-Underfull \hbox (badness 2653) in paragraph at lines 59--60
-\T1/futs/m/n/12 (+20) mises à jour des bundles
- []
-
-
-Overfull \hbox (5.32083pt too wide) in alignment at lines 23--64
- [] [] [] [] 
- []
-
-ignored error: Infinite glue shrinkage found in box being split [51
-
-]
-ignored error: Infinite glue shrinkage found in box being split [52] [53]
-[54]
-Overfull \hbox (49.25589pt too wide) in paragraph at lines 142--143
-[]\T1/futs/m/n/12 (-20) Chaque nou-vel évé-ne-ment d'en-trée ou de sor-tie dé-c
-lenche l'évé-ne-ment \T1/cmtt/m/n/12 occupancy:updated\T1/futs/m/n/12 (-20) . 
- []
-
-[55]
-Overfull \hbox (52.33916pt too wide) in paragraph at lines 192--193
-[]\T1/futs/m/n/12 (-20) Le \T1/cmtt/m/n/12 WebSocketModule \T1/futs/m/n/12 (-20
-) im-plé-mente la com-mu-ni-ca-tion temps réel via So-cket.IO [[][]32[][]]. L'\
-T1/cmtt/m/n/12 AccessGateway
- []
-
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 197.
-[56]
-Overfull \hbox (2.25511pt too wide) in paragraph at lines 213--214
-[]\T1/futs/b/n/12 (-20) Vérification de la porte \T1/futs/m/n/12 (-20) : contrô
-le via \T1/cmtt/m/n/12 GymSubscriptionDoor \T1/futs/m/n/12 (-20) que l'abon-ne-
-ment couvre
- []
-
-
-Overfull \hbox (34.80534pt too wide) in paragraph at lines 215--216
-[]\T1/futs/b/n/12 (-20) Décrémentation \T1/futs/m/n/12 (-20) : si l'abon-ne-men
-t est de type \T1/cmtt/m/n/12 PER_SESSION\T1/futs/m/n/12 (-20) , le comp-teur \
-T1/cmtt/m/n/12 numberOfSessions
- []
-
-
-Overfull \hbox (78.40428pt too wide) in paragraph at lines 240--241
-\T1/futs/m/n/12 (-20) siques (syn-chro-ni-sa-tion de cartes, ou-ver-ture à dis-
-tance, re-dé-mar-rage). Les mo-dules \T1/cmtt/m/n/12 BundleDashboardModule\T1/f
-uts/m/n/12 (-20) ,
- []
-
-[57]
-<architectures images//ARCHITECTURE MACHINES.png, id=2043, 1541.76pt x 1027.84p
-t>
-File: architectures images//ARCHITECTURE MACHINES.png Graphic file (type png)
-<use architectures images//ARCHITECTURE MACHINES.png>
-Package pdftex.def Info: architectures images//ARCHITECTURE MACHINES.png  used 
-on input line 257.
-(pdftex.def)             Requested size: 455.24411pt x 303.49248pt.
- [58 <./architectures images//ARCHITECTURE MACHINES.png (PNG copy)>]
-[59] [60] [61]) (chapters/6 Sprint 4.tex [62]
-Chapitre 7.
-
-Underfull \hbox (badness 10000) in paragraph at lines 31--31
-[]\T1/futs/m/n/12 (+20) Gestion des
- []
-
-
-Underfull \hbox (badness 3579) in paragraph at lines 35--36
-\T1/futs/m/n/12 (+20) contrô-ler la dis-po-ni-bi-lité du
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 38--38
-[]\T1/futs/m/n/12 (+20) Gestion des
- []
-
-
-Overfull \hbox (6.77219pt too wide) in paragraph at lines 40--40
-[]|\T1/futs/m/n/12 (-20) Consultation| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 43--43
-[]\T1/futs/m/n/12 (+20) Planification
- []
-
-
-Underfull \hbox (badness 1552) in paragraph at lines 43--44
-[]|\T1/futs/m/n/12 (+20) Créer des séances avec date,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 43--44
-\T1/futs/m/n/12 (+20) type (OPEN, RE-SER-VA-TION,
- []
-
-
-Underfull \hbox (badness 3108) in paragraph at lines 45--46
-[]|\T1/futs/m/n/12 (+20) Définir les dis-po-ni-bi-li-tés ho-
- []
-
-
-Overfull \hbox (6.77219pt too wide) in paragraph at lines 47--47
-[]|\T1/futs/m/n/12 (-20) Consultation| 
- []
-
-
-Underfull \hbox (badness 1038) in paragraph at lines 47--48
-[]|\T1/futs/m/n/12 (+20) Visualiser le plan-ning heb-do-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 50--50
-[]\T1/futs/m/n/12 (+20) Invitations
- []
-
-
-Overfull \hbox (14.88132pt too wide) in paragraph at lines 50--50
-[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
- []
-
-
-Overfull \hbox (1.73485pt too wide) in paragraph at lines 52--52
-[]|\T1/futs/m/n/12 (-20) Notification| 
- []
-
-
-Overfull \hbox (14.88132pt too wide) in paragraph at lines 55--55
-[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
- []
-
-
-Overfull \hbox (14.88132pt too wide) in paragraph at lines 58--58
-[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 58--59
-[]|\T1/futs/m/n/12 (+20) Enregistrer les paie-ments
- []
-
-
-Overfull \hbox (6.77219pt too wide) in paragraph at lines 60--60
-[]|\T1/futs/m/n/12 (-20) Consultation| 
- []
-
-ignored error: Infinite glue shrinkage found in box being split [63
-
-] [64]
-[65] [66]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\acrshort' on input line 179.
-
-[67]
-Overfull \hbox (18.66371pt too wide) in paragraph at lines 224--225
-[]\T1/cmtt/m/n/12 RESERVATION \T1/futs/m/n/12 (-20) : Séance sur ré-ser-va-tion
- avec un nombre maxi-mum de places (\T1/cmtt/m/n/12 maxSlots\T1/futs/m/n/12 (-2
-0) ). 
- []
-
-[68]
-Overfull \hbox (2.14339pt too wide) in paragraph at lines 229--230
-[]\T1/futs/b/n/12 (-20) SessionPaymentModule \T1/futs/m/n/12 (-20) : Ges-tion d
-es paie-ments liés aux séances de coa-ching payantes.
- []
-
-[69] [70] [71]) (chapters/7 Sprint 5.tex [72]
-Chapitre 8.
-
-Underfull \hbox (badness 10000) in paragraph at lines 31--31
-[]\T1/futs/m/n/12 (+20) Gestion des
- []
-
-
-Overfull \hbox (6.77219pt too wide) in paragraph at lines 33--33
-[]|\T1/futs/m/n/12 (-20) Consultation| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 36--36
-[]\T1/futs/m/n/12 (+20) Gestion des
- []
-
-
-Overfull \hbox (6.77219pt too wide) in paragraph at lines 38--38
-[]|\T1/futs/m/n/12 (-20) Consultation| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 41--41
-[]\T1/futs/m/n/12 (+20) Achats four-
- []
-
-
-Overfull \hbox (14.88132pt too wide) in paragraph at lines 43--43
-[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
- []
-
-
-Underfull \hbox (badness 3679) in paragraph at lines 43--43
-\T1/futs/m/n/12 (+20) teur, je veux que le
- []
-
-
-Underfull \hbox (badness 3291) in paragraph at lines 43--44
-[]|\T1/futs/m/n/12 (+20) Le stock de la salle concer-
- []
-
-
-Overfull \hbox (6.77219pt too wide) in paragraph at lines 46--46
-[]|\T1/futs/m/n/12 (-20) Consultation| 
- []
-
-
-Overfull \hbox (14.88132pt too wide) in paragraph at lines 48--48
-[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
- []
-
-
-Underfull \hbox (badness 3354) in paragraph at lines 48--49
-[]|\T1/futs/m/n/12 (+20) Être no-ti-fié lorsque le stock
- []
-
-
-Underfull \hbox (badness 5681) in paragraph at lines 51--51
-[]\T1/futs/m/n/12 (+20) Transferts de
- []
-
-
-Overfull \vbox (8.29199pt too high) detected at line 51
- []
-
-
-Overfull \hbox (14.88132pt too wide) in paragraph at lines 51--51
-[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
-[]|\T1/futs/m/n/12 (+20) Effectuer des mou-ve-ments
- []
-
-
-Underfull \hbox (badness 4660) in paragraph at lines 51--52
-\T1/futs/m/n/12 (+20) de stock d'une salle source
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 54--54
-[]\T1/futs/m/n/12 (+20) Ventes aux
- []
-
-
-Overfull \hbox (14.88132pt too wide) in paragraph at lines 54--54
-[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
- []
-
-
-Underfull \hbox (badness 1308) in paragraph at lines 54--54
-\T1/futs/m/n/12 (+20) veux vendre des pro-
- []
-
-
-Overfull \hbox (14.88132pt too wide) in paragraph at lines 56--56
-[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
-[]\T1/futs/m/n/12 (+20) Feature flag
- []
-
-
-Overfull \vbox (8.49pt too high) detected at line 59
- []
-
-
-Underfull \hbox (badness 3138) in paragraph at lines 59--60
-\T1/futs/m/n/12 (+20) tique via le \T1/cmtt/m/n/12 ModuleGuard \T1/futs/m/n/12 
-(+20) et
- []
-
-ignored error: Infinite glue shrinkage found in box being split [73
-
-] [74]
-[75] [76] [77]
-Overfull \hbox (24.77351pt too wide) in paragraph at lines 222--223
-[]\T1/futs/b/n/12 (-20) ProductCategoryModule \T1/futs/m/n/12 (-20) : Mo-dule d
-e clas-si-fi-ca-tion des pro-duits. L'en-tité \T1/cmtt/m/n/12 ProductCategory
- []
-
-
-Overfull \hbox (0.78894pt too wide) in paragraph at lines 224--225
-[]\T1/futs/b/n/12 (-20) SupplierPurchaseModule \T1/futs/m/n/12 (-20) : En-re-gi
-s-tre-ment des achats au-près des four-nis-seurs. Chaque
- []
-
-
-Overfull \hbox (1.99086pt too wide) in paragraph at lines 225--226
-[]\T1/futs/b/n/12 (-20) ProductStockModule \T1/futs/m/n/12 (-20) : Ges-tion de 
-l'in-ven-taire par salle de sport. L'en-tité \T1/cmtt/m/n/12 ProductStock
- []
-
-[78]
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 261.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.25598pt on input line 261.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 261.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.25598pt on input line 261.
- [79]
-Overfull \hbox (41.04836pt too wide) in paragraph at lines 286--287
-[]\T1/futs/b/n/12 (-20) Catalogue pro-duits (\T1/cmtt/m/n/12 articles/\T1/futs/
-b/n/12 (-20) ) \T1/futs/m/n/12 (-20) : Page de lis-ting des pro-duits avec com-
-po-sant \T1/cmtt/m/n/12 CardComponent
- []
-
-[80] [81]) (chapters/8 Sprint 6.tex [82]
-Chapitre 9.
-
-Underfull \hbox (badness 10000) in paragraph at lines 31--31
-[]\T1/futs/m/n/12 (+20) Portefeuille
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 31--31
-[]|\T1/futs/m/n/12 (+20) En tant qu'ad-mi-nis-
- []
-
-
-Underfull \hbox (badness 1377) in paragraph at lines 31--31
-\T1/futs/m/n/12 (+20) tra-teur, je veux gé-rer
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 31--31
-\T1/futs/m/n/12 (+20) les por-te-feuilles des
- []
-
-
-Overfull \hbox (14.88132pt too wide) in paragraph at lines 33--33
-[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 36--36
-[]\T1/futs/m/n/12 (+20) Journal du
- []
-
-
-Overfull \hbox (6.77219pt too wide) in paragraph at lines 36--36
-[]|\T1/futs/m/n/12 (-20) Consultation| 
- []
-
-
-Underfull \hbox (badness 3333) in paragraph at lines 36--36
-\T1/futs/m/n/12 (+20) l'his-to-rique des tran-
- []
-
-
-Overfull \hbox (6.77219pt too wide) in paragraph at lines 38--38
-[]|\T1/futs/m/n/12 (-20) Consultation| 
- []
-
-
-Underfull \hbox (badness 3525) in paragraph at lines 38--39
-\T1/futs/m/n/12 (+20) to-rique des mou-ve-ments de
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 41--41
-[]\T1/futs/m/n/12 (+20) Gestion de
- []
-
-
-Overfull \hbox (14.88132pt too wide) in paragraph at lines 41--41
-[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
- []
-
-
-Overfull \hbox (6.77219pt too wide) in paragraph at lines 43--43
-[]|\T1/futs/m/n/12 (-20) Consultation| 
- []
-
-
-Underfull \hbox (badness 1708) in paragraph at lines 43--44
-[]|\T1/futs/m/n/12 (+20) Visualiser les écri-tures quo-ti-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 46--46
-[]\T1/futs/m/n/12 (+20) Facturation
- []
-
-
-Overfull \hbox (14.88132pt too wide) in paragraph at lines 50--50
-[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--53
-[]\T1/futs/m/n/12 (+20) Intégration
- []
-
-
-Overfull \vbox (7.872pt too high) detected at line 53
- []
-
-
-Overfull \hbox (14.88132pt too wide) in paragraph at lines 53--53
-[]|\T1/futs/m/n/12 (-20) Fonctionnalité| 
- []
-
-
-Underfull \hbox (badness 2573) in paragraph at lines 53--53
-\T1/futs/m/n/12 (+20) teur, je veux lier les
- []
-
-
-Underfull \hbox (badness 3780) in paragraph at lines 53--53
-\T1/futs/m/n/12 (+20) four-nis-seurs aux fac-
- []
-
-
-Overfull \vbox (8.29199pt too high) detected at line 56
- []
-
-
-Overfull \hbox (6.77219pt too wide) in paragraph at lines 56--56
-[]|\T1/futs/m/n/12 (-20) Consultation| 
- []
-
-
-Underfull \hbox (badness 1509) in paragraph at lines 56--57
-\T1/futs/m/n/12 (+20) ments liés aux abon-ne-ments
- []
-
-ignored error: Infinite glue shrinkage found in box being split [83
-
-] [84]
-[85]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\acrshort' on input line 150.
-
-[86] [87] [88]
-Overfull \hbox (2.55415pt too wide) in paragraph at lines 232--233
-[]\T1/futs/m/n/12 (-20) Informations client : \T1/cmtt/m/n/12 clientName\T1/fut
-s/m/n/12 (-20) , \T1/cmtt/m/n/12 fiscalNumber \T1/futs/m/n/12 (-20) (ma-tri-cul
-e fis-cal du client), \T1/cmtt/m/n/12 email\T1/futs/m/n/12 (-20) ,
- []
-
-[89] [90] [91]) (chapters/9 Sprint 7.tex [92]
-Chapitre 10.
-
-Underfull \hbox (badness 1377) in paragraph at lines 45--45
-\T1/futs/m/n/12 (+20) soient dé-cou-pés en chunks et sto-ckés dans la table
- []
-
-ignored error: Infinite glue shrinkage found in box being split [93
-
-] [94]
-[95] [96]
-Overfull \hbox (15.09177pt too wide) in paragraph at lines 180--181
-\T1/futs/m/n/12 (-20) son ac-cès est condi-tionné par le guard [][][][]\T1/futs
-/b/n/12 (-20) SaaS[][][] \T1/futs/m/n/12 (-20) vé-ri-fiant l'ac-ti-va-tion du m
-o-dule \T1/cmtt/m/n/12 SaasModuleEnum.Ai\T1/futs/m/n/12 (-20) . 
- []
-
-<architectures images//RAG ARCHITECTURE.png, id=2362, 1773.62625pt x 594.22pt>
-File: architectures images//RAG ARCHITECTURE.png Graphic file (type png)
-<use architectures images//RAG ARCHITECTURE.png>
-Package pdftex.def Info: architectures images//RAG ARCHITECTURE.png  used on in
-put line 186.
-(pdftex.def)             Requested size: 455.24411pt x 152.51694pt.
-[97 <./architectures images//RAG ARCHITECTURE.png>] [98]
-Overfull \hbox (6.50941pt too wide) in paragraph at lines 277--278
-[]\T1/futs/m/n/12 (-20) Le to-ken [][][][]\T1/futs/b/n/12 (-20) JWT[][][] \T1/f
-uts/m/n/12 (-20) est sto-cké dans AsyncS-to-rage via le ser-vice \T1/cmtt/m/n/1
-2 src/services/auth-storage.ts
- []
-
-
-Overfull \hbox (20.42873pt too wide) in paragraph at lines 283--284
-[]\T1/futs/m/n/12 (-20) La com-mu-ni-ca-tion en temps réel est as-su-rée par So
--cket.IO [[][]32[][]] sur le na-mes-pace \T1/cmtt/m/n/12 /attendance\T1/futs/m/
-n/12 (-20) .
- []
-
-
-Overfull \hbox (137.78227pt too wide) in paragraph at lines 290--291
-\T1/futs/m/n/12 (-20) React Query [[][]35[][]] sont mises en pause lorsque la c
-onnexion est per-due (dé-tec-tée via \T1/cmtt/m/n/12 @react-native-community/ne
-tinfo\T1/futs/m/n/12 (-20) )
- []
-
-[99] [100] [101]
-Underfull \hbox (badness 1776) in paragraph at lines 388--388
-[]|\T1/futs/m/n/12 (+20) Blocage des abon-nés
- []
-
-
-Underfull \hbox (badness 1087) in paragraph at lines 388--388
-[]|\T1/futs/m/n/12 (+20) Toutes les 10
- []
-
-
-Underfull \hbox (badness 7704) in paragraph at lines 388--389
-[]|\T1/futs/m/n/12 (+20) Définit \T1/cmtt/m/n/12 isBlocked = true \T1/futs/m/n/
-12 (+20) pour les
- []
-
-
-Underfull \hbox (badness 2781) in paragraph at lines 390--390
-[]|\T1/futs/m/n/12 (+20) Déblocage des abon-
- []
-
-
-Underfull \hbox (badness 1087) in paragraph at lines 390--390
-[]|\T1/futs/m/n/12 (+20) Toutes les 10
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 390--391
-[]|\T1/futs/m/n/12 (+20) Réactive (\T1/cmtt/m/n/12 isBlocked = false\T1/futs/m/
-n/12 (+20) ) les
- []
-
-
-Underfull \hbox (badness 1708) in paragraph at lines 390--391
-\T1/futs/m/n/12 (+20) membres pos-sé-dant un abon-ne-ment
- []
-
-
-Underfull \hbox (badness 1087) in paragraph at lines 392--392
-[]|\T1/futs/m/n/12 (+20) Toutes les 10
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 394--394
-[]|\T1/futs/m/n/12 (+20) Quotidien à
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 396--396
-[]|\T1/futs/m/n/12 (+20) Initialisation AC En-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 398--398
-[]|\T1/futs/m/n/12 (+20) Synchronisation hor-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 398--398
-[]|\T1/futs/m/n/12 (+20) Démarrage +
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 400--400
-[]|\T1/futs/m/n/12 (+20) 2x/jour (8h,
- []
-
-[102]) (sections/Conclusion Generale.tex [103]
-Overfull \hbox (0.40761pt too wide) in paragraph at lines 14--15
-[]\T1/futs/m/n/12 (-20) Une \T1/futs/b/n/12 (-20) ap-pli-ca-tion mo-bile \T1/fu
-ts/m/n/12 (-20) conçue avec React Na-tive et Expo SDK 54, of-frant aux membres
- []
-
-[104]) [105]
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.236 \cleardoublepage
-                       [1
-
-
-]
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.236 \cleardoublepage
-                       [2]
-<pdf/back_cover.pdf, id=2499, 598.235pt x 845.1575pt>
-File: pdf/back_cover.pdf Graphic file (type pdf)
-<use pdf/back_cover.pdf>
-Package pdftex.def Info: pdf/back_cover.pdf  used on input line 239.
-(pdftex.def)             Requested size: 598.23354pt x 845.15544pt.
-<pdf/back_cover.pdf, id=2501, page=1, 598.235pt x 845.1575pt>
-File: pdf/back_cover.pdf Graphic file (type pdf)
-<use pdf/back_cover.pdf, page 1>
-Package pdftex.def Info: pdf/back_cover.pdf , page1 used on input line 239.
-(pdftex.def)             Requested size: 598.23354pt x 845.15544pt.
-File: pdf/back_cover.pdf Graphic file (type pdf)
-<use pdf/back_cover.pdf, page 1>
-Package pdftex.def Info: pdf/back_cover.pdf , page1 used on input line 239.
-(pdftex.def)             Requested size: 598.34306pt x 845.31018pt.
-File: pdf/back_cover.pdf Graphic file (type pdf)
-<use pdf/back_cover.pdf, page 1>
-Package pdftex.def Info: pdf/back_cover.pdf , page1 used on input line 239.
-(pdftex.def)             Requested size: 598.34306pt x 845.31018pt.
-File: pdf/back_cover.pdf Graphic file (type pdf)
-<use pdf/back_cover.pdf, page 1>
-Package pdftex.def Info: pdf/back_cover.pdf , page1 used on input line 239.
-(pdftex.def)             Requested size: 598.34306pt x 845.31018pt.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.0}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.239 ...ges=1, fitpaper=true]{pdf/back_cover.pdf}
-                                                  
-File: pdf/back_cover.pdf Graphic file (type pdf)
-<use pdf/back_cover.pdf, page 1>
-Package pdftex.def Info: pdf/back_cover.pdf , page1 used on input line 239.
-(pdftex.def)             Requested size: 598.34306pt x 845.31018pt.
- [0
-
-
-
- <./pdf/back_cover.pdf>]
-
-enddocument/afterlastpage (AED): lastpage setting LastPage.
-(main.aux)
- ***********
-LaTeX2e <2025-11-01>
-L3 programming layer <2025-12-24>
- ***********
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 01B47B169CD97A3E2378334C86E603A0;41776.
-Package logreq Info: Writing requests to 'main.run.xml'.
-\openout1 = `main.run.xml'.
-
- ) 
-Here is how much of TeX's memory you used:
- 51173 strings out of 467871
- 1025737 string characters out of 5416924
- 1939693 words of memory out of 5000000
- 77960 multiletter control sequences out of 15000+600000
- 788766 words of font info for 563 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 99i,17n,108p,2474b,2332s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\BEDHIAFI\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\e
-ctt1200.pk><C:/Users/BEDHIAFI/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-fourier/fourier-ms.pfb><C:/Users/BEDHIAFI/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/symbols/msam10.pfb><C:/Users/BEDHIAFI/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Users/BEDHIAFI/AppData/Local/
-Programs/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Users/BEDHIAFI/AppData/
-Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (124 pages, 5496775 bytes).
-PDF statistics:
- 2746 PDF objects out of 2984 (max. 8388607)
- 642 named destinations out of 1000 (max. 500000)
- 110915 words of extra memory for PDF output out of 128383 (max. 10000000)
-
+Overfull \hbox (0.65494pt too wide) i
