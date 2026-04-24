@@ -262,10 +262,120 @@ La figure \ref{fig:arch_machines} illustre l'architecture compl\`{e}te du Machin
 \subsubsection{Infrastructure}
 
 \begin{itemize}
-  \item \textbf{ngrok} \cite{ngrok} : cr\'{e}e un tunnel s\'{e}curis\'{e} exposant le service NestJS (port 8080) sur Internet, permettant aux dispositifs install\'{e}s en mode PUSH d'envoyer leurs \'{e}v\'{e}nements m\^{e}me derri\`{e}re un NAT.
-  \item \textbf{PM2} \cite{pm2} : orchestre les processus Python et NestJS, assurant le red\'{e}marrage automatique en cas de crash et la gestion des journaux.
-  \item \textbf{start-trustgym.bat} : script Windows de d\'{e}marrage automatis\'{e} qui lance s\'{e}quentiellement ngrok, le service Python et le service NestJS via PM2.
+  \item \textbf{ngrok} \cite{ngrok} : cr\'{e}e un tunnel s\'{e}curis\'{e} \acrshort{https} exposant le service NestJS (port 8080) sur Internet via un domaine r\'{e}serv\'{e} par salle (ex. \texttt{samurai.trustgym.net}), permettant aux dispositifs install\'{e}s en mode PUSH d'envoyer leurs \'{e}v\'{e}nements m\^{e}me derri\`{e}re un \acrshort{nat}.
+  \item \textbf{PM2} \cite{pm2} : gestionnaire de processus utilis\'{e} lors de la phase de d\'{e}veloppement pour orchestrer et superviser les services Python et NestJS avec red\'{e}marrage automatique.
+  \item \textbf{NSSM} \cite{nssm} (\textit{Non-Sucking Service Manager}) : solution retenue pour la production, permettant d'enregistrer les processus Python et NestJS comme de v\'{e}ritables \textbf{Services Windows} persistants, ind\'{e}pendants de toute session utilisateur et d\'{e}marrant automatiquement avec le syst\`{e}me d'exploitation.
 \end{itemize}
+
+%──────────────────────────────────────────────
+\subsubsection{Installateur Windows (Inno Setup)}
+%──────────────────────────────────────────────
+
+Pour simplifier le d\'{e}ploiement du Machine Handler sur les \acrshort{pc} des salles partenaires, un installateur Windows autonome a \'{e}t\'{e} cr\'{e}\'{e} \`{a} l'aide d'\textbf{Inno Setup 6} \cite{innosetup}. Le script \texttt{TrustGymSetup.iss} g\'{e}n\`{e}re un ex\'{e}cutable \texttt{TrustGymSetup-1.0.0.exe} qui empaquette l'int\'{e}gralit\'{e} du bundle -- runtimes inclus -- dans un seul fichier distribuable par cl\'{e} \acrshort{usb} ou t\'{e}l\'{e}chargement direct.
+
+\paragraph{Deux modes de configuration.}
+L'assistant propose deux modes d\'{e}terminant la mani\`{e}re dont les param\`{e}tres sont collect\'{e}s :
+
+\begin{itemize}
+  \item \textbf{Mode Token (recommand\'{e})} : le Super Admin g\'{e}n\`{e}re un jeton de configuration unique (format \texttt{TG-XXXX-XXXX}) depuis le tableau de bord cloud. L'installateur appelle alors l'endpoint \texttt{GET /api/bundle-setup/config?token=...} et r\'{e}cup\`{e}re automatiquement tous les param\`{e}tres : type de dispositif, token ngrok, domaine, identifiant de la salle, cl\'{e}s \acrshort{api} et informations de connexion \`{a} la base de donn\'{e}es. Le technicien n'a qu'\`{a} saisir le jeton et cliquer sur \og{} Suivant \fg{}.
+  \item \textbf{Mode Manuel} : le technicien saisit manuellement chaque param\`{e}tre \`{a} travers les \'{e}crans successifs de l'assistant : type de dispositif, token et domaine ngrok, identifiant de la salle (\acrshort{uuid}), cl\'{e} \acrshort{api} bridge et environnement de base de donn\'{e}es (production, staging ou custom).
+\end{itemize}
+
+\paragraph{Contenu du package.}
+L'installateur copie l'ensemble des composants dans \texttt{C:\textbackslash{}Program Files (x86)\textbackslash{}TrustGym\textbackslash{}} :
+
+\begin{itemize}
+  \item Le service NestJS compil\'{e} (\texttt{trustgym-zktco-api/dist/})
+  \item Le service Python (Hikvision, ZKTeco C3-200, ZKTeco SCR100 ou ZKTeco SC105 selon le profil)
+  \item Les runtimes embarqu\'{e}s : Python 3.13 (32 bits), Node.js 20.18 et NSSM 2.24
+  \item L'ex\'{e}cutable ngrok et les scripts PowerShell d'installation/d\'{e}sinstallation (\texttt{unified-install.ps1}, \texttt{unified-uninstall.ps1}, \texttt{unified-watchdog.ps1})
+\end{itemize}
+
+\paragraph{G\'{e}n\'{e}ration des fichiers de configuration.}
+Apr\`{e}s la copie des fichiers, l'installateur g\'{e}n\`{e}re dynamiquement deux fichiers de configuration via un script PowerShell temporaire \'{e}crit dans \texttt{\%TEMP\%} (contournement n\'{e}cessaire car Inno Setup ne peut pas \'{e}crire directement dans \texttt{Program Files}) :
+\begin{itemize}
+  \item \texttt{env} : contient le token ngrok, le domaine r\'{e}serv\'{e}, le type de \acrshort{sdk} et les chemins vers les runtimes embarqu\'{e}s.
+  \item \texttt{trustgym-zktco-api/.env} : contient les coordonn\'{e}es de la base de donn\'{e}es PostgreSQL, l'identifiant de la salle, les cl\'{e}s \acrshort{api} et la configuration \acrshort{smtp}.
+\end{itemize}
+
+Une fois la configuration g\'{e}n\'{e}r\'{e}e, l'installateur ex\'{e}cute automatiquement \texttt{unified-install.ps1 -Silent} qui prend en charge la cr\'{e}ation des Services Windows et le d\'{e}marrage des processus.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{capture/Assistant-Inno-Setup.png}
+  \caption{Assistant Inno Setup -- s\'{e}lection du mode de configuration}
+  \label{fig:sprint3-innosetup-mode}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.85\textwidth}{\centering\vspace{2cm}
+    \textit{Capture d'\'{e}cran : R\'{e}capitulatif de l'installation (type dispositif, domaine ngrok, services \`{a} cr\'{e}er)}
+  \vspace{2cm}}}
+  \caption{Assistant Inno Setup -- r\'{e}capitulatif avant installation}
+  \label{fig:sprint3-innosetup-summary}
+\end{figure}
+
+%──────────────────────────────────────────────
+\subsubsection{Services Windows Persistants (NSSM)}
+%──────────────────────────────────────────────
+
+Le script \texttt{unified-install.ps1} utilise \textbf{NSSM 2.24} pour enregistrer les processus du Machine Handler comme des Services Windows natifs. Contrairement \`{a} PM2 -- qui n\'{e}cessite une session utilisateur ouverte -- les services NSSM d\'{e}marrent d\`{e}s l'allumage du \acrshort{pc}, sans aucune interaction humaine, et se relancent automatiquement en cas de plantage.
+
+\paragraph{Services cr\'{e}\'{e}s.}
+Le tableau~\ref{tab:nssm_services} r\'{e}capitule les quatre services install\'{e}s sur chaque salle partenaire :
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|p{4.5cm}|p{2cm}|p{2.5cm}|p{4.5cm}|}
+\hline
+\textbf{Service} & \textbf{Gestionnaire} & \textbf{Port} & \textbf{Comportement} \\
+\hline
+\texttt{TrustGym-Python-API} & NSSM & 8000 / 8001 / 8002 & D\'{e}marrage automatique, redémarrage $\times$3 (d\'{e}lai 5 s) \\
+\hline
+\texttt{TrustGym-NestJS-API} & NSSM & 8080 & D\'{e}marrage diff\'{e}r\'{e} (\textit{DelayedAutoStart}), d\'{e}pend de Python API \\
+\hline
+\texttt{ngrok} & Natif ngrok & -- & Tunnel \acrshort{https} vers le domaine r\'{e}serv\'{e} de la salle \\
+\hline
+\texttt{TrustGym-Watchdog} & T\^{a}che planifi\'{e}e & -- & V\'{e}rification des endpoints \texttt{/health} toutes les 5 min, red\'{e}marrage automatique en cas d'\'{e}chec \\
+\hline
+\end{tabular}
+\caption{Services Windows install\'{e}s par NSSM sur chaque salle partenaire}
+\label{tab:nssm_services}
+\end{table}
+
+\paragraph{Configuration NSSM.}
+Pour chaque service, le script configure les propri\'{e}t\'{e}s suivantes via des appels successifs \`{a} \texttt{nssm.exe set} :
+
+\begin{itemize}
+  \item \textbf{R\'{e}pertoire de travail} (\texttt{AppDirectory}) : r\'{e}pertoire d'installation du service.
+  \item \textbf{Journalisation} (\texttt{AppStdout} / \texttt{AppStderr}) : fichiers de log s\'{e}par\'{e}s dans \texttt{C:\textbackslash{}ProgramData\textbackslash{}TrustGym\textbackslash{}logs\textbackslash{}}, avec rotation automatique \`{a} 10~Mo (\texttt{AppRotateBytes}).
+  \item \textbf{Variables d'environnement} (\texttt{AppEnvironmentExtra}) : injection de \texttt{NODE\_ENV=production}, \texttt{HOST=127.0.0.1} et \texttt{PORT=8080} pour le service NestJS.
+  \item \textbf{Politique de reprise} (\texttt{sc failure}) : red\'{e}marrage automatique trois fois cons\'{e}cutives avec un d\'{e}lai de 5 secondes entre chaque tentative, puis r\'{e}initialisation du compteur apr\`{e}s 24 heures.
+  \item \textbf{D\'{e}marrage diff\'{e}r\'{e}} : la cl\'{e} de registre \texttt{DelayedAutoStart} est activ\'{e}e pour \texttt{TrustGym-NestJS-API} afin d'\'{e}viter les conflits au d\'{e}marrage du syst\`{e}me (\textit{boot storm}).
+\end{itemize}
+
+\paragraph{Watchdog.}
+Une t\^{a}che planifi\'{e}e Windows (\textit{Scheduled Task}) nomm\'{e}e \texttt{TrustGym-Watchdog} est cr\'{e}\'{e}e et ex\'{e}cut\'{e}e toutes les cinq minutes. Elle interroge les endpoints \texttt{/health} de chaque service et red\'{e}marre ceux qui ne r\'{e}pondent pas. Ce m\'{e}canisme compl\`{e}te la politique de red\'{e}marrage NSSM en d\'{e}tectant les situations de gel (\textit{deadlock}) o\`{u} le processus est actif mais non fonctionnel.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.85\textwidth}{\centering\vspace{2cm}
+    \textit{Capture d'\'{e}cran : Gestionnaire de services Windows (services.msc) montrant les quatre services TrustGym en \'{e}tat \og{}En cours d'ex\'{e}cution\fg{}}
+  \vspace{2cm}}}
+  \caption{Services Windows NSSM install\'{e}s et actifs apr\`{e}s d\'{e}ploiement}
+  \label{fig:sprint3-nssm-services}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.85\textwidth}{\centering\vspace{2cm}
+    \textit{Capture d'\'{e}cran : Sortie du script unified-install.ps1 confirmant l'installation et le d\'{e}marrage des services}
+  \vspace{2cm}}}
+  \caption{Sortie console de l'installation NSSM -- confirmation du d\'{e}ploiement}
+  \label{fig:sprint3-nssm-install}
+\end{figure}
 
 \subsection{Diagramme de s\'{e}quence}
 

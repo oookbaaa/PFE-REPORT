@@ -503,6 +503,19 @@
       \verb https://ngrok.com
       \endverb
     \endentry
+    \entry{nssm}{misc}{}{}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labeltitlesource}{title}
+      \field{title}{NSSM -- the Non-Sucking Service Manager}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://nssm.cc
+      \endverb
+      \verb{url}
+      \verb https://nssm.cc
+      \endverb
+    \endentry
     \entry{openai}{misc}{}{}
       \list{publisher}{1}{%
         {OpenAI}%
@@ -661,6 +674,40 @@
       \endverb
       \verb{url}
       \verb https://reactnative.dev
+      \endverb
+    \endentry
+    \entry{innosetup}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=676b9eec882c5d1b47b449c50e31b455}{%
+           family={Russell},
+           familyi={R\bibinitperiod},
+           given={Jordan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e0895d71f52b361d1ea203e1f7f4e5b2}{%
+           family={Laan},
+           familyi={L\bibinitperiod},
+           given={Martijn},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{7a9e10b8e396b30da5ce5bb8638cb873}
+      \strng{fullhash}{7a9e10b8e396b30da5ce5bb8638cb873}
+      \strng{fullhashraw}{7a9e10b8e396b30da5ce5bb8638cb873}
+      \strng{bibnamehash}{7a9e10b8e396b30da5ce5bb8638cb873}
+      \strng{authorbibnamehash}{7a9e10b8e396b30da5ce5bb8638cb873}
+      \strng{authornamehash}{7a9e10b8e396b30da5ce5bb8638cb873}
+      \strng{authorfullhash}{7a9e10b8e396b30da5ce5bb8638cb873}
+      \strng{authorfullhashraw}{7a9e10b8e396b30da5ce5bb8638cb873}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Inno Setup -- Free Installer for Windows Programs}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://jrsoftware.org/isinfo.php
+      \endverb
+      \verb{url}
+      \verb https://jrsoftware.org/isinfo.php
       \endverb
     \endentry
     \entry{sandhu1996rbac}{article}{}{}
