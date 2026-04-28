@@ -4,15 +4,15 @@
 \chapter{Cadre G\'{e}n\'{e}ral}
 
 \section{Introduction}
-Ce chapitre pr\'{e}sente le cadre g\'{e}n\'{e}ral du projet. Nous y introduisons l'entreprise d'accueil TRUSTLINK, le projet TrustGym, les probl\'{e}matiques identifi\'{e}es, une revue de la litt\'{e}rature, ainsi que la solution propos\'{e}e et ses objectifs.
+Ce chapitre pose le cadre du projet : qui est TRUSTLINK, pourquoi TrustGym a \'{e}t\'{e} cr\'{e}\'{e}, quels probl\`{e}mes il r\'{e}sout, et comment il se situe face aux solutions existantes.
 
 \section{Pr\'{e}sentation de l'organisme d'accueil}
 
 \subsection{Pr\'{e}sentation de l'entreprise d'accueil}
-TRUSTLINK est une entreprise tunisienne sp\'{e}cialis\'{e}e dans les solutions num\'{e}riques pour les entreprises. Fond\'{e}e par \textbf{Bilel Taktak}, TRUSTLINK s'est positionn\'{e}e comme un acteur cl\'{e} de la transformation digitale en Tunisie, en offrant des services de d\'{e}veloppement logiciel sur mesure, de conception de plateformes \acrshort{saas}, et d'accompagnement \`{a} la digitalisation des processus m\'{e}tier.
+Fond\'{e}e par \textbf{Bilel Taktak}, TRUSTLINK est une start-up tunisienne qui construit des logiciels sur mesure pour les entreprises : plateformes \acrshort{saas}, applications web et mobile, int\'{e}grations mat\'{e}rielles. Elle intervient principalement dans le fitness, la sant\'{e} et le commerce.
 
 \vspace{10pt}
-L'entreprise se distingue par son expertise dans les technologies modernes du web et du mobile, avec un accent particulier sur les architectures modulaires, les solutions cloud, et l'int\'{e}gration de syst\`{e}mes mat\'{e}riels. TRUSTLINK intervient aupr\`{e}s de divers secteurs d'activit\'{e}, notamment le fitness, la sant\'{e}, et le commerce, en proposant des solutions cl\'{e}s en main adapt\'{e}es aux besoins sp\'{e}cifiques de chaque client.
+Ce qui la distingue, c'est la combinaison de l'expertise web/mobile moderne --- architectures modulaires, cloud, TypeScript --- et d'une connaissance fine des \'{e}quipements physiques (contr\^{o}le d'acc\`{e}s, vid\'{e}osurveillance). TrustGym est l'expression directe de cette double comp\'{e}tence.
 
 \begin{figure}[H]
   \centering
@@ -22,7 +22,7 @@ L'entreprise se distingue par son expertise dans les technologies modernes du we
 \end{figure}
 
 \subsection{Introduction au Projet}
-TrustGym est une plateforme \acrshort{saas} compl\`{e}te de gestion de salles de sport, con\c{c}ue pour r\'{e}pondre aux besoins croissants du secteur du fitness en Tunisie et dans la r\'{e}gion. Le projet est structur\'{e} en quatre sous-projets compl\'{e}mentaires :
+TrustGym est une plateforme \acrshort{saas} de gestion de salles de sport, con\c{c}ue pour le march\'{e} tunisien et les r\'{e}gions francophones. Elle se d\'{e}compose en quatre sous-projets :
 
 \begin{enumerate}
   \item \textbf{trustgym-api} : Le backend \acrshort{rest} \acrshort{api} d\'{e}velopp\'{e} avec NestJS, TypeORM et PostgreSQL 16 avec pgvector. Il constitue le c\oe{}ur m\'{e}tier de la plateforme avec plus de 50 modules fonctionnels.
@@ -32,7 +32,7 @@ TrustGym est une plateforme \acrshort{saas} compl\`{e}te de gestion de salles de
 \end{enumerate}
 
 \vspace{10pt}
-L'ensemble des sous-projets utilise \textbf{TypeScript} comme langage principal et \textbf{Yarn} comme gestionnaire de paquets, garantissant une coh\'{e}rence technique \`{a} travers toute la plateforme.
+Les quatre sous-projets partagent \textbf{TypeScript} comme langage principal et \textbf{Yarn} comme gestionnaire de paquets, ce qui facilite le passage de l'un \`{a} l'autre et maintient une base de code homog\`{e}ne.
 
 \begin{figure}[H]
   \centering
@@ -42,7 +42,7 @@ L'ensemble des sous-projets utilise \textbf{TypeScript} comme langage principal 
 \end{figure}
 
 \subsection{Description du projet}
-TrustGym couvre l'ensemble des besoins op\'{e}rationnels d'une salle de sport moderne. Les fonctionnalit\'{e}s cl\'{e}s de la plateforme sont :
+Voici ce que TrustGym permet de g\'{e}rer au quotidien :
 
 \begin{itemize}
   \item \textbf{Gestion des membres} : inscription, profils, historique et suivi des adh\'{e}rents.
@@ -58,7 +58,7 @@ TrustGym couvre l'ensemble des besoins op\'{e}rationnels d'une salle de sport mo
 \end{itemize}
 
 \subsection{Structure du Rapport}
-Le pr\'{e}sent rapport est organis\'{e} en dix chapitres suivis d'une conclusion g\'{e}n\'{e}rale :
+Le rapport suit la progression naturelle du projet, sprint par sprint :
 
 \begin{outline}
   \1 \textbf{Chapitre 1 -- Cadre G\'{e}n\'{e}ral} : pr\'{e}sentation de l'entreprise d'accueil, introduction au projet, probl\'{e}matiques et objectifs.
@@ -77,7 +77,7 @@ Le pr\'{e}sent rapport est organis\'{e} en dix chapitres suivis d'une conclusion
 \section{Probl\'{e}matiques}
 
 \subsection{Point de vue TRUSTLINK}
-Du point de vue de TRUSTLINK, plusieurs d\'{e}fis majeurs ont motiv\'{e} le d\'{e}veloppement de TrustGym :
+TRUSTLINK a identifi\'{e} des probl\`{e}mes concrets que les outils disponibles ne r\'{e}solvaient pas :
 
 \begin{itemize}
   \item \textbf{Absence de solution locale adapt\'{e}e} : le march\'{e} tunisien du fitness manque de solutions num\'{e}riques compl\`{e}tes et abordables. Les plateformes internationales existantes sont co\^{u}teuses et mal adapt\'{e}es au contexte local.
@@ -88,7 +88,7 @@ Du point de vue de TRUSTLINK, plusieurs d\'{e}fis majeurs ont motiv\'{e} le d\'{
 \end{itemize}
 
 \subsection{Point de vue technique}
-D'un point de vue technique, le projet soul\`{e}ve plusieurs probl\'{e}matiques complexes :
+Sur le plan technique, la construction de TrustGym a pos\'{e} des questions difficiles :
 
 \begin{itemize}
   \item \textbf{Architecture modulaire \`{a} grande \'{e}chelle} : structurer un backend de plus de 50 modules NestJS tout en maintenant la maintenabilit\'{e}, la testabilit\'{e} et les performances.
@@ -100,7 +100,7 @@ D'un point de vue technique, le projet soul\`{e}ve plusieurs probl\'{e}matiques 
 \end{itemize}
 
 \section{Revue de la Litt\'{e}rature}
-Avant de concevoir TrustGym, une \'{e}tude comparative des solutions existantes a \'{e}t\'{e} r\'{e}alis\'{e}e afin d'identifier les forces et les lacunes du march\'{e} actuel.
+Avant de concevoir TrustGym, nous avons analys\'{e} les solutions existantes pour comprendre ce qui manquait sur le march\'{e}.
 
 \subsection{Glofox}
 
@@ -111,7 +111,7 @@ Avant de concevoir TrustGym, une \'{e}tude comparative des solutions existantes 
   \label{fig:glofox_logo}
 \end{figure}
 
-Glofox \cite{glofox} est une plateforme irlandaise de gestion de salles de sport et de studios de fitness fond\'{e}e en 2014, consid\'{e}r\'{e}e comme l'une des solutions les plus avanc\'{e}es du march\'{e} international. Malgr\'{e} ses fonctionnalit\'{e}s \'{e}tendues, elle pr\'{e}sente plusieurs limites dans le contexte tunisien :
+Glofox \cite{glofox} est une plateforme irlandaise fond\'{e}e en 2014, bien \'{e}tablie sur le march\'{e} international. Ses fonctionnalit\'{e}s sont larges, mais elle n'est pas taill\'{e}e pour le contexte tunisien :
 
 \begin{itemize}
   \item Tarification en dollars/euros inadapt\'{e}e au march\'{e} local tunisien.
@@ -130,7 +130,7 @@ Glofox \cite{glofox} est une plateforme irlandaise de gestion de salles de sport
   \label{fig:gymmaster_logo}
 \end{figure}
 
-GymMaster \cite{gymmaster} est un logiciel de gestion de salle de sport n\'{e}o-z\'{e}landais tr\`{e}s r\'{e}pandu dans la r\'{e}gion Asie-Pacifique et qui s'\'{e}tend progressivement vers les march\'{e}s internationaux. Ses limites sont :
+GymMaster \cite{gymmaster} est un logiciel n\'{e}o-z\'{e}landais solide en Asie-Pacifique qui s'\'{e}tend progressivement \`{a} l'international. Mais ses lacunes sont similaires :
 
 \begin{itemize}
   \item Co\^{u}t \'{e}lev\'{e} par rapport aux budgets des petites et moyennes salles de sport tunisiennes.
@@ -141,7 +141,7 @@ GymMaster \cite{gymmaster} est un logiciel de gestion de salle de sport n\'{e}o-
 \end{itemize}
 
 \subsection{Solutions locales traditionnelles}
-La majorit\'{e} des salles de sport en Tunisie utilisent encore des m\'{e}thodes de gestion manuelles :
+La r\'{e}alit\'{e} du terrain est plus simple : la majorit\'{e} des salles tunisiennes fonctionnent encore de cette fa\c{c}on :
 
 \begin{itemize}
   \item Feuilles Excel ou registres papier pour le suivi des membres et des paiements.
@@ -152,7 +152,7 @@ La majorit\'{e} des salles de sport en Tunisie utilisent encore des m\'{e}thodes
 \end{itemize}
 
 \subsection{Synth\`{e}se comparative}
-Le tableau~\ref{tab:comparatif} r\'{e}sume la comparaison entre les solutions existantes et TrustGym.
+Le tableau~\ref{tab:comparatif} compare les solutions existantes et TrustGym sur les crit\`{e}res cl\'{e}s.
 
 \begin{table}[H]
 \centering
@@ -188,7 +188,7 @@ Co\^{u}t abordable & -- & -- & \checkmark & \checkmark \\
 \section{Solution et Objectifs}
 
 \subsection{Solution propos\'{e}e}
-TrustGym se positionne comme une solution diff\'{e}renciante en combinant les avantages des plateformes internationales avec une adaptation compl\`{e}te au contexte tunisien. Les principaux \'{e}l\'{e}ments diff\'{e}renciateurs sont :
+L\`{a} o\`{u} les plateformes internationales \'{e}chouent --- prix inadapt\'{e}s, pas d'arabe, pas de ZKTeco --- TrustGym comble le vide. Ses points distinctifs :
 
 \begin{itemize}
   \item \textbf{Plateforme centralis\'{e}e} : une seule solution couvrant l'ensemble des op\'{e}rations d'une salle de sport, \'{e}liminant le besoin de multiples outils fragment\'{e}s.
@@ -200,7 +200,7 @@ TrustGym se positionne comme une solution diff\'{e}renciante en combinant les av
 \end{itemize}
 
 \subsection{Objectifs du projet}
-Les objectifs principaux du projet TrustGym sont les suivants :
+Le projet s'est fix\'{e} sept objectifs concrets :
 
 \begin{enumerate}
   \item D\'{e}velopper un backend robuste et modulaire avec NestJS, capable de g\'{e}rer plus de 50 modules m\'{e}tier.
@@ -213,6 +213,6 @@ Les objectifs principaux du projet TrustGym sont les suivants :
 \end{enumerate}
 
 \section{Conclusion}
-Ce chapitre a permis de poser le cadre g\'{e}n\'{e}ral du projet TrustGym. Nous avons pr\'{e}sent\'{e} l'entreprise d'accueil TRUSTLINK, d\'{e}crit le projet et ses fonctionnalit\'{e}s cl\'{e}s, identifi\'{e} les probl\'{e}matiques tant m\'{e}tier que techniques, et r\'{e}alis\'{e} une revue comparative des solutions existantes. La solution TrustGym se distingue par son approche int\'{e}gr\'{e}e, son adaptation au march\'{e} tunisien, et son int\'{e}gration mat\'{e}rielle unique. Le chapitre suivant d\'{e}taillera l'approche de d\'{e}veloppement adopt\'{e}e et les technologies utilis\'{e}es.
+Ce chapitre a \'{e}tabli le contexte du projet : l'entreprise, le probl\`{e}me, les concurrents, et ce que TrustGym apporte de diff\'{e}rent. La photo est claire --- le march\'{e} tunisien du fitness avait besoin d'une solution native, pas d'une adaptation. Le chapitre suivant d\'{e}crit comment nous avons organis\'{e} le travail et choisi les technologies pour construire cette solution.
 
 \end{document}

@@ -4,7 +4,7 @@
 \chapter{Approche de D\'{e}veloppement et Technologies Utilis\'{e}es}
 
 \section{Introduction}
-Ce chapitre pr\'{e}sente les fondements m\'{e}thodologiques et technologiques du projet TrustGym. Nous d\'{e}taillons d'abord la m\'{e}thodologie Agile Scrum adopt\'{e}e pour organiser le d\'{e}veloppement en sprints successifs, puis nous pr\'{e}sentons la pile technologique compl\`{e}te utilis\'{e}e pour les diff\'{e}rentes couches du syst\`{e}me. Nous d\'{e}crivons ensuite l'architecture logique et physique de la plateforme, avant de d\'{e}tailler l'environnement de travail et les outils employ\'{e}s au quotidien.
+Ce chapitre explique comment le projet TrustGym a \'{e}t\'{e} organis\'{e} et construit : m\'{e}thodologie Scrum, pile technologique, architectures logique et physique, et environnement de travail.
 
 %──────────────────────────────────────────────
 \section{M\'{e}thodologie}
@@ -12,9 +12,9 @@ Ce chapitre pr\'{e}sente les fondements m\'{e}thodologiques et technologiques du
 
 \subsection{M\'{e}thodologie Agile}
 
-Le choix d'une m\'{e}thodologie de d\'{e}veloppement logiciel est une d\'{e}cision cruciale qui influence directement la qualit\'{e}, les d\'{e}lais et le succ\`{e}s global d'un projet. Dans le cadre du projet TrustGym, nous avons opt\'{e} pour une approche Agile en raison de la complexit\'{e} du syst\`{e}me et de l'\'{e}volution constante des besoins fonctionnels \cite{dev_methodology}.
+Dès le début du projet, il était clair que les besoins allaient évoluer. Les salles de sport partenaires remontaient des retours en continu, et le périmètre fonctionnel s'élargissait au fil des discussions. Une méthodologie rigide aurait été un obstacle. Nous avons donc choisi l'Agile \cite{dev_methodology}.
 
-La m\'{e}thodologie Agile repose sur un ensemble de valeurs et de principes qui privil\'{e}gient la flexibilit\'{e}, la collaboration et l'adaptation continue. Le Manifeste Agile, publi\'{e} en 2001, \'{e}nonce quatre valeurs fondamentales :
+Le Manifeste Agile, publi\'{e} en 2001, s'articule autour de quatre valeurs :
 
 \begin{itemize}
     \item Les \textbf{individus et leurs interactions} plut\^{o}t que les processus et les outils.
@@ -23,7 +23,7 @@ La m\'{e}thodologie Agile repose sur un ensemble de valeurs et de principes qui 
     \item L'\textbf{adaptation au changement} plut\^{o}t que le suivi rigide d'un plan.
 \end{itemize}
 
-Ces valeurs sont soutenues par douze principes directeurs qui encouragent la livraison fr\'{e}quente de logiciels fonctionnels, l'accueil favorable des changements de besoins et l'am\'{e}lioration continue des processus. L'approche Agile est particuli\`{e}rement adapt\'{e}e aux projets o\`{u} les exigences \'{e}voluent rapidement, comme c'est le cas pour TrustGym o\`{u} les retours des salles de sport partenaires alimentent en continu le Product Backlog.
+Ces valeurs se d\'{e}clinent en douze principes, dont le plus concret pour ce projet : livrer souvent du code qui fonctionne, et accueillir les changements m\^{e}me tard dans le d\'{e}veloppement.
 
 \begin{figure}[H]
   \centering
@@ -34,7 +34,7 @@ Ces valeurs sont soutenues par douze principes directeurs qui encouragent la liv
 
 \subsection{L'approche Scrum}
 
-Scrum est un cadre de travail Agile largement adopt\'{e} dans l'industrie du d\'{e}veloppement logiciel \cite{schwaber2020scrum}. Il fournit une structure l\'{e}g\`{e}re mais efficace pour g\'{e}rer des projets complexes \`{a} travers des cycles it\'{e}ratifs appel\'{e}s \textit{Sprints} \cite{scrum}.
+Parmi les cadres Agile, Scrum est celui qui convient le mieux à un projet de cette envergure \cite{schwaber2020scrum, scrum}. Sa structure est simple : des cycles courts (les \textit{Sprints}), des r\^{o}les clairs et des r\'{e}unions cibl\'{e}es. Il n'impose pas de lourdeur processuelle, mais il force la rigueur sur ce qui compte.
 
 \begin{outline}
     \1 \textbf{R\^{o}les Scrum}
@@ -52,7 +52,7 @@ Scrum est un cadre de travail Agile largement adopt\'{e} dans l'industrie du d\'
         \2 \textbf{Incr\'{e}ment} : Somme de tous les \'{e}l\'{e}ments du Product Backlog compl\'{e}t\'{e}s pendant le Sprint, ajout\'{e}e aux incr\'{e}ments pr\'{e}c\'{e}dents. Chaque incr\'{e}ment doit \^{e}tre potentiellement livrable.
 \end{outline}
 
-La figure~\ref{fig:agile_scrum} illustre le processus Scrum appliqu\'{e} au sein du projet TrustGym, depuis la constitution du Product Backlog jusqu'\`{a} la livraison des incr\'{e}ments.
+La figure~\ref{fig:agile_scrum} montre comment ce cycle s'est d\'{e}roul\'{e} concr\`{e}tement dans le projet TrustGym.
 
 \begin{figure}[H]
   \centering
@@ -61,13 +61,13 @@ La figure~\ref{fig:agile_scrum} illustre le processus Scrum appliqu\'{e} au sein
   \label{fig:agile_scrum}
 \end{figure}
 
-Pour le projet TrustGym, nous avons organis\'{e} le d\'{e}veloppement en \textbf{sept sprints} d'une dur\'{e}e variable de deux \`{a} quatre semaines chacun, en fonction de la complexit\'{e} des fonctionnalit\'{e}s \`{a} impl\'{e}menter. L'encadrant entreprise M.~Bilel Taktak a jou\'{e} le r\^{o}le de Product Owner, tandis que l'encadrant acad\'{e}mique M.~Talel Zouari a assur\'{e} le suivi p\'{e}dagogique.
+Le projet s'est d\'{e}roul\'{e} en \textbf{sept sprints} de deux \`{a} quatre semaines, selon la densit\'{e} fonctionnelle de chaque p\'{e}riode. M.~Bilel Taktak a assur\'{e} le r\^{o}le de Product Owner --- c'est lui qui validait les priorit\'{e}s et les livrables --- et M.~Talel Zouari a assur\'{e} le suivi p\'{e}dagogique tout au long du projet.
 
 %──────────────────────────────────────────────
 \section{Technologies Utilis\'{e}es}
 %──────────────────────────────────────────────
 
-Cette section pr\'{e}sente l'ensemble des technologies utilis\'{e}es dans le d\'{e}veloppement de la plateforme TrustGym. Le choix de ces technologies a \'{e}t\'{e} guid\'{e} par des crit\`{e}res de performance, de maintenabilit\'{e} et de compatibilit\'{e} avec les besoins fonctionnels du projet.
+Voici la pile technologique de TrustGym. Chaque choix a \'{e}t\'{e} motiv\'{e} par un besoin pr\'{e}cis --- pas par la tendance du moment.
 
 \begin{figure}[H]
   \centering
@@ -113,11 +113,11 @@ Cette section pr\'{e}sente l'ensemble des technologies utilis\'{e}es dans le d\'
 \section{Architecture Syst\`{e}me}
 %──────────────────────────────────────────────
 
-L'architecture de TrustGym a \'{e}t\'{e} con\c{c}ue pour r\'{e}pondre aux besoins d'une plateforme \acrshort{saas} compl\`{e}te et \'{e}volutive. Elle repose sur une s\'{e}paration claire des responsabilit\'{e}s entre quatre sous-projets distincts, chacun r\'{e}pondant \`{a} un besoin sp\'{e}cifique du syst\`{e}me.
+L'architecture TrustGym s\'{e}pare clairement les responsabilit\'{e}s en quatre sous-projets : un par besoin m\'{e}tier, aucun ne fait le travail d'un autre.
 
 \subsection{Architecture Logique}
 
-La plateforme TrustGym adopte une architecture client/serveur distribu\'{e}e compos\'{e}e de quatre sous-projets interconnect\'{e}s. La figure~\ref{fig:arch_logique} illustre les interactions entre les diff\'{e}rentes couches du syst\`{e}me.
+La figure~\ref{fig:arch_logique} montre comment les quatre sous-projets communiquent entre eux.
 
 \begin{itemize}
     \item \textbf{trustgym-api} : L'\acrshort{api} \acrshort{rest} centrale d\'{e}velopp\'{e}e avec NestJS constitue le c\oe{}ur du syst\`{e}me. Elle expose l'ensemble des endpoints consomm\'{e}s par les clients et g\`{e}re la logique m\'{e}tier, l'authentification, et la persistance des donn\'{e}es via TypeORM et PostgreSQL 16.
@@ -136,11 +136,11 @@ La plateforme TrustGym adopte une architecture client/serveur distribu\'{e}e com
   \label{fig:arch_logique}
 \end{figure}
 
-La communication en temps r\'{e}el est assur\'{e}e par Socket.IO via un namespace d\'{e}di\'{e} \texttt{/attendance}. Le service \texttt{PgListenerService} \'{e}coute le canal PostgreSQL \texttt{access\_log\_channel} et transmet les \'{e}v\'{e}nements d'entr\'{e}e/sortie aux clients connect\'{e}s, permettant la mise \`{a} jour instantan\'{e}e de l'occupation dans le tableau de bord et l'application mobile.
+Le temps r\'{e}el repose sur Socket.IO (namespace \texttt{/attendance}) et le m\'{e}canisme natif PostgreSQL LISTEN/NOTIFY : le service \texttt{PgListenerService} \'{e}coute le canal \texttt{access\_log\_channel} et propage instantan\'{e}ment les \'{e}v\'{e}nements d'entr\'{e}e/sortie \`{a} tous les clients connect\'{e}s.
 
 \subsection{Architecture Physique}
 
-L'architecture physique de d\'{e}ploiement repose sur un serveur \acrshort{vps} OVH sous Ubuntu, o\`{u} Nginx agit comme reverse proxy vers les services backend. La figure~\ref{fig:arch_physique} illustre cette architecture.
+Ct\'{e} infrastructure : un \acrshort{vps} OVH sous Ubuntu, avec Nginx en reverse proxy devant les services backend. La figure~\ref{fig:arch_physique} d\'{e}taille la configuration de d\'{e}ploiement.
 
 \begin{figure}[H]
   \centering
@@ -149,17 +149,17 @@ L'architecture physique de d\'{e}ploiement repose sur un serveur \acrshort{vps} 
   \label{fig:arch_physique}
 \end{figure}
 
-Le frontend web est d\'{e}ploy\'{e} sur Vercel via le \acrshort{cdn} Edge pour des performances optimales. L'application mobile est distribu\'{e}e via EAS Build pour les stores iOS et Android. Les services externes (AWS S3, Nodemailer, OpenAI) sont consomm\'{e}s par l'\acrshort{api} backend.
+Le frontend est sur Vercel (\acrshort{cdn} Edge). L'application mobile se distribue via EAS Build. L'\acrshort{api} backend consomme AWS S3, Nodemailer et OpenAI comme services externes.
 
 \subsection{Architecture Modulaire}
 
-L'\acrshort{api} NestJS suit une architecture modulaire rigoureuse inspir\'{e}e du framework Angular. Chaque domaine fonctionnel est encapsul\'{e} dans un module autonome suivant le patron :
+Chaque domaine fonctionnel de l'\acrshort{api} NestJS vit dans son propre module, selon le patron :
 
 \begin{center}
     \textbf{Module} $\rightarrow$ \textbf{Controller} $\rightarrow$ \textbf{Service} $\rightarrow$ \textbf{Entity (TypeORM)}
 \end{center}
 
-Le syst\`{e}me compte plus de 50 modules de domaine enregistr\'{e}s dans le module racine \texttt{AppModule}. Le syst\`{e}me de s\'{e}curit\'{e} repose sur plusieurs couches de guards :
+Plus de 50 modules de domaine s'enregistrent dans \texttt{AppModule}. La s\'{e}curit\'{e} est assur\'{e}e par une cha\^{i}ne de guards :
 
 \begin{itemize}
     \item \textbf{JwtAuthGuard} : V\'{e}rification du token \acrshort{jwt} pour les administrateurs, caissiers et super-administrateurs.
@@ -168,11 +168,11 @@ Le syst\`{e}me compte plus de 50 modules de domaine enregistr\'{e}s dans le modu
     \item \textbf{ModuleGuard} : Contr\^{o}le d'acc\`{e}s aux modules \acrshort{saas} via le d\'{e}corateur \texttt{@RequiresModule()}, permettant d'activer ou d\'{e}sactiver des fonctionnalit\'{e}s par partenaire (feature flags).
 \end{itemize}
 
-L'alias de chemin \texttt{@/*} est configur\'{e} pour pointer vers le r\'{e}pertoire \texttt{src/*} dans tous les sous-projets, assurant ainsi une coh\'{e}rence dans les imports et une meilleure lisibilit\'{e} du code.
+L'alias \texttt{@/*} pointe vers \texttt{src/*} dans tous les sous-projets --- un d\'{e}tail simple qui \'{e}vite les imports relatifs inextricables.
 
 \subsection{Architecture Multi-Tenant}
 
-TrustGym adopte une architecture multi-locataire (\textit{multi-tenant}) hi\'{e}rarchique qui isole les donn\'{e}es de chaque client tout en partageant la m\^{e}me instance applicative. La hi\'{e}rarchie est la suivante :
+TrustGym sert plusieurs clients sur la m\^{e}me instance, avec une isolation stricte des donn\'{e}es. La hi\'{e}rarchie est \`{a} trois niveaux :
 
 \begin{itemize}
     \item \textbf{Plateforme} (TrustGym \acrshort{saas}) : instance unique h\'{e}bergeant l'ensemble des locataires.
@@ -180,26 +180,26 @@ TrustGym adopte une architecture multi-locataire (\textit{multi-tenant}) hi\'{e}
     \item \textbf{Salle} (\texttt{Gym}) : le locataire de second niveau, repr\'{e}sentant un \'{e}tablissement physique. Chaque salle poss\`{e}de ses propres membres, coachs, utilisateurs, portes, stocks et \'{e}v\'{e}nements d'acc\`{e}s.
 \end{itemize}
 
-L'isolation des donn\'{e}es est assur\'{e}e par le champ \texttt{partnerId} pr\'{e}sent dans la majorit\'{e} des entit\'{e}s du syst\`{e}me. Chaque requ\^{e}te de base de donn\'{e}es est automatiquement filtr\'{e}e par \texttt{partnerId} (et optionnellement \texttt{gymId}) pour garantir qu'un partenaire ne puisse jamais acc\'{e}der aux donn\'{e}es d'un autre locataire.
+Le champ \texttt{partnerId} pr\'{e}sent sur la majorit\'{e} des entit\'{e}s est le verrou de cette isolation : chaque requ\^{e}te est filtr\'{e}e automatiquement, ce qui rend impossible l'acc\`{e}s aux donn\'{e}es d'un autre partenaire, m\^{e}me accidentellement.
 
 \subsection{Architecture de S\'{e}curit\'{e}}
 
-La s\'{e}curit\'{e} de TrustGym repose sur plusieurs couches compl\'{e}mentaires :
+La s\'{e}curit\'{e} de TrustGym se d\'{e}compose en quatre m\'{e}canismes distincts :
 
 \subsubsection{Double Syst\`{e}me JWT}
 
-Le syst\`{e}me impl\'{e}mente deux cha\^{i}nes d'authentification \acrshort{jwt} \cite{jwt_rfc7519} distinctes partageant le m\^{e}me secret (\texttt{JWT\_SECRET}) mais discrimin\'{e}es par un champ \texttt{type} dans le payload :
+Deux cha\^{i}nes \acrshort{jwt} \cite{jwt_rfc7519} coexistent, avec le m\^{e}me secret mais des payloads diff\'{e}rents. Le champ \texttt{type} est le discriminant :
 
 \begin{itemize}
     \item \textbf{Canal Admin/Caissier} : le token ne contient pas de champ \texttt{type}. Payload : \texttt{\{id, role, partnerId, gymId, sdk\}}. Valid\'{e} par \texttt{JwtStrategy} et prot\'{e}g\'{e} par \texttt{JwtAuthGuard}.
     \item \textbf{Canal Membre (mobile)} : le token contient \texttt{type: 'member'}. Payload : \texttt{\{id, type: 'member'\}}. Valid\'{e} par \texttt{JwtMemberStrategy} et prot\'{e}g\'{e} par \texttt{MemberJwtGuard}.
 \end{itemize}
 
-Chaque garde rejette explicitement les tokens de l'autre canal, emp\^{e}chant toute utilisation crois\'{e}e.
+Chaque guard rejette les tokens de l'autre canal : un membre ne peut pas utiliser un token admin, et vice versa.
 
 \subsubsection{Cha\^{i}ne de Gardes}
 
-Les routes prot\'{e}g\'{e}es utilisent une cha\^{i}ne de gardes d\'{e}clarative via des d\'{e}corateurs NestJS :
+Les routes prot\'{e}g\'{e}es s'expriment via des d\'{e}corateurs NestJS, par exemple :
 
 \begin{center}
     \texttt{@UseGuards(JwtAuthGuard, RolesGuard)} $\rightarrow$ \texttt{@Roles(RoleEnum.Admin)}
@@ -213,7 +213,7 @@ Les routes prot\'{e}g\'{e}es utilisent une cha\^{i}ne de gardes d\'{e}clarative 
 
 \subsubsection{Authentification Machine-\`{a}-Machine}
 
-La communication entre le Machine Handler et l'\acrshort{api} est s\'{e}curis\'{e}e par des cl\'{e}s \acrshort{api} :
+La communication Machine Handler $\leftrightarrow$ \acrshort{api} utilise des cl\'{e}s d\'{e}di\'{e}es, diff\'{e}rentes selon la direction :
 
 \begin{itemize}
     \item \textbf{Cloud $\rightarrow$ Bridge} : en-t\^{e}te \texttt{x-bridge-key} avec comparaison temporellement s\^{u}re (\textit{timing-safe}) pour \'{e}viter les attaques par canal auxiliaire.
@@ -222,11 +222,11 @@ La communication entre le Machine Handler et l'\acrshort{api} est s\'{e}curis\'{
 
 \subsubsection{Impersonation SuperAdmin}
 
-Le syst\`{e}me permet au SuperAdmin d'impersonner un autre utilisateur pour le d\'{e}bogage et le support technique. Le token \acrshort{jwt} contient alors les champs \texttt{isImpersonation}, \texttt{impersonatedBy} et \texttt{impersonatorEmail}. La piste d'audit conserve l'identit\'{e} r\'{e}elle de l'op\'{e}rateur via \texttt{impersonatorEmail}, garantissant la tra\c{c}abilit\'{e} m\^{e}me lors d'une session d'impersonation.
+Le SuperAdmin peut se connecter en tant qu'un autre utilisateur pour le d\'{e}bogage et le support. Le token \acrshort{jwt} porte les champs \texttt{isImpersonation}, \texttt{impersonatedBy} et \texttt{impersonatorEmail}. Quelle que soit l'action r\'{e}alis\'{e}e, la piste d'audit conserve l'identit\'{e} r\'{e}elle de l'op\'{e}rateur --- personne ne peut se cacher derrière l'impersonation.
 
 \subsection{Internationalisation (i18n)}
 
-Le tableau de bord web supporte trois langues via \texttt{next-intl} \cite{nextintl} :
+Le tableau de bord supporte trois langues via \texttt{next-intl} \cite{nextintl} :
 
 \begin{itemize}
     \item \textbf{Fran\c{c}ais} (fr) : langue par d\'{e}faut.
@@ -234,7 +234,7 @@ Le tableau de bord web supporte trois langues via \texttt{next-intl} \cite{nexti
     \item \textbf{Anglais} (en) : support complet.
 \end{itemize}
 
-Le routage est bas\'{e} sur la locale dans l'\acrshort{url} (\texttt{/[locale]/page}), g\'{e}r\'{e} par le middleware Next.js qui d\'{e}tecte la langue du navigateur et redirige automatiquement. Un composant \texttt{LanguageToggle} dans la barre de navigation permet \`{a} l'utilisateur de changer de langue \`{a} tout moment.
+Le middleware Next.js d\'{e}tecte la langue du navigateur et redirige vers la bonne locale (\texttt{/[locale]/page}). L'utilisateur peut aussi basculer manuellement via le \texttt{LanguageToggle} dans la barre de navigation.
 
 %──────────────────────────────────────────────
 \section{Environnement de Travail et Outils}
@@ -260,7 +260,7 @@ Le routage est bas\'{e} sur la locale dans l'\acrshort{url} (\texttt{/[locale]/p
 
 \subsection{Mat\'{e}riel de D\'{e}veloppement}
 
-L'ensemble du d\'{e}veloppement a \'{e}t\'{e} r\'{e}alis\'{e} sur les configurations suivantes :
+Le d\'{e}veloppement a \'{e}t\'{e} r\'{e}alis\'{e} sur la configuration suivante :
 \begin{itemize}
     \item \textbf{Syst\`{e}me d'exploitation} : Windows 11 Pro
     \item \textbf{Serveur de base de donn\'{e}es} : PostgreSQL 16 (port 5433)
@@ -270,7 +270,7 @@ L'ensemble du d\'{e}veloppement a \'{e}t\'{e} r\'{e}alis\'{e} sur les configurat
 
 \subsection{Workflow de D\'{e}veloppement et CI/CD}
 
-Le processus de d\'{e}veloppement suit un workflow structur\'{e} int\'{e}grant une pipeline d'int\'{e}gration et de d\'{e}ploiement continus via GitHub Actions :
+Le workflow de d\'{e}veloppement est lin\'{e}aire, du sprint backlog jusqu'au d\'{e}ploiement, avec GitHub Actions comme colonne vert\'{e}brale du \acrshort{cicd} :
 
 \begin{enumerate}
     \item \textbf{Planification} : D\'{e}finition des user stories dans Linear lors du Sprint Planning, avec attribution des priorit\'{e}s et estimation des charges.
@@ -289,6 +289,6 @@ Le processus de d\'{e}veloppement suit un workflow structur\'{e} int\'{e}grant u
 \end{figure}
 
 \section{Conclusion}
-Ce chapitre a permis de d\'{e}tailler les fondements m\'{e}thodologiques et technologiques du projet TrustGym. L'adoption de la m\'{e}thodologie Scrum a structur\'{e} le d\'{e}veloppement en sept sprints progressifs, tandis que la pile technologique choisie (NestJS, Next.js 15, React Native/Expo, PostgreSQL 16 avec pgvector) offre un \'{e}quilibre entre performance, maintenabilit\'{e} et \'{e}volutivit\'{e}. L'architecture distribu\'{e}e en quatre sous-projets, coupl\'{e}e \`{a} une pipeline \acrshort{cicd} automatis\'{e}e, garantit une livraison continue et fiable. Le chapitre suivant pr\'{e}sentera la sp\'{e}cification d\'{e}taill\'{e}e des exigences fonctionnelles et non fonctionnelles du syst\`{e}me.
+Ce chapitre a pos\'{e} les bases de la construction de TrustGym : pourquoi Scrum, quelles technologies et pourquoi, comment l'architecture est decoup\'{e}e. Le chapitre suivant passe \`{a} ce que le syst\`{e}me doit faire --- la sp\'{e}cification des exigences.
 
 \end{document}

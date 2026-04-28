@@ -6,7 +6,7 @@
 
 \section{Introduction}
 
-Le deuxi\`{e}me sprint se concentre sur le c\oe ur m\'{e}tier de toute salle de sport : la gestion des membres et de leurs abonnements. Ce sprint couvre l'ensemble du cycle de vie d'un adh\'{e}rent, depuis son inscription avec ses donn\'{e}es personnelles jusqu'\`{a} la gestion de ses abonnements, le suivi des paiements et des \'{e}ch\'{e}ances. Il introduit \'{e}galement la gestion des liens familiaux entre membres, les conventions de groupe et les cotisations annuelles, constituant ainsi le socle fonctionnel sur lequel reposeront les sprints suivants.
+Sans membres, une salle de sport n'est qu'un b\^{a}timent vide. Ce sprint construit tout ce qui tourne autour de l'adh\'{e}rent : cr\'{e}ation du profil, gestion des abonnements, suivi des paiements et des \'{e}ch\'{e}ances. Il couvre aussi les situations moins \'{e}videntes --- liens familiaux, conventions de groupe, cotisations annuelles --- que les outils g\'{e}n\'{e}riques g\`{e}rent souvent mal.
 
 \section{Sprint Backlog}
 
@@ -57,7 +57,7 @@ Cotisations & Fonctionnalit\'{e} & En tant qu'admin, je veux g\'{e}rer les cotis
 
 \subsection{Diagramme de cas d'utilisation}
 
-La figure~\ref{fig:sprint2-usecase} illustre les cas d'utilisation du Sprint 2 couvrant la gestion des membres, des abonnements et des paiements.
+La figure~\ref{fig:sprint2-usecase} cartographie les actions disponibles selon les acteurs : l'administrateur g\`{e}re le cycle complet du membre, le caissier se concentre sur les paiements.
 
 \begin{figure}[H]
 \centering
@@ -150,7 +150,7 @@ La figure~\ref{fig:sprint2-usecase} illustre les cas d'utilisation du Sprint 2 c
 
 \subsection{Diagramme de s\'{e}quence : Inscription \`{a} un Abonnement}
 
-La figure~\ref{fig:sprint2-seq} illustre le flux d'inscription d'un membre \`{a} un abonnement avec enregistrement du paiement initial.
+La figure~\ref{fig:sprint2-seq} d\'{e}taille ce que l'API fait \`{a} chaque \'{e}tape : cr\'{e}er l'abonnement, enregistrer le paiement, puis retourner les deux au front pour mise \`{a} jour de la fiche.
 
 \begin{figure}[H]
 \centering
@@ -299,6 +299,6 @@ La page des \'{e}ch\'{e}ances (\texttt{/m/members/echeances}) centralise le suiv
 
 \section{Conclusion}
 
-Le Sprint 2 a permis d'impl\'{e}menter le c\oe ur fonctionnel de TrustGym : la gestion compl\`{e}te des membres et de leurs abonnements. Le syst\`{e}me couvre d\'{e}sormais l'ensemble du cycle de vie d'un adh\'{e}rent, du suivi de ses informations personnelles \`{a} la gestion de ses paiements, en passant par les conventions de groupe et les cotisations annuelles. Le module membre constitue l'\'{e}l\'{e}ment central auquel se rattachent les fonctionnalit\'{e}s des sprints suivants. Le Sprint 3 abordera le contr\^{o}le d'acc\`{e}s physique et l'int\'{e}gration des terminaux ZKTeco et Hikvision.
+Avec ce sprint, la plateforme sait qui sont ses membres, ce qu'ils paient et quand ils ont pay\'{e}. La synchronisation automatique vers les terminaux physiques --- d\'{e}j\`{a} pr\'{e}sente dans ce module --- pr\'{e}pare le terrain pour le Sprint 3, qui connectera ces profils \`{a} la porte d'entr\'{e}e r\'{e}elle de la salle.
 
 \end{document}

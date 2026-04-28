@@ -7,7 +7,7 @@
 \section{Introduction}
 %──────────────────────────────────────────────
 
-Ce sprint est consacr\'{e} \`{a} la mise en place du module de gestion des coachs et des s\'{e}ances d'entra\^{i}nement. Il couvre l'ensemble du cycle de vie d'une s\'{e}ance, depuis la cr\'{e}ation des profils de coachs et la d\'{e}finition des disciplines, jusqu'\`{a} la planification des sessions, la gestion des invitations, le pointage par code \acrshort{qr} et le suivi des paiements. Ce module constitue un pilier fonctionnel essentiel de la plateforme TrustGym, car il permet aux g\'{e}rants de structurer l'offre de coaching et aux membres de participer activement aux s\'{e}ances propos\'{e}es.
+Apr\`{e}s l'acc\`{e}s physique et la gestion des abonnements, ce sprint apporte la dimension collective de la salle : les coachs, les disciplines et les s\'{e}ances. Un g\'{e}rant peut planifier une s\'{e}ance, inviter des membres par e-mail, et les membres pointent leur pr\'{e}sence avec leur t\'{e}l\'{e}phone en scannant un code \acrshort{qr}. Trois types de s\'{e}ances couvrent les diff\'{e}rents cas --- ouvertes \`{a} tous, sur r\'{e}servation ou sur invitation --- avec un suivi de paiement int\'{e}gr\'{e} pour les coachs.
 
 %──────────────────────────────────────────────
 \section{Sprint Backlog}
@@ -68,7 +68,7 @@ Le tableau~\ref{tab:backlog_sprint4} pr\'{e}sente le backlog du Sprint 4 d\'{e}t
 
 \subsection{Diagramme de cas d'utilisation}
 
-La figure~\ref{fig:sprint4-usecase} pr\'{e}sente le diagramme de cas d'utilisation du Sprint 4 couvrant la gestion des coachs et des s\'{e}ances.
+La figure~\ref{fig:sprint4-usecase} montre la r\'{e}partition des actions : l'administrateur pilote tout le cycle coach/s\'{e}ance, le membre consulte le planning et pointe sa pr\'{e}sence.
 
 \begin{figure}[H]
 \centering
@@ -214,7 +214,7 @@ La figure~\ref{fig:sprint4-usecase} pr\'{e}sente le diagramme de cas d'utilisati
 
 \subsection{Backend}
 
-La r\'{e}alisation backend de ce sprint repose sur plusieurs modules NestJS \cite{nestjs} interconnect\'{e}s, chacun suivant le patron \textbf{Module} $\rightarrow$ \textbf{Controller} $\rightarrow$ \textbf{Service} $\rightarrow$ \textbf{Entity}.
+Sept modules NestJS \cite{nestjs} couvrent ce sprint, chacun ax\'{e} sur un p\'{e}rim\`{e}tre fonctionnel pr\'{e}cis.
 
 \begin{outline}
     \1 \textbf{CoachModule} : Module principal pour la gestion des coachs. L'entit\'{e} \texttt{Coach} contient les champs : nom, date de naissance, profession, genre, CIN, tarif horaire (\texttt{hourlyFee}), statut (\texttt{isEnabled}), identifiant de carte (\texttt{cardId}), code PIN et r\'{e}f\'{e}rence \`{a} l'image (\texttt{imageId}). Le service expose les op\'{e}rations \acrshort{crud} avec validation des donn\'{e}es via les \acrshort{dto}.
@@ -231,7 +231,7 @@ La r\'{e}alisation backend de ce sprint repose sur plusieurs modules NestJS \cit
 
 \subsection{Diagramme de s\'{e}quence}
 
-La figure~\ref{fig:sprint4-sequence} illustre le flux de v\'{e}rification de pr\'{e}sence par code \acrshort{qr} depuis l'application mobile.
+La figure~\ref{fig:sprint4-sequence} d\'{e}taille le parcours d'un scan \acrshort{qr} : trois v\'{e}rifications c\^{o}t\'{e} API avant de confirmer la pr\'{e}sence.
 
 \begin{figure}[H]
 \centering
@@ -349,6 +349,6 @@ L'application mobile int\`{e}gre les fonctionnalit\'{e}s suivantes pour les memb
 \section{Conclusion}
 %──────────────────────────────────────────────
 
-Ce sprint a permis de mettre en place un syst\`{e}me complet de gestion des coachs et des s\'{e}ances d'entra\^{i}nement. La plateforme offre d\'{e}sormais la possibilit\'{e} de g\'{e}rer les profils des coachs, de d\'{e}finir des disciplines, de planifier des s\'{e}ances selon trois types distincts (OPEN, RESERVATION, CLOSE), d'inviter des membres par e-mail, de valider la pr\'{e}sence via code \acrshort{qr} et de suivre les paiements des coachs. Le prochain sprint sera consacr\'{e} \`{a} la boutique et \`{a} la gestion de stock.
+TrustGym dispose maintenant d'une offre de coaching structur\'{e}e : profils de coachs, disciplines, planning hebdomadaire, invitations et pointage \acrshort{qr}. Le Sprint 5 quitte le terrain des s\'{e}ances pour celui des produits, avec la boutique et la gestion de stock.
 
 \end{document}

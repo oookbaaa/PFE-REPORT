@@ -6,7 +6,7 @@
 
 \section{Introduction}
 
-Le troisi\`{e}me sprint repr\'{e}sente un tournant technique majeur dans le projet TrustGym en introduisant l'int\'{e}gration avec le mat\'{e}riel physique de contr\^{o}le d'acc\`{e}s. Ce sprint couvre la gestion des portes connect\'{e}es (ZKTeco \cite{zkteco} et Hikvision \cite{hikvision}), l'enregistrement des \'{e}v\'{e}nements d'entr\'{e}e et de sortie, le calcul de l'occupation en temps r\'{e}el, ainsi que la mise en place de l'architecture du Machine Handler -- un pont logiciel entre les dispositifs physiques et l'\acrshort{api} TrustGym. La communication temps r\'{e}el via WebSocket \cite{socketio} et le m\'{e}canisme PostgreSQL \cite{postgre} \texttt{LISTEN/NOTIFY} assurent une r\'{e}activit\'{e} imm\'{e}diate sur le tableau de bord et l'application mobile.
+Ce sprint est celui qui distingue TrustGym d'une simple application de gestion : la plateforme s'interface avec le mat\'{e}riel physique. Terminaux ZKTeco \cite{zkteco}, cam\'{e}ras Hikvision \cite{hikvision}, badges \acrshort{rfid} --- chaque entr\'{e}e et sortie est captur\'{e}e, v\'{e}rifi\'{e}e et visible en temps r\'{e}el sur le tableau de bord et l'application mobile. Piloter des dispositifs physiques depuis une architecture web exige une couche interm\'{e}diaire d\'{e}di\'{e}e : c'est le r\^{o}le du Machine Handler, connect\'{e} \`{a} l'\acrshort{api} via WebSocket \cite{socketio} et PostgreSQL \texttt{LISTEN/NOTIFY}.
 
 \section{Sprint Backlog}
 
@@ -67,7 +67,7 @@ Le troisi\`{e}me sprint repr\'{e}sente un tournant technique majeur dans le proj
 
 \subsection{Diagramme de cas d'utilisation}
 
-La figure \ref{fig:sprint3-usecase} pr\'{e}sente le diagramme de cas d'utilisation du Sprint 3 couvrant le contr\^{o}le d'acc\`{e}s et l'int\'{e}gration mat\'{e}rielle.
+La figure \ref{fig:sprint3-usecase} r\'{e}sume les actions disponibles : l'administrateur configure le mat\'{e}riel et consulte les acc\`{e}s, le caissier peut les enregistrer manuellement, et le membre voit l'occupation en direct.
 
 \begin{figure}[H]
 \centering
@@ -243,7 +243,7 @@ Le \texttt{DeviceCommandModule} g\`{e}re une file de commandes destin\'{e}es aux
 
 \subsubsection{Architecture}
 
-Le Machine Handler adopte une architecture \`{a} deux couches pour assurer la fiabilit\'{e} de la communication avec le mat\'{e}riel :
+Communiquer directement avec du mat\'{e}riel ZKTeco depuis NestJS n'est pas possible --- les \acrshort{sdk}s sont en Python (32 bits) et exigent des connexions DLL s\'{e}rielles. D'\`{o} une architecture en deux couches :
 
 \begin{itemize}
   \item \textbf{Service Python} (port 8000) : communique directement avec les dispositifs physiques ZKTeco et Hikvision via leurs \acrshort{sdk}s respectifs. Ce service g\`{e}re la connexion bas niveau, la lecture des \'{e}v\'{e}nements et l'envoi de commandes.
@@ -379,7 +379,7 @@ Une t\^{a}che planifi\'{e}e Windows (\textit{Scheduled Task}) nomm\'{e}e \texttt
 
 \subsection{Diagramme de s\'{e}quence}
 
-La figure \ref{fig:sprint3-sequence} illustre le flux temps r\'{e}el d'un \'{e}v\'{e}nement d'acc\`{e}s, depuis la d\'{e}tection par le dispositif physique jusqu'\`{a} la mise \`{a} jour du tableau de bord.
+La figure \ref{fig:sprint3-sequence} trace le chemin d'un badge \acrshort{rfid} jusqu'au tableau de bord : six \'{e}tapes, sous la seconde, de bout en bout.
 
 \begin{figure}[H]
 \centering
@@ -505,6 +505,6 @@ Les requ\^{e}tes sont automatiquement mises en pause lorsque l'appareil perd la 
 
 \section{Conclusion}
 
-Le Sprint 3 a permis de r\'{e}aliser l'une des fonctionnalit\'{e}s les plus diff\'{e}renciantes de TrustGym : le contr\^{o}le d'acc\`{e}s physique int\'{e}gr\'{e}. L'architecture du Machine Handler, avec sa double couche Python/NestJS, offre une abstraction robuste des sp\'{e}cificit\'{e}s mat\'{e}rielles. La communication temps r\'{e}el via WebSocket et PostgreSQL \texttt{LISTEN/NOTIFY} garantit une r\'{e}activit\'{e} imm\'{e}diate tant sur le tableau de bord web que sur l'application mobile. Le Sprint 4 s'appuiera sur cette infrastructure pour aborder la gestion des coachs et des s\'{e}ances d'entra\^{i}nement.
+Le Machine Handler, l'algorithme d'autorisation en six \'{e}tapes, le tunnel ngrok, les services Windows NSSM --- ce sprint a \'{e}t\'{e} le plus exigeant techniquement. Mais il est aussi celui qui donne \`{a} TrustGym sa valeur ajout\'{e}e r\'{e}elle : une porte qui s'ouvre parce que le syst\`{e}me sait qui est devant. Le Sprint 4 reprend sur cette base pour ajouter les coachs et leurs s\'{e}ances.
 
 \end{document}

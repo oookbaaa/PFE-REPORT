@@ -7,7 +7,7 @@
 \section{Introduction}
 %──────────────────────────────────────────────
 
-Ce sprint est d\'{e}di\'{e} \`{a} la mise en place des modules financiers de la plateforme TrustGym. Il couvre la gestion du portefeuille pr\'{e}pay\'{e} des membres, la tenue de caisse, la facturation \acrshort{b2b} et le suivi des paiements. Ces fonctionnalit\'{e}s constituent le socle financier de la plateforme, permettant aux g\'{e}rants de suivre l'ensemble des flux mon\'{e}taires, de g\'{e}n\'{e}rer des factures conformes et d'offrir aux membres un syst\`{e}me de solde rechargeable pour simplifier les transactions quotidiennes.
+Une salle de sport qui ne g\`{e}re pas bien son argent ne dure pas. Ce sprint couvre tout ce qui touche aux flux mon\'{e}taires : le portefeuille pr\'{e}pay\'{e} des membres, la tenue de caisse quotidienne et la facturation \acrshort{b2b} avec g\'{e}n\'{e}ration de \acrshort{pdf} conformes \`{a} la r\'{e}glementation fiscale tunisienne (TVA, timbre, matricule fiscal). Chaque transaction est trac\'{e}e ; aucun centime ne part sans laisser de trace.
 
 %──────────────────────────────────────────────
 \section{Sprint Backlog}
@@ -64,7 +64,7 @@ Le tableau~\ref{tab:backlog_sprint6} pr\'{e}sente le backlog du Sprint 6 d\'{e}t
 
 \subsection{Diagramme de cas d'utilisation}
 
-La figure~\ref{fig:sprint6-usecase} pr\'{e}sente le diagramme de cas d'utilisation du Sprint 6 couvrant la finance, la facturation et le portefeuille.
+La figure~\ref{fig:sprint6-usecase} distribue les responsabilit\'{e}s : l'administrateur g\`{e}re la facturation et les portefeuilles, le caissier tient la caisse, le membre consulte son solde depuis le mobile.
 
 \begin{figure}[H]
 \centering
@@ -222,7 +222,7 @@ La figure~\ref{fig:sprint6-usecase} pr\'{e}sente le diagramme de cas d'utilisati
 
 \subsection{Backend}
 
-La r\'{e}alisation backend de ce sprint repose sur plusieurs modules NestJS \cite{nestjs} couvrant l'ensemble des fonctionnalit\'{e}s financi\`{e}res de la plateforme :
+Six modules NestJS \cite{nestjs} couvrent les fonctionnalit\'{e}s financi\`{e}res :
 
 \begin{outline}
     \1 \textbf{WalletModule} : Module de gestion des portefeuilles pr\'{e}pay\'{e}s. L'entit\'{e} \texttt{Wallet} associe un solde (\texttt{amount}) \`{a} chaque membre. Le service expose les op\'{e}rations de consultation du solde, de rechargement et de d\'{e}duction, avec v\'{e}rification de la suffisance du solde pour les d\'{e}bits.
@@ -245,7 +245,7 @@ La r\'{e}alisation backend de ce sprint repose sur plusieurs modules NestJS \cit
 
 \subsection{Diagramme de s\'{e}quence}
 
-La figure~\ref{fig:sprint6-sequence} illustre le flux de cr\'{e}ation d'une facture \acrshort{b2b} avec g\'{e}n\'{e}ration du fichier \acrshort{pdf}.
+La figure~\ref{fig:sprint6-sequence} d\'{e}taille la cr\'{e}ation d'une facture en trois temps : en-t\^{e}te, lignes, puis g\'{e}n\'{e}ration du \acrshort{pdf} upload\'{e} sur S3.
 
 \begin{figure}[H]
 \centering
@@ -292,7 +292,7 @@ La figure~\ref{fig:sprint6-sequence} illustre le flux de cr\'{e}ation d'une fact
 
 \subsection{Frontend Web}
 
-L'interface web du tableau de bord d'administration int\`{e}gre un ensemble complet de pages pour la gestion financi\`{e}re :
+Sept pages couvrent la dimension financi\`{e}re du tableau de bord :
 
 \begin{outline}
     \1 \textbf{Comptes pr\'{e}pay\'{e}s (\texttt{comptes-prepayes/})} : Page de gestion des portefeuilles des membres. Affichage du solde de chaque membre avec possibilit\'{e} d'effectuer des rechargements et des d\'{e}ductions. Historique des transactions par membre.
@@ -346,6 +346,6 @@ L'interface web du tableau de bord d'administration int\`{e}gre un ensemble comp
 \section{Conclusion}
 %──────────────────────────────────────────────
 
-Ce sprint a permis de mettre en place l'ensemble des modules financiers de la plateforme TrustGym. Le syst\`{e}me de portefeuille pr\'{e}pay\'{e} offre aux membres un moyen de paiement simple et rapide, tandis que le module de caisse fournit aux g\'{e}rants un suivi quotidien pr\'{e}cis des flux mon\'{e}taires. La facturation \acrshort{b2b} permet de g\'{e}n\'{e}rer des factures conformes avec calcul automatique des taxes et g\'{e}n\'{e}ration de fichiers \acrshort{pdf} h\'{e}berg\'{e}s sur AWS S3 \cite{aws}. L'int\'{e}gration avec le module de paiement existant assure une vue unifi\'{e}e de l'ensemble des transactions financi\`{e}res. Le prochain sprint sera consacr\'{e} \`{a} l'application mobile, aux indicateurs \acrshort{kpi} et \`{a} l'assistant \acrshort{ai}.
+TrustGym peut maintenant suivre chaque dinar : du solde du portefeuille d'un membre \`{a} la cl\^{o}ture de caisse du soir, en passant par une facture \acrshort{b2b} conforme aux exigences fiscales tunisiennes. Le Sprint 7, le dernier, s'attaque \`{a} l'application mobile compl\`{e}te, aux tableaux de bord \acrshort{kpi} et \`{a} l'assistant \acrshort{ai}.
 
 \end{document}

@@ -6,7 +6,7 @@
 
 \section{Introduction}
 
-Le premier sprint constitue le socle fondamental de la plateforme TrustGym. Il porte sur la mise en place du syst\`{e}me d'authentification et de gestion des utilisateurs, deux piliers indispensables pour s\'{e}curiser l'acc\`{e}s \`{a} l'ensemble des fonctionnalit\'{e}s de l'application. Ce sprint couvre la cr\'{e}ation d'un double syst\`{e}me \acrshort{jwt} permettant de distinguer les administrateurs/caissiers des membres adh\'{e}rents, la gestion des r\^{o}les et des permissions via un m\'{e}canisme \acrshort{rbac}, ainsi que le contr\^{o}le d'acc\`{e}s aux modules \acrshort{saas}. C\^{o}t\'{e} mobile, un flux d'inscription multi-\'{e}tapes est impl\'{e}ment\'{e} pour offrir une exp\'{e}rience utilisateur fluide et s\'{e}curis\'{e}e.
+Tout commence ici : rien d'autre dans TrustGym ne peut fonctionner sans un syst\`{e}me d'authentification robuste. Ce premier sprint pose ce socle --- double \acrshort{jwt} pour distinguer le personnel des membres, contr\^{o}le d'acc\`{e}s par r\^{o}les (\acrshort{rbac}) et gestion des modules \acrshort{saas}. C\^{o}t\'{e} mobile, un flux d'inscription en quatre \'{e}tapes, avec v\'{e}rification par code \acrshort{otp}, permet aux membres de rejoindre la plateforme sans friction.
 
 \section{Sprint Backlog}
 
@@ -56,7 +56,7 @@ Le premier sprint constitue le socle fondamental de la plateforme TrustGym. Il p
 
 \subsection{Diagramme de cas d'utilisation}
 
-La figure~\ref{fig:sprint1-usecase} pr\'{e}sente le diagramme de cas d'utilisation du Sprint 1 couvrant les fonctionnalit\'{e}s d'authentification et de gestion des utilisateurs.
+La figure~\ref{fig:sprint1-usecase} regroupe les cas d'utilisation de ce sprint : connexion admin, gestion des utilisateurs c\^{o}t\'{e} back-office, et inscription mobile membre.
 
 \begin{figure}[H]
 \centering
@@ -212,7 +212,7 @@ La figure~\ref{fig:sprint1-seq} illustre le flux d'authentification pour un admi
 
 \subsubsection{Module d'Authentification}
 
-Le module \texttt{AuthenticationModule} constitue le c\oe ur du syst\`{e}me de s\'{e}curit\'{e}. Il impl\'{e}mente un double syst\`{e}me \acrshort{jwt} \cite{jwt_rfc7519} gr\^{a}ce \`{a} l'int\'{e}gration de Passport.js \cite{passport} avec NestJS :
+Le \texttt{AuthenticationModule} g\`{e}re deux familles d'utilisateurs bien distinctes, avec des tokens \acrshort{jwt} \cite{jwt_rfc7519} s\'{e}par\'{e}s gr\^{a}ce \`{a} Passport.js \cite{passport} :
 
 \begin{itemize}
   \item \textbf{Strat\'{e}gie Admin} (\texttt{JwtStrategy} + \texttt{JwtAuthGuard}) : utilis\'{e}e pour authentifier les administrateurs et caissiers via le endpoint \texttt{POST /api/auth/login}. Le token g\'{e}n\'{e}r\'{e} contient l'identifiant de l'utilisateur, son r\^{o}le, l'identifiant du partenaire et du centre.
@@ -245,11 +245,11 @@ Le syst\`{e}me d'impersonation permet au SuperAdmin de se connecter en tant qu'u
 
 \subsubsection{Journal d'Audit des Connexions}
 
-L'entit\'{e} \texttt{LoginLog} enregistre l'ensemble des \'{e}v\'{e}nements de connexion et de d\'{e}connexion du back-office, avec horodatage, identifiant utilisateur et adresse IP. Ce journal est consultable par les administrateurs via l'interface \texttt{/m/login-logs}, offrant une visibilit\'{e} compl\`{e}te sur l'activit\'{e} d'authentification de la salle.
+L'entit\'{e} \texttt{LoginLog} trace chaque connexion et d\'{e}connexion du back-office : horodatage, identifiant utilisateur, adresse IP. Les administrateurs consultent cet historique via \texttt{/m/login-logs} --- utile pour d\'{e}tecter une tentative suspecte ou v\'{e}rifier qui \'{e}tait connect\'{e} \`{a} un moment donn\'{e}.
 
 \subsubsection{S\'{e}curit\'{e} Globale}
 
-La configuration globale de s\'{e}curit\'{e} dans \texttt{main.ts} inclut :
+Plusieurs couches de protection sont configur\'{e}es directement dans \texttt{main.ts} :
 
 \begin{itemize}
   \item \texttt{ValidationPipe} global avec transformation automatique et validation des \acrshort{dto}.
@@ -331,6 +331,6 @@ L'interface du journal des connexions (\texttt{/m/login-logs}) affiche l'histori
 
 \section{Conclusion}
 
-Ce premier sprint a permis de poser les fondations s\'{e}curitaires de la plateforme TrustGym. Le double syst\`{e}me \acrshort{jwt}, le contr\^{o}le d'acc\`{e}s par r\^{o}les (\acrshort{rbac}) et le contr\^{o}le modulaire \acrshort{saas} via \texttt{ModuleGuard} garantissent une s\'{e}paration claire des privil\`{e}ges entre les diff\'{e}rents types d'utilisateurs. Le flux d'inscription multi-\'{e}tapes c\^{o}t\'{e} mobile, avec v\'{e}rification par code \acrshort{otp}, assure une exp\'{e}rience d'onboarding fluide et s\'{e}curis\'{e}e pour les membres. Ces bases solides permettront d'aborder le Sprint 2, consacr\'{e} \`{a} la gestion des membres et des abonnements.
+Ce sprint pose les gardes-fous sur lesquels tout le reste s'appuie. Deux tokens \acrshort{jwt} distincts, un \acrshort{rbac} \`{a} trois niveaux, un contr\^{o}le modulaire par partenaire --- et, c\^{o}t\'{e} mobile, un onboarding en quatre \'{e}tapes qui guide le membre sans friction. Le Sprint 2 peut maintenant s'appuyer sur des identit\'{e}s v\'{e}rifi\'{e}es pour construire la gestion des membres et des abonnements.
 
 \end{document}

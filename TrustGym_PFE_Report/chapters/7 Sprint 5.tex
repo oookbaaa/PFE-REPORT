@@ -7,7 +7,7 @@
 \section{Introduction}
 %──────────────────────────────────────────────
 
-Ce sprint porte sur la mise en place du module boutique et de la gestion de stock au sein de la plateforme TrustGym. Il couvre l'ensemble de la cha\^{i}ne logistique, depuis la gestion des fournisseurs et des achats, jusqu'au suivi de l'inventaire par salle, aux transferts inter-salles et aux ventes aux membres. Ce module est prot\'{e}g\'{e} par un garde de module \acrshort{saas} (\texttt{ModuleGuard}), permettant d'activer ou de d\'{e}sactiver la fonctionnalit\'{e} boutique selon l'abonnement du partenaire.
+Beaucoup de salles vendent des compl\'{e}ments, des v\^{e}tements ou des accessoires sur place. Ce sprint construit la cha\^{i}ne compl\`{e}te : fournisseur $\rightarrow$ achat $\rightarrow$ stock par salle $\rightarrow$ vente au membre. Les transferts inter-salles permettent aux partenaires multi-centres de r\'{e}\'{e}quilibrer leur inventaire sans friction. Le tout est prot\'{e}g\'{e} par le \texttt{ModuleGuard} --- la boutique n'est accessible qu'aux partenaires qui l'ont souscrite.
 
 %──────────────────────────────────────────────
 \section{Sprint Backlog}
@@ -67,7 +67,7 @@ Le tableau~\ref{tab:backlog_sprint5} pr\'{e}sente le backlog du Sprint 5 d\'{e}t
 
 \subsection{Diagramme de cas d'utilisation}
 
-La figure~\ref{fig:sprint5-usecase} pr\'{e}sente le diagramme de cas d'utilisation du Sprint 5 couvrant la boutique et la gestion de stock.
+La figure~\ref{fig:sprint5-usecase} r\'{e}sume les droits par acteur : l'administrateur g\`{e}re le cycle achat/stock/transfert, le caissier effectue les ventes au quotidien.
 
 \begin{figure}[H]
 \centering
@@ -215,7 +215,7 @@ La figure~\ref{fig:sprint5-usecase} pr\'{e}sente le diagramme de cas d'utilisati
 
 \subsection{Backend}
 
-La r\'{e}alisation backend de ce sprint s'articule autour de plusieurs modules NestJS \cite{nestjs} g\'{e}rant l'ensemble de la cha\^{i}ne logistique de la boutique :
+Huit modules NestJS \cite{nestjs} couvrent la cha\^{i}ne logistique compl\`{e}te de la boutique :
 
 \begin{outline}
     \1 \textbf{ProductModule} : Module de gestion des produits. L'entit\'{e} \texttt{Product} contient le nom, le prix unitaire (\texttt{unitPrice}), la r\'{e}f\'{e}rence au partenaire (\texttt{partnerId}), la cat\'{e}gorie et l'image associ\'{e}e. Le service expose les op\'{e}rations \acrshort{crud} avec filtrage par partenaire.
@@ -231,7 +231,7 @@ La r\'{e}alisation backend de ce sprint s'articule autour de plusieurs modules N
 
 \subsection{Diagramme de s\'{e}quence}
 
-La figure~\ref{fig:sprint5-sequence} illustre le flux d'un transfert de stock entre deux salles de sport.
+La figure~\ref{fig:sprint5-sequence} montre que le transfert s'ex\'{e}cute en transaction : soit les deux mises \`{a} jour r\'{e}ussissent, soit aucune n'est appliqu\'{e}e.
 
 \begin{figure}[H]
 \centering
@@ -280,7 +280,7 @@ La figure~\ref{fig:sprint5-sequence} illustre le flux d'un transfert de stock en
 
 \subsection{Frontend Web}
 
-L'interface web du tableau de bord d'administration int\`{e}gre un ensemble complet de pages pour la gestion de la boutique et du stock :
+Six pages couvrent la boutique c\^{o}t\'{e} tableau de bord :
 
 \begin{outline}
     \1 \textbf{Catalogue produits (\texttt{articles/})} : Page de listing des produits avec composant \texttt{CardComponent} affichant l'image, le nom et le prix unitaire de chaque produit. Formulaire de cr\'{e}ation et de modification avec upload d'image.
@@ -346,6 +346,6 @@ L'interface web du tableau de bord d'administration int\`{e}gre un ensemble comp
 \section{Conclusion}
 %──────────────────────────────────────────────
 
-Ce sprint a permis de mettre en place un syst\`{e}me complet de gestion de boutique et de stock pour la plateforme TrustGym. La solution couvre l'int\'{e}gralit\'{e} de la cha\^{i}ne logistique : gestion des produits et des fournisseurs, enregistrement des achats, suivi de l'inventaire par salle, transferts inter-salles et ventes aux membres. Le m\'{e}canisme de feature flag \acrshort{saas} assure que ce module n'est accessible qu'aux partenaires disposant de l'abonnement ad\'{e}quat. Le prochain sprint sera consacr\'{e} \`{a} la finance, la facturation et le portefeuille pr\'{e}pay\'{e}.
+De la r\'{e}ception fournisseur \`{a} la vente au membre, la tra\c{c}abilit\'{e} est totale. Le \texttt{StockMovement} horodate chaque mouvement, le transfert transactionnel \'{e}vite les incoh\'{e}rences inter-salles, et le \texttt{ModuleGuard} garantit que seuls les partenaires concern\'{e}s y ont acc\`{e}s. Le Sprint 6 s'attaque \`{a} la couche financière --- facturation, portefeuille et comptabilit\'{e}.
 
 \end{document}

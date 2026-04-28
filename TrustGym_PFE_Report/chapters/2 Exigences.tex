@@ -4,12 +4,12 @@
 \chapter{Sp\'{e}cification des Exigences}
 
 \section{Introduction}
-Ce chapitre a pour objectif de d\'{e}finir de mani\`{e}re pr\'{e}cise les exigences du projet TrustGym. Nous y identifions les diff\'{e}rents acteurs du syst\`{e}me, les besoins fonctionnels et non fonctionnels, les cas d'utilisation, le product backlog, ainsi que le diagramme de classes. Cette sp\'{e}cification constitue le socle sur lequel repose l'ensemble du d\'{e}veloppement de la plateforme.
+Avant d'\'{e}crire une ligne de code, il faut savoir ce qu'on construit et pour qui. Ce chapitre r\'{e}pond \`{a} ces questions : acteurs du syst\`{e}me, besoins fonctionnels et non fonctionnels, cas d'utilisation, product backlog et mod\`{e}le de donn\'{e}es.
 
 \section{Sp\'{e}cification des exigences}
 
 \subsection{Identification des Acteurs}
-Le syst\`{e}me TrustGym fait intervenir quatre acteurs principaux, chacun disposant de permissions et de fonctionnalit\'{e}s sp\'{e}cifiques :
+TrustGym distingue quatre acteurs, avec des p\'{e}rim\`{e}tres d'acc\`{e}s strictement d\'{e}finis :
 
 \begin{itemize}
   \item \textbf{SuperAdmin} : responsable de la gestion globale de la plateforme \acrshort{saas}. Il g\`{e}re les partenaires, les salles de sport, les modules \acrshort{saas} (activation/d\'{e}sactivation via feature flags), le registre des portes d'acc\`{e}s, les bundles de modules et les utilisateurs de la plateforme.
@@ -27,7 +27,7 @@ Le syst\`{e}me TrustGym fait intervenir quatre acteurs principaux, chacun dispos
 \end{itemize}
 
 \subsection{Besoins Fonctionnels}
-Les besoins fonctionnels de TrustGym sont organis\'{e}s par acteur :
+Voici ce que chaque acteur peut faire dans le syst\`{e}me :
 
 \subsubsection{Pour les SuperAdmins}
 \begin{outline}
@@ -96,7 +96,7 @@ Les besoins fonctionnels de TrustGym sont organis\'{e}s par acteur :
 \end{outline}
 
 \subsection{Besoins non fonctionnels}
-Les exigences non fonctionnelles garantissent la qualit\'{e} globale du syst\`{e}me \cite{functional_req} :
+Au-del\`{a} des fonctionnalit\'{e}s, la qualit\'{e} d'un syst\`{e}me se mesure \`{a} ses contraintes non fonctionnelles \cite{functional_req} :
 
 \begin{itemize}
   \item \textbf{Performance} : utilisation du \acrshort{ssr} via Next.js pour un rendu rapide c\^{o}t\'{e} serveur. Mise en cache intelligente gr\^{a}ce \`{a} TanStack React Query avec un \texttt{staleTime} de 2 minutes et un cache de 15 minutes, r\'{e}duisant significativement les requ\^{e}tes r\'{e}seau.
@@ -115,7 +115,7 @@ Les exigences non fonctionnelles garantissent la qualit\'{e} globale du syst\`{e
 \section{Analyse des besoins}
 
 \subsection{Diagramme de cas d'utilisation global}
-Le diagramme de cas d'utilisation global (figure~\ref{fig:use_case_global}) illustre les interactions entre les quatre acteurs principaux et le syst\`{e}me TrustGym. Les cas d'utilisation sont r\'{e}partis par acteur, refl\'{e}tant les diff\'{e}rents niveaux d'acc\`{e}s et de responsabilit\'{e}s au sein de la plateforme.
+La figure~\ref{fig:use_case_global} synth\'{e}tise, d'un seul coup d'\oe{}il, ce que chaque acteur peut faire dans TrustGym.
 
 \begin{figure}[H]
   \centering
@@ -198,7 +198,7 @@ Le diagramme de cas d'utilisation global (figure~\ref{fig:use_case_global}) illu
 \end{figure}
 
 \subsection{Product Backlog}
-Le tableau~\ref{tab:product_backlog} pr\'{e}sente le product backlog de TrustGym, class\'{e} par ordre d'importance. Chaque \'{e}l\'{e}ment repr\'{e}sente une fonctionnalit\'{e} majeure du syst\`{e}me, avec une \'{e}valuation de son importance sur une \'{e}chelle de 0 \`{a} 100.
+Le tableau~\ref{tab:product_backlog} liste les treize fonctionnalit\'{e}s du product backlog, tri\'{e}es par priorit\'{e} d\'{e}croissante (0--100). L'authentification et la gestion des membres arrivent en t\^{e}te --- aucune autre fonctionnalit\'{e} n'a de sens sans elles.
 
 \begin{longtable}{|c|p{4.5cm}|p{6.5cm}|c|}
 \hline
@@ -242,7 +242,7 @@ Le tableau~\ref{tab:product_backlog} pr\'{e}sente le product backlog de TrustGym
 \end{longtable}
 
 \subsection{Diagramme de classes}
-Le diagramme de classes (figure~\ref{fig:class_diagram}) repr\'{e}sente la structure statique du syst\`{e}me TrustGym et les relations entre ses principales entit\'{e}s \cite{class_diag, fowler2003uml}. Les entit\'{e}s cl\'{e}s du syst\`{e}me sont :
+Le diagramme de classes (figure~\ref{fig:class_diagram}) capture la structure du mod\`{e}le de donn\'{e}es \cite{class_diag, fowler2003uml}. Voici les entit\'{e}s centrales :
 
 \begin{itemize}
   \item \textbf{User} : repr\'{e}sente les utilisateurs du back-office (Admin, Caissier). Poss\`{e}de un r\^{o}le, des informations d'authentification (\texttt{email}, \texttt{password}, \texttt{cardId}, \texttt{pin}) et est rattach\'{e} \`{a} un partenaire et une salle.
@@ -271,7 +271,7 @@ Le diagramme de classes (figure~\ref{fig:class_diagram}) repr\'{e}sente la struc
 
 \subsection{Catalogue complet des entit\'{e}s}
 
-Le syst\`{e}me TrustGym repose sur \textbf{57 entit\'{e}s TypeORM} organis\'{e}es en neuf domaines fonctionnels. Le tableau~\ref{tab:entity_catalog} pr\'{e}sente l'ensemble des entit\'{e}s avec leur r\^{o}le dans le syst\`{e}me.
+Le mod\`{e}le complet comprend \textbf{57 entit\'{e}s TypeORM} r\'{e}parties en neuf domaines. Le tableau~\ref{tab:entity_catalog} en donne le catalogue exhaustif.
 
 \begin{longtable}{|c|p{3.8cm}|p{8.5cm}|}
 \hline
@@ -430,6 +430,6 @@ Le syst\`{e}me TrustGym repose sur \textbf{57 entit\'{e}s TypeORM} organis\'{e}e
 \end{longtable}
 
 \section{Conclusion}
-Dans ce chapitre, nous avons d\'{e}fini les sp\'{e}cifications compl\`{e}tes du projet TrustGym. Nous avons identifi\'{e} les quatre acteurs principaux du syst\`{e}me (SuperAdmin, Admin, Caissier et Membre), d\'{e}taill\'{e} les besoins fonctionnels par acteur, et \'{e}tabli les exigences non fonctionnelles en termes de performance, scalabilit\'{e}, s\'{e}curit\'{e}, convivialit\'{e} et temps r\'{e}el. Le product backlog a permis de prioriser les treize fonctionnalit\'{e}s majeures, le diagramme de cas d'utilisation global a illustr\'{e} les interactions entre les acteurs et le syst\`{e}me, et le diagramme de classes a pos\'{e} les bases de la mod\'{e}lisation des donn\'{e}es. Ces sp\'{e}cifications serviront de r\'{e}f\'{e}rence tout au long des sept sprints de d\'{e}veloppement pr\'{e}sent\'{e}s dans les chapitres suivants.
+Ce chapitre a \'{e}tabli le contrat fonctionnel du projet : qui utilise TrustGym, ce que chacun peut faire, et les contraintes qualit\'{e} attendues. Le product backlog a fix\'{e} les priorit\'{e}s, le mod\`{e}le de donn\'{e}es a pos\'{e} les fondations. Les chapitres suivants d\'{e}crivent comment tout cela a \'{e}t\'{e} construit, sprint par sprint.
 
 \end{document}

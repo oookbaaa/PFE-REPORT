@@ -7,7 +7,7 @@
 \section{Introduction}
 %──────────────────────────────────────────────
 
-Ce dernier sprint est consacr\'{e} au d\'{e}veloppement de l'application mobile destin\'{e}e aux adh\'{e}rents, \`{a} la mise en place du centre d'indicateurs cl\'{e}s de performance (\acrshort{kpi}), ainsi qu'\`{a} l'int\'{e}gration d'un assistant intelligent bas\'{e} sur l'intelligence artificielle. Ces trois volets constituent les derni\`{e}res briques fonctionnelles de la plateforme TrustGym, compl\'{e}tant ainsi l'\'{e}cosyst\`{e}me compos\'{e} du backend, du tableau de bord web, de l'int\'{e}gration mat\'{e}rielle et, d\'{e}sormais, de l'application mobile et des fonctionnalit\'{e}s avanc\'{e}es d'analytique et d'\acrshort{ai}.
+Le dernier sprint est aussi le plus ambitieux en termes de p\'{e}rim\`{e}tre : il livre l'application mobile compl\`{e}te pour les adh\'{e}rents, le centre \acrshort{kpi} pour les administrateurs, et un assistant \acrshort{ai} bas\'{e} sur le \acrshort{rag}. Ces trois volets cl\^{o}turent l'\'{e}cosyst\`{e}me TrustGym --- le backend, le dashboard web et le mat\'{e}riel \'{e}taient d\'{e}j\`{a} l\`{a} ; il manquait l'exp\'{e}rience membre et la couche analytique pour que la boucle soit ferm\'{e}e.
 
 %──────────────────────────────────────────────
 \section{Sprint Backlog}
@@ -56,7 +56,7 @@ US-7.10 & En tant que super administrateur, je veux que les modules \acrshort{ai
 
 \subsection{Diagramme de cas d'utilisation -- Application Mobile}
 
-La figure~\ref{fig:uc_mobile} illustre les cas d'utilisation de l'application mobile du point de vue de l'adh\'{e}rent.
+La figure~\ref{fig:uc_mobile} recense ce qu'un membre peut faire depuis son t\'{e}l\'{e}phone : six actions, toutes accessibles en quelques clics.
 
 \begin{figure}[H]
 \centering
@@ -91,7 +91,7 @@ La figure~\ref{fig:uc_mobile} illustre les cas d'utilisation de l'application mo
 
 \subsection{Diagramme de cas d'utilisation -- Centre KPI et Assistant IA}
 
-La figure~\ref{fig:uc_kpi_ai} illustre les cas d'utilisation du centre \acrshort{kpi} et de l'assistant \acrshort{ai} du point de vue de l'administrateur.
+La figure~\ref{fig:uc_kpi_ai} r\'{e}sume les outils analytiques et \acrshort{ai} r\'{e}serv\'{e}s aux administrateurs, de l'occupation en direct \`{a} l'ing\'{e}stion de documents \acrshort{rag}.
 
 \begin{figure}[H]
 \centering
@@ -179,7 +179,7 @@ Le module \texttt{AiModule} impl\'{e}mente un assistant intelligent bas\'{e} sur
 
 L'endpoint principal \texttt{POST /api/ai/chat} est r\'{e}serv\'{e} aux r\^{o}les Admin et SuperAdmin, et son acc\`{e}s est conditionn\'{e} par le guard \acrshort{saas} v\'{e}rifiant l'activation du module \texttt{SaasModuleEnum.Ai}.
 
-La figure~\ref{fig:rag_architecture} illustre l'architecture compl\`{e}te du pipeline \acrshort{rag} de l'assistant \acrshort{ai}.
+La figure~\ref{fig:rag_architecture} montre le pipeline complet : de la question en langage naturel jusqu'\`{a} la r\'{e}ponse contextuelle, en passant par l'embedding, la recherche vectorielle et le reranking.
 
 \begin{figure}[H]
   \centering
@@ -201,7 +201,7 @@ Le flux de traitement d'une requ\^{e}te \acrshort{ai} se d\'{e}roule comme suit 
 
 \subsection{Diagramme de s\'{e}quence}
 
-La figure~\ref{fig:sprint7-sequence} illustre le flux complet du pipeline \acrshort{rag} lors d'une interrogation de l'assistant \acrshort{ai}.
+La figure~\ref{fig:sprint7-sequence} d\'{e}taille les six \'{e}tapes du pipeline, depuis la requ\^{e}te jusqu'\`{a} la r\'{e}ponse persist\'{e}e dans \texttt{AiChatLog}.
 
 \begin{figure}[H]
 \centering
@@ -250,7 +250,7 @@ La figure~\ref{fig:sprint7-sequence} illustre le flux complet du pipeline \acrsh
 
 \subsection{R\'{e}alisation Frontend Mobile}
 
-L'application mobile est d\'{e}velopp\'{e}e avec React Native \cite{reactnative} et Expo \acrshort{sdk} 54 \cite{expo}, utilisant Expo Router pour la navigation bas\'{e}e sur les fichiers.
+L'application est construite avec React Native \cite{reactnative} et Expo \acrshort{sdk} 54 \cite{expo}, avec Expo Router pour la navigation fichier-based --- la m\^{e}me philosophie que Next.js App Router, appliqu\'{e}e au mobile.
 
 \subsubsection{Architecture de navigation}
 
@@ -301,7 +301,7 @@ La variable d'environnement \texttt{EXPO\_PUBLIC\_API\_URL} d\'{e}finie dans le 
 
 \subsection{R\'{e}alisation Frontend Web (KPI et IA)}
 
-Le tableau de bord web int\`{e}gre deux nouvelles fonctionnalit\'{e}s majeures dans ce sprint :
+C\^{o}t\'{e} tableau de bord, ce sprint ajoute deux fonctionnalit\'{e}s qui compl\`{e}tent le profil \og{}outil de gestion avanc\'{e}\fg{} :
 
 \subsubsection{Centre KPI}
 
@@ -415,8 +415,8 @@ Auto-rem\'{e}diation sync & 2x/jour (8h, 15h) & D\'{e}tecte et corrige automatiq
 \section{Conclusion}
 %──────────────────────────────────────────────
 
-Ce septi\`{e}me et dernier sprint a permis de compl\'{e}ter la plateforme TrustGym avec ses derni\`{e}res briques fonctionnelles. L'application mobile offre d\'{e}sormais aux adh\'{e}rents un acc\`{e}s complet \`{a} leurs informations, s\'{e}ances et analytiques personnelles. Le centre \acrshort{kpi} dote les administrateurs d'outils d'analyse avanc\'{e}s pour piloter l'activit\'{e} de la salle, tandis que l'assistant \acrshort{ai} bas\'{e} sur le \acrshort{rag} leur permet d'interroger la documentation de mani\`{e}re conversationnelle.
+Ce sprint boucle la boucle. Un adh\'{e}rent peut maintenant s'inscrire sur mobile, scanner un \acrshort{qr} pour pointer en s\'{e}ance, consulter son occupation en direct et voir son solde de portefeuille --- le tout sans passer par un ordinateur. Un administrateur dispose des m\^{e}mes donn\'{e}es en temps r\'{e}el, enrichies par l'analytique \acrshort{kpi} et un assistant \acrshort{rag} capable de r\'{e}pondre en langage naturel.
 
-Avec l'ach\`{e}vement de ce sprint, la plateforme TrustGym couvre d\'{e}sormais l'int\'{e}gralit\'{e} du p\'{e}rim\`{e}tre fonctionnel d\'{e}fini : gestion des membres et des abonnements, contr\^{o}le d'acc\`{e}s physique, gestion des coachs et des s\'{e}ances, boutique et gestion de stock, finance et facturation, application mobile, centre \acrshort{kpi} et assistant \acrshort{ai}. L'ensemble constitue une solution \acrshort{saas} compl\`{e}te et int\'{e}gr\'{e}e pour la gestion de salles de sport.
+Sept sprints, un backend, deux frontends, du mat\'{e}riel physique et une couche \acrshort{ai}. TrustGym est pr\^{e}t.
 
 \end{document}
