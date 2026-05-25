@@ -884,22 +884,6 @@
       \verb https://typeorm.io
       \endverb
     \endentry
-    \entry{typescript}{misc}{}{}
-      \list{publisher}{1}{%
-        {Microsoft}%
-      }
-      \field{sortinit}{T}
-      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
-      \field{labeltitlesource}{title}
-      \field{title}{TypeScript}
-      \field{year}{2024}
-      \verb{urlraw}
-      \verb https://www.typescriptlang.org/
-      \endverb
-      \verb{url}
-      \verb https://www.typescriptlang.org/
-      \endverb
-    \endentry
     \entry{vscode}{misc}{}{}
       \list{publisher}{1}{%
         {Microsoft}%

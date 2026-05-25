@@ -111,15 +111,7 @@ Avant de concevoir TrustGym, nous avons analys\'{e} les solutions existantes pou
   \label{fig:glofox_logo}
 \end{figure}
 
-Glofox \cite{glofox} est une plateforme irlandaise fond\'{e}e en 2014, bien \'{e}tablie sur le march\'{e} international. Ses fonctionnalit\'{e}s sont larges, mais elle n'est pas taill\'{e}e pour le contexte tunisien :
-
-\begin{itemize}
-  \item Tarification en dollars/euros inadapt\'{e}e au march\'{e} local tunisien.
-  \item Absence d'int\'{e}gration native avec les \'{e}quipements ZKTeco et Hikvision, pr\'{e}pond\'{e}rants en Tunisie.
-  \item Pas de support multi-devises ni de gestion de portefeuille pr\'{e}pay\'{e} adapt\'{e} aux pratiques locales.
-  \item Interface et support exclusivement en anglais.
-  \item Absence d'assistant \acrshort{ai} int\'{e}gr\'{e} pour l'analyse op\'{e}rationnelle.
-\end{itemize}
+Glofox \cite{glofox} est une plateforme irlandaise \'{e}tablie sur le march\'{e} international, mais inadapt\'{e}e au contexte tunisien : tarification en euros, aucune int\'{e}gration native ZKTeco/Hikvision, interface exclusivement en anglais et absence d'assistant \acrshort{ai}.
 
 \subsection{GymMaster}
 
@@ -130,15 +122,7 @@ Glofox \cite{glofox} est une plateforme irlandaise fond\'{e}e en 2014, bien \'{e
   \label{fig:gymmaster_logo}
 \end{figure}
 
-GymMaster \cite{gymmaster} est un logiciel n\'{e}o-z\'{e}landais solide en Asie-Pacifique qui s'\'{e}tend progressivement \`{a} l'international. Mais ses lacunes sont similaires :
-
-\begin{itemize}
-  \item Co\^{u}t \'{e}lev\'{e} par rapport aux budgets des petites et moyennes salles de sport tunisiennes.
-  \item Int\'{e}gration mat\'{e}rielle limit\'{e}e, ne supportant pas nativement les protocoles ZKTeco et Hikvision ISAPI.
-  \item Pas de module \acrshort{ai} ni de centre \acrshort{kpi} avanc\'{e} en temps r\'{e}el.
-  \item Absence de communication en temps r\'{e}el via WebSocket pour l'occupation en direct.
-  \item Non adapt\'{e} au march\'{e} tunisien (devises, langue arabe, r\`{e}glementation locale).
-\end{itemize}
+GymMaster \cite{gymmaster} est un logiciel n\'{e}o-z\'{e}landais solide mais trop co\^{u}teux pour les petites salles tunisiennes : int\'{e}gration mat\'{e}rielle limit\'{e}e (pas de protocole ZKTeco/Hikvision ISAPI natif), pas de module \acrshort{ai} ni de \acrshort{kpi} temps r\'{e}el, et non adapt\'{e} aux devises et r\'{e}glementations locales.
 
 \subsection{Solutions locales traditionnelles}
 La r\'{e}alit\'{e} du terrain est plus simple : la majorit\'{e} des salles tunisiennes fonctionnent encore de cette fa\c{c}on :
@@ -156,33 +140,36 @@ Le tableau~\ref{tab:comparatif} compare les solutions existantes et TrustGym sur
 
 \begin{table}[H]
 \centering
-\caption{Tableau comparatif des solutions de gestion de salles de sport}
-\label{tab:comparatif}
-\begin{tabular}{|l|c|c|c|c|}
+\renewcommand{\arraystretch}{1.3}
+\adjustbox{max width=\linewidth}{%
+\begin{tabular}{|p{5.2cm}|>{\centering\arraybackslash}p{2cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|}
 \hline
 \textbf{Crit\`{e}re} & \textbf{Glofox} & \textbf{GymMaster} & \textbf{Excel/Papier} & \textbf{TrustGym} \\
 \hline
-Gestion des membres & \checkmark & \checkmark & Partiel & \checkmark \\
+Gestion des membres & \checkmark & \checkmark & partiel & \checkmark \\
 \hline
-Abonnements & \checkmark & \checkmark & Partiel & \checkmark \\
+Gestion des abonnements & \checkmark & \checkmark & partiel & \checkmark \\
 \hline
-Contr\^{o}le d'acc\`{e}s physique & Partiel & Partiel & -- & \checkmark \\
+Contr\^{o}le d'acc\`{e}s physique (ZKTeco/Hikvision) & -- & -- & -- & \checkmark \\
 \hline
-Occupation temps r\'{e}el & -- & -- & -- & \checkmark \\
+Occupation temps r\'{e}el (WebSocket) & -- & -- & -- & \checkmark \\
 \hline
-Application mobile & \checkmark & \checkmark & -- & \checkmark \\
+Application mobile adh\'{e}rents & \checkmark & \checkmark & -- & \checkmark \\
 \hline
-Boutique / Stock & \checkmark & \checkmark & -- & \checkmark \\
+Boutique et gestion de stock & \checkmark & \checkmark & partiel & \checkmark \\
 \hline
-Facturation / Wallet & \checkmark & \checkmark & -- & \checkmark \\
+Facturation et portefeuille & \checkmark & \checkmark & partiel & \checkmark \\
 \hline
-Assistant \acrshort{ai} & -- & -- & -- & \checkmark \\
+Assistant \acrshort{ai} (\acrshort{rag}) & -- & -- & -- & \checkmark \\
 \hline
 Adapt\'{e} au march\'{e} tunisien & -- & -- & \checkmark & \checkmark \\
 \hline
 Co\^{u}t abordable & -- & -- & \checkmark & \checkmark \\
 \hline
-\end{tabular}
+\end{tabular}%
+}
+\caption{Tableau comparatif des solutions de gestion de salles de sport}
+\label{tab:comparatif}
 \end{table}
 
 \section{Solution et Objectifs}

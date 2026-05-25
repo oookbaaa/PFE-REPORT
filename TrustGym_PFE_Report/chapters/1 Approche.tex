@@ -10,49 +10,9 @@ Ce chapitre explique comment le projet TrustGym a \'{e}t\'{e} organis\'{e} et co
 \section{M\'{e}thodologie}
 %──────────────────────────────────────────────
 
-\subsection{M\'{e}thodologie Agile}
+\subsection{M\'{e}thodologie Agile et Scrum}
 
-Dès le début du projet, il était clair que les besoins allaient évoluer. Les salles de sport partenaires remontaient des retours en continu, et le périmètre fonctionnel s'élargissait au fil des discussions. Une méthodologie rigide aurait été un obstacle. Nous avons donc choisi l'Agile \cite{dev_methodology}.
-
-Le Manifeste Agile, publi\'{e} en 2001, s'articule autour de quatre valeurs :
-
-\begin{itemize}
-    \item Les \textbf{individus et leurs interactions} plut\^{o}t que les processus et les outils.
-    \item Un \textbf{logiciel fonctionnel} plut\^{o}t qu'une documentation exhaustive.
-    \item La \textbf{collaboration avec le client} plut\^{o}t que la n\'{e}gociation contractuelle.
-    \item L'\textbf{adaptation au changement} plut\^{o}t que le suivi rigide d'un plan.
-\end{itemize}
-
-Ces valeurs se d\'{e}clinent en douze principes, dont le plus concret pour ce projet : livrer souvent du code qui fonctionne, et accueillir les changements m\^{e}me tard dans le d\'{e}veloppement.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.65\textwidth]{agile logo.png}
-  \caption{Les valeurs fondamentales de la m\'{e}thodologie Agile}
-  \label{fig:agile_logo}
-\end{figure}
-
-\subsection{L'approche Scrum}
-
-Parmi les cadres Agile, Scrum est celui qui convient le mieux à un projet de cette envergure \cite{schwaber2020scrum, scrum}. Sa structure est simple : des cycles courts (les \textit{Sprints}), des r\^{o}les clairs et des r\'{e}unions cibl\'{e}es. Il n'impose pas de lourdeur processuelle, mais il force la rigueur sur ce qui compte.
-
-\begin{outline}
-    \1 \textbf{R\^{o}les Scrum}
-        \2 \textbf{Scrum Master} : Facilite le processus Scrum, \'{e}limine les obstacles et s'assure que l'\'{e}quipe respecte les pratiques Agile. Il agit comme un coach pour l'\'{e}quipe et prot\`{e}ge celle-ci des interf\'{e}rences ext\'{e}rieures.
-        \2 \textbf{Product Owner} : Repr\'{e}sente les parties prenantes et d\'{e}finit la vision du produit. Il est responsable de la gestion du Product Backlog et de la priorisation des fonctionnalit\'{e}s en fonction de la valeur m\'{e}tier.
-        \2 \textbf{\'{E}quipe de D\'{e}veloppement} : Groupe auto-organis\'{e} et pluridisciplinaire charg\'{e} de la conception, du d\'{e}veloppement et des tests du produit. L'\'{e}quipe s'engage collectivement sur les objectifs de chaque Sprint.
-    \1 \textbf{\'{E}v\'{e}nements Scrum}
-        \2 \textbf{Sprint Planning} : R\'{e}union de planification au d\'{e}but de chaque Sprint o\`{u} l'\'{e}quipe s\'{e}lectionne les \'{e}l\'{e}ments du Product Backlog \`{a} r\'{e}aliser et d\'{e}finit un objectif de Sprint.
-        \2 \textbf{Daily Standup} : R\'{e}union quotidienne de quinze minutes o\`{u} chaque membre partage ce qu'il a accompli, ce qu'il pr\'{e}voit de faire et les obstacles rencontr\'{e}s.
-        \2 \textbf{Sprint Review} : Pr\'{e}sentation des r\'{e}sultats du Sprint aux parties prenantes pour recueillir des retours et ajuster le Product Backlog en cons\'{e}quence.
-        \2 \textbf{Sprint Retrospective} : R\'{e}union d'am\'{e}lioration continue o\`{u} l'\'{e}quipe analyse ce qui a bien fonctionn\'{e}, ce qui peut \^{e}tre am\'{e}lior\'{e} et d\'{e}finit des actions concr\`{e}tes pour le prochain Sprint.
-    \1 \textbf{Artefacts Scrum}
-        \2 \textbf{Product Backlog} : Liste ordonn\'{e}e de toutes les fonctionnalit\'{e}s, am\'{e}liorations et corrections souhait\'{e}es pour le produit. Il est dynamique et \'{e}volue tout au long du projet.
-        \2 \textbf{Sprint Backlog} : Sous-ensemble du Product Backlog s\'{e}lectionn\'{e} pour le Sprint en cours, accompagn\'{e} d'un plan pour atteindre l'objectif du Sprint.
-        \2 \textbf{Incr\'{e}ment} : Somme de tous les \'{e}l\'{e}ments du Product Backlog compl\'{e}t\'{e}s pendant le Sprint, ajout\'{e}e aux incr\'{e}ments pr\'{e}c\'{e}dents. Chaque incr\'{e}ment doit \^{e}tre potentiellement livrable.
-\end{outline}
-
-La figure~\ref{fig:agile_scrum} montre comment ce cycle s'est d\'{e}roul\'{e} concr\`{e}tement dans le projet TrustGym.
+Face \`{a} des besoins \'{e}volutifs et des retours partenaires continus, nous avons adopt\'{e} \textbf{Scrum} \cite{schwaber2020scrum, scrum, dev_methodology} : sprints de 2 \`{a} 4 semaines, daily standups (15~min), sprint planning et sprint review. M.~Bilel Taktak a tenu le r\^{o}le de Product Owner et M.~Talel Zouari le suivi p\'{e}dagogique. Le projet s'est d\'{e}roul\'{e} en \textbf{sept sprints}.
 
 \begin{figure}[H]
   \centering
@@ -61,13 +21,11 @@ La figure~\ref{fig:agile_scrum} montre comment ce cycle s'est d\'{e}roul\'{e} co
   \label{fig:agile_scrum}
 \end{figure}
 
-Le projet s'est d\'{e}roul\'{e} en \textbf{sept sprints} de deux \`{a} quatre semaines, selon la densit\'{e} fonctionnelle de chaque p\'{e}riode. M.~Bilel Taktak a assur\'{e} le r\^{o}le de Product Owner --- c'est lui qui validait les priorit\'{e}s et les livrables --- et M.~Talel Zouari a assur\'{e} le suivi p\'{e}dagogique tout au long du projet.
-
 %──────────────────────────────────────────────
 \section{Technologies Utilis\'{e}es}
 %──────────────────────────────────────────────
 
-Voici la pile technologique de TrustGym. Chaque choix a \'{e}t\'{e} motiv\'{e} par un besoin pr\'{e}cis --- pas par la tendance du moment.
+Le tableau ci-dessous r\'{e}capitule la pile technologique de TrustGym.
 
 \begin{figure}[H]
   \centering
@@ -76,38 +34,31 @@ Voici la pile technologique de TrustGym. Chaque choix a \'{e}t\'{e} motiv\'{e} p
   \label{fig:tech_stack}
 \end{figure}
 
-\begin{outline}
-    \1 \textbf{Frontend Web}
-        \2 \textbf{Next.js 15} : Framework React offrant le rendu c\^{o}t\'{e} serveur (\acrshort{ssr}), l'App Router pour une gestion avanc\'{e}e du routage, et le support natif de l'internationalisation (i18n) pour le fran\c{c}ais, l'arabe et l'anglais \cite{nextjs}.
-        \2 \textbf{TypeScript} : Sur-ensemble typ\'{e} de JavaScript qui am\'{e}liore la robustesse du code gr\^{a}ce au typage statique et \`{a} la d\'{e}tection pr\'{e}coce des erreurs \cite{typescript}.
-        \2 \textbf{Tailwind CSS} : Framework \acrshort{css} utilitaire permettant un d\'{e}veloppement rapide d'interfaces r\'{e}actives et coh\'{e}rentes \cite{tailwind}.
-        \2 \textbf{TanStack Query 5} : Biblioth\`{e}que de gestion de l'\'{e}tat serveur offrant la mise en cache automatique, la synchronisation en arri\`{e}re-plan et la gestion optimiste des donn\'{e}es \cite{tanstack}.
-    \1 \textbf{Frontend Mobile}
-        \2 \textbf{React Native} : Framework de d\'{e}veloppement mobile multiplateforme permettant de cr\'{e}er des applications natives pour iOS et Android \`{a} partir d'une base de code unique \cite{reactnative}.
-        \2 \textbf{Expo SDK 54} : Plateforme de d\'{e}veloppement qui simplifie la configuration, le d\'{e}ploiement et la mise \`{a} jour des applications React Native \cite{expo}.
-        \2 \textbf{NativeWind 4} : Adaptation de Tailwind \acrshort{css} pour React Native, permettant d'utiliser les m\^{e}mes classes utilitaires dans l'application mobile \cite{nativewind}.
-    \1 \textbf{Backend}
-        \2 \textbf{NestJS} : Framework Node.js progressif inspir\'{e} d'Angular, offrant une architecture modulaire robuste avec injection de d\'{e}pendances, d\'{e}corateurs et structure MVC \cite{nestjs}.
-        \2 \textbf{TypeORM} : \acrshort{orm} pour TypeScript et JavaScript, facilitant l'interaction avec la base de donn\'{e}es via des entit\'{e}s et des d\'{e}corateurs \cite{typeorm}.
-        \2 \textbf{Passport.js} : Middleware d'authentification pour Node.js, utilis\'{e} pour impl\'{e}menter l'authentification \acrshort{jwt} avec deux strat\'{e}gies distinctes : une pour les administrateurs et une pour les membres \cite{passport}.
-    \1 \textbf{Base de donn\'{e}es}
-        \2 \textbf{PostgreSQL 16} : Syst\`{e}me de gestion de base de donn\'{e}es relationnelle puissant et extensible, enrichi de l'extension pgvector pour le stockage et la recherche de vecteurs \cite{postgre}.
-    \1 \textbf{Intelligence Artificielle}
-        \2 \textbf{OpenAI} : Utilisation des mod\`{e}les \texttt{text-embedding-3-small} pour la g\'{e}n\'{e}ration d'embeddings et \texttt{gpt-4o-mini} pour l'assistant \acrshort{ai} int\'{e}gr\'{e} au tableau de bord \cite{openai}.
-        \2 \textbf{pgvector} : Extension PostgreSQL permettant la recherche vectorielle pour le syst\`{e}me \acrshort{rag} de l'assistant \acrshort{ai} \cite{pgvector}.
-    \1 \textbf{Temps r\'{e}el}
-        \2 \textbf{Socket.IO} : Biblioth\`{e}que de communication bidirectionnelle en temps r\'{e}el bas\'{e}e sur WebSocket, utilis\'{e}e pour la diffusion des \'{e}v\'{e}nements d'occupation et d'acc\`{e}s \cite{socketio}.
-        \2 \textbf{PostgreSQL LISTEN/NOTIFY} : M\'{e}canisme natif de PostgreSQL utilis\'{e} pour d\'{e}clencher des \'{e}v\'{e}nements en temps r\'{e}el lors de l'insertion d'un nouvel acc\`{e}s dans la base de donn\'{e}es.
-    \1 \textbf{Mat\'{e}riel}
-        \2 \textbf{ZKTeco SDK} : Kit de d\'{e}veloppement pour l'int\'{e}gration des terminaux de contr\^{o}le d'acc\`{e}s ZKTeco (mode Pull via TCP, port 4370) \cite{zkteco}.
-        \2 \textbf{Hikvision ISAPI} : Interface de programmation pour la communication avec les \'{e}quipements Hikvision (mode Push via HTTPS, port 80/443) \cite{hikvision}.
-        \2 \textbf{PM2} : Gestionnaire de processus Node.js utilis\'{e} pour orchestrer les services du Machine Handler en production \cite{pm2}.
-        \2 \textbf{ngrok} : Service de tunneling s\'{e}curis\'{e} permettant d'exposer les services locaux du Machine Handler sur Internet \cite{ngrok}.
-    \1 \textbf{Autres}
-        \2 \textbf{AWS S3} : Service de stockage d'objets utilis\'{e} pour h\'{e}berger les fichiers multim\'{e}dias (photos de membres, logos, factures) \cite{aws}.
-        \2 \textbf{Helmet.js} : Middleware de s\'{e}curit\'{e} pour Express/NestJS qui configure les en-t\^{e}tes HTTP pour prot\'{e}ger l'application contre les vuln\'{e}rabilit\'{e}s web courantes \cite{helmet}.
-        \2 \textbf{Nodemailer} : Biblioth\`{e}que Node.js pour l'envoi d'emails transactionnels (v\'{e}rification OTP, invitations aux s\'{e}ances) via SMTP.
-\end{outline}
+\begin{longtable}{|p{3.5cm}|p{3cm}|p{7cm}|}
+\hline
+\textbf{Cat\'{e}gorie} & \textbf{Outil / Version} & \textbf{R\^{o}le dans le projet} \\
+\hline
+\endfirsthead
+\hline
+\endfoot
+Frontend Web & Next.js 15, TanStack Query 5, Tailwind CSS & Dashboard admin/caissier avec \acrshort{ssr}, App Router, i18n (fr/ar/en) \cite{nextjs, tanstack, tailwind}. \\
+\hline
+Frontend Mobile & React Native, Expo \acrshort{sdk} 54, NativeWind & Application adh\'{e}rents iOS/Android, Expo Router \cite{reactnative, expo, nativewind}. \\
+\hline
+Backend & NestJS 10, TypeORM, Passport.js & API \acrshort{rest} modulaire (50+ modules), double \acrshort{jwt} (admin vs membre) \cite{nestjs, typeorm, passport}. \\
+\hline
+Base de donn\'{e}es & PostgreSQL 16 + pgvector & Stockage relationnel + recherche vectorielle pour le \acrshort{rag} \cite{postgre, pgvector}. \\
+\hline
+Temps r\'{e}el & Socket.IO, PG LISTEN/NOTIFY & Diffusion des \'{e}v\'{e}nements d'acc\`{e}s et d'occupation sur le namespace \texttt{/attendance} \cite{socketio}. \\
+\hline
+Intelligence Artificielle & OpenAI \texttt{gpt-4o-mini} + \texttt{text-embedding-3-small} & Pipeline \acrshort{rag} : embedding $\rightarrow$ pgvector $\rightarrow$ reranking $\rightarrow$ g\'{e}n\'{e}ration \cite{openai}. \\
+\hline
+Mat\'{e}riel & ZKTeco \acrshort{sdk} (TCP 4370), Hikvision ISAPI (\acrshort{https}) & Contr\^{o}le d'acc\`{e}s physique via Machine Handler (PM2, ngrok) \cite{zkteco, hikvision, pm2}. \\
+\hline
+Infra / Autres & VPS OVH, Nginx, Vercel, AWS S3, Nodemailer, Helmet.js & H\'{e}bergement, reverse proxy, stockage fichiers, emails transactionnels, s\'{e}curit\'{e} HTTP \cite{aws, helmet}. \\
+\hline
+\caption{Pile technologique de TrustGym}
+\end{longtable}
 
 %──────────────────────────────────────────────
 \section{Architecture Syst\`{e}me}
@@ -242,21 +193,13 @@ Le middleware Next.js d\'{e}tecte la langue du navigateur et redirige vers la bo
 
 \subsection{Outils de D\'{e}veloppement}
 
-\begin{outline}
-    \1 \textbf{Mod\'{e}lisation}
-        \2 \textbf{StarUML} : Outil de mod\'{e}lisation UML utilis\'{e} pour la cr\'{e}ation des diagrammes de cas d'utilisation, de classes, de s\'{e}quence et d'activit\'{e}.
-    \1 \textbf{Environnement de d\'{e}veloppement int\'{e}gr\'{e} (\acrshort{ide})}
-        \2 \textbf{Visual Studio Code} : \'{E}diteur de code l\'{e}ger et extensible, optimis\'{e} pour le d\'{e}veloppement web et cloud avec un support natif de TypeScript, JavaScript et Node.js \cite{vscode}.
-    \1 \textbf{Gestion de Projet}
-        \2 \textbf{Linear} : Outil de gestion de projet Agile moderne utilis\'{e} pour le suivi des sprints, la planification du backlog et le suivi avanc\'{e} des t\^{a}ches au sein de l'\'{e}quipe, gr\^{a}ce \`{a} son interface fluide et ses cycles de sprint automatis\'{e}s.
-        \2 \textbf{Google Meet} : Plateforme de communication vid\'{e}o utilis\'{e}e pour les r\'{e}unions d'\'{e}quipe quotidiennes (stand-up), les sessions de Sprint Planning et de Sprint Review avec l'encadrant entreprise.
-    \1 \textbf{Tests \acrshort{api}}
-        \2 \textbf{Postman} : Plateforme de test et de documentation des \acrshort{api} \acrshort{rest}, utilis\'{e}e pour valider les endpoints avant l'int\'{e}gration frontend \cite{postman}.
-        \2 \textbf{Swagger} : Documentation interactive auto-g\'{e}n\'{e}r\'{e}e \`{a} partir des d\'{e}corateurs NestJS, accessible \`{a} l'adresse \texttt{/api/doc} \cite{swagger}.
-    \1 \textbf{Contr\^{o}le de Version}
-        \2 \textbf{Git} : Syst\`{e}me de contr\^{o}le de version distribu\'{e} utilis\'{e} pour g\'{e}rer le code source de tous les sous-projets \cite{git}.
-        \2 \textbf{GitHub} : Plateforme d'h\'{e}bergement de d\'{e}p\^{o}ts Git utilis\'{e}e pour la collaboration, les revues de code et la gestion des branches.
-\end{outline}
+\begin{itemize}
+    \item \textbf{IDE} : Visual Studio Code \cite{vscode} avec extensions TypeScript/NestJS.
+    \item \textbf{Mod\'{e}lisation UML} : StarUML (diagrammes UC, classes, s\'{e}quence).
+    \item \textbf{Tests \acrshort{api}} : Postman \cite{postman} + Swagger auto-g\'{e}n\'{e}r\'{e} \`{a} \texttt{/api/doc} \cite{swagger}.
+    \item \textbf{Gestion de projet} : Linear (sprint backlog, cycles automatis\'{e}s) ; Google Meet (daily standups et reviews).
+    \item \textbf{Contr\^{o}le de version} : Git + GitHub (pull requests, revues de code) \cite{git}.
+\end{itemize}
 
 \subsection{Mat\'{e}riel de D\'{e}veloppement}
 

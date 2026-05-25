@@ -112,41 +112,9 @@ La figure~\ref{fig:sprint2-usecase} cartographie les actions disponibles selon l
 \label{fig:sprint2-usecase}
 \end{figure}
 
-\subsection{Description textuelle des cas d'utilisation}
+\subsection{Cas d'utilisation cibl\'{e}s}
 
-\subsubsection{Cas d'utilisation : G\'{e}rer les Membres}
-
-\begin{itemize}
-  \item \textbf{Acteur principal} : Administrateur / Caissier
-  \item \textbf{Pr\'{e}conditions} : L'acteur est authentifi\'{e} et dispose des droits n\'{e}cessaires.
-  \item \textbf{Sc\'{e}nario principal} :
-  \begin{enumerate}
-    \item L'administrateur acc\`{e}de \`{a} la liste des membres via \texttt{GET /api/member/partner/paginate}.
-    \item Il peut rechercher un membre par nom, CIN ou num\'{e}ro de carte.
-    \item Il s\'{e}lectionne un membre pour consulter sa fiche d\'{e}taill\'{e}e via \texttt{GET /api/member/profile/:id}.
-    \item Il peut modifier les informations personnelles via \texttt{PATCH /api/member/:id}.
-    \item Il peut ajouter des liens familiaux (d\'{e}pendants).
-    \item Il peut bloquer ou d\'{e}bloquer le membre via le champ \texttt{isBlocked}.
-  \end{enumerate}
-  \item \textbf{Sc\'{e}nario alternatif} : Lors de la cr\'{e}ation, si le CIN ou le \texttt{cardId} existe d\'{e}j\`{a}, le syst\`{e}me retourne une erreur de duplication v\'{e}rifi\'{e}e via \texttt{POST /api/member/check-uniqueness}.
-  \item \textbf{Postconditions} : Les modifications sont persist\'{e}es en base de donn\'{e}es.
-\end{itemize}
-
-\subsubsection{Cas d'utilisation : Inscrire un Membre \`{a} un Abonnement}
-
-\begin{itemize}
-  \item \textbf{Acteur principal} : Administrateur / Caissier
-  \item \textbf{Pr\'{e}conditions} : Le membre existe dans le syst\`{e}me et des formules sont configur\'{e}es.
-  \item \textbf{Sc\'{e}nario principal} :
-  \begin{enumerate}
-    \item L'administrateur ouvre la fiche du membre, onglet abonnements.
-    \item Il s\'{e}lectionne la formule d'abonnement souhait\'{e}e.
-    \item Il d\'{e}finit les dates de d\'{e}but et de fin de l'abonnement.
-    \item Il enregistre le paiement associ\'{e} (montant, type, \'{e}ch\'{e}ance).
-    \item Le syst\`{e}me cr\'{e}e l'entr\'{e}e \texttt{MemberGymSubscription} et les \'{e}ch\'{e}ances correspondantes.
-  \end{enumerate}
-  \item \textbf{Postconditions} : Le membre est associ\'{e} \`{a} l'abonnement avec un plan de paiement.
-\end{itemize}
+Format d\'{e}fini en section~\ref{sec:uc_format}. Ce sprint couvre : \textbf{G\'{e}rer les membres} (Admin/Caissier --- recherche, modification, blocage, liens familiaux), \textbf{Inscrire un membre \`{a} un abonnement} avec \texttt{$\ll$include$\gg$} sur l'enregistrement du paiement, et \textbf{G\'{e}rer les \'{e}ch\'{e}ances/conventions/cotisations}. Sp\'{e}cificit\'{e} : la cr\'{e}ation d\'{e}clenche un \texttt{check-uniqueness} simultan\'{e} sur \texttt{Member}, \texttt{Coach} et \texttt{User} pour \'{e}viter les collisions de CIN, email, t\'{e}l\'{e}phone et \texttt{cardId}.
 
 \subsection{Diagramme de s\'{e}quence : Inscription \`{a} un Abonnement}
 
@@ -187,29 +155,29 @@ La figure~\ref{fig:sprint2-seq} d\'{e}taille ce que l'API fait \`{a} chaque \'{e
 
 \subsection{Backend}
 
-\subsubsection{Module Membre}
+\subsubsection{Modules m\'{e}tier}
 
-Le \texttt{MemberModule} g\`{e}re l'entit\'{e} \texttt{Member} qui regroupe les informations personnelles de chaque adh\'{e}rent : \texttt{firstName}, \texttt{lastName}, \texttt{dateOfBirth}, \texttt{gender}, \texttt{address}, \texttt{city}, \texttt{cin}, \texttt{phone}, ainsi que les identifiants d'acc\`{e}s physique (\texttt{cardId} pour la carte \acrshort{rfid} et \texttt{pin}). Le champ \texttt{isBlocked} permet de suspendre temporairement l'acc\`{e}s d'un membre. L'entit\'{e} est li\'{e}e au portefeuille du membre (\texttt{Wallet} via OneToOne) et peut \^{e}tre associ\'{e}e \`{a} d'autres membres via les relations familiales.
-
-Le contr\^{o}leur \texttt{MemberController} expose les endpoints suivants, tous prot\'{e}g\'{e}s par \texttt{JwtAuthGuard} et \texttt{RolesGuard} :
-\begin{itemize}
-  \item \texttt{POST /api/member} : cr\'{e}ation d'un nouveau membre.
-  \item \texttt{POST /api/member/check-uniqueness} : v\'{e}rification de l'unicit\'{e} des champs (CIN, email, cardId).
-  \item \texttt{PATCH /api/member/:id} : mise \`{a} jour des informations.
-  \item \texttt{PATCH /api/member/change-card-id} : modification du num\'{e}ro de carte \acrshort{rfid}.
-  \item \texttt{GET /api/member/partner/paginate} : liste pagin\'{e}e par partenaire.
-  \item \texttt{GET /api/member/profile/:id} : fiche d\'{e}taill\'{e}e du membre.
-\end{itemize}
-
-\subsubsection{Module Abonnement}
-
-Le \texttt{GymSubscriptionModule} d\'{e}finit les formules d'abonnement avec deux types : \texttt{PER\_MONTH} (mensuel avec \texttt{durationInMonths}) et \texttt{PER\_SESSION} (par s\'{e}ance avec \texttt{numberOfSessions}). Le champ \texttt{maxSlots} limite le nombre de r\'{e}servations simultan\'{e}es pour les s\'{e}ances de type RESERVATION.
-
-Le \texttt{MemberGymSubscriptionModule} g\`{e}re le lien entre un membre et sa formule, tra\c{c}ant les dates de d\'{e}but/fin et le statut. La relation ManyToMany entre \texttt{GymSubscription} et \texttt{Gym} permet de partager des formules entre plusieurs salles d'un m\^{e}me partenaire.
-
-\subsubsection{Module Paiement}
-
-Le \texttt{PaymentModule} centralise le suivi financier. Chaque enregistrement contient : \texttt{amount} (total), \texttt{payedAmount} (montant effectivement pay\'{e}), \texttt{typeOfPayment} (esp\`{e}ces, ch\`{e}que, virement), \texttt{isPaid} (statut), \texttt{dueDate} (\'{e}ch\'{e}ance), et pour les ch\`{e}ques : \texttt{bank} et \texttt{checkNumber}.
+\begin{longtable}{|>{\footnotesize}p{5.5cm}|>{\footnotesize}p{4.0cm}|p{3.8cm}|}
+\hline
+\textbf{Module} & \textbf{Entit\'{e}s cl\'{e}s} & \textbf{R\^{o}le} \\
+\hline
+\endfirsthead
+\hline
+\endfoot
+\texttt{MemberModule} & \texttt{Member}, \texttt{MemberImage} & \acrshort{crud} adh\'{e}rents (\texttt{cin}, \texttt{cardId}, \texttt{pin}, \texttt{isBlocked}), liens familiaux, recherche pagin\'{e}e, \texttt{check-uniqueness}. \\
+\hline
+\texttt{GymSubscriptionModule} & \texttt{GymSubscription}, \texttt{SubscriptionTimeSlot} & Formules \texttt{PER\_MONTH} / \texttt{PER\_SESSION}, \texttt{maxSlots} pour les r\'{e}servations, restrictions horaires hors-pointe. \\
+\hline
+\texttt{MemberGymSubscriptionModule} & \texttt{MemberGymSubscription} & Lien membre--formule, dates et statut, partage \acrshort{m2m} entre salles d'un m\^{e}me partenaire. \\
+\hline
+\texttt{PaymentModule} & \texttt{Payment} & \'{E}ch\'{e}ances : \texttt{amount}, \texttt{payedAmount}, \texttt{typeOfPayment}, \texttt{isPaid}, \texttt{dueDate}, \texttt{bank}/\texttt{checkNumber}. \\
+\hline
+\texttt{ConventionModule} & \texttt{Convention} & Tarifs pr\'{e}f\'{e}rentiels (\texttt{flatDiscount} ou \texttt{percentageDiscount}), cat\'{e}gories Enterprise / Family. \\
+\hline
+\texttt{AnnualFee} et \texttt{MemberAnnualFeeModule} & \texttt{AnnualFee}, \texttt{MemberAnnualFee} & Cotisations annuelles ind\'{e}pendantes des abonnements (\texttt{isAnnualFeeEnabled}, \texttt{annualFeeAmount}). \\
+\hline
+\caption{Modules backend du Sprint 2}
+\end{longtable}
 
 \subsubsection{Synchronisation Automatique avec les Dispositifs}
 
@@ -227,74 +195,22 @@ Pour les abonnements de type \texttt{PER\_SESSION}, le champ \texttt{numberOfSes
 
 L'entit\'{e} \texttt{SubscriptionTimeSlot} permet de restreindre les heures d'acc\`{e}s d'un abonnement. Cette fonctionnalit\'{e} est utilis\'{e}e pour les formules hors-pointe (par exemple, un abonnement valable uniquement de 6h \`{a} 14h). L'algorithme d'autorisation d'acc\`{e}s du Sprint 3 v\'{e}rifie ces restrictions avant d'autoriser l'entr\'{e}e.
 
-\subsubsection{Modules Convention et Cotisations}
-
-Le \texttt{ConventionModule} g\`{e}re les accords de groupe permettant des tarifs pr\'{e}f\'{e}rentiels. L'entit\'{e} \texttt{Convention} supporte deux types de r\'{e}duction : un montant fixe (\texttt{flatDiscount}) ou un pourcentage (\texttt{percentageDiscount}), appliqu\'{e} automatiquement lors de l'affectation d'un abonnement \`{a} un membre. Les conventions sont regroup\'{e}es en deux cat\'{e}gories : \textbf{Enterprise} (accords d'entreprise) et \textbf{Family} (regroupements familiaux).
-
-Le \texttt{AnnualFeeModule} et \texttt{MemberAnnualFeeModule} suivent les cotisations obligatoires par membre et par ann\'{e}e, configurables au niveau du partenaire (\texttt{isAnnualFeeEnabled}, \texttt{annualFeeAmount}). La cotisation annuelle est ind\'{e}pendante des abonnements et repr\'{e}sente g\'{e}n\'{e}ralement une assurance ou des frais d'inscription.
-
 \subsection{Frontend Web}
 
-\subsubsection{Liste des Membres}
-
-La page de liste des membres offre une vue tabulaire avec recherche en temps r\'{e}el et filtres avanc\'{e}s (par statut d'abonnement, statut de blocage, convention). La pagination est g\'{e}r\'{e}e c\^{o}t\'{e} serveur via TanStack Query \cite{tanstack} pour optimiser les performances.
+Pages livr\'{e}es : liste des membres pagin\'{e}e c\^{o}t\'{e} serveur via TanStack Query \cite{tanstack}, fiche membre \`{a} onglets (Identit\'{e}, Abonnements, \'{E}ch\'{e}ances, Famille, Cotisations), gestion des formules, conventions (\texttt{/m/conventions}) et \'{e}ch\'{e}ances (\texttt{/m/members/echeances}).
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{capture/Liste des membres Admin.png}
-  \caption{Interface de liste des membres avec filtres de recherche}
+  \includegraphics[width=\textwidth, height=0.55\textheight, keepaspectratio]{capture/Liste des membres Admin.png}
+  \caption{Liste des membres avec filtres de recherche}
   \label{fig:sprint2-member-list}
 \end{figure}
 
-\subsubsection{Fiche D\'{e}taill\'{e}e du Membre}
-
-La page de d\'{e}tail regroupe l'ensemble des informations dans une interface \`{a} onglets :
-\begin{itemize}
-  \item \textbf{Informations personnelles} : donn\'{e}es d'identit\'{e} \'{e}ditables.
-  \item \textbf{Abonnements} : historique et abonnement actif, possibilit\'{e} de renouvellement.
-  \item \textbf{\'{E}ch\'{e}ances} : tableau des paiements dus et effectu\'{e}s.
-  \item \textbf{Famille} : liens familiaux via le \texttt{FamilyDialog}.
-  \item \textbf{Cotisations} : suivi des cotisations annuelles.
-\end{itemize}
-
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{capture/fiche-membre.png}
-  \caption{Fiche d\'{e}taill\'{e}e d'un membre avec onglets}
+  \includegraphics[width=\textwidth, height=0.55\textheight, keepaspectratio]{capture/fiche-membre.png}
+  \caption{Fiche membre \`{a} onglets (identit\'{e}, abonnements, \'{e}ch\'{e}ances, famille)}
   \label{fig:sprint2-member-detail}
-\end{figure}
-
-\subsubsection{Gestion des Abonnements}
-
-L'interface de gestion des formules permet de cr\'{e}er, modifier et d\'{e}sactiver des formules. Un dialogue d\'{e}di\'{e} g\`{e}re l'inscription d'un membre avec s\'{e}lection de la formule, d\'{e}finition des dates et enregistrement du paiement initial.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{capture/abonnements.png}
-  \caption{Interface de gestion des formules d'abonnement}
-  \label{fig:sprint2-subscription}
-\end{figure}
-
-\subsubsection{Conventions de Groupe}
-
-L'interface de gestion des conventions (\texttt{/m/conventions}) permet de cr\'{e}er et de g\'{e}rer les accords tarifaires pr\'{e}f\'{e}rentiels. L'administrateur d\'{e}finit le type de r\'{e}duction (montant fixe ou pourcentage) et la cat\'{e}gorie (Enterprise ou Family), puis associe la convention aux membres lors de l'affectation d'un abonnement.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{capture/conventions.png}
-  \caption{Interface de gestion des conventions avec types de r\'{e}duction}
-  \label{fig:sprint2-conventions}
-\end{figure}
-
-\subsubsection{\'{E}ch\'{e}ances de Paiement}
-
-La page des \'{e}ch\'{e}ances (\texttt{/m/members/echeances}) centralise le suivi de tous les paiements dus et effectu\'{e}s. Le caissier ou l'administrateur peut filtrer par date d'\'{e}ch\'{e}ance, par membre ou par statut (pay\'{e} / impay\'{e}), puis marquer un paiement comme encaiss\'{e} en pr\'{e}cisant le montant et le mode de r\`{e}glement.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{capture/echeances.png}
-  \caption{Page de suivi des \'{e}ch\'{e}ances avec filtres par statut et par date}
-  \label{fig:sprint2-echeances}
 \end{figure}
 
 \section{Conclusion}

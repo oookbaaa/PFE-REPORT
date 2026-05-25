@@ -16,7 +16,6 @@ Le dernier sprint est aussi le plus ambitieux en termes de p\'{e}rim\`{e}tre : i
 Le tableau~\ref{tab:sprint7_backlog} pr\'{e}sente le backlog du Sprint 7 avec les user stories associ\'{e}es.
 
 \begin{longtable}{|c|p{10cm}|c|}
-\caption{Sprint Backlog -- Sprint 7} \label{tab:sprint7_backlog} \\
 \hline
 \textbf{ID} & \textbf{User Story} & \textbf{Priorit\'{e}} \\
 \hline
@@ -48,6 +47,8 @@ US-7.9 & En tant qu'administrateur, je veux que l'historique des conversations \
 \hline
 US-7.10 & En tant que super administrateur, je veux que les modules \acrshort{ai} et \acrshort{kpi} Center soient prot\'{e}g\'{e}s par des guards \acrshort{saas} pour contr\^{o}ler l'acc\`{e}s selon les licences activ\'{e}es. & Haute \\
 \hline
+\caption{Sprint Backlog -- Sprint 7}
+\label{tab:sprint7_backlog}
 \end{longtable}
 
 %──────────────────────────────────────────────
@@ -130,39 +131,19 @@ La figure~\ref{fig:uc_kpi_ai} r\'{e}sume les outils analytiques et \acrshort{ai}
 
 \subsection{R\'{e}alisation Backend}
 
-\subsubsection{Module Application Mobile (MemberAppModule)}
-
-Le module \texttt{MemberAppModule} expose les endpoints sp\'{e}cifiques \`{a} l'application mobile. Il comprend deux contr\^{o}leurs principaux :
-
-\begin{itemize}
-    \item \textbf{MemberSessionController} : permet aux adh\'{e}rents de consulter les s\'{e}ances disponibles, de visualiser le planning et de g\'{e}rer leurs r\'{e}servations.
-    \item \textbf{MemberKpiController} : fournit les indicateurs personnels de l'adh\'{e}rent, tels que les statistiques de pr\'{e}sence, l'occupation en temps r\'{e}el et l'historique des r\'{e}servations.
-\end{itemize}
-
-Ces endpoints sont prot\'{e}g\'{e}s par le \texttt{MemberJwtGuard}, garantissant que seuls les membres authentifi\'{e}s via l'application mobile peuvent y acc\'{e}der.
-
-\subsubsection{Module Centre KPI (KpiCenterModule)}
-
-Le module \texttt{KpiCenterModule} fournit les indicateurs analytiques avanc\'{e}s pour les administrateurs. Ses fonctionnalit\'{e}s principales sont :
-
-\begin{outline}
-    \1 \textbf{Occupation en direct (Live Occupancy)}
-        \2 Calcul du nombre de membres actuellement pr\'{e}sents dans la salle.
-        \2 Logique : comptage des membres dont le dernier \'{e}v\'{e}nement d'acc\`{e}s est de type ENTRY dans une fen\^{e}tre de temps configurable (par d\'{e}faut 1 heure).
-        \2 Diffusion en temps r\'{e}el via l'\'{e}v\'{e}nement WebSocket \texttt{occupancy:updated} sur le namespace \texttt{/attendance}.
-    \1 \textbf{Analyse des heures de pointe (Peak Hours)}
-        \2 Agr\'{e}gation des donn\'{e}es d'acc\`{e}s pour identifier les cr\'{e}neaux horaires de forte affluence.
-        \2 Visualisation par jour de la semaine et par tranche horaire.
-    \1 \textbf{Analytique de pr\'{e}sence des membres}
-        \2 Statistiques de fr\'{e}quentation individuelle et globale.
-        \2 Taux de pr\'{e}sence par p\'{e}riode, tendances et comparaisons.
-\end{outline}
-
-L'acc\`{e}s au centre \acrshort{kpi} est conditionn\'{e} par le guard \acrshort{saas} v\'{e}rifiant l'activation du module \texttt{SaasModuleEnum.KpiCenter} pour la salle concern\'{e}e.
-
-\paragraph{D\'{e}tection des membres silencieux et campagnes e-mail}
-
-Le centre \acrshort{kpi} inclut un m\'{e}canisme de d\'{e}tection des \textbf{membres silencieux} : les adh\'{e}rents n'ayant effectu\'{e} aucune visite depuis un nombre configurable de jours. L'administrateur peut s\'{e}lectionner ces membres inactifs et lancer une \textbf{campagne e-mail de r\'{e}engagement} en masse via AWS SES \cite{aws}. L'endpoint \texttt{POST /kpi-center/send-email} g\`{e}re l'envoi group\'{e} avec un template personnalis\'{e}.
+\begin{longtable}{|p{3.6cm}|>{\small}p{5.0cm}|p{5.1cm}|}
+\hline
+\textbf{Module} & \textbf{Entit\'{e}s / Composants cl\'{e}s} & \textbf{R\^{o}le} \\
+\hline
+\endfirsthead
+\hline
+\endfoot
+\texttt{MemberAppModule} & \texttt{MemberSessionController},\newline\texttt{MemberKpiController} & Endpoints mobiles prot\'{e}g\'{e}s par \texttt{MemberJwtGuard} : planning, r\'{e}servations, \acrshort{kpi} personnels. \\
+\hline
+\texttt{KpiCenterModule} & \texttt{AccessLog}, \texttt{KpiService} & Occupation en direct (ENTRY events dans fen\^{e}tre 1h), heures de pointe, diffusion WebSocket \texttt{occupancy:updated} sur \texttt{/attendance}, d\'{e}tection membres silencieux + campagne e-mail AWS SES. Guard \texttt{SaasModuleEnum.KpiCenter}. \\
+\hline
+\caption{Modules backend du Sprint 7 (Mobile \& KPI)}
+\end{longtable}
 
 \subsubsection{Module Intelligence Artificielle (AiModule)}
 
@@ -187,17 +168,6 @@ La figure~\ref{fig:rag_architecture} montre le pipeline complet : de la question
   \caption{Architecture du pipeline RAG -- Assistant IA TrustGym}
   \label{fig:rag_architecture}
 \end{figure}
-
-Le flux de traitement d'une requ\^{e}te \acrshort{ai} se d\'{e}roule comme suit :
-
-\begin{enumerate}
-    \item L'administrateur envoie une question via \texttt{POST /api/ai/chat}.
-    \item La question est convertie en vecteur d'embedding via \texttt{text-embedding-3-small}.
-    \item Une recherche de similarit\'{e} vectorielle est effectu\'{e}e dans la table \texttt{doc\_chunk} via pgvector.
-    \item Les chunks r\'{e}cup\'{e}r\'{e}s sont r\'{e}ordonn\'{e}s par le m\'{e}canisme de reranking.
-    \item Les chunks les plus pertinents sont inject\'{e}s dans le contexte du mod\`{e}le \texttt{gpt-4o-mini}.
-    \item La r\'{e}ponse g\'{e}n\'{e}r\'{e}e est retourn\'{e}e \`{a} l'administrateur et enregistr\'{e}e dans \texttt{AiChatLog}.
-\end{enumerate}
 
 \subsection{Diagramme de s\'{e}quence}
 
@@ -250,122 +220,53 @@ La figure~\ref{fig:sprint7-sequence} d\'{e}taille les six \'{e}tapes du pipeline
 
 \subsection{R\'{e}alisation Frontend Mobile}
 
-L'application est construite avec React Native \cite{reactnative} et Expo \acrshort{sdk} 54 \cite{expo}, avec Expo Router pour la navigation fichier-based --- la m\^{e}me philosophie que Next.js App Router, appliqu\'{e}e au mobile.
-
-\subsubsection{Architecture de navigation}
-
-La structure de navigation repose sur Expo Router avec un layout racine \texttt{app/\_layout.tsx} et un syst\`{e}me d'onglets d\'{e}fini dans \texttt{app/(tabs)/} :
-
-\begin{outline}
-    \1 \textbf{DashboardScreen} : \'{e}cran d'accueil affichant le flux d'activit\'{e}, les statistiques personnelles et le statut de pr\'{e}sence de l'adh\'{e}rent.
-    \1 \textbf{SessionsScreen} : calendrier PlanningView permettant de visualiser et parcourir les s\'{e}ances disponibles.
-    \1 \textbf{AnalyticsScreen} : indicateurs personnels de performance, occupation en temps r\'{e}el et historique des r\'{e}servations.
-    \1 \textbf{ProfileScreen} : gestion des informations personnelles, consultation du statut d'abonnement et d\'{e}connexion.
-\end{outline}
-
-\subsubsection{Flux d'authentification}
-
-Le flux d'authentification mobile comprend plusieurs \'{e}tapes :
-
-\begin{enumerate}
-    \item \textbf{SignInScreen} : connexion avec email et mot de passe.
-    \item \textbf{SignUpScreen} : inscription en plusieurs \'{e}tapes (v\'{e}rification de l'email, confirmation d'identit\'{e}).
-    \item \textbf{VerifyEmailScreen} : saisie du code de v\'{e}rification envoy\'{e} par email.
-    \item \textbf{SetPasswordScreen} : d\'{e}finition du mot de passe pour finaliser l'inscription.
-\end{enumerate}
-
-Le token \acrshort{jwt} est stock\'{e} dans AsyncStorage via le service \texttt{src/services/auth-storage.ts} et v\'{e}rifi\'{e} au lancement de l'application via \texttt{GET /api/auth/member/verify}.
-
-\subsubsection{Client API et temps r\'{e}el}
-
-Le client \acrshort{api} (\texttt{src/services/api.ts}) est bas\'{e} sur \texttt{fetch} et attache automatiquement le header \texttt{Authorization: Bearer <token>} \`{a} chaque requ\^{e}te.
-
-La communication en temps r\'{e}el est assur\'{e}e par Socket.IO \cite{socketio} sur le namespace \texttt{/attendance}. Le hook \texttt{useOccupancyRealtime} combine :
-
-\begin{itemize}
-    \item L'\'{e}coute des \'{e}v\'{e}nements WebSocket \texttt{occupancy:updated} pour les mises \`{a} jour instantan\'{e}es.
-    \item Un polling toutes les 30 secondes comme m\'{e}canisme de secours.
-\end{itemize}
-
-L'application est \'{e}galement con\c{c}ue pour fonctionner en mode hors ligne : les requ\^{e}tes React Query \cite{tanstack} sont mises en pause lorsque la connexion est perdue (d\'{e}tect\'{e}e via \texttt{@react-native-community/netinfo}) et reprennent automatiquement lors de la reconnexion. Ce comportement \'{e}vite les erreurs r\'{e}seau inutiles et pr\'{e}serve la batterie de l'appareil. En compl\'{e}ment, un polling toutes les 30 secondes assure la mise \`{a} jour de l'occupation m\^{e}me en cas de d\'{e}connexion temporaire du WebSocket.
-
-\subsubsection{Configuration de l'environnement}
-
-La variable d'environnement \texttt{EXPO\_PUBLIC\_API\_URL} d\'{e}finie dans le fichier \texttt{.env} d\'{e}termine l'adresse de l'\acrshort{api} selon le contexte d'ex\'{e}cution :
-
-\begin{itemize}
-    \item Simulateur iOS / Web : \texttt{http://localhost:3002/api}
-    \item \'{E}mulateur Android : \texttt{http://10.0.2.2:3002/api}
-    \item Appareil physique : \texttt{http://<ip-locale>:3002/api}
-\end{itemize}
+L'application est construite avec React Native \cite{reactnative} et Expo \acrshort{sdk} 54 \cite{expo} en suivant l'architecture Expo Router (navigation fichier-based, \texttt{app/(tabs)/}). Les quatre onglets sont : \textbf{Dashboard} (statistiques personnelles, flux d'activit\'{e}), \textbf{Sessions} (calendrier PlanningView), \textbf{Analytics} (occupation, r\'{e}servations) et \textbf{Profile} (abonnement, d\'{e}connexion). Le token \acrshort{jwt} est persist\'{e} dans \texttt{AsyncStorage} et v\'{e}rifi\'{e} au lancement via \texttt{GET /api/auth/member/verify}. Le hook \texttt{useOccupancyRealtime} combine Socket.IO \cite{socketio} (\texttt{occupancy:updated} sur \texttt{/attendance}) et un polling de secours toutes les 30 secondes. Le mode hors-ligne est g\'{e}r\'{e} par React Query \cite{tanstack} + \texttt{@react-native-community/netinfo} : les requ\^{e}tes sont mises en pause lors d'une d\'{e}connexion et reprennent automatiquement.
 
 \subsection{R\'{e}alisation Frontend Web (KPI et IA)}
 
-C\^{o}t\'{e} tableau de bord, ce sprint ajoute deux fonctionnalit\'{e}s qui compl\`{e}tent le profil \og{}outil de gestion avanc\'{e}\fg{} :
-
-\subsubsection{Centre KPI}
-
-La page du centre \acrshort{kpi} utilise le hook \texttt{useKpi} pour r\'{e}cup\'{e}rer et afficher les indicateurs analytiques. L'occupation en temps r\'{e}el est mise \`{a} jour via les \'{e}v\'{e}nements WebSocket \texttt{occupancy:updated}, assurant une visualisation instantan\'{e}e du nombre de membres pr\'{e}sents dans la salle.
-
-\subsubsection{Interface de l'assistant IA}
-
-L'interface de chat \acrshort{ai} est impl\'{e}ment\'{e}e avec le hook \texttt{useAiChat}, offrant :
-
-\begin{itemize}
-    \item Une zone de conversation avec historique des messages.
-    \item Un champ de saisie pour formuler des questions en langage naturel.
-    \item L'affichage des r\'{e}ponses g\'{e}n\'{e}r\'{e}es par l'assistant \acrshort{rag}.
-    \item Un indicateur de chargement pendant le traitement de la requ\^{e}te.
-\end{itemize}
+C\^{o}t\'{e} tableau de bord : la page \acrshort{kpi} utilise le hook \texttt{useKpi} et re\c{c}oit l'occupation en direct via \texttt{occupancy:updated} (WebSocket). L'interface de chat \acrshort{ai} (\texttt{useAiChat}) affiche la conversation, les sources \acrshort{rag} et un indicateur de chargement pendant le traitement.
 
 \subsection{Interfaces r\'{e}alis\'{e}es}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{capture/Tableau de bord mobile.png}
+  \includegraphics[width=\textwidth, height=0.55\textheight, keepaspectratio]{capture/Tableau de bord mobile.png}
   \caption{\'{E}cran d'accueil de l'application mobile avec statistiques personnelles}
   \label{fig:sprint7-mobile-dashboard}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{capture/planning-seances-mobile.png}
+  \includegraphics[width=\textwidth, height=0.55\textheight, keepaspectratio]{capture/planning-seances-mobile.png}
   \caption{Vue PlanningView du calendrier des s\'{e}ances sur mobile}
   \label{fig:sprint7-mobile-sessions}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{capture/profil-mobile.png}
+  \includegraphics[width=\textwidth, height=0.55\textheight, keepaspectratio]{capture/profil-mobile.png}
   \caption{\'{E}cran de profil avec informations et statut d'abonnement}
   \label{fig:sprint7-mobile-profile}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}\textit{Capture d'\'{e}cran : Analytique sur l'application mobile}\vspace{2cm}}}
-  \caption{\'{E}cran d'analytique mobile avec heures de pointe et statistiques personnelles}
-  \label{fig:sprint7-mobile-analytics}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{capture/Centre KPI.png}
+  \includegraphics[width=\textwidth, height=0.55\textheight, keepaspectratio]{capture/Centre KPI.png}
   \caption{Centre KPI avec occupation en direct et analyse des heures de pointe}
   \label{fig:sprint7-kpi-center}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{capture/membres-silencieux.png}
+  \includegraphics[width=\textwidth, height=0.55\textheight, keepaspectratio]{capture/membres-silencieux.png}
   \caption{Interface de d\'{e}tection des membres inactifs avec envoi de campagne e-mail de r\'{e}engagement}
   \label{fig:sprint7-silent-members}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{capture/Assistant IA.png}
-  \caption{Interface de chat de l'assistant IA bas\'{e} sur le RAG}
+  \includegraphics[width=\textwidth, height=0.55\textheight, keepaspectratio]{capture/Assistant IA.png}
+  \caption{Interface de chat de l'assistant \acrshort{ai} bas\'{e} sur le \acrshort{rag}}
   \label{fig:sprint7-ai-chat}
 \end{figure}
 

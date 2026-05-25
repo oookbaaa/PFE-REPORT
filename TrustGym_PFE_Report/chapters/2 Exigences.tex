@@ -27,73 +27,14 @@ TrustGym distingue quatre acteurs, avec des p\'{e}rim\`{e}tres d'acc\`{e}s stric
 \end{itemize}
 
 \subsection{Besoins Fonctionnels}
-Voici ce que chaque acteur peut faire dans le syst\`{e}me :
+Le p\'{e}rim\`{e}tre fonctionnel par acteur, synth\'{e}tis\'{e} (le diagramme de cas d'utilisation global de la figure~\ref{fig:use_case_global} en donne la vue compl\`{e}te) :
 
-\subsubsection{Pour les SuperAdmins}
-\begin{outline}
-  \1 Gestion des partenaires (ajout, modification, suppression, consultation)
-  \1 Gestion des salles de sport (cr\'{e}ation, configuration, cl\'{e} API du bridge)
-  \1 Gestion des modules \acrshort{saas} : activation et d\'{e}sactivation des fonctionnalit\'{e}s par salle
-    \2 Module \acrshort{ai} (Assistant intelligent)
-    \2 Module Boutique
-    \2 Module Coachs
-    \2 Module Centre \acrshort{kpi}
-    \2 Module Finance
-    \2 Module Acc\`{e}s (contr\^{o}le d'acc\`{e}s physique)
-  \1 Gestion du registre des portes d'acc\`{e}s
-  \1 Gestion des bundles de modules
-  \1 Gestion des utilisateurs de la plateforme
-\end{outline}
-
-\subsubsection{Pour les Admins}
-\begin{outline}
-  \1 Tableau de bord \acrshort{kpi} avec indicateurs cl\'{e}s de performance
-  \1 Gestion des membres (\acrshort{crud} complet, recherche, filtrage)
-  \1 Gestion des abonnements (cr\'{e}ation, affectation, renouvellement, historique)
-  \1 Contr\^{o}le d'acc\`{e}s
-    \2 Gestion des entr\'{e}es et sorties
-    \2 Configuration des cr\'{e}neaux horaires
-    \2 Consultation de l'historique d'acc\`{e}s
-    \2 Suivi de l'occupation en temps r\'{e}el
-  \1 Gestion des coachs (ajout, modification, affectation aux disciplines)
-  \1 Planification des s\'{e}ances (cr\'{e}ation, modification, calendrier)
-  \1 Boutique
-    \2 Gestion des produits et des cat\'{e}gories
-    \2 Gestion des fournisseurs
-    \2 Gestion du stock et des transferts inter-salles
-  \1 Finance
-    \2 Portefeuille pr\'{e}pay\'{e} (wallet)
-    \2 Facturation \acrshort{b2b} et g\'{e}n\'{e}ration de factures \acrshort{pdf}
-    \2 Gestion de la caisse (ouverture, cl\^{o}ture, journal)
-  \1 Assistant \acrshort{ai} bas\'{e} sur le \acrshort{rag}
-\end{outline}
-
-\subsubsection{Pour les Caissiers}
-\begin{outline}
-  \1 Inscription de nouveaux membres
-  \1 Enr\^{o}lement des membres aux abonnements
-  \1 Encaissement des paiements (esp\`{e}ces, ch\`{e}que)
-  \1 Enregistrement des acc\`{e}s manuels
-  \1 Ventes en boutique
-  \1 Rechargement des portefeuilles membres
-\end{outline}
-
-\subsubsection{Pour les Membres (application mobile)}
-\begin{outline}
-  \1 Inscription multi-\'{e}tapes s\'{e}curis\'{e}e
-    \2 V\'{e}rification de l'adresse e-mail
-    \2 Confirmation par code \acrshort{otp}
-    \2 Saisie des informations d'identit\'{e}
-    \2 D\'{e}finition du mot de passe
-  \1 Tableau de bord personnel avec informations d'abonnement
-  \1 Consultation des s\'{e}ances avec vue calendrier
-  \1 R\'{e}servation de cr\'{e}neaux pour les s\'{e}ances de type RESERVATION
-  \1 Statistiques et analytique
-    \2 Historique de pr\'{e}sence
-    \2 Taux d'occupation en temps r\'{e}el
-    \2 Heures de pointe
-  \1 Gestion du profil
-\end{outline}
+\begin{itemize}
+  \item \textbf{SuperAdmin} : partenaires, salles, modules \acrshort{saas} (\acrshort{ai}, Boutique, Coachs, \acrshort{kpi}, Finance, Acc\`{e}s), registre des portes, bundles de modules, utilisateurs plateforme.
+  \item \textbf{Admin} : tableau de bord \acrshort{kpi}, \acrshort{crud} membres, abonnements, contr\^{o}le d'acc\`{e}s (entr\'{e}es/sorties, cr\'{e}neaux, occupation temps r\'{e}el), coachs et s\'{e}ances, boutique (produits/fournisseurs/stock/transferts), finance (wallet, facturation \acrshort{b2b}, caisse), assistant \acrshort{ai}/\acrshort{rag}.
+  \item \textbf{Caissier} : inscription des membres, enr\^{o}lement aux abonnements, encaissement (esp\`{e}ces/ch\`{e}que), acc\`{e}s manuels, ventes boutique, rechargement wallet --- sans suppression ni acc\`{e}s aux rapports.
+  \item \textbf{Membre} (mobile) : inscription multi-\'{e}tapes (e-mail, \acrshort{otp}, identit\'{e}, mot de passe), tableau de bord, calendrier des s\'{e}ances, r\'{e}servation des cr\'{e}neaux RESERVATION, statistiques (pr\'{e}sence, occupation, heures de pointe), profil.
+\end{itemize}
 
 \subsection{Besoins non fonctionnels}
 Au-del\`{a} des fonctionnalit\'{e}s, la qualit\'{e} d'un syst\`{e}me se mesure \`{a} ses contraintes non fonctionnelles \cite{functional_req} :
@@ -197,6 +138,18 @@ La figure~\ref{fig:use_case_global} synth\'{e}tise, d'un seul coup d'\oe{}il, ce
   \label{fig:use_case_global}
 \end{figure}
 
+\subsection{Format des descriptions textuelles de cas d'utilisation}
+\label{sec:uc_format}
+Pour all\'{e}ger les chapitres de sprint, le format textuel des cas d'utilisation est d\'{e}fini une seule fois ici. Chaque sprint r\'{e}f\'{e}rence ce format et liste uniquement les variations sp\'{e}cifiques (acteur, sc\'{e}nario, exceptions notables) lorsqu'elles apportent une information non triviale.
+
+\begin{itemize}
+  \item \textbf{Acteur principal} : r\^{o}le qui d\'{e}clenche le cas d'utilisation (SuperAdmin, Admin, Caissier, Membre).
+  \item \textbf{Pr\'{e}conditions} : utilisateur authentifi\'{e}, p\'{e}rim\`{e}tre tenant valide (partenaire/salle), permissions \acrshort{rbac} et \texttt{ModuleGuard} satisfaites.
+  \item \textbf{Sc\'{e}nario nominal} : (1) l'acteur saisit les donn\'{e}es ou d\'{e}clenche l'action, (2) le client web/mobile valide localement et envoie la requ\^{e}te, (3) l'\acrshort{api} valide les \acrshort{dto} et les r\`{e}gles m\'{e}tier, (4) l'\acrshort{orm} persiste, (5) un \'{e}v\'{e}nement temps r\'{e}el est diffus\'{e} si pertinent, (6) le client met \`{a} jour son \'{e}tat.
+  \item \textbf{Postcondition} : donn\'{e}es persist\'{e}es, journal d'audit ou \acrshort{ws} \'{e}mis, retour \texttt{2xx}.
+  \item \textbf{Exceptions} : \texttt{401} non authentifi\'{e}, \texttt{403} permission/module manquant, \texttt{400} \acrshort{dto} invalide, \texttt{409} conflit m\'{e}tier (doublon, stock insuffisant, etc.).
+\end{itemize}
+
 \subsection{Product Backlog}
 Le tableau~\ref{tab:product_backlog} liste les treize fonctionnalit\'{e}s du product backlog, tri\'{e}es par priorit\'{e} d\'{e}croissante (0--100). L'authentification et la gestion des membres arrivent en t\^{e}te --- aucune autre fonctionnalit\'{e} n'a de sens sans elles.
 
@@ -242,25 +195,7 @@ Le tableau~\ref{tab:product_backlog} liste les treize fonctionnalit\'{e}s du pro
 \end{longtable}
 
 \subsection{Diagramme de classes}
-Le diagramme de classes (figure~\ref{fig:class_diagram}) capture la structure du mod\`{e}le de donn\'{e}es \cite{class_diag, fowler2003uml}. Voici les entit\'{e}s centrales :
-
-\begin{itemize}
-  \item \textbf{User} : repr\'{e}sente les utilisateurs du back-office (Admin, Caissier). Poss\`{e}de un r\^{o}le, des informations d'authentification (\texttt{email}, \texttt{password}, \texttt{cardId}, \texttt{pin}) et est rattach\'{e} \`{a} un partenaire et une salle.
-  \item \textbf{Member} : adh\'{e}rent de la salle avec ses donn\'{e}es personnelles (\texttt{firstName}, \texttt{lastName}, \texttt{cin}, \texttt{dateOfBirth}), son statut de blocage et son mot de passe applicatif pour le mobile.
-  \item \textbf{Gym} : entit\'{e} centrale repr\'{e}sentant une salle de sport, avec sa configuration (\texttt{sdk}, \texttt{gymDomain}, \texttt{bridgeApiKey}) et ses modules activ\'{e}s.
-  \item \textbf{Partner} : partenaire \acrshort{saas} propri\'{e}taire d'une ou plusieurs salles, avec ses informations fiscales (\texttt{taxIdentificationNumber}, \texttt{tva}, \texttt{timbre}).
-  \item \textbf{Door} : porte physique d'acc\`{e}s \'{e}quip\'{e}e d'un dispositif ZKTeco ou Hikvision, avec configuration r\'{e}seau (\texttt{ip}, \texttt{port}, \texttt{sdk}).
-  \item \textbf{Access} : enregistrement d'un \'{e}v\'{e}nement d'entr\'{e}e ou de sortie, avec le type (\texttt{ENTRY}/\texttt{EXIT}) et l'autorisation.
-  \item \textbf{GymSubscription} : type d'abonnement (\texttt{PER\_MONTH} ou \texttt{PER\_SESSION}) avec prix, dur\'{e}e et nombre maximal de cr\'{e}neaux.
-  \item \textbf{Payment} : transaction financi\`{e}re li\'{e}e \`{a} un abonnement, avec type de paiement, montant et statut.
-  \item \textbf{Coach} : entra\^{i}neur avec son tarif horaire, sa carte d'acc\`{e}s et ses disciplines.
-  \item \textbf{Session} : s\'{e}ance planifi\'{e}e avec type (\texttt{OPEN}, \texttt{RESERVATION}, \texttt{CLOSE}), cr\'{e}neau horaire et nombre de places.
-  \item \textbf{Product} : article en vente dans la boutique, avec prix unitaire et cat\'{e}gorie.
-  \item \textbf{Supplier} : fournisseur de produits pour la boutique.
-  \item \textbf{Invoice} : facture \acrshort{b2b} avec informations client, taux de taxe, timbre fiscal et fichier \acrshort{pdf} g\'{e}n\'{e}r\'{e}.
-  \item \textbf{Wallet} : portefeuille pr\'{e}pay\'{e} d'un membre, avec solde courant et historique des mouvements via \textbf{WalletEntry}.
-  \item \textbf{AiChatLog} : historique des conversations avec l'assistant \acrshort{ai}, stockant les questions et r\'{e}ponses.
-\end{itemize}
+Le diagramme de classes (figure~\ref{fig:class_diagram}) capture la structure du mod\`{e}le de donn\'{e}es \cite{class_diag, fowler2003uml}. Il s'organise autour de quatre p\^{o}les : le noyau multi-tenant (\textbf{Partner}, \textbf{Gym}, \textbf{User}, \textbf{Member}), le contr\^{o}le d'acc\`{e}s (\textbf{Door}, \textbf{Access}, \textbf{GymSubscription}, \textbf{Payment}), l'op\'{e}rationnel m\'{e}tier (\textbf{Coach}, \textbf{Session}, \textbf{Product}, \textbf{Supplier}, \textbf{Invoice}, \textbf{Wallet}) et l'\acrshort{ai} (\textbf{AiChatLog}). Le catalogue exhaustif des 57 entit\'{e}s est donn\'{e} ci-dessous (tableau~\ref{tab:entity_catalog}).
 
 \begin{figure}[H]
   \centering
@@ -273,7 +208,7 @@ Le diagramme de classes (figure~\ref{fig:class_diagram}) capture la structure du
 
 Le mod\`{e}le complet comprend \textbf{57 entit\'{e}s TypeORM} r\'{e}parties en neuf domaines. Le tableau~\ref{tab:entity_catalog} en donne le catalogue exhaustif.
 
-\begin{longtable}{|c|p{3.8cm}|p{8.5cm}|}
+\begin{longtable}{|c|>{\footnotesize}p{4.8cm}|p{7.5cm}|}
 \hline
 \textbf{\#} & \textbf{Entit\'{e}} & \textbf{Description} \\
 \hline

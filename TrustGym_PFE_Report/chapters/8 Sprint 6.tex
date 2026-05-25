@@ -16,7 +16,6 @@ Une salle de sport qui ne g\`{e}re pas bien son argent ne dure pas. Ce sprint co
 Le tableau~\ref{tab:backlog_sprint6} pr\'{e}sente le backlog du Sprint 6 d\'{e}taill\'{e} par \'{e}pic, nature et user stories.
 
 \begin{longtable}{|p{2.5cm}|p{2cm}|p{4cm}|p{5.5cm}|}
-\caption{Sprint Backlog -- Sprint 6} \label{tab:backlog_sprint6} \\
 \hline
 \textbf{Epic} & \textbf{Nature} & \textbf{User Story} & \textbf{Description} \\
 \hline
@@ -55,7 +54,8 @@ Le tableau~\ref{tab:backlog_sprint6} pr\'{e}sente le backlog du Sprint 6 d\'{e}t
 
 \multirow{1}{*}{\parbox{2.5cm}{Suivi des paiements}} & Consultation & En tant qu'administrateur, je veux suivre les paiements des abonnements & Consulter l'ensemble des paiements li\'{e}s aux abonnements des membres via l'int\'{e}gration avec le \texttt{PaymentModule}. \\
 \hline
-
+\caption{Sprint Backlog -- Sprint 6}
+\label{tab:backlog_sprint6}
 \end{longtable}
 
 %──────────────────────────────────────────────
@@ -108,113 +108,9 @@ La figure~\ref{fig:sprint6-usecase} distribue les responsabilit\'{e}s : l'admini
 \label{fig:sprint6-usecase}
 \end{figure}
 
-\subsection{Description textuelle des cas d'utilisation}
+\subsection{Cas d'utilisation cibl\'{e}s}
 
-\subsubsection{Cas d'utilisation : G\'{e}rer le portefeuille d'un membre}
-
-\begin{table}[H]
-\centering
-\caption{Description textuelle -- G\'{e}rer le portefeuille d'un membre}
-\begin{tabular}{|p{4cm}|p{10cm}|}
-\hline
-\textbf{Cas d'utilisation} & G\'{e}rer le portefeuille d'un membre \\
-\hline
-\textbf{Acteur principal} & Administrateur / Caissier \\
-\hline
-\textbf{Pr\'{e}condition} & Le membre existe dans le syst\`{e}me et dispose d'un portefeuille. \\
-\hline
-\textbf{Sc\'{e}nario principal} &
-\begin{enumerate}
-    \item L'administrateur acc\`{e}de \`{a} la section des comptes pr\'{e}pay\'{e}s.
-    \item Le syst\`{e}me affiche la liste des membres avec leurs soldes respectifs.
-    \item L'administrateur s\'{e}lectionne un membre et effectue une op\'{e}ration :
-    \begin{itemize}
-        \item Rechargement : ajout d'un montant au solde du portefeuille.
-        \item D\'{e}duction : retrait d'un montant du solde du portefeuille.
-    \end{itemize}
-    \item Le syst\`{e}me enregistre la transaction dans le journal des entr\'{e}es.
-    \item Le solde du portefeuille est mis \`{a} jour en cons\'{e}quence.
-\end{enumerate} \\
-\hline
-\textbf{Postcondition} & Le solde du portefeuille est mis \`{a} jour et la transaction est trac\'{e}e. \\
-\hline
-\textbf{Exceptions} &
-\begin{itemize}
-    \item Le solde est insuffisant pour une d\'{e}duction.
-    \item Le montant saisi est invalide (n\'{e}gatif ou nul).
-\end{itemize} \\
-\hline
-\end{tabular}
-\end{table}
-
-\subsubsection{Cas d'utilisation : Cr\'{e}er une facture \acrshort{b2b}}
-
-\begin{table}[H]
-\centering
-\caption{Description textuelle -- Cr\'{e}er une facture \acrshort{b2b}}
-\begin{tabular}{|p{4cm}|p{10cm}|}
-\hline
-\textbf{Cas d'utilisation} & Cr\'{e}er une facture \acrshort{b2b} \\
-\hline
-\textbf{Acteur principal} & Administrateur \\
-\hline
-\textbf{Pr\'{e}condition} & L'administrateur est authentifi\'{e} et dispose des droits de facturation. \\
-\hline
-\textbf{Sc\'{e}nario principal} &
-\begin{enumerate}
-    \item L'administrateur acc\`{e}de au module de facturation.
-    \item Il cr\'{e}e une nouvelle facture en renseignant les informations du client : nom, num\'{e}ro fiscal, e-mail, t\'{e}l\'{e}phone.
-    \item Il d\'{e}finit la date d'\'{e}mission et la date d'\'{e}ch\'{e}ance.
-    \item Il configure le taux de TVA et le timbre fiscal le cas \'{e}ch\'{e}ant.
-    \item Il ajoute les lignes de facture : produit, quantit\'{e} et prix unitaire.
-    \item Le syst\`{e}me calcule automatiquement le total hors taxes, le montant des taxes et le total TTC.
-    \item Il peut ajouter le logo et la signature de l'entreprise.
-    \item Le syst\`{e}me g\'{e}n\`{e}re le fichier \acrshort{pdf} de la facture (\texttt{fileUrl}).
-\end{enumerate} \\
-\hline
-\textbf{Postcondition} & La facture est cr\'{e}\'{e}e, le fichier \acrshort{pdf} est g\'{e}n\'{e}r\'{e} et accessible. \\
-\hline
-\textbf{Exceptions} &
-\begin{itemize}
-    \item Les informations obligatoires du client ne sont pas renseign\'{e}es.
-    \item Aucune ligne de facture n'a \'{e}t\'{e} ajout\'{e}e.
-    \item Le taux de TVA est invalide.
-\end{itemize} \\
-\hline
-\end{tabular}
-\end{table}
-
-\subsubsection{Cas d'utilisation : G\'{e}rer la caisse}
-
-\begin{table}[H]
-\centering
-\caption{Description textuelle -- G\'{e}rer la caisse}
-\begin{tabular}{|p{4cm}|p{10cm}|}
-\hline
-\textbf{Cas d'utilisation} & G\'{e}rer la caisse \\
-\hline
-\textbf{Acteur principal} & Caissier / Administrateur \\
-\hline
-\textbf{Pr\'{e}condition} & Le caissier est authentifi\'{e} et affect\'{e} \`{a} une salle de sport. \\
-\hline
-\textbf{Sc\'{e}nario principal} &
-\begin{enumerate}
-    \item Le caissier ouvre la caisse en d\'{e}but de journ\'{e}e avec un solde d'ouverture.
-    \item Les transactions de la journ\'{e}e (paiements d'abonnements, ventes boutique, rechargements de portefeuille) sont automatiquement enregistr\'{e}es dans le journal de caisse.
-    \item En fin de journ\'{e}e, le caissier ferme la caisse en saisissant le solde de fermeture.
-    \item Le syst\`{e}me compare le solde th\'{e}orique au solde r\'{e}el et signale les \'{e}carts.
-\end{enumerate} \\
-\hline
-\textbf{Postcondition} & La journ\'{e}e de caisse est cl\^{o}tur\'{e}e et le journal est archiv\'{e}. \\
-\hline
-\textbf{Exceptions} &
-\begin{itemize}
-    \item La caisse est d\'{e}j\`{a} ouverte pour la journ\'{e}e en cours.
-    \item Un \'{e}cart significatif est d\'{e}tect\'{e} entre le solde th\'{e}orique et le solde r\'{e}el.
-\end{itemize} \\
-\hline
-\end{tabular}
-\end{table}
+Format d\'{e}fini en section~\ref{sec:uc_format}. Ce sprint couvre : \textbf{G\'{e}rer le portefeuille} (Admin/Caissier --- rechargement/d\'{e}duction avec v\'{e}rification de solde, journal \texttt{WalletEntry}), \textbf{Cr\'{e}er une facture \acrshort{b2b}} (Admin --- champs fiscaux tunisiens : TVA, timbre, matricule fiscal, snapshot client, g\'{e}n\'{e}ration \acrshort{pdf} sur AWS S3), et \textbf{G\'{e}rer la caisse} (Caissier/Admin --- ouverture/fermeture quotidienne, r\'{e}conciliation solde th\'{e}orique vs r\'{e}el).
 
 %──────────────────────────────────────────────
 \section{R\'{e}alisation}
@@ -222,26 +118,27 @@ La figure~\ref{fig:sprint6-usecase} distribue les responsabilit\'{e}s : l'admini
 
 \subsection{Backend}
 
-Six modules NestJS \cite{nestjs} couvrent les fonctionnalit\'{e}s financi\`{e}res :
-
-\begin{outline}
-    \1 \textbf{WalletModule} : Module de gestion des portefeuilles pr\'{e}pay\'{e}s. L'entit\'{e} \texttt{Wallet} associe un solde (\texttt{amount}) \`{a} chaque membre. Le service expose les op\'{e}rations de consultation du solde, de rechargement et de d\'{e}duction, avec v\'{e}rification de la suffisance du solde pour les d\'{e}bits.
-    \1 \textbf{WalletEntryModule} : Gestion du journal des transactions du portefeuille. Chaque op\'{e}ration (rechargement ou d\'{e}duction) g\'{e}n\`{e}re une entr\'{e}e dans le journal, permettant une tra\c{c}abilit\'{e} compl\`{e}te des mouvements financiers. Le service offre des fonctionnalit\'{e}s de filtrage par date, par type d'op\'{e}ration et par membre.
-    \1 \textbf{CashRegisterModule} : Module de gestion de la caisse. Il g\`{e}re les soldes d'ouverture et de fermeture quotidiens via l'entit\'{e} \texttt{CashRegister}. L'entit\'{e} \texttt{CashRegisterLog} enregistre chaque transaction individuelle (paiement d'abonnement, vente boutique, rechargement de portefeuille) dans un journal d\'{e}taill\'{e}. Lors de la cl\^{o}ture de caisse, le syst\`{e}me compare le \textbf{solde th\'{e}orique} (solde d'ouverture + somme des transactions) au \textbf{solde r\'{e}el} saisi par le caissier, signalant automatiquement les \'{e}carts pour faciliter la r\'{e}conciliation.
-    \1 \textbf{InvoiceModule} : Module de facturation \acrshort{b2b}. L'entit\'{e} \texttt{Invoice} contient l'ensemble des informations n\'{e}cessaires \`{a} une facture conforme \`{a} la r\'{e}glementation fiscale tunisienne :
-        \2 Informations client : \texttt{clientName}, \texttt{fiscalNumber} (matricule fiscal du client), \texttt{email}, \texttt{phone}.
-        \2 Dates : \texttt{date} (date d'\'{e}mission), \texttt{deadline} (date d'\'{e}ch\'{e}ance).
-        \2 Informations fiscales tunisiennes :
-            \3 \textbf{TVA} (\textit{Taxe sur la Valeur Ajout\'{e}e}) : taux de TVA en pourcentage, configur\'{e} au niveau du partenaire via \texttt{Partner.tva}. Obligatoire pour toute facture \acrshort{b2b} en Tunisie.
-            \3 \textbf{Timbre fiscal} : montant fixe du timbre gouvernemental (\texttt{stamp}), configur\'{e} via \texttt{Partner.timbre}. Taxe forfaitaire l\'{e}galement requise sur les factures tunisiennes.
-            \3 \textbf{Matricule fiscal} : identifiant fiscal unique du client (\texttt{fiscalNumber}), n\'{e}cessaire pour les transactions \acrshort{b2b}.
-        \2 Mise en page : \texttt{logo}, \texttt{signature}.
-        \2 Montants calcul\'{e}s : \texttt{total} (TTC), \texttt{taxes} (montant de la TVA).
-        \2 Fichier g\'{e}n\'{e}r\'{e} : \texttt{fileUrl} (lien vers le \acrshort{pdf} h\'{e}berg\'{e} sur AWS S3 \cite{aws}).
-        \2 \textbf{Immutabilit\'{e}} : les informations du client et de la salle sont \textit{snapshot\'{e}es} au moment de la cr\'{e}ation (copies statiques, non des r\'{e}f\'{e}rences dynamiques), conformément aux pratiques comptables.
-    \1 \textbf{InvoiceLineModule} : Gestion des lignes de d\'{e}tail de chaque facture. Chaque ligne comprend le produit, la quantit\'{e} et le prix unitaire. Le calcul des sous-totaux par ligne et du total g\'{e}n\'{e}ral est effectu\'{e} automatiquement par le service.
-    \1 \textbf{Int\'{e}gration PaymentModule} : Le module de paiement existant est enrichi pour centraliser le suivi des paiements li\'{e}s aux abonnements des membres. Il fournit les donn\'{e}es n\'{e}cessaires au registre de caisse et aux rapports financiers.
-\end{outline}
+\begin{longtable}{|>{\footnotesize}p{4.5cm}|>{\footnotesize}p{3.6cm}|p{5.6cm}|}
+\hline
+\textbf{Module} & \textbf{Entit\'{e}s cl\'{e}s} & \textbf{R\^{o}le} \\
+\hline
+\endfirsthead
+\hline
+\endfoot
+\texttt{WalletModule} & \texttt{Wallet} & Portefeuille pr\'{e}pay\'{e} par membre (\texttt{amount}) ; rechargement et d\'{e}duction avec v\'{e}rification de solde. \\
+\hline
+\texttt{WalletEntryModule} & \texttt{WalletEntry} & Journal des transactions (type, montant, date) ; filtrage par membre et par type. \\
+\hline
+\texttt{CashRegisterModule} & \texttt{CashRegister}, \texttt{CashRegisterLog} & Ouverture/fermeture quotidienne ; r\'{e}conciliation solde th\'{e}orique vs solde r\'{e}el. \\
+\hline
+\texttt{InvoiceModule} & \texttt{Invoice} & Facture \acrshort{b2b} conforme : TVA, timbre fiscal, matricule (\texttt{fiscalNumber}), snapshot client, g\'{e}n\'{e}ration \acrshort{pdf} $\rightarrow$ \texttt{fileUrl} sur S3. \\
+\hline
+\texttt{InvoiceLineModule} & \texttt{InvoiceLine} & Lignes de d\'{e}tail (produit, quantit\'{e}, prix) ; calcul automatique des sous-totaux et du total TTC. \\
+\hline
+\texttt{PaymentModule} & \texttt{Payment} & Suivi centralis\'{e} des paiements d'abonnements ; donn\'{e}es aliment\'{e}es dans le registre de caisse. \\
+\hline
+\caption{Modules backend du Sprint 6}
+\end{longtable}
 
 \subsection{Diagramme de s\'{e}quence}
 
@@ -290,54 +187,34 @@ La figure~\ref{fig:sprint6-sequence} d\'{e}taille la cr\'{e}ation d'une facture 
 \label{fig:sprint6-sequence}
 \end{figure}
 
-\subsection{Frontend Web}
+\subsection{Interfaces r\'{e}alis\'{e}es (web)}
 
-Sept pages couvrent la dimension financi\`{e}re du tableau de bord :
-
-\begin{outline}
-    \1 \textbf{Comptes pr\'{e}pay\'{e}s (\texttt{comptes-prepayes/})} : Page de gestion des portefeuilles des membres. Affichage du solde de chaque membre avec possibilit\'{e} d'effectuer des rechargements et des d\'{e}ductions. Historique des transactions par membre.
-    \1 \textbf{Factures de vente (\texttt{factures-vente/})} : Liste des factures \'{e}mises avec filtrage par date, par client et par statut. Vue d\'{e}taill\'{e}e de chaque facture avec les lignes de d\'{e}tail et possibilit\'{e} de t\'{e}l\'{e}charger le fichier \acrshort{pdf} g\'{e}n\'{e}r\'{e}.
-    \1 \textbf{Factures d'achats (\texttt{factures-achats/})} : Gestion des factures li\'{e}es aux achats aupr\`{e}s des fournisseurs, assurant la tra\c{c}abilit\'{e} comptable des approvisionnements.
-    \1 \textbf{Cr\'{e}ation de facture (\texttt{cree-facture/})} : Formulaire complet de cr\'{e}ation de facture \acrshort{b2b} avec :
-        \2 Saisie des informations client (nom, num\'{e}ro fiscal, e-mail, t\'{e}l\'{e}phone).
-        \2 Configuration des dates d'\'{e}mission et d'\'{e}ch\'{e}ance.
-        \2 D\'{e}finition du taux de TVA et du timbre fiscal.
-        \2 Ajout dynamique de lignes de facture (produit, quantit\'{e}, prix).
-        \2 Upload du logo et de la signature.
-        \2 Calcul automatique des totaux HT, taxes et TTC.
-        \2 G\'{e}n\'{e}ration du fichier \acrshort{pdf} de la facture.
-    \1 \textbf{Fournisseurs (\texttt{fournisseurs/})} : Page de gestion des fournisseurs avec cr\'{e}ation, modification et consultation des fiches fournisseurs. Int\'{e}gration avec les factures d'achats.
-    \1 \textbf{Transactions du portefeuille} : Interface d\'{e}taill\'{e}e affichant l'historique des entr\'{e}es du portefeuille avec filtrage avanc\'{e} par type d'op\'{e}ration (rechargement, d\'{e}duction), par date et par membre.
-    \1 \textbf{Vue d\'{e}taill\'{e}e des factures} : Page de d\'{e}tail d'une facture affichant l'ensemble des informations, les lignes de d\'{e}tail, les montants calcul\'{e}s et le lien de t\'{e}l\'{e}chargement du fichier g\'{e}n\'{e}r\'{e}.
-\end{outline}
-
-\subsection{Interfaces r\'{e}alis\'{e}es}
+Pages web : \texttt{comptes-prepayes/} (soldes et rechargements), \texttt{factures-vente/} (listing + t\'{e}l\'{e}chargement \acrshort{pdf}), \texttt{factures-achats/}, \texttt{cree-facture/} (formulaire B2B complet : TVA, timbre, lignes, logo, signature, calcul TTC automatique), \texttt{fournisseurs/}, transactions du portefeuille et vue d\'{e}taill\'{e}e facture.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{capture/portefeuilles.png}
+  \includegraphics[width=\textwidth, height=0.55\textheight, keepaspectratio]{capture/portefeuilles.png}
   \caption{Page de gestion des comptes pr\'{e}pay\'{e}s des membres}
   \label{fig:sprint6-wallet}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{capture/facture-b2b.png}
-  \caption{Formulaire de cr\'{e}ation de facture avec lignes de d\'{e}tail}
+  \includegraphics[width=\textwidth, height=0.55\textheight, keepaspectratio]{capture/facture-b2b.png}
+  \caption{Formulaire de cr\'{e}ation de facture \acrshort{b2b} avec lignes de d\'{e}tail}
   \label{fig:sprint6-invoice}
 \end{figure}
 
-
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{capture/paiements-abonnements.png}
+  \includegraphics[width=\textwidth, height=0.55\textheight, keepaspectratio]{capture/paiements-abonnements.png}
   \caption{Page de suivi des paiements avec historique des transactions}
   \label{fig:sprint6-payments}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{capture/facture-b2b-detail.png}
+  \includegraphics[width=\textwidth, height=0.55\textheight, keepaspectratio]{capture/facture-b2b-detail.png}
   \caption{Vue d\'{e}taill\'{e}e d'une facture g\'{e}n\'{e}r\'{e}e avec lignes, taxes et totaux}
   \label{fig:sprint6-invoice-detail}
 \end{figure}

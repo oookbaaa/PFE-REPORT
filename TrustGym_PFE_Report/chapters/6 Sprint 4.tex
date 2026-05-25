@@ -16,7 +16,6 @@ Apr\`{e}s l'acc\`{e}s physique et la gestion des abonnements, ce sprint apporte 
 Le tableau~\ref{tab:backlog_sprint4} pr\'{e}sente le backlog du Sprint 4 d\'{e}taill\'{e} par \'{e}pic, nature et user stories.
 
 \begin{longtable}{|p{2.5cm}|p{2cm}|p{4cm}|p{5.5cm}|}
-\caption{Sprint Backlog -- Sprint 4} \label{tab:backlog_sprint4} \\
 \hline
 \textbf{Epic} & \textbf{Nature} & \textbf{User Story} & \textbf{Description} \\
 \hline
@@ -59,7 +58,8 @@ Le tableau~\ref{tab:backlog_sprint4} pr\'{e}sente le backlog du Sprint 4 d\'{e}t
 \cline{2-4}
  & Consultation & En tant qu'administrateur, je veux suivre les paiements des coachs & Consulter l'historique des paiements et g\'{e}n\'{e}rer les factures de r\'{e}mun\'{e}ration des coachs. \\
 \hline
-
+\caption{Sprint Backlog -- Sprint 4}
+\label{tab:backlog_sprint4}
 \end{longtable}
 
 %──────────────────────────────────────────────
@@ -108,105 +108,9 @@ La figure~\ref{fig:sprint4-usecase} montre la r\'{e}partition des actions : l'ad
 \label{fig:sprint4-usecase}
 \end{figure}
 
-\subsection{Description textuelle des cas d'utilisation}
+\subsection{Cas d'utilisation cibl\'{e}s}
 
-\subsubsection{Cas d'utilisation : G\'{e}rer les coachs}
-
-\begin{table}[H]
-\centering
-\caption{Description textuelle -- G\'{e}rer les coachs}
-\begin{tabular}{|p{4cm}|p{10cm}|}
-\hline
-\textbf{Cas d'utilisation} & G\'{e}rer les coachs \\
-\hline
-\textbf{Acteur principal} & Administrateur \\
-\hline
-\textbf{Pr\'{e}condition} & L'administrateur est authentifi\'{e} et dispose des droits n\'{e}cessaires. \\
-\hline
-\textbf{Sc\'{e}nario principal} &
-\begin{enumerate}
-    \item L'administrateur acc\`{e}de \`{a} la section des coachs.
-    \item Le syst\`{e}me affiche la liste des coachs existants.
-    \item L'administrateur peut cr\'{e}er un nouveau coach en renseignant : nom, date de naissance, profession, genre, CIN, tarif horaire, identifiant de carte et code PIN.
-    \item Le syst\`{e}me valide les donn\'{e}es et enregistre le coach.
-    \item L'administrateur peut modifier, activer/d\'{e}sactiver ou supprimer un coach existant.
-\end{enumerate} \\
-\hline
-\textbf{Postcondition} & Le coach est cr\'{e}\'{e}, modifi\'{e} ou supprim\'{e} avec succ\`{e}s. \\
-\hline
-\textbf{Exceptions} &
-\begin{itemize}
-    \item Le CIN est d\'{e}j\`{a} utilis\'{e} par un autre coach.
-    \item Les donn\'{e}es obligatoires ne sont pas renseign\'{e}es.
-\end{itemize} \\
-\hline
-\end{tabular}
-\end{table}
-
-\subsubsection{Cas d'utilisation : Planifier une s\'{e}ance}
-
-\begin{table}[H]
-\centering
-\caption{Description textuelle -- Planifier une s\'{e}ance}
-\begin{tabular}{|p{4cm}|p{10cm}|}
-\hline
-\textbf{Cas d'utilisation} & Planifier une s\'{e}ance \\
-\hline
-\textbf{Acteur principal} & Administrateur \\
-\hline
-\textbf{Pr\'{e}condition} & Au moins un coach et une discipline existent dans le syst\`{e}me. \\
-\hline
-\textbf{Sc\'{e}nario principal} &
-\begin{enumerate}
-    \item L'administrateur acc\`{e}de au module de planification des s\'{e}ances.
-    \item Il s\'{e}lectionne la date, l'heure de d\'{e}but, l'heure de fin, le coach et la discipline.
-    \item Il choisit le type de s\'{e}ance : OPEN (libre), RESERVATION (sur r\'{e}servation avec nombre de places limit\'{e}) ou CLOSE (ferm\'{e}e).
-    \item Pour le type RESERVATION, il d\'{e}finit le nombre maximum de places (maxSlots).
-    \item Le syst\`{e}me v\'{e}rifie la disponibilit\'{e} du coach sur le cr\'{e}neau et enregistre la s\'{e}ance.
-\end{enumerate} \\
-\hline
-\textbf{Postcondition} & La s\'{e}ance est cr\'{e}\'{e}e et visible dans le planning. \\
-\hline
-\textbf{Exceptions} &
-\begin{itemize}
-    \item Le coach n'est pas disponible sur le cr\'{e}neau demand\'{e}.
-    \item Les horaires de d\'{e}but et de fin sont incoh\'{e}rents.
-\end{itemize} \\
-\hline
-\end{tabular}
-\end{table}
-
-\subsubsection{Cas d'utilisation : Pointer via code \acrshort{qr}}
-
-\begin{table}[H]
-\centering
-\caption{Description textuelle -- Pointer via code \acrshort{qr}}
-\begin{tabular}{|p{4cm}|p{10cm}|}
-\hline
-\textbf{Cas d'utilisation} & Pointer via code \acrshort{qr} \\
-\hline
-\textbf{Acteur principal} & Membre \\
-\hline
-\textbf{Pr\'{e}condition} & Le membre est authentifi\'{e} sur l'application mobile et une s\'{e}ance est en cours. \\
-\hline
-\textbf{Sc\'{e}nario principal} &
-\begin{enumerate}
-    \item Le membre ouvre le scanner \acrshort{qr} depuis l'application mobile.
-    \item Il scanne le code \acrshort{qr} associ\'{e} \`{a} la s\'{e}ance.
-    \item Le syst\`{e}me v\'{e}rifie la validit\'{e} du code et l'inscription du membre.
-    \item La pr\'{e}sence est enregistr\'{e}e avec succ\`{e}s.
-\end{enumerate} \\
-\hline
-\textbf{Postcondition} & La pr\'{e}sence du membre est confirm\'{e}e dans le syst\`{e}me. \\
-\hline
-\textbf{Exceptions} &
-\begin{itemize}
-    \item Le code \acrshort{qr} est expir\'{e} ou invalide.
-    \item Le membre n'est pas inscrit \`{a} cette s\'{e}ance.
-\end{itemize} \\
-\hline
-\end{tabular}
-\end{table}
+Format d\'{e}fini en section~\ref{sec:uc_format}. Ce sprint couvre : \textbf{G\'{e}rer les coachs} (Admin), \textbf{Planifier une s\'{e}ance} (Admin --- contr\^{o}le de disponibilit\'{e} via \texttt{CoachTimeSlot}, types OPEN/RESERVATION/CLOSE avec \texttt{maxSlots}), et \textbf{Pointer via code \acrshort{qr}} (Membre --- scan via \texttt{expo-camera}, validation cumul\'{e}e session active + inscription).
 
 %──────────────────────────────────────────────
 \section{R\'{e}alisation}
@@ -214,20 +118,29 @@ La figure~\ref{fig:sprint4-usecase} montre la r\'{e}partition des actions : l'ad
 
 \subsection{Backend}
 
-Sept modules NestJS \cite{nestjs} couvrent ce sprint, chacun ax\'{e} sur un p\'{e}rim\`{e}tre fonctionnel pr\'{e}cis.
-
-\begin{outline}
-    \1 \textbf{CoachModule} : Module principal pour la gestion des coachs. L'entit\'{e} \texttt{Coach} contient les champs : nom, date de naissance, profession, genre, CIN, tarif horaire (\texttt{hourlyFee}), statut (\texttt{isEnabled}), identifiant de carte (\texttt{cardId}), code PIN et r\'{e}f\'{e}rence \`{a} l'image (\texttt{imageId}). Le service expose les op\'{e}rations \acrshort{crud} avec validation des donn\'{e}es via les \acrshort{dto}.
-    \1 \textbf{DisciplineModule} : Gestion des disciplines sportives. L'entit\'{e} \texttt{Discipline} comprend un titre, une image et une association au partenaire (\texttt{partnerId}). Les disciplines sont sp\'{e}cifiques \`{a} chaque salle de sport.
-    \1 \textbf{CoachSessionModule} : Module central de gestion des s\'{e}ances. L'entit\'{e} \texttt{Session} d\'{e}finit la date, l'heure de d\'{e}but, l'heure de fin et le type de s\'{e}ance via une \'{e}num\'{e}ration \`{a} trois valeurs :
-        \2 \texttt{OPEN} : S\'{e}ance ouverte \`{a} tous les membres sans restriction.
-        \2 \texttt{RESERVATION} : S\'{e}ance sur r\'{e}servation avec un nombre maximum de places (\texttt{maxSlots}).
-        \2 \texttt{CLOSE} : S\'{e}ance ferm\'{e}e, accessible uniquement sur invitation.
-    \1 \textbf{CoachTimeSlotModule} : Gestion des cr\'{e}neaux de disponibilit\'{e} des coachs. L'entit\'{e} \texttt{CoachTimeSlot} d\'{e}finit un planning hebdomadaire r\'{e}current pour chaque coach, tandis que l'entit\'{e} \texttt{TimeSlotHours} pr\'{e}cise les plages jour/heure sp\'{e}cifiques (par exemple : lundi 8h--12h, mercredi 14h--18h). Ces disponibilit\'{e}s sont v\'{e}rifi\'{e}es automatiquement lors de la cr\'{e}ation d'une s\'{e}ance pour \'{e}viter les conflits de planning.
-    \1 \textbf{SessionInvitationModule} : Gestion des invitations aux s\'{e}ances. Int\`{e}gre le \textbf{EmailModule} pour l'envoi de notifications par e-mail aux membres invit\'{e}s, utilisant des templates personnalis\'{e}s.
-    \1 \textbf{SessionQRCodeModule} : G\'{e}n\'{e}ration et validation des codes \acrshort{qr} pour le pointage de pr\'{e}sence. Chaque s\'{e}ance poss\`{e}de un code \acrshort{qr} unique permettant aux membres de confirmer leur participation via l'application mobile.
-    \1 \textbf{SessionPaymentModule} : Gestion des paiements li\'{e}s aux s\'{e}ances de coaching payantes. Permet d'enregistrer les transactions et de suivre la r\'{e}mun\'{e}ration des coachs.
-\end{outline}
+\begin{longtable}{|>{\footnotesize}p{4.5cm}|>{\footnotesize}p{3.6cm}|p{5.6cm}|}
+\hline
+\textbf{Module} & \textbf{Entit\'{e}s cl\'{e}s} & \textbf{R\^{o}le} \\
+\hline
+\endfirsthead
+\hline
+\endfoot
+\texttt{CoachModule} & \texttt{Coach}, \texttt{CoachImage} & \acrshort{crud} coach (\texttt{hourlyFee}, \texttt{isEnabled}, \texttt{cardId}, \texttt{pin}). \\
+\hline
+\texttt{DisciplineModule} & \texttt{Discipline} & Disciplines sportives par partenaire. \\
+\hline
+\texttt{CoachSessionModule} & \texttt{Session} & S\'{e}ances avec types \texttt{OPEN} (acc\`{e}s libre), \texttt{RESERVATION} (\texttt{maxSlots}) et \texttt{CLOSE} (sur invitation). \\
+\hline
+\texttt{CoachTimeSlotModule} & \texttt{CoachTimeSlot}, \texttt{TimeSlotHours} & Disponibilit\'{e}s hebdomadaires r\'{e}currentes ; v\'{e}rification automatique lors de la planification. \\
+\hline
+\texttt{SessionInvitationModule} (+\texttt{EmailModule}) & \texttt{SessionInvitation} & Invitations cibl\'{e}es par e-mail (templates Nodemailer). \\
+\hline
+\texttt{SessionQRCodeModule} & \texttt{SessionQRCode} & Code \acrshort{qr} unique par s\'{e}ance pour le pointage mobile. \\
+\hline
+\texttt{SessionPaymentModule} & \texttt{SessionPayment} & R\'{e}mun\'{e}ration des coachs et historique des paiements. \\
+\hline
+\caption{Modules backend du Sprint 4}
+\end{longtable}
 
 \subsection{Diagramme de s\'{e}quence}
 
@@ -272,77 +185,22 @@ La figure~\ref{fig:sprint4-sequence} d\'{e}taille le parcours d'un scan \acrshor
 \label{fig:sprint4-sequence}
 \end{figure}
 
-\subsection{Frontend Web}
+\subsection{Interfaces r\'{e}alis\'{e}es (web et mobile)}
 
-L'interface web du tableau de bord d'administration int\`{e}gre plusieurs pages et composants pour la gestion des coachs et des s\'{e}ances :
-
-\begin{outline}
-    \1 \textbf{Module Coachs (\texttt{coaches/})} : Page de listing des coachs avec tableau filtrable et paginable. Formulaire de cr\'{e}ation et de modification avec upload de photo de profil. Page de d\'{e}tail affichant les informations compl\`{e}tes du coach et ses statistiques.
-    \1 \textbf{Module Disciplines (\texttt{cours/})} : Interface de gestion des disciplines sportives avec cr\'{e}ation, modification et association d'images.
-    \1 \textbf{Module S\'{e}ances (\texttt{seances/})} : Interface de gestion des s\'{e}ances avec diff\'{e}renciation visuelle selon le type (OPEN, RESERVATION, CLOSE). Formulaire de cr\'{e}ation avec s\'{e}lection du coach, de la discipline et configuration du type de s\'{e}ance.
-    \1 \textbf{Module Planning (\texttt{planning/})} : Vue calendrier hebdomadaire affichant l'ensemble des s\'{e}ances planifi\'{e}es. Navigation temporelle et filtrage par coach ou discipline.
-    \1 \textbf{Module Paiements (\texttt{paiement/})} : Suivi des paiements des coachs avec historique des transactions et g\'{e}n\'{e}ration de factures de r\'{e}mun\'{e}ration.
-\end{outline}
-
-\subsection{Frontend Mobile}
-
-L'application mobile int\`{e}gre les fonctionnalit\'{e}s suivantes pour les membres :
-
-\begin{outline}
-    \1 \textbf{PlanningView} : Composant calendrier affichant les s\'{e}ances disponibles avec code couleur selon le type. Les membres peuvent visualiser les d\'{e}tails de chaque s\'{e}ance (coach, discipline, horaires, places disponibles).
-    \1 \textbf{Affichage des types de s\'{e}ances} : Diff\'{e}renciation visuelle des s\'{e}ances OPEN (acc\`{e}s libre), RESERVATION (places limit\'{e}es avec compteur) et CLOSE (sur invitation uniquement).
-    \1 \textbf{Scanner \acrshort{qr}} : Fonctionnalit\'{e} de scan de code \acrshort{qr} via \texttt{expo-camera} permettant aux membres de pointer leur pr\'{e}sence lors des s\'{e}ances, avec retour visuel de confirmation.
-\end{outline}
-
-\subsection{Interfaces r\'{e}alis\'{e}es}
+Pages web : \texttt{coaches/}, \texttt{cours/} (disciplines), \texttt{seances/} (cr\'{e}ation et listing color\'{e} par type), \texttt{planning/} (calendrier), \texttt{paiement/} (r\'{e}mun\'{e}rations). C\^{o}t\'{e} mobile : \texttt{PlanningView} avec code couleur par type, scanner \acrshort{qr} via \texttt{expo-camera}.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{capture/Liste des coachs.png}
-  \caption{Page de gestion des coachs avec tableau filtrable}
-  \label{fig:sprint4-coaches}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{capture/planning-seances.png}
-  \caption{Vue calendrier hebdomadaire des s\'{e}ances planifi\'{e}es}
+  \includegraphics[width=\textwidth, height=0.55\textheight, keepaspectratio]{capture/planning-seances.png}
+  \caption{Calendrier hebdomadaire des s\'{e}ances planifi\'{e}es}
   \label{fig:sprint4-planning}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{capture/creation-seance.png}
-  \caption{Formulaire de cr\'{e}ation d'une s\'{e}ance avec s\'{e}lection du type}
-  \label{fig:sprint4-session-create}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{capture/Scanner QR sur mobile.png}
-  \caption{Interface de scan du code QR pour le pointage de pr\'{e}sence}
+  \includegraphics[width=\textwidth, height=0.55\textheight, keepaspectratio]{capture/Scanner QR sur mobile.png}
+  \caption{Scan du code QR pour le pointage de pr\'{e}sence}
   \label{fig:sprint4-qr-scan}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{capture/seances-mobile.png}
-  \caption{Vue des s\'{e}ances disponibles sur l'application mobile}
-  \label{fig:sprint4-mobile-sessions}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{capture/Gestion des disciplines.png}
-  \caption{Interface de gestion des disciplines sportives}
-  \label{fig:sprint4-disciplines}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{capture/Paiements des coachs.png}
-  \caption{Suivi des paiements et r\'{e}mun\'{e}rations des coachs}
-  \label{fig:sprint4-coach-payments}
 \end{figure}
 
 %──────────────────────────────────────────────

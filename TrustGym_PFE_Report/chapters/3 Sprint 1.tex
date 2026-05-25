@@ -111,58 +111,9 @@ La figure~\ref{fig:sprint1-usecase} regroupe les cas d'utilisation de ce sprint 
 \label{fig:sprint1-usecase}
 \end{figure}
 
-\subsection{Description textuelle des cas d'utilisation}
+\subsection{Cas d'utilisation cibl\'{e}s}
 
-\subsubsection{Cas d'utilisation : Connexion Administrateur}
-
-\begin{itemize}
-  \item \textbf{Acteur principal} : Administrateur / Caissier
-  \item \textbf{Pr\'{e}conditions} : L'utilisateur poss\`{e}de un compte actif avec un r\^{o}le attribu\'{e}.
-  \item \textbf{Sc\'{e}nario principal} :
-  \begin{enumerate}
-    \item L'utilisateur acc\`{e}de \`{a} la page de connexion du tableau de bord web.
-    \item Il saisit son adresse email et son mot de passe.
-    \item Le syst\`{e}me v\'{e}rifie les identifiants via \texttt{POST /api/auth/login}.
-    \item Le syst\`{e}me g\'{e}n\`{e}re un token \acrshort{jwt} et le retourne au client.
-    \item L'utilisateur est redirig\'{e} vers le tableau de bord.
-  \end{enumerate}
-  \item \textbf{Sc\'{e}nario alternatif} : Si les identifiants sont invalides, un message d'erreur est affich\'{e}.
-  \item \textbf{Postconditions} : L'utilisateur est authentifi\'{e} et peut acc\'{e}der aux fonctionnalit\'{e}s autoris\'{e}es par son r\^{o}le.
-\end{itemize}
-
-\subsubsection{Cas d'utilisation : Inscription Membre (Mobile)}
-
-\begin{itemize}
-  \item \textbf{Acteur principal} : Membre (adh\'{e}rent)
-  \item \textbf{Pr\'{e}conditions} : Le membre a \'{e}t\'{e} pr\'{e}alablement enregistr\'{e} par un administrateur dans le syst\`{e}me.
-  \item \textbf{Sc\'{e}nario principal} :
-  \begin{enumerate}
-    \item Le membre ouvre l'application mobile et s\'{e}lectionne l'inscription.
-    \item Il saisit son adresse email. Le syst\`{e}me v\'{e}rifie son existence via \texttt{POST /api/auth/member/check-email}.
-    \item Le syst\`{e}me affiche les informations d'identit\'{e} \`{a} confirmer (nom, pr\'{e}nom).
-    \item Un code \acrshort{otp} \`{a} six chiffres est envoy\'{e} par email via Nodemailer.
-    \item Le membre saisit le code re\c{c}u et le syst\`{e}me le v\'{e}rifie via \texttt{POST /api/auth/member/verify-email}.
-    \item Le membre d\'{e}finit son mot de passe via \texttt{POST /api/auth/member/register}.
-    \item Le compte est activ\'{e} et le membre est redirig\'{e} vers l'accueil.
-  \end{enumerate}
-  \item \textbf{Sc\'{e}nario alternatif} : Si l'email n'existe pas dans le syst\`{e}me, un message indique de contacter l'administration de la salle.
-  \item \textbf{Postconditions} : Le membre dispose d'un compte actif avec un mot de passe d\'{e}fini.
-\end{itemize}
-
-\subsubsection{Cas d'utilisation : Gestion des Utilisateurs}
-
-\begin{itemize}
-  \item \textbf{Acteur principal} : SuperAdmin
-  \item \textbf{Pr\'{e}conditions} : L'acteur est authentifi\'{e} avec le r\^{o}le SuperAdmin.
-  \item \textbf{Sc\'{e}nario principal} :
-  \begin{enumerate}
-    \item Le SuperAdmin acc\`{e}de \`{a} la page de gestion des utilisateurs.
-    \item Il peut cr\'{e}er un nouvel utilisateur en sp\'{e}cifiant le nom, l'email, le mot de passe et le r\^{o}le.
-    \item Il peut modifier les informations ou le r\^{o}le d'un utilisateur existant.
-    \item Il peut d\'{e}sactiver ou supprimer un utilisateur.
-  \end{enumerate}
-  \item \textbf{Postconditions} : Les modifications sont persist\'{e}es en base de donn\'{e}es.
-\end{itemize}
+Conform\'{e}ment au format d\'{e}fini en section~\ref{sec:uc_format}, ce sprint couvre : \textbf{Connexion administrateur} (Admin/Caissier), \textbf{Inscription membre} en quatre \'{e}tapes avec \texttt{$\ll$include$\gg$} sur la v\'{e}rification \acrshort{otp}, et \textbf{Gestion des utilisateurs} (SuperAdmin). Sp\'{e}cificit\'{e}s : l'inscription membre n\'{e}cessite que le membre ait \'{e}t\'{e} pr\'{e}-enregistr\'{e} par un administrateur ; \`{a} d\'{e}faut, l'\acrshort{api} renvoie une erreur invitant \`{a} contacter l'administration.
 
 \subsection{Diagramme de s\'{e}quence : Authentification JWT}
 

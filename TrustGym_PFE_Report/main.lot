@@ -2,31 +2,29 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {1.1}{\ignorespaces Tableau comparatif des solutions de gestion de salles de sport}}{7}{table.caption.12}%
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Pile technologique de TrustGym}}{11}{table.2.1}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Product Backlog de TrustGym}}{27}{table.3.1}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Catalogue des 57 entit\'{e}s de la base de donn\'{e}es TrustGym}}{31}{table.3.2}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Product Backlog de TrustGym}}{24}{table.3.1}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Catalogue des 57 entit\'{e}s de la base de donn\'{e}es TrustGym}}{28}{table.3.2}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Sprint Backlog -- Sprint 1}}{33}{table.4.1}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Sprint Backlog -- Sprint 1}}{30}{table.4.1}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Sprint Backlog -- Sprint 2}}{43}{table.5.1}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Sprint Backlog -- Sprint 2}}{39}{table.5.1}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Modules backend du Sprint 2}}{42}{table.5.2}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Sprint Backlog -- Sprint 3}}{54}{table.6.1}%
-\contentsline {table}{\numberline {6.2}{\ignorespaces Services Windows install\'{e}s par NSSM sur chaque salle partenaire}}{62}{table.caption.39}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Sprint Backlog -- Sprint 3}}{47}{table.6.1}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces Modules backend du Sprint 3}}{49}{table.6.2}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces Services Windows install\'{e}s par NSSM sur chaque salle partenaire}}{54}{table.caption.34}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {7.1}{\ignorespaces Sprint Backlog -- Sprint 4}}{69}{table.7.1}%
-\contentsline {table}{\numberline {7.2}{\ignorespaces Description textuelle -- G\'{e}rer les coachs}}{72}{table.caption.51}%
-\contentsline {table}{\numberline {7.3}{\ignorespaces Description textuelle -- Planifier une s\'{e}ance}}{73}{table.caption.52}%
-\contentsline {table}{\numberline {7.4}{\ignorespaces Description textuelle -- Pointer via code \acrshort {qr}}}{74}{table.caption.53}%
+\contentsline {table}{\numberline {7.1}{\ignorespaces Sprint Backlog -- Sprint 4}}{59}{table.7.1}%
+\contentsline {table}{\numberline {7.2}{\ignorespaces Modules backend du Sprint 4}}{61}{table.7.2}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {8.1}{\ignorespaces Sprint Backlog -- Sprint 5}}{80}{table.8.1}%
-\contentsline {table}{\numberline {8.2}{\ignorespaces Description textuelle -- G\'{e}rer les produits}}{83}{table.caption.63}%
-\contentsline {table}{\numberline {8.3}{\ignorespaces Description textuelle -- Transf\'{e}rer du stock entre salles}}{84}{table.caption.64}%
-\contentsline {table}{\numberline {8.4}{\ignorespaces Description textuelle -- Vendre un produit \`{a} un membre}}{85}{table.caption.65}%
+\contentsline {table}{\numberline {8.1}{\ignorespaces Sprint Backlog -- Sprint 5}}{65}{table.8.1}%
+\contentsline {table}{\numberline {8.2}{\ignorespaces Modules backend du Sprint 5}}{67}{table.8.2}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {9.1}{\ignorespaces Sprint Backlog -- Sprint 6}}{91}{table.9.1}%
-\contentsline {table}{\numberline {9.2}{\ignorespaces Description textuelle -- G\'{e}rer le portefeuille d'un membre}}{94}{table.caption.75}%
-\contentsline {table}{\numberline {9.3}{\ignorespaces Description textuelle -- Cr\'{e}er une facture \acrshort {b2b}}}{95}{table.caption.76}%
-\contentsline {table}{\numberline {9.4}{\ignorespaces Description textuelle -- G\'{e}rer la caisse}}{96}{table.caption.77}%
+\contentsline {table}{\numberline {9.1}{\ignorespaces Sprint Backlog -- Sprint 6}}{74}{table.9.1}%
+\contentsline {table}{\numberline {9.2}{\ignorespaces Modules backend du Sprint 6}}{76}{table.9.2}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {10.1}{\ignorespaces Sprint Backlog -- Sprint 7}}{102}{table.10.1}%
-\contentsline {table}{\numberline {10.2}{\ignorespaces Processus automatis\'{e}s (CRON Jobs) de TrustGym}}{114}{table.10.2}%
+\contentsline {table}{\numberline {10.1}{\ignorespaces Sprint Backlog -- Sprint 7}}{82}{table.10.1}%
+\contentsline {table}{\numberline {10.2}{\ignorespaces Modules backend du Sprint 7 (Mobile \& KPI)}}{84}{table.10.2}%
+\contentsline {table}{\numberline {10.3}{\ignorespaces Processus automatis\'{e}s (CRON Jobs) de TrustGym}}{90}{table.10.3}%

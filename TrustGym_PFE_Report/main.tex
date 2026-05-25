@@ -31,6 +31,7 @@
 \usepackage[french]{babel}
 \usepackage{csquotes}
 
+\usepackage{array}
 \usepackage{multirow}
 
 %% PDF
@@ -112,8 +113,16 @@
 \setlength\headheight{15pt}
 \fancyhead[L]{5TWIN}
 \fancyhead[R]{Okba Bedhiafi}
-\fancyfoot[R]{\thepage}
- \setlength {\marginparwidth }{2cm}
+\fancyfoot[C]{\thepage}
+
+% Chapter-opening pages use plain style — override to also center the number
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+}
+
+\setlength{\marginparwidth}{2cm}
 
 %acronyms%
 \makenoidxglossaries
