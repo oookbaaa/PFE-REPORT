@@ -74,7 +74,8 @@ La figure \ref{fig:sprint3-usecase} r\'{e}sume les actions disponibles : l'admin
 \begin{tikzpicture}[scale=0.85, transform shape]
 
 % System box
-\node[systembox={Syst\`{e}me TrustGym -- Contr\^{o}le d'Acc\`{e}s}, minimum width=10cm, minimum height=12cm] (sys) at (5.5, -5) {};
+\node[systembox, minimum width=10cm, minimum height=12cm] (sys) at (5.5, -5) {};
+\node[uctitle] at (sys.north) {Syst\`{e}me TrustGym -- Contr\^{o}le d'Acc\`{e}s};
 
 % Actors (all on the left)
 \stickfigure{(-2.5, -1.5)}{Admin}

@@ -58,12 +58,14 @@
     label={[font=\footnotesize]below:#1}
   },
   usecase/.style={
-    draw, ellipse, minimum width=2.8cm, minimum height=1cm,
+    draw, semithick, ellipse, fill=white, minimum width=2.8cm, minimum height=1cm,
     text width=2.5cm, align=center, font=\footnotesize
   },
   systembox/.style={
-    draw, dashed, rounded corners, inner sep=10pt,
-    label={[font=\small\bfseries]above:#1}
+    draw, semithick, rounded corners=4pt, inner sep=12pt
+  },
+  uctitle/.style={
+    font=\small\bfseries, anchor=south, yshift=3pt
   }
 }
 
@@ -78,13 +80,13 @@
 
 % Stick figure command for UML actors
 \newcommand{\stickfigure}[2]{%
-  \begin{scope}[shift={#1}]
-    \draw (0,0.35) circle (0.15cm);
-    \draw (0,0.2) -- (0,-0.15);
-    \draw (-0.2,0.1) -- (0.2,0.1);
-    \draw (0,-0.15) -- (-0.15,-0.4);
-    \draw (0,-0.15) -- (0.15,-0.4);
-    \node[font=\footnotesize, below] at (0,-0.45) {#2};
+  \begin{scope}[shift={#1}, line width=0.7pt, line cap=round, line join=round]
+    \draw (0,0.35) circle (0.16cm);
+    \draw (0,0.19) -- (0,-0.15);
+    \draw (-0.22,0.08) -- (0.22,0.08);
+    \draw (0,-0.15) -- (-0.17,-0.42);
+    \draw (0,-0.15) -- (0.17,-0.42);
+    \node[font=\footnotesize, below] at (0,-0.46) {#2};
   \end{scope}
 }
 

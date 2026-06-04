@@ -74,7 +74,8 @@ La figure~\ref{fig:sprint5-usecase} r\'{e}sume les droits par acteur : l'adminis
 \begin{tikzpicture}[scale=0.85, transform shape]
 
 % System box
-\node[systembox={Syst\`{e}me TrustGym -- Boutique et Stock}, minimum width=10cm, minimum height=12cm] (sys) at (5.5, -5) {};
+\node[systembox, minimum width=10cm, minimum height=12cm] (sys) at (5.5, -5) {};
+\node[uctitle] at (sys.north) {Syst\`{e}me TrustGym -- Boutique et Stock};
 
 % Actors (all on the left)
 \stickfigure{(-2.5, -2)}{Admin}

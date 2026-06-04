@@ -64,7 +64,8 @@ La figure~\ref{fig:uc_mobile} recense ce qu'un membre peut faire depuis son t\'{
 \begin{tikzpicture}[scale=0.85, transform shape]
 
 % System box
-\node[systembox={Application Mobile TrustGym}, minimum width=9cm, minimum height=10cm] (sys) at (5, -4) {};
+\node[systembox, minimum width=9cm, minimum height=10cm] (sys) at (5, -4) {};
+\node[uctitle] at (sys.north) {Application Mobile TrustGym};
 
 % Actor
 \stickfigure{({-2.5, -4})}{Membre}
@@ -99,7 +100,8 @@ La figure~\ref{fig:uc_kpi_ai} r\'{e}sume les outils analytiques et \acrshort{ai}
 \begin{tikzpicture}[scale=0.85, transform shape]
 
 % System box
-\node[systembox={Centre KPI et Assistant IA}, minimum width=9cm, minimum height=10cm] (sys) at (5, -4) {};
+\node[systembox, minimum width=9cm, minimum height=10cm] (sys) at (5, -4) {};
+\node[uctitle] at (sys.north) {Centre KPI et Assistant IA};
 
 % Actor
 \stickfigure{({-2.5, -4})}{Admin}
