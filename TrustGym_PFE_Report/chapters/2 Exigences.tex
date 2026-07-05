@@ -60,77 +60,72 @@ La figure~\ref{fig:use_case_global} synth\'{e}tise, d'un seul coup d'\oe{}il, ce
 
 \begin{figure}[H]
   \centering
-  \resizebox{\textwidth}{!}{%
+  \resizebox{!}{0.8\textheight}{%
   \begin{tikzpicture}[
-    actor/.style={},
-    uc/.style={draw, semithick, ellipse, fill=white, minimum width=2.6cm, minimum height=0.9cm, text width=2.4cm, align=center, font=\scriptsize},
-    sys/.style={draw, semithick, rounded corners=5pt, inner sep=8pt}
+    link/.style={semithick}
   ]
 
-  % System boundary
-  \node[sys, minimum width=10cm, minimum height=16cm] (system) at (5,0) {};
-  \node[font=\small\bfseries, anchor=north] at (system.north) {Syst\`{e}me TrustGym};
+  % System boundary : single column of use cases (crossing-free)
+  \node[systembox, minimum width=5cm, minimum height=26cm] (system) at (5,-11.875) {};
+  \node[uctitle] at (system.north) {Syst\`{e}me TrustGym};
 
-  % --- SuperAdmin (left top) ---
-  \stickfigure{(-2.5, 5)}{SuperAdmin}
-  \node[uc] (uc1) at (3.5, 7) {G\'{e}rer les partenaires};
-  \node[uc] (uc2) at (3.5, 5.7) {G\'{e}rer les salles};
-  \node[uc] (uc3) at (3.5, 4.4) {G\'{e}rer les modules SaaS};
-  \node[uc] (uc4) at (3.5, 3.1) {G\'{e}rer les portes};
+  % --- Use cases : single column at x=5, grouped by actor (top -> bottom) ---
+  % SuperAdmin
+  \node[usecase] (uc1)  at (5,   0.00) {G\'{e}rer les partenaires};
+  \node[usecase] (uc2)  at (5,  -1.25) {G\'{e}rer les salles};
+  \node[usecase] (uc3)  at (5,  -2.50) {G\'{e}rer les modules SaaS};
+  \node[usecase] (uc4)  at (5,  -3.75) {G\'{e}rer les portes};
+  % Admin
+  \node[usecase] (uc6)  at (5,  -5.00) {G\'{e}rer les abonnements};
+  \node[usecase] (uc8)  at (5,  -6.25) {G\'{e}rer les coachs};
+  \node[usecase] (uc9)  at (5,  -7.50) {Planifier les s\'{e}ances};
+  \node[usecase] (uc10) at (5,  -8.75) {G\'{e}rer la boutique};
+  \node[usecase] (uc11) at (5, -10.00) {G\'{e}rer la finance};
+  \node[usecase] (uc12) at (5, -11.25) {Consulter les KPI};
+  \node[usecase] (uc13) at (5, -12.50) {Utiliser l'assistant IA};
+  % Admin + Caissier (shared)
+  \node[usecase] (uc5)  at (5, -13.75) {G\'{e}rer les membres};
+  \node[usecase] (uc7)  at (5, -15.00) {Contr\^{o}ler les acc\`{e}s};
+  % Caissier
+  \node[usecase] (uc14) at (5, -16.25) {Inscrire un membre};
+  \node[usecase] (uc15) at (5, -17.50) {Encaisser un paiement};
+  \node[usecase] (uc16) at (5, -18.75) {Vendre un produit};
+  % Membre
+  \node[usecase] (uc17) at (5, -20.00) {S'inscrire (mobile)};
+  \node[usecase] (uc18) at (5, -21.25) {Consulter les s\'{e}ances};
+  \node[usecase] (uc19) at (5, -22.50) {R\'{e}server une s\'{e}ance};
+  \node[usecase] (uc20) at (5, -23.75) {Consulter l'occupation};
 
-  \draw (-2.5, 5) -- (uc1);
-  \draw (-2.5, 5) -- (uc2);
-  \draw (-2.5, 5) -- (uc3);
-  \draw (-2.5, 5) -- (uc4);
+  % --- Actors (left), each centred on its own group ---
+  \stickfigure{(-2.5, -1.9)}{SuperAdmin}
+  \draw[link] (-1, -1.9) -- (uc1.west);
+  \draw[link] (-1, -1.9) -- (uc2.west);
+  \draw[link] (-1, -1.9) -- (uc3.west);
+  \draw[link] (-1, -1.9) -- (uc4.west);
 
-  % --- Admin (left middle) ---
-  \stickfigure{(-2.5, 0)}{Admin}
-  \node[uc] (uc5) at (3.5, 1.8) {G\'{e}rer les membres};
-  \node[uc] (uc6) at (3.5, 0.5) {G\'{e}rer les abonnements};
-  \node[uc] (uc7) at (3.5, -0.8) {Contr\^{o}ler les acc\`{e}s};
-  \node[uc] (uc8) at (3.5, -2.1) {G\'{e}rer les coachs};
-  \node[uc] (uc9) at (3.5, -3.4) {Planifier les s\'{e}ances};
+  \stickfigure{(-2.5, -10.0)}{Admin}
+  \draw[link] (-1, -10.0) -- (uc5.west);
+  \draw[link] (-1, -10.0) -- (uc6.west);
+  \draw[link] (-1, -10.0) -- (uc7.west);
+  \draw[link] (-1, -10.0) -- (uc8.west);
+  \draw[link] (-1, -10.0) -- (uc9.west);
+  \draw[link] (-1, -10.0) -- (uc10.west);
+  \draw[link] (-1, -10.0) -- (uc11.west);
+  \draw[link] (-1, -10.0) -- (uc12.west);
+  \draw[link] (-1, -10.0) -- (uc13.west);
 
-  \draw (-2.5, 0) -- (uc5);
-  \draw (-2.5, 0) -- (uc6);
-  \draw (-2.5, 0) -- (uc7);
-  \draw (-2.5, 0) -- (uc8);
-  \draw (-2.5, 0) -- (uc9);
+  \stickfigure{(-2.5, -16.25)}{Caissier}
+  \draw[link] (-1, -16.25) -- (uc5.west);
+  \draw[link] (-1, -16.25) -- (uc7.west);
+  \draw[link] (-1, -16.25) -- (uc14.west);
+  \draw[link] (-1, -16.25) -- (uc15.west);
+  \draw[link] (-1, -16.25) -- (uc16.west);
 
-  % --- Right side use cases ---
-  \node[uc] (uc10) at (7.5, 1.8) {G\'{e}rer la boutique};
-  \node[uc] (uc11) at (7.5, 0.5) {G\'{e}rer la finance};
-  \node[uc] (uc12) at (7.5, -0.8) {Consulter les KPI};
-  \node[uc] (uc13) at (7.5, -2.1) {Utiliser l'assistant IA};
-
-  \draw (-2.5, 0) -- (uc10);
-  \draw (-2.5, 0) -- (uc11);
-  \draw (-2.5, 0) -- (uc12);
-  \draw (-2.5, 0) -- (uc13);
-
-  % --- Caissier (left bottom) ---
-  \stickfigure{(-2.5, -5.5)}{Caissier}
-  \node[uc] (uc14) at (3.5, -4.7) {Inscrire un membre};
-  \node[uc] (uc15) at (3.5, -6) {Encaisser un paiement};
-  \node[uc] (uc16) at (3.5, -7.3) {Vendre un produit};
-
-  \draw (-2.5, -5.5) -- (uc14);
-  \draw (-2.5, -5.5) -- (uc15);
-  \draw (-2.5, -5.5) -- (uc16);
-  \draw (-2.5, -5.5) -- (uc5);
-  \draw (-2.5, -5.5) -- (uc7);
-
-  % --- Membre (left bottom) ---
-  \stickfigure{(-2.5, -9.5)}{Membre}
-  \node[uc] (uc17) at (7.5, -3.4) {S'inscrire (mobile)};
-  \node[uc] (uc18) at (7.5, -4.7) {Consulter les s\'{e}ances};
-  \node[uc] (uc19) at (7.5, -6) {R\'{e}server une s\'{e}ance};
-  \node[uc] (uc20) at (7.5, -7.3) {Consulter l'occupation};
-
-  \draw (-2.5, -9.5) -- (uc17);
-  \draw (-2.5, -9.5) -- (uc18);
-  \draw (-2.5, -9.5) -- (uc19);
-  \draw (-2.5, -9.5) -- (uc20);
+  \stickfigure{(-2.5, -21.9)}{Membre}
+  \draw[link] (-1, -21.9) -- (uc17.west);
+  \draw[link] (-1, -21.9) -- (uc18.west);
+  \draw[link] (-1, -21.9) -- (uc19.west);
+  \draw[link] (-1, -21.9) -- (uc20.west);
 
   \end{tikzpicture}
   }%

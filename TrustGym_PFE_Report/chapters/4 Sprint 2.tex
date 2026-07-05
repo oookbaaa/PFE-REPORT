@@ -64,47 +64,47 @@ La figure~\ref{fig:sprint2-usecase} cartographie les actions disponibles selon l
 \resizebox{0.95\textwidth}{!}{%
 \begin{tikzpicture}[
   uc/.style={draw, semithick, ellipse, fill=white, minimum width=2.8cm, minimum height=0.9cm, text width=2.6cm, align=center, font=\scriptsize},
-  sys/.style={draw, semithick, rounded corners=5pt, inner sep=10pt}
+  sys/.style={draw, semithick, rounded corners=5pt, inner sep=10pt},
+  link/.style={semithick}
 ]
 
-\node[sys, minimum width=9cm, minimum height=10cm] (system) at (5,0) {};
-\node[font=\small\bfseries, anchor=north] at (system.north) {Sprint 2 -- Membres \& Abonnements};
+% System boundary
+\node[sys, minimum width=6cm, minimum height=13cm] (system) at (4.5,0) {};
+\node[font=\small\bfseries, anchor=south, yshift=2pt] at (system.north) {Sprint 2 -- Membres \& Abonnements};
 
-% Admin (left)
-\stickfigure{(-2, 2)}{Admin}
-\node[uc] (uc1) at (3.5, 4) {G\'{e}rer les membres};
-\node[uc] (uc2) at (3.5, 2.5) {Cr\'{e}er une formule d'abonnement};
-\node[uc] (uc3) at (3.5, 1) {Inscrire un membre};
-\node[uc] (uc4) at (3.5, -0.5) {G\'{e}rer les conventions};
-\node[uc] (uc5) at (3.5, -2) {G\'{e}rer les cotisations};
+% Use cases : single column at x=4.5 (Admin-only on top, shared/Caissier at bottom)
+\node[uc] (uc2)  at (4.5,  5.625) {Cr\'{e}er une formule d'abonnement};
+\node[uc] (uc7)  at (4.5,  4.375) {G\'{e}rer les liens familiaux};
+\node[uc] (uc8)  at (4.5,  3.125) {Bloquer / D\'{e}bloquer};
+\node[uc] (uc9)  at (4.5,  1.875) {Consulter l'historique};
+\node[uc] (uc4)  at (4.5,  0.625) {G\'{e}rer les conventions};
+\node[uc] (uc5)  at (4.5, -0.625) {G\'{e}rer les cotisations};
+\node[uc] (uc10) at (4.5, -1.875) {G\'{e}rer les \'{e}ch\'{e}ances};
+\node[uc] (uc1)  at (4.5, -3.125) {G\'{e}rer les membres};
+\node[uc] (uc3)  at (4.5, -4.375) {Inscrire un membre};
+\node[uc] (uc6)  at (4.5, -5.625) {Enregistrer un paiement};
 
-\draw (-2, 2) -- (uc1);
-\draw (-2, 2) -- (uc2);
-\draw (-2, 2) -- (uc3);
-\draw (-2, 2) -- (uc4);
-\draw (-2, 2) -- (uc5);
+% Admin (left), centred on its group
+\stickfigure{(-2.5, 0.6)}{Admin}
+\draw[link] (-2.5, 0.6) -- (uc1.west);
+\draw[link] (-2.5, 0.6) -- (uc2.west);
+\draw[link] (-2.5, 0.6) -- (uc3.west);
+\draw[link] (-2.5, 0.6) -- (uc4.west);
+\draw[link] (-2.5, 0.6) -- (uc5.west);
+\draw[link] (-2.5, 0.6) -- (uc7.west);
+\draw[link] (-2.5, 0.6) -- (uc8.west);
+\draw[link] (-2.5, 0.6) -- (uc9.west);
+\draw[link] (-2.5, 0.6) -- (uc10.west);
 
-% Caissier (left bottom)
-\stickfigure{(-2, -4)}{Caissier}
-\node[uc] (uc6) at (3.5, -3.5) {Enregistrer un paiement};
+% Caissier (left bottom), centred on the shared cluster
+\stickfigure{(-2.5, -4.6)}{Caissier}
+\draw[link] (-2.5, -4.6) -- (uc1.west);
+\draw[link] (-2.5, -4.6) -- (uc3.west);
+\draw[link] (-2.5, -4.6) -- (uc6.west);
 
-\draw (-2, -4) -- (uc6);
-\draw (-2, -4) -- (uc1);
-\draw (-2, -4) -- (uc3);
-
-% Right side use cases
-\node[uc] (uc7) at (7.5, 4) {G\'{e}rer les liens familiaux};
-\node[uc] (uc8) at (7.5, 2.5) {Bloquer / D\'{e}bloquer};
-\node[uc] (uc9) at (7.5, 1) {Consulter l'historique};
-\node[uc] (uc10) at (7.5, -0.5) {G\'{e}rer les \'{e}ch\'{e}ances};
-
-\draw (-2, 2) -- (uc7);
-\draw (-2, 2) -- (uc8);
-\draw (-2, 2) -- (uc9);
-\draw (-2, 2) -- (uc10);
-
-% Include
-\draw[dashed, -{Stealth[length=2mm]}] (uc3) -- node[right, font=\tiny] {$\ll$include$\gg$} (uc6);
+% Include relationship (routed on the right, outside the column)
+\draw[dashed, -{Stealth[length=2mm]}] (uc3.east) to[bend left=55]
+  node[right, font=\tiny] {$\ll$include$\gg$} (uc6.east);
 
 \end{tikzpicture}
 }%

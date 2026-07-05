@@ -93,7 +93,7 @@ La figure~\ref{fig:uc_mobile} recense ce qu'un membre peut faire depuis son t\'{
 
 \subsection{Diagramme de cas d'utilisation -- Centre KPI et Assistant IA}
 
-La figure~\ref{fig:uc_kpi_ai} r\'{e}sume les outils analytiques et \acrshort{ai} r\'{e}serv\'{e}s aux administrateurs, de l'occupation en direct \`{a} l'ing\'{e}stion de documents \acrshort{rag}.
+La figure~\ref{fig:uc_kpi_ai} r\'{e}sume les outils analytiques et \acrshort{ai} r\'{e}serv\'{e}s aux administrateurs, de l'occupation en direct \`{a} l'ing\'{e}stion de documents \acrshort{rag}. L'API OpenAI intervient comme acteur secondaire : elle g\'{e}n\`{e}re les r\'{e}ponses de l'assistant (\texttt{gpt-4o-mini}) et les vecteurs d'embedding des documents ing\'{e}r\'{e}s (\texttt{text-embedding-3-small}).
 
 \begin{figure}[H]
 \centering
@@ -103,15 +103,16 @@ La figure~\ref{fig:uc_kpi_ai} r\'{e}sume les outils analytiques et \acrshort{ai}
 \node[systembox, minimum width=9cm, minimum height=10cm] (sys) at (5, -4) {};
 \node[uctitle] at (sys.north) {Centre KPI et Assistant IA};
 
-% Actor
+% Primary actor (left)
 \stickfigure{({-2.5, -4})}{Admin}
 
-% Use cases
+% Use cases (Interroger l'assistant IA et Ing\'{e}rer des documents RAG regroup\'{e}s en bas, adjacents,
+% pour que l'acteur secondaire OpenAI ne croise aucune autre ellipse)
 \node[usecase] (uc1) at (5, 0) {Consulter l'occupation en direct};
 \node[usecase] (uc2) at (5, -1.8) {Analyser les heures de pointe};
 \node[usecase] (uc3) at (5, -3.6) {Consulter les statistiques de pr\'{e}sence};
-\node[usecase] (uc4) at (5, -5.4) {Interroger l'assistant IA};
-\node[usecase] (uc5) at (5, -7.2) {Consulter l'historique des conversations};
+\node[usecase] (uc5) at (5, -5.4) {Consulter l'historique des conversations};
+\node[usecase] (uc4) at (5, -7.2) {Interroger l'assistant IA};
 \node[usecase] (uc6) at (5, -9) {Ing\'{e}rer des documents RAG};
 
 % Admin links
@@ -121,6 +122,11 @@ La figure~\ref{fig:uc_kpi_ai} r\'{e}sume les outils analytiques et \acrshort{ai}
 \draw (0, -4) -- (uc4.west);
 \draw (0, -4) -- (uc5.west);
 \draw (0, -4) -- (uc6.west);
+
+% Secondary system (right) : external system called by the RAG assistant
+\node[draw, semithick, rectangle, minimum width=2.6cm, minimum height=1.1cm, align=center, font=\scriptsize] (openai) at (11.5, -8.1) {\textit{\tiny $\ll$syst\`{e}me$\gg$}\\[2pt]\textbf{OpenAI (LLM)}};
+\draw (openai.west) -- (uc4.east);
+\draw (openai.west) -- (uc6.east);
 
 \end{tikzpicture}
 \caption{Diagramme de cas d'utilisation -- Centre KPI et Assistant IA}

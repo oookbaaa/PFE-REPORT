@@ -50,124 +50,124 @@
 \contentsline {subsection}{\numberline {3.2.3}Besoins non fonctionnels}{20}{subsection.3.2.3}%
 \contentsline {section}{\numberline {3.3}Analyse des besoins}{21}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Diagramme de cas d'utilisation global}{21}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Format des descriptions textuelles de cas d'utilisation}{23}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Product Backlog}{23}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Diagramme de classes}{24}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Catalogue complet des entit\'{e}s}{25}{subsection.3.3.5}%
-\contentsline {section}{\numberline {3.4}Conclusion}{28}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Sprint 1 : Authentification et Gestion des Utilisateurs}{29}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introduction}{29}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Sprint Backlog}{29}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Analyse}{30}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Diagramme de cas d'utilisation}{30}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Cas d'utilisation cibl\'{e}s}{31}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {3.3.2}Format des descriptions textuelles de cas d'utilisation}{22}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Product Backlog}{22}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Diagramme de classes}{23}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Catalogue complet des entit\'{e}s}{24}{subsection.3.3.5}%
+\contentsline {section}{\numberline {3.4}Conclusion}{27}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Sprint 1 : Authentification et Gestion des Utilisateurs}{28}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{28}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Sprint Backlog}{28}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Analyse}{29}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Diagramme de cas d'utilisation}{29}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Cas d'utilisation cibl\'{e}s}{30}{subsection.4.3.2}%
 \contentsline {subsection}{\numberline {4.3.3}Diagramme de s\'{e}quence : Authentification JWT}{31}{subsection.4.3.3}%
-\contentsline {section}{\numberline {4.4}R\'{e}alisation}{32}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Backend}{32}{subsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.1.1}Module d'Authentification}{32}{subsubsection.4.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.4.1.2}Module Utilisateur}{33}{subsubsection.4.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.4.1.3}Contr\^{o}le d'Acc\`{e}s}{33}{subsubsection.4.4.1.3}%
-\contentsline {subsubsection}{\numberline {4.4.1.4}Impersonation SuperAdmin}{33}{subsubsection.4.4.1.4}%
-\contentsline {subsubsection}{\numberline {4.4.1.5}Journal d'Audit des Connexions}{33}{subsubsection.4.4.1.5}%
-\contentsline {subsubsection}{\numberline {4.4.1.6}S\'{e}curit\'{e} Globale}{33}{subsubsection.4.4.1.6}%
-\contentsline {subsection}{\numberline {4.4.2}Frontend Web}{34}{subsection.4.4.2}%
-\contentsline {subsubsection}{\numberline {4.4.2.1}Fournisseur de Session}{34}{subsubsection.4.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.4.2.2}Page de Connexion}{34}{subsubsection.4.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.4.2.3}Gestion des Utilisateurs}{35}{subsubsection.4.4.2.3}%
-\contentsline {subsection}{\numberline {4.4.3}Frontend Mobile}{35}{subsection.4.4.3}%
-\contentsline {subsubsection}{\numberline {4.4.3.1}Flux d'Inscription Multi-\'{E}tapes}{35}{subsubsection.4.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.4.3.2}\'{E}cran de Connexion Mobile}{36}{subsubsection.4.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.4.3.3}Journal des Connexions}{37}{subsubsection.4.4.3.3}%
-\contentsline {section}{\numberline {4.5}Conclusion}{37}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Sprint 2 : Gestion des Membres et des Abonnements}{38}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Introduction}{38}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Sprint Backlog}{38}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Analyse}{39}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Diagramme de cas d'utilisation}{39}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Cas d'utilisation cibl\'{e}s}{40}{subsection.5.3.2}%
+\contentsline {section}{\numberline {4.4}R\'{e}alisation}{31}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Backend}{31}{subsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.1.1}Module d'Authentification}{31}{subsubsection.4.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.4.1.2}Module Utilisateur}{32}{subsubsection.4.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.4.1.3}Contr\^{o}le d'Acc\`{e}s}{32}{subsubsection.4.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.4.1.4}Impersonation SuperAdmin}{32}{subsubsection.4.4.1.4}%
+\contentsline {subsubsection}{\numberline {4.4.1.5}Journal d'Audit des Connexions}{32}{subsubsection.4.4.1.5}%
+\contentsline {subsubsection}{\numberline {4.4.1.6}S\'{e}curit\'{e} Globale}{32}{subsubsection.4.4.1.6}%
+\contentsline {subsection}{\numberline {4.4.2}Frontend Web}{33}{subsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.1}Fournisseur de Session}{33}{subsubsection.4.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.4.2.2}Page de Connexion}{33}{subsubsection.4.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.3}Gestion des Utilisateurs}{34}{subsubsection.4.4.2.3}%
+\contentsline {subsection}{\numberline {4.4.3}Frontend Mobile}{34}{subsection.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.3.1}Flux d'Inscription Multi-\'{E}tapes}{34}{subsubsection.4.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.4.3.2}\'{E}cran de Connexion Mobile}{35}{subsubsection.4.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.4.3.3}Journal des Connexions}{36}{subsubsection.4.4.3.3}%
+\contentsline {section}{\numberline {4.5}Conclusion}{36}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Sprint 2 : Gestion des Membres et des Abonnements}{37}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introduction}{37}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Sprint Backlog}{37}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Analyse}{38}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Diagramme de cas d'utilisation}{38}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Cas d'utilisation cibl\'{e}s}{39}{subsection.5.3.2}%
 \contentsline {subsection}{\numberline {5.3.3}Diagramme de s\'{e}quence : Inscription \`{a} un Abonnement}{40}{subsection.5.3.3}%
-\contentsline {section}{\numberline {5.4}R\'{e}alisation}{41}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Backend}{41}{subsection.5.4.1}%
-\contentsline {subsubsection}{\numberline {5.4.1.1}Modules m\'{e}tier}{41}{subsubsection.5.4.1.1}%
-\contentsline {subsubsection}{\numberline {5.4.1.2}Synchronisation Automatique avec les Dispositifs}{42}{subsubsection.5.4.1.2}%
-\contentsline {subsubsection}{\numberline {5.4.1.3}Validation d'Unicit\'{e} en Temps R\'{e}el}{42}{subsubsection.5.4.1.3}%
+\contentsline {section}{\numberline {5.4}R\'{e}alisation}{40}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Backend}{40}{subsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.1.1}Modules m\'{e}tier}{40}{subsubsection.5.4.1.1}%
+\contentsline {subsubsection}{\numberline {5.4.1.2}Synchronisation Automatique avec les Dispositifs}{41}{subsubsection.5.4.1.2}%
+\contentsline {subsubsection}{\numberline {5.4.1.3}Validation d'Unicit\'{e} en Temps R\'{e}el}{41}{subsubsection.5.4.1.3}%
 \contentsline {subsubsection}{\numberline {5.4.1.4}D\'{e}cr\'{e}mentation des S\'{e}ances (PER\_SESSION)}{42}{subsubsection.5.4.1.4}%
-\contentsline {subsubsection}{\numberline {5.4.1.5}Cr\'{e}neaux Horaires d'Abonnement}{43}{subsubsection.5.4.1.5}%
-\contentsline {subsection}{\numberline {5.4.2}Frontend Web}{43}{subsection.5.4.2}%
-\contentsline {section}{\numberline {5.5}Conclusion}{44}{section.5.5}%
-\contentsline {chapter}{\numberline {6}Sprint 3 : Contr\^{o}le d'Acc\`{e}s et Int\'{e}gration Mat\'{e}rielle}{45}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Introduction}{45}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Sprint Backlog}{45}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Analyse}{47}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Diagramme de cas d'utilisation}{47}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Cas d'utilisation cibl\'{e}s}{48}{subsection.6.3.2}%
-\contentsline {section}{\numberline {6.4}R\'{e}alisation}{48}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Backend}{48}{subsection.6.4.1}%
-\contentsline {subsubsection}{\numberline {6.4.1.1}Modules m\'{e}tier}{48}{subsubsection.6.4.1.1}%
-\contentsline {subsubsection}{\numberline {6.4.1.2}Calcul de l'Occupation en Direct}{49}{subsubsection.6.4.1.2}%
-\contentsline {subsubsection}{\numberline {6.4.1.3}Algorithme d'Autorisation d'Acc\`{e}s}{49}{subsubsection.6.4.1.3}%
-\contentsline {subsubsection}{\numberline {6.4.1.4}Verrouillage des Dispositifs (DeviceLockService)}{50}{subsubsection.6.4.1.4}%
-\contentsline {subsubsection}{\numberline {6.4.1.5}Protocole ADMS (Push-Mode EFace10)}{50}{subsubsection.6.4.1.5}%
-\contentsline {subsubsection}{\numberline {6.4.1.6}Modules Commandes et Bundles}{50}{subsubsection.6.4.1.6}%
-\contentsline {subsection}{\numberline {6.4.2}Machine Handler}{50}{subsection.6.4.2}%
-\contentsline {subsubsection}{\numberline {6.4.2.1}Architecture}{50}{subsubsection.6.4.2.1}%
-\contentsline {subsubsection}{\numberline {6.4.2.2}Infrastructure}{51}{subsubsection.6.4.2.2}%
-\contentsline {subsubsection}{\numberline {6.4.2.3}Installateur Windows (Inno Setup)}{52}{subsubsection.6.4.2.3}%
-\contentsline {paragraph}{\numberline {6.4.2.3.1}Deux modes de configuration.}{52}{paragraph.6.4.2.3.1}%
-\contentsline {paragraph}{\numberline {6.4.2.3.2}Contenu du package.}{52}{paragraph.6.4.2.3.2}%
-\contentsline {paragraph}{\numberline {6.4.2.3.3}G\'{e}n\'{e}ration des fichiers de configuration.}{52}{paragraph.6.4.2.3.3}%
-\contentsline {subsubsection}{\numberline {6.4.2.4}Services Windows Persistants (NSSM)}{53}{subsubsection.6.4.2.4}%
-\contentsline {paragraph}{\numberline {6.4.2.4.1}Services cr\'{e}\'{e}s.}{53}{paragraph.6.4.2.4.1}%
-\contentsline {paragraph}{\numberline {6.4.2.4.2}Configuration NSSM.}{54}{paragraph.6.4.2.4.2}%
-\contentsline {paragraph}{\numberline {6.4.2.4.3}Watchdog.}{54}{paragraph.6.4.2.4.3}%
-\contentsline {subsection}{\numberline {6.4.3}Diagramme de s\'{e}quence}{54}{subsection.6.4.3}%
-\contentsline {subsection}{\numberline {6.4.4}Interfaces r\'{e}alis\'{e}es (web et mobile)}{55}{subsection.6.4.4}%
-\contentsline {section}{\numberline {6.5}Conclusion}{57}{section.6.5}%
-\contentsline {chapter}{\numberline {7}Sprint 4 : Gestion des Coachs et des S\'{e}ances}{58}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Introduction}{58}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Sprint Backlog}{58}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Analyse}{59}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Diagramme de cas d'utilisation}{59}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}Cas d'utilisation cibl\'{e}s}{60}{subsection.7.3.2}%
-\contentsline {section}{\numberline {7.4}R\'{e}alisation}{60}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1}Backend}{60}{subsection.7.4.1}%
-\contentsline {subsection}{\numberline {7.4.2}Diagramme de s\'{e}quence}{61}{subsection.7.4.2}%
-\contentsline {subsection}{\numberline {7.4.3}Interfaces r\'{e}alis\'{e}es (web et mobile)}{62}{subsection.7.4.3}%
-\contentsline {section}{\numberline {7.5}Conclusion}{63}{section.7.5}%
-\contentsline {chapter}{\numberline {8}Sprint 5 : Boutique et Gestion de Stock}{64}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Introduction}{64}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Sprint Backlog}{64}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Analyse}{66}{section.8.3}%
-\contentsline {subsection}{\numberline {8.3.1}Diagramme de cas d'utilisation}{66}{subsection.8.3.1}%
-\contentsline {subsection}{\numberline {8.3.2}Cas d'utilisation cibl\'{e}s}{66}{subsection.8.3.2}%
-\contentsline {section}{\numberline {8.4}R\'{e}alisation}{66}{section.8.4}%
-\contentsline {subsection}{\numberline {8.4.1}Backend}{66}{subsection.8.4.1}%
-\contentsline {subsection}{\numberline {8.4.2}Diagramme de s\'{e}quence}{67}{subsection.8.4.2}%
-\contentsline {subsection}{\numberline {8.4.3}Interfaces r\'{e}alis\'{e}es (web)}{68}{subsection.8.4.3}%
-\contentsline {section}{\numberline {8.5}Conclusion}{72}{section.8.5}%
-\contentsline {chapter}{\numberline {9}Sprint 6 : Finance, Facturation et Portefeuille}{73}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Introduction}{73}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Sprint Backlog}{73}{section.9.2}%
-\contentsline {section}{\numberline {9.3}Analyse}{75}{section.9.3}%
-\contentsline {subsection}{\numberline {9.3.1}Diagramme de cas d'utilisation}{75}{subsection.9.3.1}%
-\contentsline {subsection}{\numberline {9.3.2}Cas d'utilisation cibl\'{e}s}{75}{subsection.9.3.2}%
-\contentsline {section}{\numberline {9.4}R\'{e}alisation}{76}{section.9.4}%
-\contentsline {subsection}{\numberline {9.4.1}Backend}{76}{subsection.9.4.1}%
-\contentsline {subsection}{\numberline {9.4.2}Diagramme de s\'{e}quence}{76}{subsection.9.4.2}%
-\contentsline {subsection}{\numberline {9.4.3}Interfaces r\'{e}alis\'{e}es (web)}{77}{subsection.9.4.3}%
-\contentsline {section}{\numberline {9.5}Conclusion}{80}{section.9.5}%
-\contentsline {chapter}{\numberline {10}Sprint 7 : Application Mobile, Centre KPI et Assistant IA}{81}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Introduction}{81}{section.10.1}%
-\contentsline {section}{\numberline {10.2}Sprint Backlog}{81}{section.10.2}%
-\contentsline {section}{\numberline {10.3}Analyse}{82}{section.10.3}%
-\contentsline {subsection}{\numberline {10.3.1}Diagramme de cas d'utilisation -- Application Mobile}{82}{subsection.10.3.1}%
-\contentsline {subsection}{\numberline {10.3.2}Diagramme de cas d'utilisation -- Centre KPI et Assistant IA}{83}{subsection.10.3.2}%
-\contentsline {section}{\numberline {10.4}R\'{e}alisation}{84}{section.10.4}%
-\contentsline {subsection}{\numberline {10.4.1}R\'{e}alisation Backend}{84}{subsection.10.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.1.5}Cr\'{e}neaux Horaires d'Abonnement}{42}{subsubsection.5.4.1.5}%
+\contentsline {subsection}{\numberline {5.4.2}Frontend Web}{42}{subsection.5.4.2}%
+\contentsline {section}{\numberline {5.5}Conclusion}{43}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Sprint 3 : Contr\^{o}le d'Acc\`{e}s et Int\'{e}gration Mat\'{e}rielle}{44}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Introduction}{44}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Sprint Backlog}{44}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Analyse}{46}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Diagramme de cas d'utilisation}{46}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Cas d'utilisation cibl\'{e}s}{47}{subsection.6.3.2}%
+\contentsline {section}{\numberline {6.4}R\'{e}alisation}{47}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Backend}{47}{subsection.6.4.1}%
+\contentsline {subsubsection}{\numberline {6.4.1.1}Modules m\'{e}tier}{47}{subsubsection.6.4.1.1}%
+\contentsline {subsubsection}{\numberline {6.4.1.2}Calcul de l'Occupation en Direct}{48}{subsubsection.6.4.1.2}%
+\contentsline {subsubsection}{\numberline {6.4.1.3}Algorithme d'Autorisation d'Acc\`{e}s}{48}{subsubsection.6.4.1.3}%
+\contentsline {subsubsection}{\numberline {6.4.1.4}Verrouillage des Dispositifs (DeviceLockService)}{49}{subsubsection.6.4.1.4}%
+\contentsline {subsubsection}{\numberline {6.4.1.5}Protocole ADMS (Push-Mode EFace10)}{49}{subsubsection.6.4.1.5}%
+\contentsline {subsubsection}{\numberline {6.4.1.6}Modules Commandes et Bundles}{49}{subsubsection.6.4.1.6}%
+\contentsline {subsection}{\numberline {6.4.2}Machine Handler}{49}{subsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.1}Architecture}{49}{subsubsection.6.4.2.1}%
+\contentsline {subsubsection}{\numberline {6.4.2.2}Infrastructure}{50}{subsubsection.6.4.2.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.3}Installateur Windows (Inno Setup)}{51}{subsubsection.6.4.2.3}%
+\contentsline {paragraph}{\numberline {6.4.2.3.1}Deux modes de configuration.}{51}{paragraph.6.4.2.3.1}%
+\contentsline {paragraph}{\numberline {6.4.2.3.2}Contenu du package.}{51}{paragraph.6.4.2.3.2}%
+\contentsline {paragraph}{\numberline {6.4.2.3.3}G\'{e}n\'{e}ration des fichiers de configuration.}{51}{paragraph.6.4.2.3.3}%
+\contentsline {subsubsection}{\numberline {6.4.2.4}Services Windows Persistants (NSSM)}{52}{subsubsection.6.4.2.4}%
+\contentsline {paragraph}{\numberline {6.4.2.4.1}Services cr\'{e}\'{e}s.}{52}{paragraph.6.4.2.4.1}%
+\contentsline {paragraph}{\numberline {6.4.2.4.2}Configuration NSSM.}{53}{paragraph.6.4.2.4.2}%
+\contentsline {paragraph}{\numberline {6.4.2.4.3}Watchdog.}{53}{paragraph.6.4.2.4.3}%
+\contentsline {subsection}{\numberline {6.4.3}Diagramme de s\'{e}quence}{53}{subsection.6.4.3}%
+\contentsline {subsection}{\numberline {6.4.4}Interfaces r\'{e}alis\'{e}es (web et mobile)}{54}{subsection.6.4.4}%
+\contentsline {section}{\numberline {6.5}Conclusion}{56}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Sprint 4 : Gestion des Coachs et des S\'{e}ances}{57}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Introduction}{57}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Sprint Backlog}{57}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Analyse}{58}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Diagramme de cas d'utilisation}{58}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Cas d'utilisation cibl\'{e}s}{59}{subsection.7.3.2}%
+\contentsline {section}{\numberline {7.4}R\'{e}alisation}{59}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Backend}{59}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Diagramme de s\'{e}quence}{60}{subsection.7.4.2}%
+\contentsline {subsection}{\numberline {7.4.3}Interfaces r\'{e}alis\'{e}es (web et mobile)}{61}{subsection.7.4.3}%
+\contentsline {section}{\numberline {7.5}Conclusion}{62}{section.7.5}%
+\contentsline {chapter}{\numberline {8}Sprint 5 : Boutique et Gestion de Stock}{63}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Introduction}{63}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Sprint Backlog}{63}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Analyse}{65}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Diagramme de cas d'utilisation}{65}{subsection.8.3.1}%
+\contentsline {subsection}{\numberline {8.3.2}Cas d'utilisation cibl\'{e}s}{65}{subsection.8.3.2}%
+\contentsline {section}{\numberline {8.4}R\'{e}alisation}{65}{section.8.4}%
+\contentsline {subsection}{\numberline {8.4.1}Backend}{65}{subsection.8.4.1}%
+\contentsline {subsection}{\numberline {8.4.2}Diagramme de s\'{e}quence}{66}{subsection.8.4.2}%
+\contentsline {subsection}{\numberline {8.4.3}Interfaces r\'{e}alis\'{e}es (web)}{67}{subsection.8.4.3}%
+\contentsline {section}{\numberline {8.5}Conclusion}{71}{section.8.5}%
+\contentsline {chapter}{\numberline {9}Sprint 6 : Finance, Facturation et Portefeuille}{72}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Introduction}{72}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Sprint Backlog}{72}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Analyse}{74}{section.9.3}%
+\contentsline {subsection}{\numberline {9.3.1}Diagramme de cas d'utilisation}{74}{subsection.9.3.1}%
+\contentsline {subsection}{\numberline {9.3.2}Cas d'utilisation cibl\'{e}s}{74}{subsection.9.3.2}%
+\contentsline {section}{\numberline {9.4}R\'{e}alisation}{75}{section.9.4}%
+\contentsline {subsection}{\numberline {9.4.1}Backend}{75}{subsection.9.4.1}%
+\contentsline {subsection}{\numberline {9.4.2}Diagramme de s\'{e}quence}{75}{subsection.9.4.2}%
+\contentsline {subsection}{\numberline {9.4.3}Interfaces r\'{e}alis\'{e}es (web)}{76}{subsection.9.4.3}%
+\contentsline {section}{\numberline {9.5}Conclusion}{79}{section.9.5}%
+\contentsline {chapter}{\numberline {10}Sprint 7 : Application Mobile, Centre KPI et Assistant IA}{80}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Introduction}{80}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Sprint Backlog}{80}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Analyse}{81}{section.10.3}%
+\contentsline {subsection}{\numberline {10.3.1}Diagramme de cas d'utilisation -- Application Mobile}{81}{subsection.10.3.1}%
+\contentsline {subsection}{\numberline {10.3.2}Diagramme de cas d'utilisation -- Centre KPI et Assistant IA}{82}{subsection.10.3.2}%
+\contentsline {section}{\numberline {10.4}R\'{e}alisation}{83}{section.10.4}%
+\contentsline {subsection}{\numberline {10.4.1}R\'{e}alisation Backend}{83}{subsection.10.4.1}%
 \contentsline {subsubsection}{\numberline {10.4.1.1}Module Intelligence Artificielle (AiModule)}{84}{subsubsection.10.4.1.1}%
-\contentsline {subsection}{\numberline {10.4.2}Diagramme de s\'{e}quence}{85}{subsection.10.4.2}%
-\contentsline {subsection}{\numberline {10.4.3}R\'{e}alisation Frontend Mobile}{86}{subsection.10.4.3}%
-\contentsline {subsection}{\numberline {10.4.4}R\'{e}alisation Frontend Web (KPI et IA)}{86}{subsection.10.4.4}%
+\contentsline {subsection}{\numberline {10.4.2}Diagramme de s\'{e}quence}{84}{subsection.10.4.2}%
+\contentsline {subsection}{\numberline {10.4.3}R\'{e}alisation Frontend Mobile}{85}{subsection.10.4.3}%
+\contentsline {subsection}{\numberline {10.4.4}R\'{e}alisation Frontend Web (KPI et IA)}{85}{subsection.10.4.4}%
 \contentsline {subsection}{\numberline {10.4.5}Interfaces r\'{e}alis\'{e}es}{86}{subsection.10.4.5}%
 \contentsline {subsection}{\numberline {10.4.6}Processus Automatis\'{e}s (CRON Jobs)}{90}{subsection.10.4.6}%
 \contentsline {section}{\numberline {10.5}Conclusion}{91}{section.10.5}%

@@ -63,47 +63,48 @@ La figure~\ref{fig:sprint1-usecase} regroupe les cas d'utilisation de ce sprint 
 \resizebox{0.95\textwidth}{!}{%
 \begin{tikzpicture}[
   uc/.style={draw, semithick, ellipse, fill=white, minimum width=2.8cm, minimum height=0.9cm, text width=2.6cm, align=center, font=\scriptsize},
-  sys/.style={draw, semithick, rounded corners=5pt, inner sep=10pt}
+  sys/.style={draw, semithick, rounded corners=5pt, inner sep=10pt},
+  link/.style={semithick}
 ]
 
 % System boundary
-\node[sys, minimum width=9cm, minimum height=10cm] (system) at (5,0) {};
-\node[font=\small\bfseries, anchor=north] at (system.north) {Sprint 1 -- Authentification};
+\node[sys, minimum width=6cm, minimum height=13cm] (system) at (4.5,0) {};
+\node[font=\small\bfseries, anchor=south, yshift=2pt] at (system.north) {Sprint 1 -- Authentification};
 
-% Admin actor (left)
-\stickfigure{(-2, 2.5)}{Admin / Caissier}
-\node[uc] (uc1) at (3.5, 4) {Se connecter (web)};
-\node[uc] (uc2) at (3.5, 2.5) {V\'{e}rifier le token};
+% Use cases : single column at x=4.5, grouped by actor
+\node[uc] (uc1)  at (4.5,  5.4) {Se connecter (web)};
+\node[uc] (uc2)  at (4.5,  4.2) {V\'{e}rifier le token};
 
-\draw (-2, 2.5) -- (uc1);
-\draw (-2, 2.5) -- (uc2);
+\node[uc] (uc3)  at (4.5,  3.0) {G\'{e}rer les utilisateurs};
+\node[uc] (uc4)  at (4.5,  1.8) {Attribuer les r\^{o}les};
+\node[uc] (uc5)  at (4.5,  0.6) {Configurer les modules SaaS};
 
-% SuperAdmin actor (left bottom)
-\stickfigure{(-2, -1.5)}{SuperAdmin}
-\node[uc] (uc3) at (3.5, 1) {G\'{e}rer les utilisateurs};
-\node[uc] (uc4) at (3.5, -0.5) {Attribuer les r\^{o}les};
-\node[uc] (uc5) at (3.5, -2) {Configurer les modules SaaS};
+\node[uc] (uc6)  at (4.5, -0.6) {S'inscrire (multi-\'{e}tapes)};
+\node[uc] (uc8)  at (4.5, -1.8) {V\'{e}rifier le code OTP};
+\node[uc] (uc7)  at (4.5, -3.0) {Se connecter (mobile)};
+\node[uc] (uc9)  at (4.5, -4.2) {D\'{e}finir le mot de passe};
+\node[uc] (uc10) at (4.5, -5.4) {R\'{e}initialiser le mot de passe};
 
-\draw (-2, -1.5) -- (uc3);
-\draw (-2, -1.5) -- (uc4);
-\draw (-2, -1.5) -- (uc5);
+% Actors (left), each centred on its own group
+\stickfigure{(-2.5, 4.8)}{Admin / Caissier}
+\draw[link] (-2.5, 4.8) -- (uc1.west);
+\draw[link] (-2.5, 4.8) -- (uc2.west);
 
-% Member actor (left bottom)
-\stickfigure{(-2, -4.5)}{Membre}
-\node[uc] (uc6) at (7.5, 4) {S'inscrire (multi-\'{e}tapes)};
-\node[uc] (uc7) at (7.5, 2.5) {Se connecter (mobile)};
-\node[uc] (uc8) at (7.5, 1) {V\'{e}rifier le code OTP};
-\node[uc] (uc9) at (7.5, -0.5) {D\'{e}finir le mot de passe};
-\node[uc] (uc10) at (7.5, -2) {R\'{e}initialiser le mot de passe};
+\stickfigure{(-2.5, 1.8)}{SuperAdmin}
+\draw[link] (-2.5, 1.8) -- (uc3.west);
+\draw[link] (-2.5, 1.8) -- (uc4.west);
+\draw[link] (-2.5, 1.8) -- (uc5.west);
 
-\draw (-2, -4.5) -- (uc6.west);
-\draw (-2, -4.5) -- (uc7.west);
-\draw (-2, -4.5) -- (uc8.west);
-\draw (-2, -4.5) -- (uc9.west);
-\draw (-2, -4.5) -- (uc10.west);
+\stickfigure{(-2.5, -3.0)}{Membre}
+\draw[link] (-2.5, -3.0) -- (uc6.west);
+\draw[link] (-2.5, -3.0) -- (uc8.west);
+\draw[link] (-2.5, -3.0) -- (uc7.west);
+\draw[link] (-2.5, -3.0) -- (uc9.west);
+\draw[link] (-2.5, -3.0) -- (uc10.west);
 
-% Include relationship
-\draw[dashed, -{Stealth[length=2mm]}] (uc6) -- node[above, font=\tiny, sloped] {$\ll$include$\gg$} (uc8);
+% Include relationship (routed on the right, outside the column)
+\draw[dashed, -{Stealth[length=2mm]}] (uc6.east) to[bend left=55]
+  node[right, font=\tiny] {$\ll$include$\gg$} (uc8.east);
 
 \end{tikzpicture}
 }%
