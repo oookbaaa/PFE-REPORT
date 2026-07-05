@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.13)  8 MAY 2026 12:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.13)  5 JUN 2026 10:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1704,48 +1704,48 @@ Package babel Info: 'french' activates 'french' shorthands.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 182.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 187.
 LaTeX Font Info:    Trying to load font information for FML+futm on input line 
-182.
+187.
 
 (C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/fourier\fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 182.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 187.
 LaTeX Font Info:    Trying to load font information for FMS+futm on input line 
-182.
+187.
 
 (C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/fourier\fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 182.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 187.
 LaTeX Font Info:    Trying to load font information for FMX+futm on input line 
-182.
+187.
 
 (C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/fourier\fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
 
 (C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf
 .mkii
@@ -1778,18 +1778,18 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Redeclaring math accent \widehat on input line 182.
-LaTeX Font Info:    Redeclaring math accent \widetilde on input line 182.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 187.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 187.
 Package microtype Info: Patching varwidth to enable character protrusion.
 \MT@vwid@leftmargin=\dimen373
 \MT@vwid@rightmargin=\dimen374
-LaTeX Info: Redefining \microtypecontext on input line 182.
-Package microtype Info: Applying patch `item' on input line 182.
-Package microtype Info: Applying patch `toc' on input line 182.
-Package microtype Info: Applying patch `eqnum' on input line 182.
-Package microtype Info: Applying patch `footnote' on input line 182.
-Package microtype Info: Applying patch `verbatim' on input line 182.
-LaTeX Info: Redefining \microtypesetup on input line 182.
+LaTeX Info: Redefining \microtypecontext on input line 187.
+Package microtype Info: Applying patch `item' on input line 187.
+Package microtype Info: Applying patch `toc' on input line 187.
+Package microtype Info: Applying patch `eqnum' on input line 187.
+Package microtype Info: Applying patch `footnote' on input line 187.
+Package microtype Info: Applying patch `verbatim' on input line 187.
+LaTeX Info: Redefining \microtypesetup on input line 187.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1804,7 +1804,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `futs' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-Package hyperref Info: Link coloring ON on input line 182.
+Package hyperref Info: Link coloring ON on input line 187.
  (main.out) (main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
@@ -1824,9 +1824,9 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (main.bbl)
-Package biblatex Info: Reference section=0 on input line 182.
-Package biblatex Info: Reference segment=0 on input line 182.
-LaTeX Info: Redefining \degres on input line 182.
+Package biblatex Info: Reference section=0 on input line 187.
+Package biblatex Info: Reference segment=0 on input line 187.
+LaTeX Info: Redefining \degres on input line 187.
 
 (C:\Users\BEDHIAFI\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.
 sty
@@ -1879,28 +1879,28 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 <pdf/front_cover.pdf, id=697, 597.73312pt x 845.40843pt>
 File: pdf/front_cover.pdf Graphic file (type pdf)
 <use pdf/front_cover.pdf>
-Package pdftex.def Info: pdf/front_cover.pdf  used on input line 188.
+Package pdftex.def Info: pdf/front_cover.pdf  used on input line 193.
 (pdftex.def)             Requested size: 597.73166pt x 845.40636pt.
 <pdf/front_cover.pdf, id=699, page=1, 597.73312pt x 845.40843pt>
 File: pdf/front_cover.pdf Graphic file (type pdf)
 <use pdf/front_cover.pdf, page 1>
-Package pdftex.def Info: pdf/front_cover.pdf , page1 used on input line 188.
+Package pdftex.def Info: pdf/front_cover.pdf , page1 used on input line 193.
 (pdftex.def)             Requested size: 597.73166pt x 845.40636pt.
 File: pdf/front_cover.pdf Graphic file (type pdf)
 <use pdf/front_cover.pdf, page 1>
-Package pdftex.def Info: pdf/front_cover.pdf , page1 used on input line 188.
+Package pdftex.def Info: pdf/front_cover.pdf , page1 used on input line 193.
 (pdftex.def)             Requested size: 598.01439pt x 845.80624pt.
 File: pdf/front_cover.pdf Graphic file (type pdf)
 <use pdf/front_cover.pdf, page 1>
-Package pdftex.def Info: pdf/front_cover.pdf , page1 used on input line 188.
+Package pdftex.def Info: pdf/front_cover.pdf , page1 used on input line 193.
 (pdftex.def)             Requested size: 598.01439pt x 845.80624pt.
 File: pdf/front_cover.pdf Graphic file (type pdf)
 <use pdf/front_cover.pdf, page 1>
-Package pdftex.def Info: pdf/front_cover.pdf , page1 used on input line 188.
+Package pdftex.def Info: pdf/front_cover.pdf , page1 used on input line 193.
 (pdftex.def)             Requested size: 598.01439pt x 845.80624pt.
 File: pdf/front_cover.pdf Graphic file (type pdf)
 <use pdf/front_cover.pdf, page 1>
-Package pdftex.def Info: pdf/front_cover.pdf , page1 used on input line 188.
+Package pdftex.def Info: pdf/front_cover.pdf , page1 used on input line 193.
 (pdftex.def)             Requested size: 598.01439pt x 845.80624pt.
 [0
 
@@ -1910,27 +1910,27 @@ Package pdftex.def Info: pdf/front_cover.pdf , page1 used on input line 188.
 <pdf/signature_cover.pdf, id=730, 597.73312pt x 845.40843pt>
 File: pdf/signature_cover.pdf Graphic file (type pdf)
 <use pdf/signature_cover.pdf>
-Package pdftex.def Info: pdf/signature_cover.pdf  used on input line 194.
+Package pdftex.def Info: pdf/signature_cover.pdf  used on input line 199.
 (pdftex.def)             Requested size: 597.73166pt x 845.40636pt.
 <pdf/signature_cover.pdf, id=732, page=1, 597.73312pt x 845.40843pt>
 File: pdf/signature_cover.pdf Graphic file (type pdf)
 <use pdf/signature_cover.pdf, page 1>
-Package pdftex.def Info: pdf/signature_cover.pdf , page1 used on input line 194
+Package pdftex.def Info: pdf/signature_cover.pdf , page1 used on input line 199
 .
 (pdftex.def)             Requested size: 597.73166pt x 845.40636pt.
 File: pdf/signature_cover.pdf Graphic file (type pdf)
 <use pdf/signature_cover.pdf, page 1>
-Package pdftex.def Info: pdf/signature_cover.pdf , page1 used on input line 194
+Package pdftex.def Info: pdf/signature_cover.pdf , page1 used on input line 199
 .
 (pdftex.def)             Requested size: 598.01439pt x 845.80624pt.
 File: pdf/signature_cover.pdf Graphic file (type pdf)
 <use pdf/signature_cover.pdf, page 1>
-Package pdftex.def Info: pdf/signature_cover.pdf , page1 used on input line 194
+Package pdftex.def Info: pdf/signature_cover.pdf , page1 used on input line 199
 .
 (pdftex.def)             Requested size: 598.01439pt x 845.80624pt.
 File: pdf/signature_cover.pdf Graphic file (type pdf)
 <use pdf/signature_cover.pdf, page 1>
-Package pdftex.def Info: pdf/signature_cover.pdf , page1 used on input line 194
+Package pdftex.def Info: pdf/signature_cover.pdf , page1 used on input line 199
 .
 (pdftex.def)             Requested size: 598.01439pt x 845.80624pt.
 
@@ -1938,11 +1938,11 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.0}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.194 ..., fitpaper=true]{pdf/signature_cover.pdf}
+l.199 ..., fitpaper=true]{pdf/signature_cover.pdf}
                                                   
 File: pdf/signature_cover.pdf Graphic file (type pdf)
 <use pdf/signature_cover.pdf, page 1>
-Package pdftex.def Info: pdf/signature_cover.pdf , page1 used on input line 194
+Package pdftex.def Info: pdf/signature_cover.pdf , page1 used on input line 199
 .
 (pdftex.def)             Requested size: 598.01439pt x 845.80624pt.
  [0
@@ -2011,7 +2011,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.202 \clearpage
+l.207 \clearpage
                  [5] (main.lof
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
@@ -2040,7 +2040,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.210 \clearpage
+l.215 \clearpage
                  [2] (main.lot)
 \tf@lot=\write8
 \openout8 = `main.lot'.
@@ -2050,21 +2050,21 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.216 \clearpage
+l.221 \clearpage
                  [3
 
 
 ]
 
 Package glossaries Info: Preparing to sort glossary `acronym' (total number of
-(glossaries)             referenced entries: 50)
+(glossaries)             referenced entries: 53)
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.221 ... toctitle=Liste des Acronymes, sort=word]
+l.226 ... toctitle=Liste des Acronymes, sort=word]
                                                    [4
 
 ]
@@ -2072,7 +2072,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.221 ... toctitle=Liste des Acronymes, sort=word]
+l.226 ... toctitle=Liste des Acronymes, sort=word]
                                                    [5
 
 
@@ -2081,7 +2081,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.223 \clearpage
+l.228 \clearpage
                  [6] (sections/Remerciements.tex
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
@@ -2096,7 +2096,7 @@ l.21 \clearpage
 
 ]
 Chapitre 1.
-<img/trust_link_logo.jpg, id=1207, 200.75pt x 200.75pt>
+<img/trust_link_logo.jpg, id=1210, 200.75pt x 200.75pt>
 File: img/trust_link_logo.jpg Graphic file (type jpg)
 <use img/trust_link_logo.jpg>
 Package pdftex.def Info: img/trust_link_logo.jpg  used on input line 19.
@@ -2104,7 +2104,7 @@ Package pdftex.def Info: img/trust_link_logo.jpg  used on input line 19.
 [2
 
  <./img/trust_link_logo.jpg>]
-<img/trustgym-logo.png, id=1216, 414.54875pt x 191.71625pt>
+<img/trustgym-logo.png, id=1219, 414.54875pt x 191.71625pt>
 File: img/trustgym-logo.png Graphic file (type png)
 <use img/trustgym-logo.png>
 Package pdftex.def Info: img/trustgym-logo.png  used on input line 39.
@@ -2114,12 +2114,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<img/glofox logo.png, id=1238, 129.48375pt x 48.18pt>
+<img/glofox logo.png, id=1241, 129.48375pt x 48.18pt>
 File: img/glofox logo.png Graphic file (type png)
 <use img/glofox logo.png>
 Package pdftex.def Info: img/glofox logo.png  used on input line 109.
 (pdftex.def)             Requested size: 113.81102pt x 42.34998pt.
-<img/gymmaster logo.png, id=1241, 329.23pt x 154.5775pt>
+<img/gymmaster logo.png, id=1244, 329.23pt x 154.5775pt>
 File: img/gymmaster logo.png Graphic file (type png)
 <use img/gymmaster logo.png>
 Package pdftex.def Info: img/gymmaster logo.png  used on input line 120.
@@ -2132,7 +2132,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 153--153
 [6 <./img/gymmaster logo.png (PNG copy)>] [7]) (chapters/1 Approche.tex
 [8]
 Chapitre 2.
-<img/scrum logo.png, id=1289, 1164.35pt x 903.375pt>
+<img/scrum logo.png, id=1292, 1164.35pt x 903.375pt>
 File: img/scrum logo.png Graphic file (type png)
 <use img/scrum logo.png>
 Package pdftex.def Info: img/scrum logo.png  used on input line 19.
@@ -2140,7 +2140,7 @@ Package pdftex.def Info: img/scrum logo.png  used on input line 19.
 [9
 
 ]
-<img/Technologie utilisee.png, id=1297, 810.02625pt x 357.13425pt>
+<img/Technologie utilisee.png, id=1300, 810.02625pt x 357.13425pt>
 File: img/Technologie utilisee.png Graphic file (type png)
 <use img/Technologie utilisee.png>
 Package pdftex.def Info: img/Technologie utilisee.png  used on input line 32.
@@ -2239,7 +2239,7 @@ Underfull \hbox (badness 3930) in paragraph at lines 58--58
  []
 
 [10 <./img/scrum logo.png> <./img/Technologie utilisee.png>] [11]
-<architectures images//ARCHITECTURE LOGIQUE.png, id=1368, 604.50844pt x 785.183
+<architectures images//ARCHITECTURE LOGIQUE.png, id=1371, 604.50844pt x 785.183
 44pt>
 File: architectures images//ARCHITECTURE LOGIQUE.png Graphic file (type png)
 <use architectures images//ARCHITECTURE LOGIQUE.png>
@@ -2253,7 +2253,7 @@ tenerService \T1/futs/m/n/12 (-20) écoute le ca-nal \T1/cmtt/m/n/12 access_log_
 channel
  []
 
-<architectures images//ARCHITECTURE PHYSIQUE.png, id=1379, 554.07pt x 679.03688
+<architectures images//ARCHITECTURE PHYSIQUE.png, id=1382, 554.07pt x 679.03688
 pt>
 File: architectures images//ARCHITECTURE PHYSIQUE.png Graphic file (type png)
 <use architectures images//ARCHITECTURE PHYSIQUE.png>
@@ -2284,7 +2284,7 @@ m/n/12 impersonatorEmail\T1/futs/m/n/12 (-20) .
  []
 
 [16]
-<architectures images//ARCHITECTURE CICD.png, id=1423, 1541.76pt x 1027.84pt>
+<architectures images//ARCHITECTURE CICD.png, id=1426, 1541.76pt x 1027.84pt>
 File: architectures images//ARCHITECTURE CICD.png Graphic file (type png)
 <use architectures images//ARCHITECTURE CICD.png>
 Package pdftex.def Info: architectures images//ARCHITECTURE CICD.png  used on i
@@ -2323,7 +2323,7 @@ Underfull \hbox (badness 1789) in paragraph at lines 183--183
  []
 
 ignored error: Infinite glue shrinkage found in box being split [23]
-<img/class diagram.png, id=1508, 3262.1875pt x 3355.53625pt>
+<img/class diagram.png, id=1511, 3262.1875pt x 3355.53625pt>
 File: img/class diagram.png Graphic file (type png)
 <use img/class diagram.png>
 Package pdftex.def Info: img/class diagram.png  used on input line 202.
@@ -2554,14 +2554,14 @@ ra-teurs consultent cet his-to-rique via \T1/cmtt/m/n/12 /m/login-logs
  []
 
 [33]
-<img/capture/Page de connexion web.png, id=1599, 558.58687pt x 469.755pt>
+<img/capture/Page de connexion web.png, id=1602, 558.58687pt x 469.755pt>
 File: img/capture/Page de connexion web.png Graphic file (type png)
 <use img/capture/Page de connexion web.png>
 Package pdftex.def Info: img/capture/Page de connexion web.png  used on input l
 ine 225.
 (pdftex.def)             Requested size: 455.25706pt x 382.8577pt.
  [34 <./img/capture/Page de connexion web.png>]
-<img/capture/Gestion des utilisateurs superadmin.png, id=1605, 1147.28625pt x 6
+<img/capture/Gestion des utilisateurs superadmin.png, id=1608, 1147.28625pt x 6
 28.14674pt>
 File: img/capture/Gestion des utilisateurs superadmin.png Graphic file (type pn
 g)
@@ -2569,14 +2569,14 @@ g)
 Package pdftex.def Info: img/capture/Gestion des utilisateurs superadmin.png  u
 sed on input line 236.
 (pdftex.def)             Requested size: 455.23007pt x 249.24146pt.
-<img/capture/flux-inscription.jpeg, id=1608, 1204.5pt x 575.90157pt>
+<img/capture/flux-inscription.jpeg, id=1611, 1204.5pt x 575.90157pt>
 File: img/capture/flux-inscription.jpeg Graphic file (type jpg)
 <use img/capture/flux-inscription.jpeg>
 Package pdftex.def Info: img/capture/flux-inscription.jpeg  used on input line 
 256.
 (pdftex.def)             Requested size: 455.25195pt x 217.66734pt.
  [35 <./img/capture/Gestion des utilisateurs superadmin.png>]
-<img/capture/ecran-connexion-mobile.png, id=1621, 712.0197pt x 384.84665pt>
+<img/capture/ecran-connexion-mobile.png, id=1624, 712.0197pt x 384.84665pt>
 File: img/capture/ecran-connexion-mobile.png Graphic file (type png)
 <use img/capture/ecran-connexion-mobile.png>
 Package pdftex.def Info: img/capture/ecran-connexion-mobile.png  used on input 
@@ -2584,7 +2584,7 @@ line 267.
 (pdftex.def)             Requested size: 455.2456pt x 246.06024pt.
  [36 <./img/capture/flux-inscription.jpeg> <./img/capture/ecran-connexion-mobil
 e.png>]
-<img/capture/Journal des connexions (Login Logs).png, id=1627, 1142.46825pt x 6
+<img/capture/Journal des connexions (Login Logs).png, id=1630, 1142.46825pt x 6
 23.32875pt>
 File: img/capture/Journal des connexions (Login Logs).png Graphic file (type pn
 g)
@@ -2867,18 +2867,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 169--170
  []
 
 
-! Package glossaries Error: Glossary entry `m2m' has not been defined.
-
-See the glossaries package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.171 ... dates et statut, partage \acrshort{m2m} 
-                                                  entre salles d'un m\^{e}me...
-
-You need to define a glossary entry before you can use it.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 171--172
 []|\T1/futs/m/n/12 (+20) Lien membre--
  []
@@ -2890,7 +2878,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 171--172
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 171--172
-\T1/futs/m/n/12 (+20) salles d'un même
+\T1/futs/m/n/12 (+20) entre salles d'un
  []
 
 
@@ -2957,13 +2945,13 @@ Overfull \hbox (7.7999pt too wide) in paragraph at lines 177--178
  []
 
 ignored error: Infinite glue shrinkage found in box being split [41] [42]
-<img/capture/Liste des membres Admin.png, id=1663, 1129.821pt x 615.4995pt>
+<img/capture/Liste des membres Admin.png, id=1667, 1129.821pt x 615.4995pt>
 File: img/capture/Liste des membres Admin.png Graphic file (type png)
 <use img/capture/Liste des membres Admin.png>
 Package pdftex.def Info: img/capture/Liste des membres Admin.png  used on input
  line 204.
 (pdftex.def)             Requested size: 455.23041pt x 247.99864pt.
-<img/capture/fiche-membre.png, id=1664, 1129.821pt x 624.53325pt>
+<img/capture/fiche-membre.png, id=1668, 1129.821pt x 624.53325pt>
 File: img/capture/fiche-membre.png Graphic file (type png)
 <use img/capture/fiche-membre.png>
 Package pdftex.def Info: img/capture/fiche-membre.png  used on input line 211.
@@ -3218,247 +3206,210 @@ ignored error: Infinite glue shrinkage found in box being split [45
 
 ]
 ignored error: Infinite glue shrinkage found in box being split [46] [47]
-Overfull \hbox (1.9585pt too wide) in paragraph at lines 115--116
+Overfull \hbox (1.9585pt too wide) in paragraph at lines 116--117
 \T1/cmtt/m/n/12 occupancy:updated \T1/futs/m/n/12 (-20) via Web-So-cket), et \T
 1/futs/b/n/12 (-20) En-re-gis-trer ma-nuel-le-ment un ac-cès \T1/futs/m/n/12 (-
 20) (Cais-sier/Admin,
  []
 
 
-Underfull \hbox (badness 5681) in paragraph at lines 130--131
+Underfull \hbox (badness 5681) in paragraph at lines 131--132
 []|\T1/futs/m/n/12 (+20) Événements EN-TRY/EXIT, in-
  []
 
 
-Underfull \hbox (badness 4713) in paragraph at lines 130--131
+Underfull \hbox (badness 4713) in paragraph at lines 131--132
 \T1/futs/m/n/12 (+20) dexés sur \T1/cmtt/m/n/12 doorId\T1/futs/m/n/12 (+20) , \
 T1/cmtt/m/n/12 dateTime\T1/futs/m/n/12 (+20) ,
  []
 
 
-Underfull \hbox (badness 1184) in paragraph at lines 130--131
+Underfull \hbox (badness 1184) in paragraph at lines 131--132
 \T1/cmtt/m/n/12 accessType\T1/futs/m/n/12 (+20) , \T1/cmtt/m/n/12 memberId \T1/
 futs/m/n/12 (+20) ; sta-tut
  []
 
 
-Underfull \hbox (badness 1735) in paragraph at lines 132--133
+Underfull \hbox (badness 1735) in paragraph at lines 133--134
 []|\T1/futs/m/n/12 (+20) Dispositifs : IP, port, nu-méro
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--133
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
 \T1/futs/m/n/12 (+20) PUSH-ATTENDANCE, PUSH-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 136--136
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
 []|\T1/cmtt/m/n/10 TimeSlotModule\T1/futs/m/n/10 (+20) ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 136--136
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
 []|\T1/cmtt/m/n/10 TimeSlotHours\T1/futs/m/n/10 (+20) ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--138
+Underfull \hbox (badness 10000) in paragraph at lines 139--139
 []|\T1/cmtt/m/n/10 WebSocketModule
  []
 
 
-Underfull \hbox (badness 5756) in paragraph at lines 138--139
+Underfull \hbox (badness 5756) in paragraph at lines 139--140
 []|\T1/futs/m/n/12 (+20) Socket.IO sur \T1/cmtt/m/n/12 /attendance \T1/futs/m/n
 /12 (+20) :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--139
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
 \T1/cmtt/m/n/12 authenticate\T1/futs/m/n/12 (+20) /\T1/cmtt/m/n/12 auth:success
 \T1/futs/m/n/12 (+20) ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--139
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
 \T1/cmtt/m/n/12 attendance:recorded\T1/futs/m/n/12 (+20) ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--139
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
 \T1/cmtt/m/n/12 occupancy:updated\T1/futs/m/n/12 (+20) . Salles
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--139
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
 \T1/cmtt/m/n/12 gym:<gymId>\T1/futs/m/n/12 (+20) , ali-men-tées
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--139
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
 \T1/futs/m/n/12 (+20) par un trig-ger Post-greSQL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--139
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
 \T1/cmtt/m/n/12 NOTIFY \T1/futs/m/n/12 (+20) consommé par
  []
 
 ignored error: Infinite glue shrinkage found in box being split [48]
-Overfull \hbox (2.25511pt too wide) in paragraph at lines 155--156
+Overfull \hbox (2.25511pt too wide) in paragraph at lines 156--157
 []\T1/futs/b/n/12 (-20) Vérification de la porte \T1/futs/m/n/12 (-20) : contrô
 le via \T1/cmtt/m/n/12 GymSubscriptionDoor \T1/futs/m/n/12 (-20) que l'abon-ne-
 ment couvre
  []
 
 
-Underfull \hbox (badness 5077) in paragraph at lines 157--157
+Underfull \hbox (badness 5077) in paragraph at lines 158--158
 []\T1/futs/b/n/12 (+20) Décrémentation \T1/futs/m/n/12 (+20) : si l'abon-ne-men
 t est de type \T1/cmtt/m/n/12 PER_SESSION\T1/futs/m/n/12 (+20) , le comp-teur
  []
 
 [49]
-Underfull \hbox (badness 1546) in paragraph at lines 187--188
+Underfull \hbox (badness 1546) in paragraph at lines 188--189
 \T1/futs/m/n/12 (+20) siques (syn-chro-ni-sa-tion de cartes, ou-ver-ture à dis-
 tance, re-dé-mar-rage). Les mo-dules
  []
 
 [50]
-<architectures images//ARCHITECTURE MACHINES.png, id=1727, 1541.76pt x 1027.84p
+<architectures images//ARCHITECTURE MACHINES.png, id=1731, 1541.76pt x 1027.84p
 t>
 File: architectures images//ARCHITECTURE MACHINES.png Graphic file (type png)
 <use architectures images//ARCHITECTURE MACHINES.png>
 Package pdftex.def Info: architectures images//ARCHITECTURE MACHINES.png  used 
-on input line 205.
+on input line 206.
 (pdftex.def)             Requested size: 455.24411pt x 303.49248pt.
-
-
-! Package glossaries Error: Glossary entry `pc' has not been defined.
-
-See the glossaries package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.223 ...du Machine Handler sur les \acrshort{pc} 
-                                                  des salles partenaires, un...
-
-You need to define a glossary entry before you can use it.
-
-
-! Package glossaries Error: Glossary entry `usb' has not been defined.
-
-See the glossaries package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.223 ... distribuable par cl\'{e} \acrshort{usb} 
-                                                  ou t\'{e}l\'{e}chargement ...
-
-You need to define a glossary entry before you can use it.
-
-[51 <./architectures images//ARCHITECTURE MACHINES.png (PNG copy)>]
-Overfull \hbox (46.34819pt too wide) in paragraph at lines 243--245
+ [51 <./architectures images//ARCHITECTURE MACHINES.png (PNG copy)>]
+Overfull \hbox (46.34819pt too wide) in paragraph at lines 244--246
 []\T1/futs/m/n/12 (-20) L'exécutable ngrok et les scripts Po-wer-Shell : \T1/cm
 tt/m/n/12 unified-install.ps1\T1/futs/m/n/12 (-20) , \T1/cmtt/m/n/12 unified-un
 install.ps1\T1/futs/m/n/12 (-20) ,
  []
 
-<img/capture/Assistant-Inno-Setup.png, id=1746, 712.0197pt x 569.61577pt>
+<img/capture/Assistant-Inno-Setup.png, id=1752, 712.0197pt x 569.61577pt>
 File: img/capture/Assistant-Inno-Setup.png Graphic file (type png)
 <use img/capture/Assistant-Inno-Setup.png>
 Package pdftex.def Info: img/capture/Assistant-Inno-Setup.png  used on input li
-ne 262.
+ne 263.
 (pdftex.def)             Requested size: 455.2456pt x 364.19649pt.
 [52]
-
-! Package glossaries Error: Glossary entry `pc' has not been defined.
-
-See the glossaries package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.271 ...rent d\`{e}s l'allumage du \acrshort{pc},
-                                                   sans aucune interaction h...
-
-You need to define a glossary entry before you can use it.
-
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 279.
+(Font)              scaled to size 10.07397pt on input line 280.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 279.
+(Font)              scaled to size 7.63599pt on input line 280.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 279.
+(Font)              scaled to size 10.07397pt on input line 280.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 279.
+(Font)              scaled to size 7.63599pt on input line 280.
 
-Overfull \hbox (2.6797pt too wide) in paragraph at lines 281--281
+Overfull \hbox (2.6797pt too wide) in paragraph at lines 282--282
 []|\T1/futs/b/n/10.95 (-20) Gestionnaire| 
  []
 
 
-Underfull \hbox (badness 2680) in paragraph at lines 283--283
+Underfull \hbox (badness 2680) in paragraph at lines 284--284
 []|\T1/futs/m/n/10.95 (+20) 8000 / 8001 /
  []
 
 
-Underfull \hbox (badness 1014) in paragraph at lines 289--290
+Underfull \hbox (badness 1014) in paragraph at lines 290--291
 []|\T1/futs/m/n/10.95 (+20) Vérification des end-points
  []
 
 [53 <./img/capture/Assistant-Inno-Setup.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 303--303
+Underfull \hbox (badness 10000) in paragraph at lines 304--304
 []\T1/futs/b/n/12 (+20) Journalisation \T1/futs/m/n/12 (+20) (\T1/cmtt/m/n/12 A
 ppStdout \T1/futs/m/n/12 (+20) / \T1/cmtt/m/n/12 AppStderr\T1/futs/m/n/12 (+20)
  ) : fi-chiers de log sé-pa-rés dans
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 303--303
+Underfull \hbox (badness 10000) in paragraph at lines 304--304
 \T1/cmtt/m/n/12 C:\ProgramData\TrustGym\logs\\T1/futs/m/n/12 (+20) , avec ro-ta
 -tion au-to-ma-tique à 10 Mo
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--304
+Underfull \hbox (badness 10000) in paragraph at lines 305--305
 []\T1/futs/b/n/12 (+20) Variables d'en-vi-ron-ne-ment \T1/futs/m/n/12 (+20) (\T
 1/cmtt/m/n/12 AppEnvironmentExtra\T1/futs/m/n/12 (+20) ) : in-jec-tion de
  []
 
 
-Underfull \hbox (badness 4242) in paragraph at lines 306--306
+Underfull \hbox (badness 4242) in paragraph at lines 307--307
 []\T1/futs/b/n/12 (+20) Démarrage dif-féré \T1/futs/m/n/12 (+20) : la clé de re
 -gistre \T1/cmtt/m/n/12 DelayedAutoStart \T1/futs/m/n/12 (+20) est ac-ti-vée po
 ur
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--312
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
  \T1/futs/b/n/12 (+20) 6.4.2.4.3 Wat-ch-dog.[][] \T1/futs/m/n/12 (+20) Une tâch
 e pla-ni-fiée Win-dows (\T1/futs/m/it/12 (+20) Sche-du-led Task\T1/futs/m/n/12 
 (+20) ) nom-mée
  []
 
 [54]
-<img/capture/historique-acces.png, id=1766, 1126.2075pt x 617.9085pt>
+<img/capture/historique-acces.png, id=1773, 1126.2075pt x 617.9085pt>
 File: img/capture/historique-acces.png Graphic file (type png)
 <use img/capture/historique-acces.png>
 Package pdftex.def Info: img/capture/historique-acces.png  used on input line 3
-68.
+69.
 (pdftex.def)             Requested size: 455.23514pt x 249.7707pt.
  [55]
-<img/capture/config-portes.png, id=1771, 1127.412pt x 626.94225pt>
+<img/capture/config-portes.png, id=1778, 1127.412pt x 626.94225pt>
 File: img/capture/config-portes.png Graphic file (type png)
 <use img/capture/config-portes.png>
-Package pdftex.def Info: img/capture/config-portes.png  used on input line 375.
+Package pdftex.def Info: img/capture/config-portes.png  used on input line 376.
 
 (pdftex.def)             Requested size: 455.24034pt x 253.15448pt.
-<img/capture/Toast entry-exit socketio.png, id=1772, 1131.0255pt x 626.34pt>
-File: img/capture/Toast entry-exit socketio.png Graphic file (type png)
-<use img/capture/Toast entry-exit socketio.png>
-Package pdftex.def Info: img/capture/Toast entry-exit socketio.png  used on inp
-ut line 382.
-(pdftex.def)             Requested size: 455.24976pt x 252.10849pt.
+<img/capture/Toast entry-exit socketio.jpeg, id=1779, 741.77126pt x 1606.0pt>
+File: img/capture/Toast entry-exit socketio.jpeg Graphic file (type jpg)
+<use img/capture/Toast entry-exit socketio.jpeg>
+Package pdftex.def Info: img/capture/Toast entry-exit socketio.jpeg  used on in
+put line 383.
+(pdftex.def)             Requested size: 178.52675pt x 386.52612pt.
  [56 <./img/capture/historique-acces.png> <./img/capture/config-portes.png>]) (
-chapters/6 Sprint 4.tex [57 <./img/capture/Toast entry-exit socketio.png>]
+chapters/6 Sprint 4.tex [57 <./img/capture/Toast entry-exit socketio.jpeg>]
 Chapitre 7.
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
@@ -3548,55 +3499,55 @@ Overfull \hbox (6.77219pt too wide) in paragraph at lines 59--59
 ignored error: Infinite glue shrinkage found in box being split [58
 
 ] [59]
-Overfull \hbox (27.85359pt too wide) in paragraph at lines 113--114
+Overfull \hbox (27.85359pt too wide) in paragraph at lines 114--115
 \T1/futs/b/n/12 (-20) séance \T1/futs/m/n/12 (-20) (Ad-min --- contrôle de dis-
 po-ni-bi-lité via \T1/cmtt/m/n/12 CoachTimeSlot\T1/futs/m/n/12 (-20) , types OP
 EN/RESERVATION/CLOSE
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
 []|[][][][]\T1/futs/b/n/12 (+20) CRUD[][][] \T1/futs/m/n/12 (+20) coach (\T1/cm
 tt/m/n/12 hourlyFee\T1/futs/m/n/12 (+20) ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--134
+Underfull \hbox (badness 10000) in paragraph at lines 135--135
 []|\T1/cmtt/m/n/10 CoachTimeSlot\T1/futs/m/n/10 (+20) ,
  []
 
 
-Underfull \hbox (badness 5741) in paragraph at lines 134--135
+Underfull \hbox (badness 5741) in paragraph at lines 135--136
 []|\T1/futs/m/n/12 (+20) Disponibilités heb-do-ma-daires
  []
 
 
-Underfull \hbox (badness 2073) in paragraph at lines 134--135
+Underfull \hbox (badness 2073) in paragraph at lines 135--136
 \T1/futs/m/n/12 (+20) ré-cur-rentes ; vé-ri-fi-ca-tion au-to-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 136--136
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
 []|\T1/cmtt/m/n/10 SessionInvitationModule
  []
 
 
-Underfull \hbox (badness 1796) in paragraph at lines 136--137
+Underfull \hbox (badness 1796) in paragraph at lines 137--138
 []|\T1/futs/m/n/12 (+20) Invitations ci-blées par e-mail
  []
 
 ignored error: Infinite glue shrinkage found in box being split [60] [61]
-<img/capture/planning-seances.png, id=1820, 1128.01425pt x 617.30624pt>
+<img/capture/planning-seances.png, id=1826, 1128.01425pt x 617.30624pt>
 File: img/capture/planning-seances.png Graphic file (type png)
 <use img/capture/planning-seances.png>
 Package pdftex.def Info: img/capture/planning-seances.png  used on input line 1
-94.
+95.
 (pdftex.def)             Requested size: 455.24255pt x 249.13165pt.
-<img/capture/Scanner QR sur mobile.png, id=1821, 712.0197pt x 569.61577pt>
+<img/capture/Scanner QR sur mobile.png, id=1827, 712.0197pt x 569.61577pt>
 File: img/capture/Scanner QR sur mobile.png Graphic file (type png)
 <use img/capture/Scanner QR sur mobile.png>
 Package pdftex.def Info: img/capture/Scanner QR sur mobile.png  used on input l
-ine 201.
+ine 202.
 (pdftex.def)             Requested size: 455.2456pt x 364.19649pt.
 
 [62 <./img/capture/planning-seances.png>]) (chapters/7 Sprint 5.tex [63 <./img/
@@ -3805,83 +3756,83 @@ Overfull \hbox (9.30247pt too wide) in paragraph at lines 70--71
  []
 
 [65]
-Underfull \hbox (badness 10000) in paragraph at lines 126--126
+Underfull \hbox (badness 10000) in paragraph at lines 127--127
 []|\T1/cmtt/m/n/10 Product\T1/futs/m/n/10 (+20) ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--128
+Underfull \hbox (badness 10000) in paragraph at lines 129--129
 []|\T1/cmtt/m/n/10 Supplier\T1/futs/m/n/10 (+20) ,
  []
 
 
-Underfull \hbox (badness 6859) in paragraph at lines 128--129
+Underfull \hbox (badness 6859) in paragraph at lines 129--130
 []|\T1/futs/m/n/12 (+20) Fiches four-nis-seurs et achats ;
  []
 
 
-Underfull \hbox (badness 1810) in paragraph at lines 130--131
+Underfull \hbox (badness 1810) in paragraph at lines 131--132
 []|\T1/futs/m/n/12 (+20) Inventaire par salle (pro-duit $\FMS/futm/m/n/12 ^^B$
  []
 
 [66]
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 170.
+(Font)              scaled to size 7.35999pt on input line 171.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.25598pt on input line 170.
+(Font)              scaled to size 6.25598pt on input line 171.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 170.
+(Font)              scaled to size 7.35999pt on input line 171.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.25598pt on input line 170.
+(Font)              scaled to size 6.25598pt on input line 171.
  [67]
-<img/capture/Catalogue des produits.png, id=1858, 1132.23pt x 610.07925pt>
+<img/capture/Catalogue des produits.png, id=1864, 1132.23pt x 610.07925pt>
 File: img/capture/Catalogue des produits.png Graphic file (type png)
 <use img/capture/Catalogue des produits.png>
 Package pdftex.def Info: img/capture/Catalogue des produits.png  used on input 
-line 196.
+line 197.
 (pdftex.def)             Requested size: 455.23357pt x 245.2934pt.
  [68]
-<img/capture/etat-stock.png, id=1863, 1126.2075pt x 613.0905pt>
+<img/capture/etat-stock.png, id=1869, 1126.2075pt x 613.0905pt>
 File: img/capture/etat-stock.png Graphic file (type png)
 <use img/capture/etat-stock.png>
-Package pdftex.def Info: img/capture/etat-stock.png  used on input line 203.
+Package pdftex.def Info: img/capture/etat-stock.png  used on input line 204.
 (pdftex.def)             Requested size: 455.23514pt x 247.82318pt.
-<img/capture/transfert-stock.png, id=1864, 1127.412pt x 618.51076pt>
+<img/capture/transfert-stock.png, id=1870, 1127.412pt x 618.51076pt>
 File: img/capture/transfert-stock.png Graphic file (type png)
 <use img/capture/transfert-stock.png>
 Package pdftex.def Info: img/capture/transfert-stock.png  used on input line 21
-0.
+1.
 (pdftex.def)             Requested size: 455.24034pt x 249.7499pt.
  [69 <./img/capture/Catalogue des produits.png> <./img/capture/etat-stock.png>]
-<img/capture/vente-membres.png, id=1871, 1126.2075pt x 606.46574pt>
+<img/capture/vente-membres.png, id=1877, 1126.2075pt x 606.46574pt>
 File: img/capture/vente-membres.png Graphic file (type png)
 <use img/capture/vente-membres.png>
-Package pdftex.def Info: img/capture/vente-membres.png  used on input line 217.
+Package pdftex.def Info: img/capture/vente-membres.png  used on input line 218.
 
 (pdftex.def)             Requested size: 455.23514pt x 245.14532pt.
-<img/capture/categories-produits.png, id=1872, 1130.42325pt x 531.1845pt>
+<img/capture/categories-produits.png, id=1878, 1130.42325pt x 531.1845pt>
 File: img/capture/categories-produits.png Graphic file (type png)
 <use img/capture/categories-produits.png>
 Package pdftex.def Info: img/capture/categories-produits.png  used on input lin
-e 224.
+e 225.
 (pdftex.def)             Requested size: 455.24884pt x 213.92085pt.
  [70 <./img/capture/transfert-stock.png> <./img/capture/vente-membres.png>]
-<img/capture/Gestion des fournisseurs.png, id=1879, 1126.80975pt x 608.87476pt>
+<img/capture/Gestion des fournisseurs.png, id=1885, 1126.80975pt x 608.87476pt>
 
 File: img/capture/Gestion des fournisseurs.png Graphic file (type png)
 <use img/capture/Gestion des fournisseurs.png>
 Package pdftex.def Info: img/capture/Gestion des fournisseurs.png  used on inpu
-t line 231.
+t line 232.
 (pdftex.def)             Requested size: 455.23787pt x 245.98903pt.
-<img/capture/reception-stock.png, id=1880, 1109.94675pt x 589.0005pt>
+<img/capture/reception-stock.png, id=1886, 1109.94675pt x 589.0005pt>
 File: img/capture/reception-stock.png Graphic file (type png)
 <use img/capture/reception-stock.png>
 Package pdftex.def Info: img/capture/reception-stock.png  used on input line 23
-8.
+9.
 (pdftex.def)             Requested size: 455.23355pt x 241.57265pt.
  [71 <./img/capture/categories-produits.png> <./img/capture/Gestion des fournis
 seurs.png>]
-Overfull \hbox (7.06448pt too wide) in paragraph at lines 247--248
+Overfull \hbox (7.06448pt too wide) in paragraph at lines 248--249
 []\T1/futs/m/n/12 (-20) De la ré-cep-tion four-nis-seur à la vente au membre, l
 a tra-ça-bi-lité est to-tale. Le \T1/cmtt/m/n/12 StockMovement
  []
@@ -4009,93 +3960,93 @@ Underfull \hbox (badness 1509) in paragraph at lines 55--56
 ignored error: Infinite glue shrinkage found in box being split [73
 
 ] [74]
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
 []|\T1/futs/m/n/12 (+20) Portefeuille pré-payé par
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
 \T1/futs/m/n/12 (+20) membre (\T1/cmtt/m/n/12 amount\T1/futs/m/n/12 (+20) ) ; r
 e-char-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
 \T1/futs/m/n/12 (+20) ge-ment et dé-duc-tion avec
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 130--131
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
 \T1/futs/m/n/12 (+20) mon-tant, date) ; fil-trage par
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--132
+Underfull \hbox (badness 10000) in paragraph at lines 133--133
 []|\T1/cmtt/m/n/10 CashRegister\T1/futs/m/n/10 (+20) ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--133
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
 []|\T1/futs/m/n/12 (+20) Ouverture/fermeture quo-ti-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--133
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
 \T1/futs/m/n/12 (+20) dienne ; ré-con-ci-lia-tion solde
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
 []|\T1/futs/m/n/12 (+20) Facture [][][][]\T1/futs/b/n/12 (+20) B2B[][][] \T1/fu
 ts/m/n/12 (+20) conforme :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
 \T1/futs/m/n/12 (+20) TVA, timbre fis-cal, ma-tri-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
 \T1/futs/m/n/12 (+20) client, gé-né-ra-tion [][][][]\T1/futs/b/n/12 (+20) PDF[]
 [][] $\FMS/futm/m/n/12 !$
  []
 
 
-Underfull \hbox (badness 5832) in paragraph at lines 138--139
+Underfull \hbox (badness 5832) in paragraph at lines 139--140
 \T1/futs/m/n/12 (+20) d'abon-ne-ments ; don-nées ali-
  []
 
 
-Underfull \hbox (badness 5133) in paragraph at lines 138--139
+Underfull \hbox (badness 5133) in paragraph at lines 139--140
 \T1/futs/m/n/12 (+20) men-tées dans le re-gistre de
  []
 
 [75] [76]
-<img/capture/portefeuilles.png, id=1927, 1121.3895pt x 588.39825pt>
+<img/capture/portefeuilles.png, id=1933, 1121.3895pt x 588.39825pt>
 File: img/capture/portefeuilles.png Graphic file (type png)
 <use img/capture/portefeuilles.png>
-Package pdftex.def Info: img/capture/portefeuilles.png  used on input line 196.
+Package pdftex.def Info: img/capture/portefeuilles.png  used on input line 197.
 
 (pdftex.def)             Requested size: 455.23825pt x 238.86562pt.
  [77]
-<img/capture/facture-b2b.png, id=1933, 1096.095pt x 620.3175pt>
+<img/capture/facture-b2b.png, id=1939, 1096.095pt x 620.3175pt>
 File: img/capture/facture-b2b.png Graphic file (type png)
 <use img/capture/facture-b2b.png>
-Package pdftex.def Info: img/capture/facture-b2b.png  used on input line 203.
+Package pdftex.def Info: img/capture/facture-b2b.png  used on input line 204.
 (pdftex.def)             Requested size: 455.25563pt x 257.64467pt.
-<img/capture/paiements-abonnements.png, id=1936, 1040.688pt x 522.15076pt>
+<img/capture/paiements-abonnements.png, id=1942, 1040.688pt x 522.15076pt>
 File: img/capture/paiements-abonnements.png Graphic file (type png)
 <use img/capture/paiements-abonnements.png>
 Package pdftex.def Info: img/capture/paiements-abonnements.png  used on input l
-ine 210.
+ine 211.
 (pdftex.def)             Requested size: 455.25224pt x 228.41649pt.
  [78 <./img/capture/portefeuilles.png> <./img/capture/facture-b2b.png>]
-<img/capture/facture-b2b-detail.png, id=1943, 712.0197pt x 569.61577pt>
+<img/capture/facture-b2b-detail.png, id=1949, 712.0197pt x 569.61577pt>
 File: img/capture/facture-b2b-detail.png Graphic file (type png)
 <use img/capture/facture-b2b-detail.png>
 Package pdftex.def Info: img/capture/facture-b2b-detail.png  used on input line
- 217.
+ 218.
 (pdftex.def)             Requested size: 455.2456pt x 364.19649pt.
  [79 <./img/capture/paiements-abonnements.png> <./img/capture/facture-b2b-detai
 l.png (PNG copy)>]) (chapters/9 Sprint 7.tex [80]
@@ -4108,119 +4059,103 @@ Underfull \hbox (badness 1377) in paragraph at lines 44--44
 ignored error: Infinite glue shrinkage found in box being split [81
 
 ] [82]
-Underfull \hbox (badness 2970) in paragraph at lines 143--144
+Underfull \hbox (badness 2970) in paragraph at lines 145--146
 []|\T1/futs/m/n/12 (+20) Occupation en di-rect (EN-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--144
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
 \T1/futs/m/n/12 (+20) TRY events dans fe-nêtre
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--144
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
 \T1/futs/m/n/12 (+20) 1h), heures de pointe,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--144
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
 \T1/futs/m/n/12 (+20) dif-fu-sion Web-So-cket
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--144
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
 \T1/cmtt/m/n/12 occupancy:updated \T1/futs/m/n/12 (+20) sur
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--144
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
 \T1/cmtt/m/n/12 /attendance\T1/futs/m/n/12 (+20) , dé-tec-tion
  []
 
 
-Overfull \hbox (5.92403pt too wide) in paragraph at lines 143--144
+Overfull \hbox (5.92403pt too wide) in paragraph at lines 145--146
 \T1/cmtt/m/n/12 SaasModuleEnum.KpiCenter\T1/futs/m/n/12 (-20) .| 
  []
 
 [83]
-Overfull \hbox (15.09177pt too wide) in paragraph at lines 161--162
+Overfull \hbox (15.09177pt too wide) in paragraph at lines 163--164
 \T1/futs/m/n/12 (-20) son ac-cès est condi-tionné par le guard [][][][]\T1/futs
 /b/n/12 (-20) SaaS[][][] \T1/futs/m/n/12 (-20) vé-ri-fiant l'ac-ti-va-tion du m
 o-dule \T1/cmtt/m/n/12 SaasModuleEnum.Ai\T1/futs/m/n/12 (-20) . 
  []
 
-<architectures images//RAG ARCHITECTURE.png, id=1995, 1773.62625pt x 594.22pt>
+<architectures images//RAG ARCHITECTURE.png, id=2001, 1773.62625pt x 594.22pt>
 File: architectures images//RAG ARCHITECTURE.png Graphic file (type png)
 <use architectures images//RAG ARCHITECTURE.png>
 Package pdftex.def Info: architectures images//RAG ARCHITECTURE.png  used on in
-put line 167.
+put line 169.
 (pdftex.def)             Requested size: 455.24411pt x 152.51694pt.
 [84]
-Overfull \hbox (10.54022pt too wide) in paragraph at lines 223--224
+Overfull \hbox (10.54022pt too wide) in paragraph at lines 225--226
 \T1/futs/m/n/12 (-20) hook \T1/cmtt/m/n/12 useOccupancyRealtime \T1/futs/m/n/12
  (-20) com-bine So-cket.IO [[][]34[][]] (\T1/cmtt/m/n/12 occupancy:updated \T1/
 futs/m/n/12 (-20) sur \T1/cmtt/m/n/12 /attendance\T1/futs/m/n/12 (-20) )
  []
 
 [85 <./architectures images//RAG ARCHITECTURE.png>]
-<img/capture/Tableau de bord mobile.png, id=2017, 712.0197pt x 437.5361pt>
+<img/capture/Tableau de bord mobile.png, id=2023, 712.0197pt x 437.5361pt>
 File: img/capture/Tableau de bord mobile.png Graphic file (type png)
 <use img/capture/Tableau de bord mobile.png>
 Package pdftex.def Info: img/capture/Tableau de bord mobile.png  used on input 
-line 233.
+line 235.
 (pdftex.def)             Requested size: 455.2456pt x 279.74841pt.
-<img/capture/planning-seances-mobile.png, id=2018, 712.0197pt x 430.77193pt>
+<img/capture/planning-seances-mobile.png, id=2024, 712.0197pt x 430.77193pt>
 File: img/capture/planning-seances-mobile.png Graphic file (type png)
 <use img/capture/planning-seances-mobile.png>
 Package pdftex.def Info: img/capture/planning-seances-mobile.png  used on input
- line 240.
+ line 242.
 (pdftex.def)             Requested size: 455.2456pt x 275.42358pt.
  [86 <./img/capture/Tableau de bord mobile.png>]
-<img/capture/profil-mobile.png, id=2024, 712.0197pt x 485.24142pt>
+<img/capture/profil-mobile.png, id=2030, 712.0197pt x 485.24142pt>
 File: img/capture/profil-mobile.png Graphic file (type png)
 <use img/capture/profil-mobile.png>
-Package pdftex.def Info: img/capture/profil-mobile.png  used on input line 247.
+Package pdftex.def Info: img/capture/profil-mobile.png  used on input line 249.
 
 (pdftex.def)             Requested size: 455.2456pt x 310.24988pt.
-<img/capture/Centre KPI.png, id=2025, 712.0197pt x 569.61577pt>
+<img/capture/Centre KPI.png, id=2031, 712.0197pt x 569.61577pt>
 File: img/capture/Centre KPI.png Graphic file (type png)
 <use img/capture/Centre KPI.png>
-Package pdftex.def Info: img/capture/Centre KPI.png  used on input line 254.
+Package pdftex.def Info: img/capture/Centre KPI.png  used on input line 256.
 (pdftex.def)             Requested size: 455.2456pt x 364.19649pt.
  [87 <./img/capture/planning-seances-mobile.png> <./img/capture/profil-mobile.p
 ng>]
-<img/capture/membres-silencieux.png, id=2032, 524.40251pt x 569.61577pt>
+<img/capture/membres-silencieux.png, id=2038, 524.40251pt x 569.61577pt>
 File: img/capture/membres-silencieux.png Graphic file (type png)
 <use img/capture/membres-silencieux.png>
 Package pdftex.def Info: img/capture/membres-silencieux.png  used on input line
- 261.
+ 263.
 (pdftex.def)             Requested size: 355.86082pt x 386.54266pt.
  [88 <./img/capture/Centre KPI.png (PNG copy)>]
-<img/capture/Assistant IA.png, id=2037, 712.0197pt x 363.13005pt>
+<img/capture/Assistant IA.png, id=2043, 712.0197pt x 363.13005pt>
 File: img/capture/Assistant IA.png Graphic file (type png)
 <use img/capture/Assistant IA.png>
-Package pdftex.def Info: img/capture/Assistant IA.png  used on input line 268.
+Package pdftex.def Info: img/capture/Assistant IA.png  used on input line 270.
 (pdftex.def)             Requested size: 455.2456pt x 232.17526pt.
 
 [89 <./img/capture/membres-silencieux.png> <./img/capture/Assistant IA.png>]
-Underfull \hbox (badness 1776) in paragraph at lines 289--289
+Underfull \hbox (badness 1776) in paragraph at lines 291--291
 []|\T1/futs/m/n/12 (+20) Blocage des abon-nés
- []
-
-
-Underfull \hbox (badness 1087) in paragraph at lines 289--289
-[]|\T1/futs/m/n/12 (+20) Toutes les 10
- []
-
-
-Underfull \hbox (badness 7704) in paragraph at lines 289--290
-[]|\T1/futs/m/n/12 (+20) Définit \T1/cmtt/m/n/12 isBlocked = true \T1/futs/m/n/
-12 (+20) pour les
- []
-
-
-Underfull \hbox (badness 2781) in paragraph at lines 291--291
-[]|\T1/futs/m/n/12 (+20) Déblocage des abon-
  []
 
 
@@ -4229,14 +4164,14 @@ Underfull \hbox (badness 1087) in paragraph at lines 291--291
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 291--292
-[]|\T1/futs/m/n/12 (+20) Réactive (\T1/cmtt/m/n/12 isBlocked = false\T1/futs/m/
-n/12 (+20) ) les
+Underfull \hbox (badness 7704) in paragraph at lines 291--292
+[]|\T1/futs/m/n/12 (+20) Définit \T1/cmtt/m/n/12 isBlocked = true \T1/futs/m/n/
+12 (+20) pour les
  []
 
 
-Underfull \hbox (badness 1708) in paragraph at lines 291--292
-\T1/futs/m/n/12 (+20) membres pos-sé-dant un abon-ne-ment
+Underfull \hbox (badness 2781) in paragraph at lines 293--293
+[]|\T1/futs/m/n/12 (+20) Déblocage des abon-
  []
 
 
@@ -4245,35 +4180,51 @@ Underfull \hbox (badness 1087) in paragraph at lines 293--293
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 295--295
-[]|\T1/futs/m/n/12 (+20) Quotidien à
+Underfull \hbox (badness 10000) in paragraph at lines 293--294
+[]|\T1/futs/m/n/12 (+20) Réactive (\T1/cmtt/m/n/12 isBlocked = false\T1/futs/m/
+n/12 (+20) ) les
+ []
+
+
+Underfull \hbox (badness 1708) in paragraph at lines 293--294
+\T1/futs/m/n/12 (+20) membres pos-sé-dant un abon-ne-ment
+ []
+
+
+Underfull \hbox (badness 1087) in paragraph at lines 295--295
+[]|\T1/futs/m/n/12 (+20) Toutes les 10
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 297--297
+[]|\T1/futs/m/n/12 (+20) Quotidien à
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 299--299
 []|\T1/futs/m/n/12 (+20) Initialisation AC En-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 299--299
+Underfull \hbox (badness 10000) in paragraph at lines 301--301
 []|\T1/futs/m/n/12 (+20) Synchronisation hor-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 299--299
+Underfull \hbox (badness 10000) in paragraph at lines 301--301
 []|\T1/futs/m/n/12 (+20) Démarrage +
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--301
+Underfull \hbox (badness 10000) in paragraph at lines 303--303
 []|\T1/futs/m/n/12 (+20) 2x/jour (8h,
  []
 
-<img/capture/cronjobs-terminal.png, id=2050, 1079.83424pt x 516.12825pt>
+<img/capture/cronjobs-terminal.png, id=2056, 1079.83424pt x 516.12825pt>
 File: img/capture/cronjobs-terminal.png Graphic file (type png)
 <use img/capture/cronjobs-terminal.png>
 Package pdftex.def Info: img/capture/cronjobs-terminal.png  used on input line 
-310.
+312.
 (pdftex.def)             Requested size: 455.24089pt x 217.59143pt.
 [90]) (sections/Conclusion Generale.tex [91 <./img/capture/cronjobs-terminal.pn
 g>]
@@ -4287,7 +4238,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.245 \cleardoublepage
+l.250 \cleardoublepage
                        [1
 
 
@@ -4296,40 +4247,40 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.245 \cleardoublepage
+l.250 \cleardoublepage
                        [2]
-<pdf/back_cover.pdf, id=2129, 598.235pt x 845.1575pt>
+<pdf/back_cover.pdf, id=2135, 598.235pt x 845.1575pt>
 File: pdf/back_cover.pdf Graphic file (type pdf)
 <use pdf/back_cover.pdf>
-Package pdftex.def Info: pdf/back_cover.pdf  used on input line 248.
+Package pdftex.def Info: pdf/back_cover.pdf  used on input line 253.
 (pdftex.def)             Requested size: 598.23354pt x 845.15544pt.
-<pdf/back_cover.pdf, id=2131, page=1, 598.235pt x 845.1575pt>
+<pdf/back_cover.pdf, id=2137, page=1, 598.235pt x 845.1575pt>
 File: pdf/back_cover.pdf Graphic file (type pdf)
 <use pdf/back_cover.pdf, page 1>
-Package pdftex.def Info: pdf/back_cover.pdf , page1 used on input line 248.
+Package pdftex.def Info: pdf/back_cover.pdf , page1 used on input line 253.
 (pdftex.def)             Requested size: 598.23354pt x 845.15544pt.
 File: pdf/back_cover.pdf Graphic file (type pdf)
 <use pdf/back_cover.pdf, page 1>
-Package pdftex.def Info: pdf/back_cover.pdf , page1 used on input line 248.
+Package pdftex.def Info: pdf/back_cover.pdf , page1 used on input line 253.
 (pdftex.def)             Requested size: 598.34306pt x 845.31018pt.
 File: pdf/back_cover.pdf Graphic file (type pdf)
 <use pdf/back_cover.pdf, page 1>
-Package pdftex.def Info: pdf/back_cover.pdf , page1 used on input line 248.
+Package pdftex.def Info: pdf/back_cover.pdf , page1 used on input line 253.
 (pdftex.def)             Requested size: 598.34306pt x 845.31018pt.
 File: pdf/back_cover.pdf Graphic file (type pdf)
 <use pdf/back_cover.pdf, page 1>
-Package pdftex.def Info: pdf/back_cover.pdf , page1 used on input line 248.
+Package pdftex.def Info: pdf/back_cover.pdf , page1 used on input line 253.
 (pdftex.def)             Requested size: 598.34306pt x 845.31018pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.0}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.248 ...ges=1, fitpaper=true]{pdf/back_cover.pdf}
+l.253 ...ges=1, fitpaper=true]{pdf/back_cover.pdf}
                                                   
 File: pdf/back_cover.pdf Graphic file (type pdf)
 <use pdf/back_cover.pdf, page 1>
-Package pdftex.def Info: pdf/back_cover.pdf , page1 used on input line 248.
+Package pdftex.def Info: pdf/back_cover.pdf , page1 used on input line 253.
 (pdftex.def)             Requested size: 598.34306pt x 845.31018pt.
  [0
 
@@ -4350,10 +4301,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 51414 strings out of 467871
- 1036583 string characters out of 5416924
- 1933871 words of memory out of 5000000
- 78284 multiletter control sequences out of 15000+600000
+ 51518 strings out of 467871
+ 1037673 string characters out of 5416924
+ 1935838 words of memory out of 5000000
+ 78385 multiletter control sequences out of 15000+600000
  808316 words of font info for 613 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,17n,108p,2474b,2332s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -4366,9 +4317,9 @@ ams/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/BEDHIAFI/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Users/BEDHI
 AFI/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Users
 /BEDHIAFI/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (109 pages, 12873412 bytes).
+Output written on main.pdf (109 pages, 12802856 bytes).
 PDF statistics:
- 2429 PDF objects out of 2487 (max. 8388607)
- 474 named destinations out of 1000 (max. 500000)
+ 2436 PDF objects out of 2487 (max. 8388607)
+ 477 named destinations out of 1000 (max. 500000)
  119929 words of extra memory for PDF output out of 128383 (max. 10000000)
 
